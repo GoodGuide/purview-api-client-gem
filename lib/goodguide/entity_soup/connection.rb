@@ -60,11 +60,11 @@ class GoodGuide::EntitySoup::Connection
     query = opts.to_query
   end
 
-  def get_all(opts={})
+  def get_all(elements, opts={})
     hash = get_json(opts).dup
 
     # use ResponseList to wrap the other keys
-    ResponseList.new(hash.delete('entities')).tap do |rl|
+    ResponseList.new(hash.delete(elements) || []).tap do |rl|
       rl.stats = hash
     end
   end

@@ -53,7 +53,7 @@ module GoodGuide::EntitySoup::Resource
 
     def initialize_resource!
       resource_name self.name.demodulize.underscore
-      resource_path "/" + self.name.demodulize.underscore.pluralize
+      resource_path "/" + self.resource_name.pluralize
     end
 
     def default_view(params)
@@ -71,6 +71,11 @@ module GoodGuide::EntitySoup::Resource
       end
     end
 
+    def method(name, opts={})
+      params = view_params_for(opts)
+      connection.method(name, params)
+    end
+
     def find(id, opts={})
       params = view_params_for(opts)
       new(connection.get(id, params))
@@ -83,7 +88,7 @@ module GoodGuide::EntitySoup::Resource
 
     def find_all(opts={})
       params = view_params_for(opts)
-      connection.get_all(params).map! { |r| new(r) }
+      connection.get_all(resource_name.pluralize, params).map! { |r| new(r) }
     end
 
     def inflate_all!(records, opts={})
@@ -98,8 +103,12 @@ module GoodGuide::EntitySoup::Resource
       super.split('::').last
     end
 
-    def resource_name(name)
-      alias_method name.to_sym, :resource
+    def resource_name(name=nil)
+      if name
+        @resource_name = name.to_s
+        alias_method name.to_sym, :resource
+      end
+      @resource_name
     end
 
     def resource_path(path)
@@ -167,7 +176,7 @@ module GoodGuide::EntitySoup::Resource
     def has_many(type, opts={})
       type = type.to_s
       klass_name = opts.fetch(:model, type).to_s.singularize.camelize
-      model_name = "GoodGuide::API::" + klass_name
+      model_name = "GoodGuide::EntitySoup::" + klass_name
       model = model_name.constantize
       relations << type
 

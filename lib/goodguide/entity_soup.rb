@@ -33,3 +33,10 @@ require 'active_support/inflector'
 
 require "goodguide/entity_soup/connection"
 require "goodguide/entity_soup/resource"
+require "goodguide/entity_soup/attribute_type"
+require "goodguide/entity_soup/entity_type"
+require "goodguide/entity_soup/attribute"
+require "goodguide/entity_soup/entity"
+require "goodguide/entity_soup/catalog"
+require "goodguide/entity_soup/provider"
+require "goodguide/entity_soup/attribute_value"

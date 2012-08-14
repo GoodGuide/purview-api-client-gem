@@ -8,18 +8,81 @@ describe GoodGuide::EntitySoup do
 
   # pending 'can authenticate' # TODO - to enable role based restrictions to data
 
-  pending 'can get list of entity types'
-  pending 'can get list of attribute types'
+  it 'gets a list of attribute types' do
+    types = [{ name: 'Integer', 
+               options: { allow_nil: true, default_value: nil } }, 
+             { name: 'String', 
+               options: { allow_nil: true, default_value: nil} }]
+    
+    stub_connection! do |stub|
+      stub.get('/attributes/types.json') { [200, {}, types.to_json] }
+    end
+    
+    entity_types = GoodGuide::EntitySoup::Attribute.types
+    entity_types.should be_a Array
+    entity_types.to_json.should == types.to_json
+  end
+  
+  it 'gets list of entity types' do
+    types = [ {name: 'Product'}, {name: 'Ingredient'}, {name: 'Brand'} ]
+    stub_connection! do |stub|
+      stub.get('/entities/types.json') { [200, {}, types.to_json] }
+    end
+    
+    entity_types = GoodGuide::EntitySoup::Entity.types
+    entity_types.should be_a Array
+    entity_types.to_json.should == types.to_json
+  end
+
 
   # TODO - restrict catalog access by role/ACL
   context 'catalogs' do
 
-    pending 'can be listed'
-    pending 'can be fetched by name'
-    pending 'have a name and description'
-    pending 'can be created' 
-    pending 'can be updated' 
-    pending 'can be deleted' 
+    it 'can be listed' do
+      response = { catalogs: [{ id: 1, name: 'cat1', description: 'The first catalog' },
+                              { id: 2, name: 'cat2', description: 'The second catalog' }] }
+      
+      stub_connection! do |stub|
+        stub.get('/catalogs.json') { [200, {}, response.to_json] }
+      end
+    
+      catalogs = GoodGuide::EntitySoup::Catalog.find_all
+      catalogs.should be_a Array
+      catalogs.to_json.should == response[:catalogs].to_json
+    end
+
+    it 'can be fetched by id' do
+      response = { id: 1, name: 'foo', description: 'The first catalog' }
+      stub_connection! do |stub|
+        stub.get('/catalogs/1.json') { [200, {}, response.to_json] }
+      end
+      
+      catalog = GoodGuide::EntitySoup::Catalog.find(1)
+      catalog.should be_a Catalog
+      catalog.id.should == 1
+    end
+    
+    it 'has a name and description' do
+      response = { id: 1, name: 'foo', description: 'The first catalog' }
+      stub_connection! do |stub|
+        stub.get('/catalogs/1.json') { [200, {}, response.to_json] }
+      end
+      
+      catalog = GoodGuide::EntitySoup::Catalog.find(1)
+      catalog.should be_a Catalog
+      catalog.id.should == 1
+      catalog.description.should == response[:description]
+      catalog.name.should == response[:name]
+    end
+
+    it 'can be created' do
+    end
+
+    it 'can be updated' do
+    end
+
+    it 'can be deleted' do
+    end
 
   end
 

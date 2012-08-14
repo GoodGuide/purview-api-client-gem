@@ -4,6 +4,7 @@ describe GoodGuide::EntitySoup::Resource do
   class TestResource
     include Resource
     resource_path '/tests'
+    resource_name 'test'
   end
 
   class Entity
@@ -69,7 +70,7 @@ describe GoodGuide::EntitySoup::Resource do
       stub_connection! do |stub|
         stub.get('tests.json?include[]=foo&limit=3') do
           body = {
-            entities: [
+            tests: [
               { id: 1 }, { id: 2 }, { id: 3 }
             ],
             total: 100,
