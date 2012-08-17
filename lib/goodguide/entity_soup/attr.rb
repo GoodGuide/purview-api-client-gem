@@ -1,7 +1,7 @@
-class GoodGuide::EntitySoup::Attribute
+class GoodGuide::EntitySoup::Attr
   include GoodGuide::EntitySoup::Resource
 
-  attributes :name, :options
+  attributes :name, :options, :entity_type
 
   class Type
     def initialize(o)

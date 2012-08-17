@@ -15,10 +15,10 @@ describe GoodGuide::EntitySoup do
                options: { allow_nil: true, default_value: nil} }]
     
     stub_connection! do |stub|
-      stub.get('/attributes/types.json') { [200, {}, types.to_json] }
+      stub.get('/attrs/types') { [200, {}, types.to_json] }
     end
     
-    entity_types = GoodGuide::EntitySoup::Attribute.types
+    entity_types = GoodGuide::EntitySoup::Attr.types
     entity_types.should be_a Array
     entity_types.to_json.should == types.to_json
   end
@@ -26,7 +26,7 @@ describe GoodGuide::EntitySoup do
   it 'gets list of entity types' do
     types = [ {name: 'Product'}, {name: 'Ingredient'}, {name: 'Brand'} ]
     stub_connection! do |stub|
-      stub.get('/entities/types.json') { [200, {}, types.to_json] }
+      stub.get('/entities/types') { [200, {}, types.to_json] }
     end
     
     entity_types = GoodGuide::EntitySoup::Entity.types
@@ -43,7 +43,7 @@ describe GoodGuide::EntitySoup do
                               { id: 2, name: 'cat2', description: 'The second catalog' }] }
       
       stub_connection! do |stub|
-        stub.get('/catalogs.json') { [200, {}, response.to_json] }
+        stub.get('/catalogs') { [200, {}, response.to_json] }
       end
     
       catalogs = GoodGuide::EntitySoup::Catalog.find_all
@@ -54,7 +54,7 @@ describe GoodGuide::EntitySoup do
     it 'can be fetched by id' do
       response = { id: 1, name: 'foo', description: 'The first catalog' }
       stub_connection! do |stub|
-        stub.get('/catalogs/1.json') { [200, {}, response.to_json] }
+        stub.get('/catalogs/1') { [200, {}, response.to_json] }
       end
       
       catalog = GoodGuide::EntitySoup::Catalog.find(1)
@@ -65,7 +65,7 @@ describe GoodGuide::EntitySoup do
     it 'has a name and description' do
       response = { id: 1, name: 'foo', description: 'The first catalog' }
       stub_connection! do |stub|
-        stub.get('/catalogs/1.json') { [200, {}, response.to_json] }
+        stub.get('/catalogs/1') { [200, {}, response.to_json] }
       end
       
       catalog = GoodGuide::EntitySoup::Catalog.find(1)
@@ -75,14 +75,11 @@ describe GoodGuide::EntitySoup do
       catalog.name.should == response[:name]
     end
 
-    it 'can be created' do
-    end
+    pending 'can be created'
 
-    it 'can be updated' do
-    end
+    pending 'can be updated'
 
-    it 'can be deleted' do
-    end
+    pending 'can be deleted'
 
   end
 
@@ -92,35 +89,147 @@ describe GoodGuide::EntitySoup do
   # TODO - expose the provider concept
   # TODO - restrict provider access by role/ACL
   #
-  # context 'providers' do
-  # 
-  #   pending 'can be created'  
-  #   pending 'can be listed'   
-  #   pending 'can be fetched by name'
-  #   pending 'have a name'
-  #   pending 'have a description'
-  #   pending 'can be updated'  
-  #   pending 'can be deleted'  
-  #
-  # end
+  context 'providers' do
 
+    it 'can be fetched by id' do
+      response = { id: 1, name: 'p1' }
+      
+      stub_connection! do |stub|
+        stub.get('/providers/1') { [200, {}, response.to_json] }
+      end
+    
+      catalog = GoodGuide::EntitySoup::Provider.find(1)
+      catalog.should be_a Provider
+      catalog.name.should == 'p1'
+    end
 
-  # TODO - restrict attribute editing by role/ACL
-  context 'attributes' do
+    it 'can be listed' do
+      response = { providers: [{ id: 1, name: 'p1' },
+                              { id: 2, name: 'p2'}] }
+      
+      stub_connection! do |stub|
+        stub.get('/providers') { [200, {}, response.to_json] }
+      end
+    
+      catalogs = GoodGuide::EntitySoup::Provider.find_all
+      catalogs.should be_a Array
+      catalogs.to_json.should == response[:providers].to_json
+    end
+
+    it 'can be fetched by name' do
+      response = { providers: [{ id: 1, name: 'p1' }] }
+      
+      stub_connection! do |stub|
+        stub.get('/providers?name=p1') { [200, {}, response.to_json] }
+      end
+    
+      catalogs = GoodGuide::EntitySoup::Provider.find_all(name: 'p1')
+      catalogs.should be_a Array
+      catalogs.to_json.should == response[:providers].to_json
+    end
+
+    it 'have a name' do
+      response = { id: 1, name: 'p1' }
+      
+      stub_connection! do |stub|
+        stub.get('/providers/1') { [200, {}, response.to_json] }
+      end
+    
+      catalog = GoodGuide::EntitySoup::Provider.find(1)
+      catalog.should be_a Provider
+      catalog.name.should == 'p1'
+    end
+
+    pending 'can be created'  
+    pending 'can be updated'  
+    pending 'can be deleted'  
+
+  end
+
+  # TODO - restrict attr editing by role/ACL
+  context 'attrs' do
+
+    it 'can be fetched by id' do
+      response = { id: 1, name: 'a1' }
+      stub_connection! do |stub|
+        stub.get('/attrs/1') { [200, {}, response.to_json] }
+      end
+      attr = GoodGuide::EntitySoup::Attr.find(1)
+      attr.should be_a Attr
+      attr.to_json.should == response.to_json
+    end
+
+    it 'can be listed' do
+      response = { attrs: [{ id: 1, name: 'a1' }, { id: 2, name: 'a2' }] }
+      stub_connection! do |stub|
+        stub.get('/attrs') { [200, {}, response.to_json] }
+      end
+    
+      attrs = GoodGuide::EntitySoup::Attr.find_all
+      attrs.should be_a Array
+      attrs.to_json.should == response[:attrs].to_json
+    end
+
+    it 'can be listed by name' do
+      response = { attrs: [{ id: 1, name: 'a1', catalog_id: 1 }] }
+      stub_connection! do |stub|
+        stub.get('/attrs?name=a1') { [200, {}, response.to_json] }
+      end
+    
+      attrs = GoodGuide::EntitySoup::Attr.find_all(name: 'a1')
+      attrs.should be_a Array
+      attrs.to_json.should == response[:attrs].to_json
+    end
+
+    it 'can be listed by catalog' do
+      response = { attrs: [{ id: 1, name: 'a1', catalog_id: 1 }] }
+      stub_connection! do |stub|
+        stub.get('/attrs?catalog_id=1') { [200, {}, response.to_json] }
+      end
+    
+      attrs = GoodGuide::EntitySoup::Attr.find_all(catalog_id: 1)
+      attrs.should be_a Array
+      attrs.to_json.should == response[:attrs].to_json
+    end
+
+    it 'can be listed within a catalog' do
+      catalog_response = { id: 1, name: 'c1' }
+      attrs_response = { attrs: [{ id: 1, name: 'a1', catalog_id: 1 }] }
+      stub_connection! do |stub|
+        stub.get('/catalogs/1') { [200, {}, catalog_response.to_json] }
+        stub.get('/attrs?catalog_id=1') { [200, {}, attrs_response.to_json] }
+      end
+
+      catalog = GoodGuide::EntitySoup::Catalog.find(1)
+      catalog.should be_a Catalog
+      attrs = catalog.attrs
+      attrs.should be_a Array
+      attrs.to_json.should == attrs_response[:attrs].to_json
+    end
+
+    it 'have a name, type and options' do
+      response = { id: 1, name: 'c1', options: { allow_nil: true, list: false }, entity_type: 'Product' }
+      stub_connection! do |stub|
+        stub.get('/attrs/1') { [200, {}, response.to_json] }
+      end
+
+      attr = GoodGuide::EntitySoup::Attr.find(1)
+      attr.should be_a Attr
+      attr.options.should be_a Hash
+      attr.options[:allow_nil].should == true
+      attr.options[:list].should == false
+      attr.entity_type.should == 'Product'
+      attr.name.should == 'c1'
+    end
 
     pending 'can be created'
-    pending 'can be fetched by name'
-    pending 'have a name'
-    pending 'have a type'
-    pending 'have options'
-    pending 'can be listed in a catalog'
     pending 'can be deleted'
 
-    # Note: Seems sensible that we should not allow updating of attribute fields other than
+    # Note: Seems sensible that we should not allow updating of attr fields other than
     # to change the name.  Instead provide a data migration tool to deal with migrating 
-    # attribute values from one attribute to another and re-validating data
+    # attr values from one attr to another and re-validating data
 
-    # TODO - decide if when creating an attribute you need to restrict what entity types
+    # TODO - decide if when creating an attr you need to restrict what entity types
     # it applies to, currently not restricted
 
   end
@@ -129,144 +238,117 @@ describe GoodGuide::EntitySoup do
   # TODO - restrcit entity creation and access by role/ACL
   context 'entities' do
 
-    pending 'can be created in a catalog'
-    pending 'can be created with attribute values'
-    pending 'can be fetched by id without attribute values'
-    pending 'can be fetched by id with attribute values'
-    pending 'can be fetched by id with some attribute values'
-    
+    let(:entity_response) {
+      { id: 1, catalog_id: 1, type: 'Product', attr_values: [{ id: 1, entity_id: 1, attr_id: 1, provider_id: 1, value: "foo" }] } 
+    }
+    let(:catalog_response) { 
+      { id: 1 } 
+    }
+
+    it 'can be fetched by id with attr values' do
+      stub_connection! do |stub|
+        stub.get('/entities/1') { [200, {}, entity_response.to_json] }
+        stub.get('/catalogs/1') { [200, {}, catalog_response.to_json] }
+      end
+
+      entity = GoodGuide::EntitySoup::Entity.find(1)
+      entity.should be_a Entity
+      entity.catalog.should be_a Catalog
+      entity.type.should == 'Product'
+      entity.attr_values.should be_a Array
+      entity.attr_values.first.should be_a AttrValue
+    end
+
+    it 'can be listed in a catalog' do
+      stub_connection! do |stub|
+        stub.get('/entities?catalog_id=1') { [200, {}, { entities: [entity_response] }.to_json] }
+        stub.get('/catalogs/1') { [200, {}, catalog_response.to_json] }
+      end
+
+      catalog = GoodGuide::EntitySoup::Catalog.find(1)
+      catalog.should be_a Catalog
+      entities = catalog.entities
+      entities.should be_a Array
+      entities[0].should be_a Entity
+    end
+
+    pending 'can be created in a attr'
+    pending 'can be created with attr values'
+
   end
   
 
-  context 'attribute values' do
+  context 'attr values' do
 
-    pending 'of an entity can be fetched en-masse'
-    pending 'of an entity can be fetched by attribute name'
-    pending 'of an entity can be fetched by attribute names'
-    pending 'have an attribute name'
-    pending 'have a value'
+    let(:attr_values_response) { 
+      [{ id: 1, entity_id: 1, attr_id: 1, provider_id: 1, value: "foo" } ]
+    }
+
+    let(:entity_response) {
+      { id: 1, catalog_id: 1, type: 'Product', attr_values: attr_values_response }
+    }
+
+    let(:attr_response) {
+      {  id: 1, name: 'a1' }
+    }
+
+    it 'can be fetched by id and have required attributes' do
+      stub_connection! do |stub|
+        stub.get('/attr_values/1') { [200, {}, attr_values_response[0].to_json] }
+      end
+      
+      attr_value = GoodGuide::EntitySoup::AttrValue.find(1)
+      attr_value.should be_a AttrValue
+      attr_value.entity_id.should == 1
+      attr_value.attr_id.should == 1
+      attr_value.provider_id.should == 1
+      attr_value.value.should == "foo"
+    end
+
+    it 'have an attribute' do
+      stub_connection! do |stub|
+        stub.get('/attr_values/1') { [200, {}, attr_values_response[0].to_json] }
+        stub.get('/attrs/1') { [200, {}, attr_response.to_json] }
+      end
+
+      attr_value = GoodGuide::EntitySoup::AttrValue.find(1)
+      attr = attr_value.attr
+      attr.should be_a Attr
+      attr.id.should == 1
+    end
+
+    it 'have an entity' do
+      stub_connection! do |stub|
+        stub.get('/attr_values/1') { [200, {}, attr_values_response[0].to_json] }
+        stub.get('/entities/1') { [200, {}, entity_response.to_json] }
+      end
+
+      attr_value = GoodGuide::EntitySoup::AttrValue.find(1)
+      entity = attr_value.entity
+      entity.should be_a Entity
+      entity.id.should == 1
+    end
+
+    it 'can be fetched for an entity' do
+      stub_connection! do |stub|
+        stub.get('/entities/1') { [200, {}, entity_response.to_json] }
+        stub.get('/attr_values?entity_id=1') { [200, {}, { attr_values: attr_values_response }.to_json] }
+      end
+
+      entity = GoodGuide::EntitySoup::Entity.find(1)
+      entity.should be_a Entity
+      attr_values = GoodGuide::EntitySoup::AttrValue.find_all(entity_id: entity.id)
+      attr_values.should be_a Array
+      attr_values[0].should be_a AttrValue
+      attr_values.as_json.should == attr_values_response.as_json
+    end
+
+
     # Note: set means define or update existing value
-    pending 'of an entity can be set by attribute name singularly'
-    pending 'of an entity can be set by attribute name in bulk'
+    pending 'of an entity can be set by attr name singularly'
+    pending 'of an entity can be set by attr name in bulk'
     pending 'of an entity can be deleted'
 
   end
 
-
-  # TODO - restrict access to entity via catalog by ACL 
-  # TODO - expose provider concept
-  context 'search' do
-
-    pending 'can get entities by catalog and type'
-    pending 'can be restricted by given value of attribute'
-    pending 'can be restricted by given values of attribute'
-    pending 'can be restricted by given value of attributes'
-    pending 'can be restricted by given values of attributes'
-
-  end
-
-  # describe 'get' do
-  #   it 'gets a product with a polyid' do
-  #     stub_faraday do |stub|
-  #       stub.get('/products/asin:123') { response(product: { name: 'foo' } ) }
-  #     end
-
-  #     product = GoodGuide::ProductSoup.get('asin:123')
-  #     assert { product.is_a? GoodGuide::ProductSoup::Product }
-  #     assert { product.name == 'foo' }
-  #   end
-  # end
-
-  # describe 'ensured_present_get' do
-  #   it 'gets a product with a polyid' do
-  #     stub_faraday do |stub|
-  #       stub.get('/products/asin:123') { response(product: { name: 'foo' } ) }
-  #     end
-
-  #     product = GoodGuide::ProductSoup.ensure_present_get('asin:123')
-  #     assert { product.is_a? GoodGuide::ProductSoup::Product }
-  #   end
-  # end
-
-  # describe 'updated_since' do
-  #   it 'gets list of products' do
-  #     stub_faraday do |stub|
-  #       stub.get('/products') do
-  #         response(products: [ { name: 'foo' }, { name: 'bar' } ])
-  #       end
-  #     end
-
-  #     products = GoodGuide::ProductSoup.updated_since(Time.now)
-  #     products.size.should == 2
-  #     products.each { |p| assert { p.is_a? GoodGuide::ProductSoup::Product } }
-  #   end
-
-  #   it 'gets no products if the date is nil or not a Date, DateTime or Time' do
-  #     products = GoodGuide::ProductSoup.updated_since(nil)
-  #     products.size.should == 0
-  #     products = GoodGuide::ProductSoup.updated_since(42)
-  #     products.size.should == 0
-  #   end
-
-  #   it 'accepts a valid string as a since argument' do
-  #     products = GoodGuide::ProductSoup.updated_since('2012-01-01')
-  #     products.size.should == 2
-  #   end
-
-  #   it 'raises an exception if since is an invalid date string' do
-  #     e = rescuing { GoodGuide::ProductSoup.updated_since('garbag!') }
-  #     assert { e.is_a? ArgumentError }
-  #   end
-
-  # end  
-
-  # describe 'batch_get' do
-  #   it 'gets list of products from polyids' do
-  #     stub_faraday do |stub|
-  #       stub.get('/products') do
-  #         response(products: [ { name: 'foo' }, { name: 'bar' } ])
-  #       end
-  #     end
-
-  #     products = GoodGuide::ProductSoup.batch_get(['asin:123', 'asin:456'])
-  #     products.size.should == 2
-  #     products.each { |p| assert { p.is_a? GoodGuide::ProductSoup::Product } }
-  #   end
-
-  #   it %[raises a ServerError with a bum response] do
-  #     stub_faraday do |stub|
-  #       stub.get('/products') do
-  #         response(error: 'lolwtf')
-  #       end
-  #     end
-
-  #     e = rescuing { GoodGuide::ProductSoup.batch_get %w(asin:123 asin:456) }
-  #     assert { e.is_a? GoodGuide::ProductSoup::ServerError }
-  #     assert { e.message.include?({error: 'lolwtf'}.to_json.inspect) }
-  #   end
-  # end
-
-  # describe 'ensure_present' do
-  #   it 'checks presence' do
-  #     body = { hints: {} }.to_json
-
-  #     stub_faraday do |stub|
-  #       stub.put('/products/asin:123', body) { response }
-  #     end
-
-  #     assert { GoodGuide::ProductSoup.ensure_present('asin:123') }
-  #   end
-
-  #   it 'sends along hints' do
-  #     body = { hints: { name: 'Shampoo' } }.to_json
-
-  #     stub_faraday do |stub|
-  #       stub.put('/products/asin:456', body) { response }
-  #     end
-
-  #     assert {
-  #       GoodGuide::ProductSoup.ensure_present('asin:456', name: 'Shampoo')
-  #     }
-  #   end
-  # end
 end

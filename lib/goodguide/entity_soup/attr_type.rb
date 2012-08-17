@@ -1,3 +1,3 @@
-class GoodGuide::EntitySoup::AttributeType
+class GoodGuide::EntitySoup::AttrType
   include GoodGuide::EntitySoup::Resource
 end

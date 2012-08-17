@@ -2,10 +2,12 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require './lib/goodguide/entity_soup'
+#require './lib/goodguide/entity_soup'
 require 'yajl/json_gem'
 #require 'wrong/adapters/rspec'
 
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'goodguide/entity_soup'
 include GoodGuide::EntitySoup
 

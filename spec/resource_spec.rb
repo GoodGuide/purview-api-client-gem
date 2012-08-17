@@ -37,7 +37,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'finds a single resource' do
       stub_connection! do |stub|
-        stub.get('tests/123.json') {
+        stub.get('tests/123') {
           body = { id: 123 }.to_json
           [200, {}, body]
         }
@@ -53,7 +53,7 @@ describe GoodGuide::EntitySoup::Resource do
 
       stub_connection! do |stub|
         ids.each do |id|
-          stub.get("tests/#{id}.json") {
+          stub.get("tests/#{id}") {
             body = { id: id }.to_json
             [200, {}, body]
           }
@@ -68,7 +68,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it "searches resources" do
       stub_connection! do |stub|
-        stub.get('tests.json?include[]=foo&limit=3') do
+        stub.get('tests?include[]=foo&limit=3') do
           body = {
             tests: [
               { id: 1 }, { id: 2 }, { id: 3 }

@@ -19,7 +19,7 @@ class GoodGuide::EntitySoup::Connection
   end
 
   def path_for(id)
-    "#{rel_path}/#{id}.json"
+    "#{rel_path}/#{id}"
   end
 
   def get(id, opts={}, cacher=nil, break_cache=false, parse=true)
@@ -47,7 +47,7 @@ class GoodGuide::EntitySoup::Connection
     key = "#{path}?#{query}"
 
     cache_and_benchmark(key, cacher, break_cache) do
-      res = http.get("#{rel_path}.json", opts)
+      res = http.get("#{rel_path}", opts)
       JSON.load(res.body)
     end
   end
