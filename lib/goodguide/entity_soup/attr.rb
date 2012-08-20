@@ -9,16 +9,16 @@ class GoodGuide::EntitySoup::Attr
     end
 
     def name
-      @type[:name]
+      @type["name"]
     end
 
     def options
-      @type[:options]
+      @type["options"]
     end
   end
 
   def self.types
-    connection.get('types')
+    connection.get('types')['attr_types'].collect { |t| Type.new(t) }
   end
     
 end

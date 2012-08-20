@@ -8,9 +8,11 @@ gem 'faraday'
 gem 'activesupport'
 
 group :test, :development do
-  gem 'rspec'
+        gem 'rspec'
   gem 'rr'
   gem 'rake'
   gem 'yajl-ruby'
 #  gem 'wrong'
+  gem 'webmock'        
+  gem 'vcr'
 end

@@ -9,29 +9,19 @@ describe GoodGuide::EntitySoup do
   # pending 'can authenticate' # TODO - to enable role based restrictions to data
 
   it 'gets a list of attribute types' do
-    types = [{ name: 'Integer', 
-               options: { allow_nil: true, default_value: nil } }, 
-             { name: 'String', 
-               options: { allow_nil: true, default_value: nil} }]
-    
-    stub_connection! do |stub|
-      stub.get('/attrs/types') { [200, {}, types.to_json] }
-    end
-    
-    entity_types = GoodGuide::EntitySoup::Attr.types
-    entity_types.should be_a Array
-    entity_types.to_json.should == types.to_json
+    attr_types = vcr('attr/types') { Attr.types }
+    attr_types.should be_a Array
+    attr_types.each { |t| t.should be_a Attr::Type }
+    attr_types.collect(&:name).should include 'Integer'
+    attr_types.first.name.should_not be_nil
+    attr_types.first.options.keys.should include 'allow_nil'
   end
   
   it 'gets list of entity types' do
-    types = [ {name: 'Product'}, {name: 'Ingredient'}, {name: 'Brand'} ]
-    stub_connection! do |stub|
-      stub.get('/entities/types') { [200, {}, types.to_json] }
-    end
-    
-    entity_types = GoodGuide::EntitySoup::Entity.types
+    entity_types = vcr('entity/types') { Entity.types }
     entity_types.should be_a Array
-    entity_types.to_json.should == types.to_json
+    entity_types.each { |t| t.should be_a Entity::Type }
+    entity_types.collect(&:name).should include 'Product'
   end
 
 
@@ -39,43 +29,30 @@ describe GoodGuide::EntitySoup do
   context 'catalogs' do
 
     it 'can be listed' do
-      response = { catalogs: [{ id: 1, name: 'cat1', description: 'The first catalog' },
-                              { id: 2, name: 'cat2', description: 'The second catalog' }] }
-      
-      stub_connection! do |stub|
-        stub.get('/catalogs') { [200, {}, response.to_json] }
-      end
-    
-      catalogs = GoodGuide::EntitySoup::Catalog.find_all
+      # GoodGuide catalog id 1 always exists
+      catalogs = vcr('catalogs/all') { Catalog.find_all }
       catalogs.should be_a Array
-      catalogs.to_json.should == response[:catalogs].to_json
+      catalogs.each { |c| c.should be_a Catalog }
+      catalogs.first.id.should == 1
+      catalogs.first.name.should_not be_nil
+      catalogs.first.description.should_not be_nil
     end
 
     it 'can be fetched by id' do
-      response = { id: 1, name: 'foo', description: 'The first catalog' }
-      stub_connection! do |stub|
-        stub.get('/catalogs/1') { [200, {}, response.to_json] }
-      end
-      
-      catalog = GoodGuide::EntitySoup::Catalog.find(1)
+      catalog = vcr('catalogs/find_by_id') { Catalog.find(1) }
       catalog.should be_a Catalog
       catalog.id.should == 1
     end
     
     it 'has a name and description' do
-      response = { id: 1, name: 'foo', description: 'The first catalog' }
-      stub_connection! do |stub|
-        stub.get('/catalogs/1') { [200, {}, response.to_json] }
-      end
-      
-      catalog = GoodGuide::EntitySoup::Catalog.find(1)
-      catalog.should be_a Catalog
-      catalog.id.should == 1
-      catalog.description.should == response[:description]
-      catalog.name.should == response[:name]
+      catalog = vcr('catalogs/find_by_id') { Catalog.find(1) }
+      catalog.description.should_not be_nil
+      catalog.name.should_not be_nil
     end
 
-    pending 'can be created'
+    it 'can be created' do
+     
+    end
 
     pending 'can be updated'
 
@@ -92,52 +69,24 @@ describe GoodGuide::EntitySoup do
   context 'providers' do
 
     it 'can be fetched by id' do
-      response = { id: 1, name: 'p1' }
-      
-      stub_connection! do |stub|
-        stub.get('/providers/1') { [200, {}, response.to_json] }
-      end
-    
-      catalog = GoodGuide::EntitySoup::Provider.find(1)
+      catalog = vcr('providers/find_by_id') { GoodGuide::EntitySoup::Provider.find(1) }
       catalog.should be_a Provider
-      catalog.name.should == 'p1'
+      catalog.name.should == 'GoodGuide'
     end
 
     it 'can be listed' do
-      response = { providers: [{ id: 1, name: 'p1' },
-                              { id: 2, name: 'p2'}] }
-      
-      stub_connection! do |stub|
-        stub.get('/providers') { [200, {}, response.to_json] }
-      end
-    
-      catalogs = GoodGuide::EntitySoup::Provider.find_all
+      catalogs = vcr('providers/all') { GoodGuide::EntitySoup::Provider.find_all }
       catalogs.should be_a Array
-      catalogs.to_json.should == response[:providers].to_json
+      catalogs.each { |c| c.should be_a Provider }
+      catalogs.first.name.should_not be_nil
     end
 
     it 'can be fetched by name' do
-      response = { providers: [{ id: 1, name: 'p1' }] }
-      
-      stub_connection! do |stub|
-        stub.get('/providers?name=p1') { [200, {}, response.to_json] }
-      end
-    
-      catalogs = GoodGuide::EntitySoup::Provider.find_all(name: 'p1')
+      catalogs = vcr('providers/by_name') { GoodGuide::EntitySoup::Provider.find_all(name: 'GoodGuide') }
       catalogs.should be_a Array
-      catalogs.to_json.should == response[:providers].to_json
-    end
-
-    it 'have a name' do
-      response = { id: 1, name: 'p1' }
-      
-      stub_connection! do |stub|
-        stub.get('/providers/1') { [200, {}, response.to_json] }
-      end
-    
-      catalog = GoodGuide::EntitySoup::Provider.find(1)
-      catalog.should be_a Provider
-      catalog.name.should == 'p1'
+      catalogs.length.should > 0
+      catalogs.each { |c| c.should be_a Provider }
+      catalogs.first.name.should == 'GoodGuide'
     end
 
     pending 'can be created'  
@@ -149,6 +98,8 @@ describe GoodGuide::EntitySoup do
   # TODO - restrict attr editing by role/ACL
   context 'attrs' do
 
+    let(:catalog) { GoodGuide::EnitySoup::Catalog.find(1) }
+    
     it 'can be fetched by id' do
       response = { id: 1, name: 'a1' }
       stub_connection! do |stub|
