@@ -51,17 +51,17 @@ describe GoodGuide::EntitySoup do
     end
 
     it 'can be created' do
-      catalog = Catalog.new(name: "test", description: "NASA")
-      saved = vcr('catalogs/create') { catalog.save }
-      unless saved
-        catalog.destroy.should == true
-        vcr('catalogs/create-again') { catalog.save }.should be_true
-      end
-      catalog.id.should_not be_nil
-      vcr('catalogs/create-find') {
+      vcr('catalogs/create') do
+        catalog = Catalog.new(name: "test", description: "NASA")
+        saved = catalog.save
+        unless saved
+          catalog.destroy.should == true
+          catalog.save.should be_true
+        end
+        catalog.id.should_not be_nil
         catalog2 = Catalog.find(catalog.id, break: true)
         catalog2.name.should == catalog.name
-      }
+      end
     end
 
     it 'cant be created with a duplicate name' do
@@ -76,7 +76,9 @@ describe GoodGuide::EntitySoup do
         saved = catalog.save
         unless saved
           catalog = Catalog.find_all(name: "test2").first
-          catalog.destroy.should == true
+          catalog.destroy.should be_true
+          catalog = Catalog.new(name: "test2", description: "NASA")
+          catalog.save.should be_true
         end
         catalog2 = Catalog.find(catalog.id, break: true)
         catalog2.description.should == "NASA"
