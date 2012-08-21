@@ -8,6 +8,11 @@ describe GoodGuide::EntitySoup do
 
   # pending 'can authenticate' # TODO - to enable role based restrictions to data
 
+  def ensure_deleted(klass, name)
+    things = klass.find_all(name: name)
+    (things.first.destroy.should be_true) if things.any?
+  end
+
   it 'gets a list of attribute types' do
     attr_types = vcr('attr/types') { Attr.types }
     attr_types.should be_a Array
@@ -52,12 +57,9 @@ describe GoodGuide::EntitySoup do
 
     it 'can be created' do
       vcr('catalogs/create') do
+        ensure_deleted Catalog, "test"
         catalog = Catalog.new(name: "test", description: "NASA")
-        saved = catalog.save
-        unless saved
-          catalog.destroy.should == true
-          catalog.save.should be_true
-        end
+        catalog.save.should be_true
         catalog.id.should_not be_nil
         catalog2 = Catalog.find(catalog.id, break: true)
         catalog2.name.should == catalog.name
@@ -72,14 +74,9 @@ describe GoodGuide::EntitySoup do
 
     it 'can be updated' do
       vcr('catalogs/updated') do
+        ensure_deleted Catalog, 'test2'
         catalog = Catalog.new(name: "test2", description: "NASA")
-        saved = catalog.save
-        unless saved
-          catalog = Catalog.find_all(name: "test2").first
-          catalog.destroy.should be_true
-          catalog = Catalog.new(name: "test2", description: "NASA")
-          catalog.save.should be_true
-        end
+        catalog.save.should be_true
         catalog2 = Catalog.find(catalog.id, break: true)
         catalog2.description.should == "NASA"
         catalog2.description = "ESA"
@@ -90,20 +87,13 @@ describe GoodGuide::EntitySoup do
     end
 
     it 'can be destroyed' do
-      id = nil
       vcr('catalogs/destroy') do
-        catalog = Catalog.find_all(name: "test")
-        if catalog.empty?
-          catalog = Catalog.new(name: "test", description: "NASA")
-          catalog.save.should be_true
-        else
-          catalog.length.should == 1
-          catalog = catalog.first
-        end
+        ensure_deleted Catalog, 'test'
+        catalog = Catalog.new(name: "test", description: "NASA")
+        catalog.save.should be_true
         catalog.destroy.should be_true
-        id = catalog.id
+        Catalog.find(catalog.id, break: true).should be_nil
       end
-      vcr('catalogs/destroy-find') { Catalog.find(id, break: true).should be_nil }
     end
 
     it 'cant destroy non-existant id' do
@@ -145,9 +135,68 @@ describe GoodGuide::EntitySoup do
       catalogs.first.name.should == 'GoodGuide'
     end
 
-    pending 'can be created'  
-    pending 'can be updated'  
-    pending 'can be deleted'  
+    it 'can be created' do
+      vcr('providers/create') do
+        ensure_deleted(Provider, 'test')
+        provider = Provider.new(name: "test")
+        provider.save.should be_true
+        provider.should_not be_nil
+        provider2 = Provider.find(provider.id, break: true)
+        provider2.name.should == provider.name
+      end
+    end
+
+    it 'cant be created with a duplicate name' do
+      provider = Provider.new(name: "GoodGuide")
+      vcr('providers/create-duplicate') { provider.save }.should be_false
+      provider.errors.should_not be_nil
+    end
+
+    it 'can be updated' do
+      vcr('providers/updated') do
+        ensure_deleted(Provider, 'test')
+        ensure_deleted(Provider, 'test2')
+        provider = Provider.new(name: "test")
+        provider.save.should be_true
+        provider.name = "test2"
+        provider.save.should be_true
+        provider2 = Provider.find(provider.id, break: true)
+        provider2.name.should == "test2"
+      end
+    end
+
+    it 'cannot be renamed to duplicate name' do
+      vcr('providers/rename') do
+        ensure_deleted(Provider, 'test')
+        ensure_deleted(Provider, 'test2')
+        provider = Provider.new(name: "test")
+        provider.save.should be_true
+        provider2 = Provider.new(name: "test2")
+        provider2.save.should be_true
+        provider.id.should_not == provider2.id
+        provider2.name = "test"
+        provider2.save.should be_false
+        provider2.errors.should_not be_empty
+      end
+    end
+
+    it 'can be destroyed' do
+      vcr('providers/destroy') do
+        ensure_deleted(Provider, 'test')
+        provider = Provider.new(name: 'test', description: 'NASA')
+        provider.save.should be_true
+        provider.destroy.should be_true
+        Provider.find(provider.id, break: true).should be_nil
+      end
+    end
+
+    it 'cant destroy non-existant id' do
+      vcr('providers/destroy-non-existant') do
+        provider = Provider.new(id: 'non-existant')
+        provider.id.should == 'non-existant'
+        provider.destroy.should be_false
+      end
+    end
 
   end
 

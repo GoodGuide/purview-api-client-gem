@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/attrs/types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"07f4b3b6383a76684a76a5e548de705a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 05d1f5cae49041dc6499dd3097d922de
+      X-Runtime:
+      - '0.006159'
+      Content-Length:
+      - '312'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Tue, 21 Aug 2012 18:28:37 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"attr_types":[{"name":"Derived","options":{"list":false,"allow_nil":false,"default_value":null,"rule":"{}"}},{"name":"Numeric","options":null},{"name":"Float","options":null},{"name":"Percentage","options":null},{"name":"JSON","options":null},{"name":"String","options":null},{"name":"Integer","options":null}]}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2012 18:28:37 GMT
+recorded_with: VCR 2.2.4

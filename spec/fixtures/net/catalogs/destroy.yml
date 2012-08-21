@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/catalogs?name=test2
+    uri: http://localhost:3000/catalogs?name=test
     body:
       encoding: US-ASCII
       string: ''
@@ -23,13 +23,13 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"2af00140fff02f4050d002c8e101f517"'
+      - ! '"4163b39cd44b06189b4e2ebe6ae479d2"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b33dfb47d1efa18a4c64c9631cc199c6
+      - 0f38453cf05de816dd2f93e2212fdc17
       X-Runtime:
-      - '0.005185'
+      - '0.004674'
       Content-Length:
       - '132'
       Server:
@@ -40,12 +40,12 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[{"created_at":"2012-08-21T08:58:30Z","description":"ESA","id":145,"name":"test2","updated_at":"2012-08-21T08:58:30Z"}]}'
+      string: ! '{"catalogs":[{"created_at":"2012-08-21T18:28:37Z","description":"NASA","id":146,"name":"test","updated_at":"2012-08-21T18:28:37Z"}]}'
     http_version: 
   recorded_at: Tue, 21 Aug 2012 18:28:38 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/catalogs/145
+    uri: http://localhost:3000/catalogs/146
     body:
       encoding: US-ASCII
       string: ''
@@ -64,9 +64,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - c63e352eccea00e0f2e56e25db03f805
+      - b9310d0eeb2afb7c45d54d04cdb584ef
       X-Runtime:
-      - '0.014544'
+      - '0.010779'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
@@ -83,7 +83,7 @@ http_interactions:
     uri: http://localhost:3000/catalogs
     body:
       encoding: US-ASCII
-      string: name=test2&description=NASA
+      string: name=test&description=NASA
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -97,21 +97,21 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/catalogs/147
+      - http://localhost:3000/catalogs/148
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"32b9ca7b66b4fec5118601fee8df09af"'
+      - ! '"4651f6d30268040a654c3eaca251dbdd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cc788a02424d449d48b44c1232b7a762
+      - 62f0f4dce3645991e7ca9049ceacc9a7
       X-Runtime:
-      - '0.015817'
+      - '0.013881'
       Content-Length:
-      - '118'
+      - '117'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
@@ -120,61 +120,16 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-21T18:28:38Z","description":"NASA","id":147,"name":"test2","updated_at":"2012-08-21T18:28:38Z"}'
+      string: ! '{"created_at":"2012-08-21T18:28:38Z","description":"NASA","id":148,"name":"test","updated_at":"2012-08-21T18:28:38Z"}'
     http_version: 
   recorded_at: Tue, 21 Aug 2012 18:28:38 GMT
 - request:
-    method: get
-    uri: http://localhost:3000/catalogs/147
+    method: delete
+    uri: http://localhost:3000/catalogs/148
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"32b9ca7b66b4fec5118601fee8df09af"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 77846121a21f701ac339e387752c623e
-      X-Runtime:
-      - '0.005456'
-      Content-Length:
-      - '118'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
-      Date:
-      - Tue, 21 Aug 2012 18:28:38 GMT
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-21T18:28:38Z","description":"NASA","id":147,"name":"test2","updated_at":"2012-08-21T18:28:38Z"}'
-    http_version: 
-  recorded_at: Tue, 21 Aug 2012 18:28:38 GMT
-- request:
-    method: put
-    uri: http://localhost:3000/catalogs/147
-    body:
-      encoding: UTF-8
-      string: created_at=2012-08-21T18%3A28%3A38Z&description=ESA&id=147&name=test2&updated_at=2012-08-21T18%3A28%3A38Z
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
       Accept:
       - ! '*/*'
       User-Agent:
@@ -189,9 +144,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - af9c505492ac79b04b0694fc3c79ad55
+      - a83e9652a187c4494185507cc6d2eb88
       X-Runtime:
-      - '0.017951'
+      - '0.009967'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
@@ -205,7 +160,7 @@ http_interactions:
   recorded_at: Tue, 21 Aug 2012 18:28:38 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/147
+    uri: http://localhost:3000/catalogs/148
     body:
       encoding: US-ASCII
       string: ''
@@ -218,23 +173,21 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: ! 'OK '
+      code: 404
+      message: ! 'Not Found '
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Etag:
-      - ! '"54b4917244649ef8b57a4942f1a4fae2"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 17e53e8ba2699d765f728a05ca245b97
+      - 12581bac31110032821af100dfc08621
       X-Runtime:
-      - '0.007859'
+      - '0.004070'
       Content-Length:
-      - '117'
+      - '69'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
@@ -243,7 +196,7 @@ http_interactions:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-21T18:28:38Z","description":"ESA","id":147,"name":"test2","updated_at":"2012-08-21T18:28:38Z"}'
+      string: ! '{"error":"not found: Couldn''t find Catalog with id=148","status":404}'
     http_version: 
   recorded_at: Tue, 21 Aug 2012 18:28:38 GMT
 recorded_with: VCR 2.2.4
