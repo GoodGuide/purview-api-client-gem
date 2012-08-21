@@ -30,8 +30,32 @@ describe GoodGuide::EntitySoup::Resource do
       r.should be_a TestResource
       r.id.should == 789
     end
+
   end
 
+  describe 'entity' do
+
+    class Entity
+      attributes :foo, :bar
+    end
+
+    it 'has fields' do
+      r = Entity.new(foo: 'foo', bar: 'bar')
+      r.foo.should == 'foo'
+      r.bar.should == 'bar'
+    end
+
+    it 'has editable fields' do
+      r = Entity.new(foo: 'foo', bar: 'bar')
+      r.foo.should == 'foo'
+      r.bar.should == 'bar'
+      r.foo = 'bar'
+      r.bar = 'foo'
+      r.foo.should == 'bar'
+      r.bar.should == 'foo'
+    end
+
+  end
   describe 'finding' do
     after { reset_connection! }
 

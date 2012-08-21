@@ -34,8 +34,49 @@ class GoodGuide::EntitySoup::Connection
 
     cache_and_benchmark(key(id, opts), cacher, break_cache) do
       res = http.get(path_for(id), opts)
+      if not res.respond_to?(:status) or (res.status == 200)
+        parse ? JSON.load(res.body) : res.body
+      else
+        nil
+      end
+    end
+  end
+
+  def put(id, opts={})
+    opts = opts.dup
+    parse = opts.fetch(:parse, true)
+    opts.delete(:parse)
+
+    res = http.put(path_for(id), opts)
+    if not res.respond_to?(:status) or (res.status == 204)
+      true
+    else
       parse ? JSON.load(res.body) : res.body
     end
+  end
+
+  def post(opts={})
+    opts = opts.dup
+    parse = opts.fetch(:parse, true)
+    opts.delete(:parse)
+
+    res = http.post(rel_path, opts)
+    parse ? JSON.load(res.body) : res.body
+  end
+
+  def delete(id, opts={})
+    opts = opts.dup
+    parse = opts.fetch(:parse, true)
+    opts.delete(:parse)
+
+    res = http.delete(path_for(id), opts)
+    if not res.respond_to?(:status) or (res.status == 204)
+      true
+    else
+      parse ? JSON.load(res.body) : res.body
+    end
+  rescue
+    nil
   end
 
   def get_json(opts={})

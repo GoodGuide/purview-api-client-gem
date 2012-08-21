@@ -51,12 +51,66 @@ describe GoodGuide::EntitySoup do
     end
 
     it 'can be created' do
-     
+      catalog = Catalog.new(name: "test", description: "NASA")
+      saved = vcr('catalogs/create') { catalog.save }
+      unless saved
+        catalog.destroy.should == true
+        vcr('catalogs/create-again') { catalog.save }.should be_true
+      end
+      catalog.id.should_not be_nil
+      vcr('catalogs/create-find') {
+        catalog2 = Catalog.find(catalog.id, break: true)
+        catalog2.name.should == catalog.name
+      }
     end
 
-    pending 'can be updated'
+    it 'cant be created with a duplicate name' do
+      catalog = Catalog.new(name: "GoodGuide")
+      vcr('catalogs/create-duplicate') { catalog.save }.should be_false
+      catalog.errors.should_not be_nil
+    end
 
-    pending 'can be deleted'
+    it 'can be updated' do
+      vcr('catalogs/updated') do
+        catalog = Catalog.new(name: "test2", description: "NASA")
+        saved = catalog.save
+        unless saved
+          catalog = Catalog.find_all(name: "test2").first
+          catalog.destroy.should == true
+        end
+        catalog2 = Catalog.find(catalog.id, break: true)
+        catalog2.description.should == "NASA"
+        catalog2.description = "ESA"
+        catalog2.save.should be_true
+        catalog3 = Catalog.find(catalog.id, break: true)
+        catalog3.description.should == "ESA"
+      end
+    end
+
+    it 'can be destroyed' do
+      id = nil
+      vcr('catalogs/destroy') do
+        catalog = Catalog.find_all(name: "test")
+        if catalog.empty?
+          catalog = Catalog.new(name: "test", description: "NASA")
+          catalog.save.should be_true
+        else
+          catalog.length.should == 1
+          catalog = catalog.first
+        end
+        catalog.destroy.should be_true
+        id = catalog.id
+      end
+      vcr('catalogs/destroy-find') { Catalog.find(id, break: true).should be_nil }
+    end
+
+    it 'cant destroy non-existant id' do
+      vcr('catalogs/destroy-non-existant') do
+        catalog = Catalog.new
+        catalog.attributes[:id] = "non-existant"
+        catalog.destroy.should be_false
+      end
+    end
 
   end
 

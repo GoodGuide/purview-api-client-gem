@@ -17,7 +17,7 @@ module GoodGuide::EntitySoup::Resource
     initialize_resource!
   end
 
-  def initialize(o)
+  def initialize(o = {})
     case
     when Fixnum === o
       @attributes = { id: o }
@@ -27,14 +27,52 @@ module GoodGuide::EntitySoup::Resource
     when o.respond_to?(:attributes)
       @attributes = o.attributes
     else
-      super
+      super(o)
+    end
+  end
+
+  def save
+    if id.nil?
+      result = connection.post(attributes)
+      if result['error']
+        @errors = result['error']
+        false
+      else
+        @attributes = result.with_indifferent_access
+        true
+      end
+    else
+      result = connection.put(id, attributes)
+      if result.is_a?(Hash) and result['error']
+        @errors = result['error'].with_indifferent_access
+        false
+      else
+        true
+      end
+    end
+  end
+
+  def destroy
+    if id.nil?
+      false
+    else
+      result = connection.delete(id)
+      if result.is_a?(Hash) and result['error']
+        false
+      else
+        result
+      end
     end
   end
 
   def id
-    @attributes.fetch(:id)
+    @attributes.fetch(:id, nil)
   end
 
+  def errors
+    @errors
+  end
+    
   def as_json(opts={})
     # Pull JSON from relations directly, because they may have been
     # modified/inflated
@@ -71,14 +109,13 @@ module GoodGuide::EntitySoup::Resource
       end
     end
 
-    def method(name, opts={})
-      params = view_params_for(opts)
-      connection.method(name, params)
-    end
-
     def find(id, opts={})
       params = view_params_for(opts)
-      new(connection.get(id, params))
+      if (result = connection.get(id, params))
+        new(result)
+      else
+        nil
+      end
     end
 
     def find_multi(ids, opts={})
@@ -196,6 +233,9 @@ module GoodGuide::EntitySoup::Resource
       attrs.each do |attr|
         define_method(attr) do
           self.resource[attr]
+        end
+        define_method("#{attr}=") do |value|
+          self.resource[attr] = value
         end
       end
     end

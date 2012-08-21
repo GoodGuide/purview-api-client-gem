@@ -6,6 +6,7 @@ Bundler.require
 require 'yajl/json_gem'
 #require 'wrong/adapters/rspec'
 require 'vcr'
+require 'digest/bubblebabble'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -34,6 +35,10 @@ module SpecHelpers
 
   def vcr(name, &b)
     VCR.use_cassette(name, &b)
+  end
+
+  def random_string
+    Digest.bubblebabble(Digest::SHA1::hexdigest("random string")[8..12]) 
   end
 
 
