@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/entities/types
+    uri: http://localhost:3000/attrs/types
     body:
       encoding: US-ASCII
       string: ''
@@ -23,24 +23,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"a5429af1a0a4f6b6ec9a48d15fbb351a"'
+      - ! '"20f63fcf06f6c415a97d993d7dbb0086"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d11ed3c14721029ca5b82aef98ba1935
+      - af343c386897fef56188bc48156fd6bc
       X-Runtime:
-      - '0.004779'
+      - '0.003242'
       Content-Length:
-      - '115'
+      - '340'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Tue, 21 Aug 2012 18:28:37 GMT
+      - Wed, 22 Aug 2012 07:58:42 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"entity_types":[{"name":"Product"},{"name":"Ingredient"},{"name":"Brand"},{"name":"Company"},{"name":"Category"}]}'
+      string: ! '{"attr_types":[{"name":"DerivedAttr","options":{"list":false,"allow_nil":false,"default_value":null,"rule":"{}"}},{"name":"NumericAttr","options":null},{"name":"FloatAttr","options":null},{"name":"PercentageAttr","options":null},{"name":"JSONAttr","options":null},{"name":"StringAttr","options":null},{"name":"IntegerAttr","options":null}]}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 18:28:37 GMT
+  recorded_at: Wed, 22 Aug 2012 07:58:42 GMT
 recorded_with: VCR 2.2.4

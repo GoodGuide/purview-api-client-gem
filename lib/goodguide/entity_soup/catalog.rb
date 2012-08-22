@@ -3,12 +3,12 @@ class GoodGuide::EntitySoup::Catalog
 
   attributes :description, :name
 
-  def attrs
-    Attr.find_all(catalog_id: self.id)
+  def attrs(params = {})
+    Attr.find_all(params.with_indifferent_access.merge(catalog_id: self.id))
   end
 
-  def entities
-    Entity.find_all(catalog_id: self.id)
+  def entities(params = {})
+    Entity.find_all(params.with_indifferent_access.merge(catalog_id: self.id))
   end
 
 end
