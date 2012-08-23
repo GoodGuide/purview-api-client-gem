@@ -355,26 +355,27 @@ describe GoodGuide::EntitySoup do
   
   context 'attr values' do
 
-    before(:each) do 
-      vcr('attr_values/init') do 
-
+    around(:each) do |x|
+      vcr("attr_values/#{example.description}") do
         ensure_deleted Catalog, 'test'
         @catalog = Catalog.new(name: 'test')
         @catalog.save.should be_true
+        
+        ensure_deleted Provider, 'test'
+        @provider = Provider.new(name: 'test')
+        @provider.save.should be_true
 
-        @provider = Provider.find(1)
-
-        ensure_deleted Attr, 'attr1'
         @attr = Attr.new(name: 'attr1', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
         @attr.save.should be_true
 
         @entity = Entity.new(catalog_id: @catalog.id, type: 'Product')
         @entity.save.should be_true
+
+        x.run
       end
     end
 
     it 'can be created' do
-      vcr('attr_values/create') do
         value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id, value: 42)
         value.save.should be_true
 
@@ -384,12 +385,10 @@ describe GoodGuide::EntitySoup do
         found_value.attr_id.should == @attr.id
         found_value.provider_id.should == @provider.id
         found_value.value.should == 42
-      end
     end
 
     # Integration test
     it 'get custom default values' do
-      vcr('attr_values/create-and-get-custom') do
         ensure_deleted Attr, 'attr2'
         attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'StringAttr', options: { default_value: "taoit" }, catalog_id: @catalog.id)
         attr2.save.should be_true
@@ -403,11 +402,9 @@ describe GoodGuide::EntitySoup do
         found_value.attr_id.should == attr2.id
         found_value.provider_id.should == @provider.id
         found_value.value.should == "taoit"
-      end
     end
 
     it 'can be a list' do
-      vcr('attr_values/create-and-get-list') do
         ensure_deleted Attr, 'attr2'
         attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id,
                          options: { list: true, allow_nil: true, default_value: nil })
@@ -427,46 +424,33 @@ describe GoodGuide::EntitySoup do
         value.save.should be_true
         found_value = AttrValue.find(value.id)
         found_value.value.should == [42]
-      end
     end
 
-      
-    pending 'have an attribute' do
-      stub_connection! do |stub|
-        stub.get('/attr_values/1') { [200, {}, attr_values_response[0].to_json] }
-        stub.get('/attrs/1') { [200, {}, attr_response.to_json] }
-      end
-      
-      attr_value = GoodGuide::EntitySoup::AttrValue.find(1)
-      attr = attr_value.attr
+    it 'have an attribute and an entity' do
+      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id)
+      value.save.should be_true
+      found_value = AttrValue.find(value.id)
+      found_value.should be_a AttrValue
+      found_value.entity_id.should == @entity.id
+      found_value.attr_id.should == @attr.id
+      attr = found_value.attr
       attr.should be_a Attr
-      attr.id.should == 1
-    end
-    
-    pending 'have an entity' do
-      stub_connection! do |stub|
-        stub.get('/attr_values/1') { [200, {}, attr_values_response[0].to_json] }
-        stub.get('/entities/1') { [200, {}, entity_response.to_json] }
-      end
-      
-      attr_value = GoodGuide::EntitySoup::AttrValue.find(1)
-      entity = attr_value.entity
+      entity = found_value.entity
       entity.should be_a Entity
-      entity.id.should == 1
+
+      attr.id.should == value.attr_id
+      entity.id.should == value.entity_id
+      attr.catalog_id.should == value.entity.catalog_id
     end
-    
-    pending 'can be fetched for an entity' do
-      stub_connection! do |stub|
-        stub.get('/entities/1') { [200, {}, entity_response.to_json] }
-        stub.get('/attr_values?entity_id=1') { [200, {}, { attr_values: attr_values_response }.to_json] }
-      end
+     
+    it 'can be fetched for an entity' do
+      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id)
+      value.save.should be_true
       
-      entity = GoodGuide::EntitySoup::Entity.find(1)
-      entity.should be_a Entity
-      attr_values = GoodGuide::EntitySoup::AttrValue.find_all(entity_id: entity.id)
+      attr_values = @entity.attr_values
+      #attr_values = GoodGuide::EntitySoup::AttrValue.find_all(entity_id: entity.id)
       attr_values.should be_a Array
       attr_values[0].should be_a AttrValue
-      attr_values.as_json.should == attr_values_response.as_json
     end
 
 

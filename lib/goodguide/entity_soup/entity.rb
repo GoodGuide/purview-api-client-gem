@@ -3,8 +3,6 @@ class GoodGuide::EntitySoup::Entity
 
   attributes :catalog_id, :type
 
-  has_many :attr_values
-
   class Type
     def initialize(o)
       @type = o
@@ -27,4 +25,7 @@ class GoodGuide::EntitySoup::Entity
     Catalog.find(self.catalog_id)
   end
 
+  def attr_values(params = {})
+    AttrValue.find_all(params.merge!(entity_id: self.id))
+  end
 end
