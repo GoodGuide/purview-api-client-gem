@@ -1,0 +1,284 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/providers?name=test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"0b99032b19aa1bac02e857b94253ed3e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 84b280bf1f8dac41e3e66fe997c839e0
+      X-Runtime:
+      - '0.005333'
+      Content-Length:
+      - '111'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"providers":[{"created_at":"2012-08-23T18:22:11Z","id":35,"name":"test","updated_at":"2012-08-23T18:22:11Z"}]}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/providers/35
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: ! 'No Content '
+    headers:
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a962acff054dab80ae142dfc8e9da25e
+      X-Runtime:
+      - '0.018373'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/providers?name=test2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"eba4e418b31e2caee34a18475ff67ebc"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b2d8f423a91de4f38a251324b9d8cdf8
+      X-Runtime:
+      - '0.004784'
+      Content-Length:
+      - '111'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"providers":[{"created_at":"2012-08-23T17:08:14Z","id":6,"name":"test2","updated_at":"2012-08-23T17:08:14Z"}]}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/providers/6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: ! 'No Content '
+    headers:
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ac0f6bb3f161a2e3304a50af02656422
+      X-Runtime:
+      - '0.010972'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/providers
+    body:
+      encoding: US-ASCII
+      string: name=test
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/providers/36
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"ef9e458fc0c4e7386839f1f105142aeb"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 050cd2a7c0d26ddcd292e4955fda74a1
+      X-Runtime:
+      - '0.012157'
+      Content-Length:
+      - '95'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"created_at":"2012-08-23T18:22:11Z","id":36,"name":"test","updated_at":"2012-08-23T18:22:11Z"}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/providers/36
+    body:
+      encoding: UTF-8
+      string: created_at=2012-08-23T18%3A22%3A11Z&id=36&name=test2&updated_at=2012-08-23T18%3A22%3A11Z
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: ! 'No Content '
+    headers:
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 1804c06fc245a8540f61c77f5cb84bcf
+      X-Runtime:
+      - '0.012339'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/providers/36
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"4842987c58ba2b691c7fb8e85867604b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bff2aaa2c3004000b752cbd071f14c30
+      X-Runtime:
+      - '0.003879'
+      Content-Length:
+      - '96'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"created_at":"2012-08-23T18:22:11Z","id":36,"name":"test2","updated_at":"2012-08-23T18:22:11Z"}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:12 GMT
+recorded_with: VCR 2.2.4

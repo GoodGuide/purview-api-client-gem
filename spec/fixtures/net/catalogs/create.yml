@@ -1,0 +1,169 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/catalogs?name=test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"99a8d6b6bf30c319722311f6c9a027ee"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 38b88d7364c165891fd5dc6d7ee9b0bb
+      X-Runtime:
+      - '0.005216'
+      Content-Length:
+      - '129'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"catalogs":[{"created_at":"2012-08-23T17:54:33Z","description":null,"id":33,"name":"test","updated_at":"2012-08-23T17:54:33Z"}]}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/catalogs/33
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: ! 'No Content '
+    headers:
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 4efb26da60d39fdaa98ea8e1d1188af5
+      X-Runtime:
+      - '0.109744'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/catalogs
+    body:
+      encoding: US-ASCII
+      string: name=test&description=NASA
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/catalogs/34
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"ed9a90e587cf14567ea1cdf1c6a3f566"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3084d8d8d380716ca393fcffd6531c63
+      X-Runtime:
+      - '0.020063'
+      Content-Length:
+      - '116'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"created_at":"2012-08-23T18:22:11Z","description":"NASA","id":34,"name":"test","updated_at":"2012-08-23T18:22:11Z"}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/catalogs/34
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"ed9a90e587cf14567ea1cdf1c6a3f566"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - be123d33a18fb3d2dddb1317afc7843b
+      X-Runtime:
+      - '0.004498'
+      Content-Length:
+      - '116'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Thu, 23 Aug 2012 18:22:11 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"created_at":"2012-08-23T18:22:11Z","description":"NASA","id":34,"name":"test","updated_at":"2012-08-23T18:22:11Z"}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2012 18:22:11 GMT
+recorded_with: VCR 2.2.4
