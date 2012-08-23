@@ -423,6 +423,10 @@ describe GoodGuide::EntitySoup do
         found_value.provider_id.should == @provider.id
         found_value.value.should be_nil
 
+        value.value = [42]
+        value.save.should be_true
+        found_value = AttrValue.find(value.id)
+        found_value.value.should == [42]
       end
     end
 

@@ -27,28 +27,28 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c0c1a7f9991384b562bf8a43301e0cfe
+      - a33e1f46b90dcade81f0fe1f80333b0a
       X-Runtime:
-      - '0.003927'
+      - '0.003983'
       Content-Length:
       - '12'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 23 Aug 2012 07:40:28 GMT
+      - Thu, 23 Aug 2012 07:58:35 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"attrs":[]}'
     http_version: 
-  recorded_at: Thu, 23 Aug 2012 07:40:28 GMT
+  recorded_at: Thu, 23 Aug 2012 07:58:35 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr2&entity_type=Product&type=StringAttr&options%5Bdefault_value%5D=taoit&catalog_id=137
+      string: name=attr2&entity_type=Product&type=StringAttr&options%5Bdefault_value%5D=taoit&catalog_id=147
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -62,38 +62,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/101
+      - http://localhost:3000/attrs/123
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"37f7d6457ef75c43ae6f2ac5fc71118b"'
+      - ! '"ce58abd3caad3fe0a12e199508777b3a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bb13aca2ddf23de829d4f8be2acd24df
+      - 96826fed319599a8ba979d35c81c2ae4
       X-Runtime:
-      - '0.020886'
+      - '0.020731'
       Content-Length:
       - '224'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 23 Aug 2012 07:40:28 GMT
+      - Thu, 23 Aug 2012 07:58:35 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":137,"created_at":"2012-08-23T07:40:28Z","entity_type":"Product","id":101,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":"taoit"},"updated_at":"2012-08-23T07:40:28Z","type":"StringAttr"}'
+      string: ! '{"catalog_id":147,"created_at":"2012-08-23T07:58:35Z","entity_type":"Product","id":123,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":"taoit"},"updated_at":"2012-08-23T07:58:35Z","type":"StringAttr"}'
     http_version: 
-  recorded_at: Thu, 23 Aug 2012 07:40:28 GMT
+  recorded_at: Thu, 23 Aug 2012 07:58:35 GMT
 - request:
     method: post
     uri: http://localhost:3000/attr_values
     body:
       encoding: US-ASCII
-      string: entity_id=82&attr_id=101&provider_id=1
+      string: entity_id=93&attr_id=123&provider_id=1
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -107,35 +107,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attr_values/35
+      - http://localhost:3000/attr_values/44
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"4d5b3559fc9ad930c8bea8c4b9f9226b"'
+      - ! '"419bfe1298d51072fcdde9ecf6edd717"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 95fc5c966d6cebf79fe5914d36773e39
+      - 564d8fec82fc91ca080c86c6714b1945
       X-Runtime:
-      - '0.023107'
+      - '0.023595'
       Content-Length:
       - '142'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 23 Aug 2012 07:40:28 GMT
+      - Thu, 23 Aug 2012 07:58:35 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attr_id":101,"created_at":"2012-08-23T07:40:28Z","entity_id":82,"id":35,"provider_id":1,"updated_at":"2012-08-23T07:40:28Z","value":"taoit"}'
+      string: ! '{"attr_id":123,"created_at":"2012-08-23T07:58:35Z","entity_id":93,"id":44,"provider_id":1,"updated_at":"2012-08-23T07:58:35Z","value":"taoit"}'
     http_version: 
-  recorded_at: Thu, 23 Aug 2012 07:40:28 GMT
+  recorded_at: Thu, 23 Aug 2012 07:58:35 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attr_values/35
+    uri: http://localhost:3000/attr_values/44
     body:
       encoding: US-ASCII
       string: ''
@@ -156,24 +156,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"4d5b3559fc9ad930c8bea8c4b9f9226b"'
+      - ! '"419bfe1298d51072fcdde9ecf6edd717"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7967ce0db0a1f2a3d3945050df604a46
+      - 9808aaa01ea6f03c43e688c76d14c97b
       X-Runtime:
-      - '0.004397'
+      - '0.004237'
       Content-Length:
       - '142'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 23 Aug 2012 07:40:28 GMT
+      - Thu, 23 Aug 2012 07:58:35 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attr_id":101,"created_at":"2012-08-23T07:40:28Z","entity_id":82,"id":35,"provider_id":1,"updated_at":"2012-08-23T07:40:28Z","value":"taoit"}'
+      string: ! '{"attr_id":123,"created_at":"2012-08-23T07:58:35Z","entity_id":93,"id":44,"provider_id":1,"updated_at":"2012-08-23T07:58:35Z","value":"taoit"}'
     http_version: 
-  recorded_at: Thu, 23 Aug 2012 07:40:28 GMT
+  recorded_at: Thu, 23 Aug 2012 07:58:35 GMT
 recorded_with: VCR 2.2.4
