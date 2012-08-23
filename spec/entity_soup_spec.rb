@@ -367,7 +367,7 @@ describe GoodGuide::EntitySoup do
         ensure_deleted Attr, 'attr1'
         @attr = Attr.new(name: 'attr1', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
         @attr.save.should be_true
-        
+
         @entity = Entity.new(catalog_id: @catalog.id, type: 'Product')
         @entity.save.should be_true
       end
@@ -384,22 +384,48 @@ describe GoodGuide::EntitySoup do
         found_value.attr_id.should == @attr.id
         found_value.provider_id.should == @provider.id
         found_value.value.should == 42
-        entity = Entity.find(@entity.id)
       end
     end
 
-    pending 'can be fetched by id and have required attributes' do
-      stub_connection! do |stub|
-        stub.get('/attr_values/1') { [200, {}, attr_values_response[0].to_json] }
+    # Integration test
+    it 'get custom default values' do
+      vcr('attr_values/create-and-get-custom') do
+        ensure_deleted Attr, 'attr2'
+        attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'StringAttr', options: { default_value: "taoit" }, catalog_id: @catalog.id)
+        attr2.save.should be_true
+        
+        value = AttrValue.new(entity_id: @entity.id, attr_id: attr2.id, provider_id: @provider.id)
+        value.save.should be_true
+
+        found_value = AttrValue.find(value.id)
+        found_value.should be_a AttrValue
+        found_value.entity_id.should == @entity.id
+        found_value.attr_id.should == attr2.id
+        found_value.provider_id.should == @provider.id
+        found_value.value.should == "taoit"
       end
-      
-      attr_value = GoodGuide::EntitySoup::AttrValue.find(1)
-      attr_value.should be_a AttrValue
-      attr_value.entity_id.should == 1
-      attr_value.attr_id.should == 1
-      attr_value.provider_id.should == 1
-      attr_value.value.should == "foo"
     end
+
+    it 'can be a list' do
+      vcr('attr_values/create-and-get-list') do
+        ensure_deleted Attr, 'attr2'
+        attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id,
+                         options: { list: true, allow_nil: true, default_value: nil })
+        attr2.save.should be_true
+        
+        value = AttrValue.new(entity_id: @entity.id, attr_id: attr2.id, provider_id: @provider.id)
+        value.save.should be_true
+
+        found_value = AttrValue.find(value.id)
+        found_value.should be_a AttrValue
+        found_value.entity_id.should == @entity.id
+        found_value.attr_id.should == attr2.id
+        found_value.provider_id.should == @provider.id
+        found_value.value.should be_nil
+
+      end
+    end
+
       
     pending 'have an attribute' do
       stub_connection! do |stub|

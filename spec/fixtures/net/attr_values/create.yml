@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:3000/attr_values
     body:
       encoding: US-ASCII
-      string: entity_id=381&attr_id=491&provider_id=1&value=42
+      string: entity_id=82&attr_id=100&provider_id=1&value=42
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -19,35 +19,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attr_values/148
+      - http://localhost:3000/attr_values/34
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"ec6447651b60156e09db612e32fd3528"'
+      - ! '"d76bc05fc282d1586a1b8e8bc69e2e98"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d90276ed88f8813ea2e6ae5b474102f1
+      - b0fcf7c2cad72cc15e5258f71e7a8dc8
       X-Runtime:
-      - '0.023213'
+      - '0.069433'
       Content-Length:
-      - '139'
+      - '137'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:26 GMT
+      - Thu, 23 Aug 2012 07:40:27 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attr_id":491,"created_at":"2012-08-22T07:58:26Z","entity_id":381,"id":148,"provider_id":1,"updated_at":"2012-08-22T07:58:26Z","value":42}'
+      string: ! '{"attr_id":100,"created_at":"2012-08-23T07:40:27Z","entity_id":82,"id":34,"provider_id":1,"updated_at":"2012-08-23T07:40:27Z","value":42}'
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:26 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:27 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attr_values/148
+    uri: http://localhost:3000/attr_values/34
     body:
       encoding: US-ASCII
       string: ''
@@ -68,67 +68,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"ec6447651b60156e09db612e32fd3528"'
+      - ! '"d76bc05fc282d1586a1b8e8bc69e2e98"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1a682af2c239882aabc8880173586add
+      - 8a48e40ee8abd33ea5962cade5c7aedc
       X-Runtime:
-      - '0.004348'
+      - '0.005116'
       Content-Length:
-      - '139'
+      - '137'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:26 GMT
+      - Thu, 23 Aug 2012 07:40:27 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attr_id":491,"created_at":"2012-08-22T07:58:26Z","entity_id":381,"id":148,"provider_id":1,"updated_at":"2012-08-22T07:58:26Z","value":42}'
+      string: ! '{"attr_id":100,"created_at":"2012-08-23T07:40:27Z","entity_id":82,"id":34,"provider_id":1,"updated_at":"2012-08-23T07:40:27Z","value":42}'
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:26 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/entities/381
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"96d19eb279455a8bfc07c1d7cc8d747c"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - bdf255f91e8c869868dd3655ebc02c63
-      X-Runtime:
-      - '0.006162'
-      Content-Length:
-      - '272'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
-      Date:
-      - Wed, 22 Aug 2012 07:58:26 GMT
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: ! '{"catalog_id":770,"created_at":"2012-08-22T07:58:26Z","id":381,"updated_at":"2012-08-22T07:58:26Z","attr_values":[{"attr_id":491,"created_at":"2012-08-22T07:58:26Z","entity_id":381,"id":148,"provider_id":1,"updated_at":"2012-08-22T07:58:26Z","value":42}],"type":"Product"}'
-    http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:26 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:27 GMT
 recorded_with: VCR 2.2.4

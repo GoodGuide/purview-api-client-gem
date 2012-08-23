@@ -23,20 +23,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 0961ceee48e7264348839a6e75778452
+      - 3783db721eae4532f31a793eb73bb49c
       X-Runtime:
-      - '0.004910'
+      - '0.004023'
       Content-Length:
       - '78'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:42 GMT
+      - Thu, 23 Aug 2012 07:40:25 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"error":"not found: Couldn''t find Catalog with id=non-existant","status":404}'
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:42 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:25 GMT
 recorded_with: VCR 2.2.4

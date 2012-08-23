@@ -23,29 +23,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"e5bb29c7924969ac074712ef3e8e9542"'
+      - ! '"7e0eabbf2fe77ef079cc663490d7b1e0"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 49d481e3551f3976e432debb569e6255
+      - ff5c32f8d1233796c92023f8399a67e1
       X-Runtime:
-      - '0.004175'
+      - '0.004336'
       Content-Length:
       - '132'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:42 GMT
+      - Thu, 23 Aug 2012 07:40:25 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[{"created_at":"2012-08-22T07:58:42Z","description":"NASA","id":771,"name":"test","updated_at":"2012-08-22T07:58:42Z"}]}'
+      string: ! '{"catalogs":[{"created_at":"2012-08-23T07:40:25Z","description":"NASA","id":134,"name":"test","updated_at":"2012-08-23T07:40:25Z"}]}'
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:42 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:25 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/catalogs/771
+    uri: http://localhost:3000/catalogs/134
     body:
       encoding: US-ASCII
       string: ''
@@ -64,20 +64,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 56b6778ea8373b1c9724d2994299d3e8
+      - 21cb7cfe92cacf22702f6c58543ad9e5
       X-Runtime:
-      - '0.008511'
+      - '0.013047'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:42 GMT
+      - Thu, 23 Aug 2012 07:40:25 GMT
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:42 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:25 GMT
 - request:
     method: post
     uri: http://localhost:3000/catalogs
@@ -97,35 +97,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/catalogs/773
+      - http://localhost:3000/catalogs/136
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"1d84fed033ea10aa63d9d330905df2ee"'
+      - ! '"ebdaf04665f31ff070a0ca0d941972a4"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c8c5a90cc1a29b86bedbe62cfe7a3947
+      - 77f9bf2ecdcc4c8bc6eccf36f6b48988
       X-Runtime:
-      - '0.014038'
+      - '0.013235'
       Content-Length:
       - '117'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:42 GMT
+      - Thu, 23 Aug 2012 07:40:25 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-22T07:58:42Z","description":"NASA","id":773,"name":"test","updated_at":"2012-08-22T07:58:42Z"}'
+      string: ! '{"created_at":"2012-08-23T07:40:25Z","description":"NASA","id":136,"name":"test","updated_at":"2012-08-23T07:40:25Z"}'
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:42 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:25 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/catalogs/773
+    uri: http://localhost:3000/catalogs/136
     body:
       encoding: US-ASCII
       string: ''
@@ -144,23 +144,23 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 2afa7ad9e316b5369117b9d40a654f29
+      - f8eeab0a6d8c06cd40e44b8ae40da446
       X-Runtime:
-      - '0.009017'
+      - '0.010789'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:42 GMT
+      - Thu, 23 Aug 2012 07:40:25 GMT
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:42 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:25 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/773
+    uri: http://localhost:3000/catalogs/136
     body:
       encoding: US-ASCII
       string: ''
@@ -183,20 +183,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 887c518b69f9d1ac301872ff7f41c452
+      - 0e261c611562827bd72225a610f6d03d
       X-Runtime:
-      - '0.050100'
+      - '0.003988'
       Content-Length:
       - '69'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 22 Aug 2012 07:58:42 GMT
+      - Thu, 23 Aug 2012 07:40:25 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"error":"not found: Couldn''t find Catalog with id=773","status":404}'
+      string: ! '{"error":"not found: Couldn''t find Catalog with id=136","status":404}'
     http_version: 
-  recorded_at: Wed, 22 Aug 2012 07:58:42 GMT
+  recorded_at: Thu, 23 Aug 2012 07:40:25 GMT
 recorded_with: VCR 2.2.4
