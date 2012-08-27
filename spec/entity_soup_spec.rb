@@ -16,7 +16,6 @@ describe GoodGuide::EntitySoup do
   it 'gets a list of attribute types' do
     attr_types = vcr('attrs/types') { Attr.types }
     attr_types.should be_a Array
-    attr_types.each { |t| t.should be_a Attr::Type }
     attr_types.collect(&:name).should include 'IntegerAttr'
     attr_types.first.name.should_not be_nil
     attr_types.first.options.keys.should include 'allow_nil'
@@ -25,7 +24,6 @@ describe GoodGuide::EntitySoup do
   it 'gets list of entity types' do
     entity_types = vcr('entities/types') { Entity.types }
     entity_types.should be_a Array
-    entity_types.each { |t| t.should be_a Entity::Type }
     entity_types.collect(&:name).should include 'Product'
   end
 
@@ -455,9 +453,81 @@ describe GoodGuide::EntitySoup do
 
 
     # Note: set means define or update existing value
-    pending 'of an entity can be set by attr name singularly'
-    pending 'of an entity can be set by attr name in bulk'
-    pending 'of an entity can be deleted'
+    it 'of an entity can be created and updated singularly' do
+      @entity.update_attr_values(attr_id: @attr.id, provider_id: @provider.id, value: 1).should be_true
+      @entity = Entity.find(@entity.id)
+      attr_values = @entity.attr_values
+      attr_values.length.should == 1
+      attr_values.first.attr_id.should == @attr.id
+      attr_values.first.value.should == 1
+      @entity.update_attr_values(id: attr_values.first.id, value: 2).should be_true
+      @entity = Entity.find(@entity.id)
+      attr_values = @entity.attr_values
+      attr_values.length.should == 1
+      attr_values.first.attr_id.should == @attr.id
+      attr_values.first.value.should == 2
+    end
+
+    it 'cannot be updated with a bogus value' do
+      @entity.update_attr_values(attr_id: @attr.id, provider_id: @provider.id, value: 1).should be_true
+      @entity = Entity.find(@entity.id)
+      attr_values = @entity.attr_values
+      attr_values.length.should == 1
+      attr_values.first.attr_id.should == @attr.id
+      attr_values.first.value.should == 1
+      @entity.update_attr_values(id: attr_values.first.id, value: 'not a number').should be_false
+      @entity.errors.should be_a Hash
+      @entity.errors.keys.should include('attr_values.value')
+    end
+
+    it 'of an entity can be created with an array' do
+      attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
+      attr2.save.should be_true
+      @entity.update_attr_values([{attr_id: @attr.id, provider_id: @provider.id, value: 1},
+                                  {attr_id: attr2.id, provider_id: @provider.id, value: 2}]).should be_true
+      @entity = Entity.find(@entity.id)
+      attr_values = @entity.attr_values
+      attr_values.length.should == 2
+      attr_values.collect(&:value).should include(1,2)
+    end
+
+    it 'of an entity are created transactionally' do
+      attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
+      attr2.save.should be_true
+      @entity.update_attr_values([{attr_id: @attr.id, provider_id: @provider.id, value: 1},
+                                  {attr_id: attr2.id, provider_id: @provider.id, value: "not a number"}]).should be_false
+      @entity.errors.should be_a Hash
+      @provider.attr_values.should be_empty
+    end
+
+    it 'of an entity are updated transactionally' do
+      attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
+      attr2.save.should be_true
+      @entity.update_attr_values([{attr_id: @attr.id, provider_id: @provider.id, value: 1},
+                                  {attr_id: attr2.id, provider_id: @provider.id, value: 2}]).should be_true
+      @entity = Entity.find(@entity.id)
+      attr_values = @entity.attr_values
+      attr_values.length.should == 2
+      attr_values.collect(&:value).should include(1,2)
+      @entity.update_attr_values([{attr_id: @attr.id, value: 100},{attr_id: attr2.id, value: "not a number"}]).should be_false
+      @entity = Entity.find(@entity.id)
+      attr_values = @entity.attr_values
+      attr_values.length.should == 2
+      attr_values.collect(&:value).should include(1,2)
+    end
+
+    # Probably wont allow for now - just set them to nil?  Or have seperate delete_attr_values/delete_all_attr_values API
+    it 'of an entity can be deleted' do
+      @entity.update_attr_values(attr_id: @attr.id, provider_id: @provider.id, value: 1).should be_true
+      @entity = Entity.find(@entity.id)
+      attr_values = @entity.attr_values
+      attr_values.length.should == 1
+      attr_values.first.attr_id.should == @attr.id
+      attr_values.first.value.should == 1
+      attr_values.first.destroy.should be_true
+      @entity = Entity.find(@entity.id)
+      @entity.attr_values.should be_blank
+    end
 
   end
 

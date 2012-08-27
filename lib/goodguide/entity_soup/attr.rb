@@ -1,24 +1,15 @@
+require 'hashie/mash'
 class GoodGuide::EntitySoup::Attr
   include GoodGuide::EntitySoup::Resource
 
   attributes :type, :name, :options, :entity_type, :catalog_id
 
-  class Type
-    def initialize(o)
-      @type = o
-    end
-
-    def name
-      @type["name"]
-    end
-
-    def options
-      @type["options"]
-    end
-  end
+  # class Type < Hash
+  #   include ::Hashie::Extensions::MethodAccess
+  # end
 
   def self.types
-    connection.get('types')['attr_types'].collect { |t| Type.new(t) }
+    connection.get('types')['attr_types'].collect { |t| Hashie::Mash.new(t) }
   end
     
 end

@@ -48,11 +48,13 @@ class GoodGuide::EntitySoup::Connection
     opts.delete(:parse)
 
     res = http.put(path_for(id), opts)
-    if not res.respond_to?(:status) or (res.status == 204)
+    if not res.respond_to?(:status) or no_content(res)
       true
     else
       parse ? JSON.load(res.body) : res.body
     end
+  rescue
+    nil
   end
 
   def post(opts={})
@@ -62,6 +64,8 @@ class GoodGuide::EntitySoup::Connection
 
     res = http.post(rel_path, opts)
     parse ? JSON.load(res.body) : res.body
+  rescue
+    nil
   end
 
   def delete(id, opts={})
@@ -70,7 +74,7 @@ class GoodGuide::EntitySoup::Connection
     opts.delete(:parse)
 
     res = http.delete(path_for(id), opts)
-    if not res.respond_to?(:status) or (res.status == 204)
+    if not res.respond_to?(:status) or no_content(res)
       true
     else
       parse ? JSON.load(res.body) : res.body
@@ -156,6 +160,14 @@ private
     else
       path.dup
     end
+  end
+
+  def success(response)
+    response.respond_to?(:status) and (response.status >= 200) and (response.status < 300)
+  end
+  
+  def no_content(response)
+    response.respond_to?(:status) and (response.status == 204)
   end
 
   # allow overriding in tests
