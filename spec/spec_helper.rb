@@ -41,6 +41,12 @@ module SpecHelpers
     Digest.bubblebabble(Digest::SHA1::hexdigest("random string")[8..12]) 
   end
 
+  def ensure_deleted(klass, name)
+    things = klass.find_all(name: name)
+    (things.first.destroy.should be_true) if things.any?
+  end
+
+
 
 private
   def connection_stack

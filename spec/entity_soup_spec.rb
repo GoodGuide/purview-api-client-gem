@@ -8,11 +8,6 @@ describe GoodGuide::EntitySoup do
 
   # pending 'can authenticate' # TODO - to enable role based restrictions to data
 
-  def ensure_deleted(klass, name)
-    things = klass.find_all(name: name)
-    (things.first.destroy.should be_true) if things.any?
-  end
-
   it 'gets a list of attribute types' do
     attr_types = vcr('attrs/types') { Attr.types }
     attr_types.should be_a Array
