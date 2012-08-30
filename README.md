@@ -1,28 +1,41 @@
 # GoodGuide Entity Soup Gem
 
-This is the gem for access to the GoodGuide entity soup API
+This is the gem for access to the GoodGuide entity soup repository via an underlying RESTful API
 
 ## Configuration
 
 In your Gemfile:
 
-gem 'goodguide-entity_soup'
+    gem 'goodguide-entity_soup'
 
 In your code:
 
-require 'goodguide/entity_soup'
+    require 'goodguide/entity_soup'
 
-The entity soup API located by the url property which must be set before the first access.  The default is http:/entity-soup.goodguide.com
+The entity soup RESTful API endpoint is located by the url property which must be set before the first access of any API object and cannot be changed subsequently.  The default is `http:/entity-soup.goodguide.com`.
 
-GoodGuide::EntitySoup.url = 'http://localhost:3000'
+    GoodGuide::EntitySoup.url = 'http://localhost:3000'
 
-## Model  
+## Entity Soup Data Model  
 
-The data model consists of catalogs, providers, entities, attributes and attribute values.  They each have a class under the namespace GoodGuide::EntitySoup which is assumed in the examples below ie. Catalog.find_all means GoodGuide::EntitySoup::Catalog.find_all
+The entity soup data model consists of uniquely named catalogs and providers, plus typed entities and attributes, and attribute values.  
 
-### API philosophiy
+Catalogs contain typed entities such as products, brands, ingredients etc.  A catalog also contains attributes which apply to the entities within the catalog, each attribute is applicable to a specific type of entity and attributes of that entity type are uniquely named.  Therefore a product 'toxcitity' attribute is distinct from an ingredient 'toxcitity' attribute.  Attributes are also typed so a product 'name' attribute can be a string, but a product 'weight' can be a float with applicable checking on setting and updating of the attribute value at the repository level.  
 
-The general philosophy of the API is that objects are found with find or find_all on the appropriate class, created via new() followed by save.  Updating is performed by getting an object, assigning parameters that have changed then saving.  Normal non-communication errors do not cause exceptions e.g find of a non-existant id returns nil, saving a new or updated object returns false if the data is not conforming.  Errors from save or update are returned via the errors method on the object.
+Every entity within a catalog may have attribute values according to the attributes defined for that entity type within the catalog. If not defined the attribute values simply don't exist and querying for them will return nil.
+
+
+They each have a class under the namespace GoodGuide::EntitySoup which is assumed in the examples below ie. Catalog.find_all means GoodGuide::EntitySoup::Catalog.find_all
+
+## API philosophy
+
+The general philosophy of the API is:
+
+Read with `<Class>.find` or `<Class>.find_all`. 
+
+Create with `<Class>.new(<optional params>)` followed by `instance#save`.  
+
+Updating with is performed by getting an object, assigning parameters that have changed then saving.  Normal non-communication errors do not cause exceptions e.g find of a non-existant id returns nil, saving a new or updated object returns false if the data is not conforming.  Errors from save or update are returned via the errors method on the object.
 
 ### Catalog
 
