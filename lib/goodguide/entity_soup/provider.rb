@@ -1,10 +1,17 @@
-class GoodGuide::EntitySoup::Provider
-  include GoodGuide::EntitySoup::Resource
+module GoodGuide::EntitySoup
 
-  attributes :name
+  class Provider
+    include Resource
 
-  def attr_values(params = {})
-    AttrValue.find_all(params.with_indifferent_access.merge(provider_id: self.id))
+    attributes :name
+
+    def attr_values(params = {})
+      AttrValue.find_all(params.merge(provider_id: self.id))
+    end
+
+    def self.find_by_name(name, opts = {})
+      Provider.find_all(opts.merge(name: name)).first
+    end
   end
 
 end

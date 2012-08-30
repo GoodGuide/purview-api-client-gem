@@ -1,14 +1,14 @@
 module GoodGuide
   module EntitySoup
 
-    DEFAULT_URL = "http://api.goodguide.com/entity_soup"
+    DEFAULT_URL = "http://entity-soup.goodguide.com"
 
     def self.url=(url)
-      GoodGuide::EntitySoup::Connection.site = url
+      Connection.site = url
     end
 
     def self.url
-      GoodGuide::EntitySoup::Connection.site
+      Connection.site
     end
 
   end
@@ -31,6 +31,7 @@ require 'active_support/core_ext/proc'
 require 'active_support/core_ext/object/to_query'
 require 'active_support/core_ext/object/to_json'
 require 'active_support/inflector'
+require 'active_support/cache'
 
 require "goodguide/entity_soup/connection"
 require "goodguide/entity_soup/resource"

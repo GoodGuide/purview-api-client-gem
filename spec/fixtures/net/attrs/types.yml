@@ -27,20 +27,20 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ea6a29e004bc133d7c54390dafb7eb8b
+      - 077e7ebabecde423c722708180211ce9
       X-Runtime:
-      - '0.069446'
+      - '0.074278'
       Content-Length:
       - '340'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:23 GMT
+      - Thu, 30 Aug 2012 16:55:04 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"attr_types":[{"name":"DerivedAttr","options":{"list":false,"allow_nil":false,"default_value":null,"rule":"{}"}},{"name":"NumericAttr","options":null},{"name":"FloatAttr","options":null},{"name":"PercentageAttr","options":null},{"name":"JSONAttr","options":null},{"name":"StringAttr","options":null},{"name":"IntegerAttr","options":null}]}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:23 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:04 GMT
 recorded_with: VCR 2.2.4

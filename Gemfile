@@ -13,7 +13,7 @@ group :test, :development do
   gem 'rr'
   gem 'rake'
   gem 'yajl-ruby'
-#  gem 'wrong'
   gem 'webmock'        
   gem 'vcr'
+  gem 'dalli'
 end

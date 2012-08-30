@@ -27,7 +27,9 @@ module GoodGuide::EntitySoup::Resource
     when o.respond_to?(:attributes)
       @attributes = o.attributes
     else
-      super(o)
+      @attributes = { id: nil }
+      super
+      #raise ArgumentError
     end
   end
 
@@ -120,7 +122,7 @@ module GoodGuide::EntitySoup::Resource
 
     def find_multi(ids, opts={})
       params = view_params_for(opts)
-      connection.get_multi(ids, params).map { |r| new(r) }
+      connection.get_multi(ids, params).map { |r| r ? new(r) : nil }
     end
 
     def find_all(opts={})

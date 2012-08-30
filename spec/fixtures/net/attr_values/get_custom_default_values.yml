@@ -23,29 +23,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"994e8922e5caef1ab3a45e4c2112d42f"'
+      - ! '"419f3c812fe32a627018e100ac82a85f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8d50aa254ce2a81da3c9eb53e6fa6128
+      - 71fff2e22ca3b4a89a97a28b8b9d11aa
       X-Runtime:
-      - '0.005480'
+      - '0.005838'
       Content-Length:
       - '131'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[{"created_at":"2012-08-29T00:16:26Z","description":null,"id":2045,"name":"test","updated_at":"2012-08-29T00:16:26Z"}]}'
+      string: ! '{"catalogs":[{"created_at":"2012-08-30T16:55:08Z","description":null,"id":2140,"name":"test","updated_at":"2012-08-30T16:55:08Z"}]}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/catalogs/2045
+    uri: http://localhost:3000/catalogs/2140
     body:
       encoding: US-ASCII
       string: ''
@@ -64,20 +64,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 0de93ac1396daddfd443b66932d19049
+      - f51198ca455be39528b33e66be027b6c
       X-Runtime:
-      - '0.028028'
+      - '0.039046'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: post
     uri: http://localhost:3000/catalogs
@@ -97,32 +97,32 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/catalogs/2046
+      - http://localhost:3000/catalogs/2141
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"231d62da6d5819f16e0bfeb1e8e415cc"'
+      - ! '"1e7a14b73f8c8f012b3d8a951bdfb530"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bd6e939b11f15001d279ea1231d7feab
+      - 145907b40b514aa2083d6bceda456be5
       X-Runtime:
-      - '0.014497'
+      - '0.015665'
       Content-Length:
       - '116'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-29T00:16:26Z","description":null,"id":2046,"name":"test","updated_at":"2012-08-29T00:16:26Z"}'
+      string: ! '{"created_at":"2012-08-30T16:55:09Z","description":null,"id":2141,"name":"test","updated_at":"2012-08-30T16:55:09Z"}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: get
     uri: http://localhost:3000/providers?name=test
@@ -146,29 +146,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"1c0c4fcb663551265efec0016c8183b5"'
+      - ! '"b6a912e63b27771fec602cf8d44733a9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 96845c7074a5568695d268624d9fd263
+      - 16da0e45944505c94b915dd22c9511b2
       X-Runtime:
-      - '0.005052'
+      - '0.007109'
       Content-Length:
-      - '112'
+      - '113'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"providers":[{"created_at":"2012-08-29T00:16:26Z","id":931,"name":"test","updated_at":"2012-08-29T00:16:26Z"}]}'
+      string: ! '{"providers":[{"created_at":"2012-08-30T16:55:08Z","id":1011,"name":"test","updated_at":"2012-08-30T16:55:08Z"}]}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/providers/931
+    uri: http://localhost:3000/providers/1011
     body:
       encoding: US-ASCII
       string: ''
@@ -187,20 +187,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - a201aa3c5e0d7b5165b52b12e447acff
+      - 7f39e0d129c651403b326c38e4efa670
       X-Runtime:
-      - '0.011933'
+      - '0.014437'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: post
     uri: http://localhost:3000/providers
@@ -220,38 +220,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/providers/932
+      - http://localhost:3000/providers/1012
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"5992816544cc9a153a728e7c6d2ba739"'
+      - ! '"ea2509625321d6cf974489e7d6368122"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5594d652f886c1a40a2e90df0f096856
+      - c99692faa183ff4a3f1229b85acff347
       X-Runtime:
-      - '0.011905'
+      - '0.013718'
       Content-Length:
-      - '96'
+      - '97'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-29T00:16:26Z","id":932,"name":"test","updated_at":"2012-08-29T00:16:26Z"}'
+      string: ! '{"created_at":"2012-08-30T16:55:09Z","id":1012,"name":"test","updated_at":"2012-08-30T16:55:09Z"}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr1&entity_type=Product&type=IntegerAttr&catalog_id=2046
+      string: name=attr1&entity_type=Product&type=IntegerAttr&catalog_id=2141
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -265,38 +265,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/1349
+      - http://localhost:3000/attrs/1514
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"0462d7767a8623fbe933cce99e53f7d1"'
+      - ! '"a7712ba7276c6dd4f813acd95461832e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 357479f7b697454f51b528db8e42d2f8
+      - a92630f58a6816d284d70f0274281fc7
       X-Runtime:
-      - '0.022724'
+      - '0.074502'
       Content-Length:
       - '224'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":2046,"created_at":"2012-08-29T00:16:26Z","entity_type":"Product","id":1349,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-08-29T00:16:26Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":2141,"created_at":"2012-08-30T16:55:09Z","entity_type":"Product","id":1514,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-08-30T16:55:09Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: post
     uri: http://localhost:3000/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=2046&type=Product
+      string: catalog_id=2141&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -310,32 +310,32 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/entities/1270
+      - http://localhost:3000/entities/1515
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"b3a58378af29facc0546a5bf1c7e1f97"'
+      - ! '"ff67f35e54e2bd10c792e5f1110bd792"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4093ec34bdee0c2b774b8bff805e7aa9
+      - 58983f199767912e8d2a7b7f1e9973d7
       X-Runtime:
-      - '0.010721'
+      - '0.012657'
       Content-Length:
       - '118'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":2046,"created_at":"2012-08-29T00:16:26Z","id":1270,"updated_at":"2012-08-29T00:16:26Z","type":"Product"}'
+      string: ! '{"catalog_id":2141,"created_at":"2012-08-30T16:55:09Z","id":1515,"updated_at":"2012-08-30T16:55:09Z","type":"Product"}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: get
     uri: http://localhost:3000/attrs?name=attr2
@@ -363,28 +363,28 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 708cb2e4b254e7e000d96fabb17401fe
+      - f605380cbd2aa5cf7dc57285bf973ec3
       X-Runtime:
-      - '0.004143'
+      - '0.007475'
       Content-Length:
       - '12'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"attrs":[]}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr2&entity_type=Product&type=StringAttr&options%5Bdefault_value%5D=taoit&catalog_id=2046
+      string: name=attr2&entity_type=Product&type=StringAttr&options%5Bdefault_value%5D=taoit&catalog_id=2141
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -398,38 +398,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/1350
+      - http://localhost:3000/attrs/1515
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"48845974db03b51ee5c709f83962933c"'
+      - ! '"313bcd5560f3806a98a6c4beb7bc51c9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 819a69ddc0e4b2e0837f095b8e610d32
+      - 6dafc7a036cbda4f4197117299e33041
       X-Runtime:
-      - '0.017856'
+      - '0.034404'
       Content-Length:
       - '226'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":2046,"created_at":"2012-08-29T00:16:26Z","entity_type":"Product","id":1350,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":"taoit"},"updated_at":"2012-08-29T00:16:26Z","type":"StringAttr"}'
+      string: ! '{"catalog_id":2141,"created_at":"2012-08-30T16:55:09Z","entity_type":"Product","id":1515,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":"taoit"},"updated_at":"2012-08-30T16:55:09Z","type":"StringAttr"}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: post
     uri: http://localhost:3000/attr_values
     body:
       encoding: US-ASCII
-      string: entity_id=1270&attr_id=1350&provider_id=932
+      string: entity_id=1515&attr_id=1515&provider_id=1012
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -443,35 +443,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attr_values/570
+      - http://localhost:3000/attr_values/630
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"37dd4ac8700b15c4ed2752957c3e8223"'
+      - ! '"53dd9ace4a70aed7a81cf10f4f2cddbd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 72c3699bea7c32a7be6f574981ededaa
+      - 500c0555aae9f203d04e4dbd987aab21
       X-Runtime:
-      - '0.024021'
+      - '0.033074'
       Content-Length:
-      - '163'
+      - '164'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attr_id":1350,"created_at":"2012-08-29T00:16:26Z","entity_id":1270,"id":570,"provider_id":932,"updated_at":"2012-08-29T00:16:26Z","value":"taoit","name":"attr2"}'
+      string: ! '{"attr_id":1515,"created_at":"2012-08-30T16:55:09Z","entity_id":1515,"id":630,"provider_id":1012,"updated_at":"2012-08-30T16:55:09Z","value":"taoit","name":"attr2"}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attr_values/570
+    uri: http://localhost:3000/attr_values/630
     body:
       encoding: US-ASCII
       string: ''
@@ -492,24 +492,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"37dd4ac8700b15c4ed2752957c3e8223"'
+      - ! '"53dd9ace4a70aed7a81cf10f4f2cddbd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9e52832131e4fe196089e7f23c1e8323
+      - b2cab6c88e476f7613efe83274604727
       X-Runtime:
-      - '0.009727'
+      - '0.011719'
       Content-Length:
-      - '163'
+      - '164'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:26 GMT
+      - Thu, 30 Aug 2012 16:55:09 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attr_id":1350,"created_at":"2012-08-29T00:16:26Z","entity_id":1270,"id":570,"provider_id":932,"updated_at":"2012-08-29T00:16:26Z","value":"taoit","name":"attr2"}'
+      string: ! '{"attr_id":1515,"created_at":"2012-08-30T16:55:09Z","entity_id":1515,"id":630,"provider_id":1012,"updated_at":"2012-08-30T16:55:09Z","value":"taoit","name":"attr2"}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:26 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:09 GMT
 recorded_with: VCR 2.2.4

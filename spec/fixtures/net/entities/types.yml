@@ -27,20 +27,20 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 522b62e0d2cfedd050db5445877066b8
+      - 125190b7ce2dd94aa669b258be765c99
       X-Runtime:
-      - '0.004879'
+      - '0.005187'
       Content-Length:
       - '115'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:23 GMT
+      - Thu, 30 Aug 2012 16:55:04 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"entity_types":[{"name":"Product"},{"name":"Ingredient"},{"name":"Brand"},{"name":"Company"},{"name":"Category"}]}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:23 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:04 GMT
 recorded_with: VCR 2.2.4

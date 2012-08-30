@@ -23,20 +23,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - b8de05b7c34643987d65745ade2317df
+      - 6500330f5de5a9dc39eae7beefd81e59
       X-Runtime:
-      - '0.004050'
+      - '0.005096'
       Content-Length:
       - '88'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:25 GMT
+      - Thu, 30 Aug 2012 16:55:06 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"error":{"base":"not found: Couldn''t find Provider with id=non-existant"},"status":404}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:25 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:06 GMT
 recorded_with: VCR 2.2.4

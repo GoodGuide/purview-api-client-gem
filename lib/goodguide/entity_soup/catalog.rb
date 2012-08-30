@@ -1,14 +1,23 @@
-class GoodGuide::EntitySoup::Catalog
-  include GoodGuide::EntitySoup::Resource
+module GoodGuide::EntitySoup
 
-  attributes :description, :name
+  class Catalog
+    include Resource
+    
+    attributes :description, :name
+    
+    def attrs(params = {})
+      Attr.find_all(params.merge(catalog_id: self.id))
+    end
+    
+    def entities(params = {})
+      Entity.find_all(params.merge(catalog_id: self.id))
+    end
 
-  def attrs(params = {})
-    Attr.find_all(params.with_indifferent_access.merge(catalog_id: self.id))
-  end
+    def self.find_by_name(name, opts = {})
+      Catalog.find_all(opts.merge(name: name)).first
+    end
 
-  def entities(params = {})
-    Entity.find_all(params.with_indifferent_access.merge(catalog_id: self.id))
   end
 
 end
+

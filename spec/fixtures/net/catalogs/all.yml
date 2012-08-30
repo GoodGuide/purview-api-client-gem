@@ -23,25 +23,25 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"f83ca378d0a136a9bee71c2caa170111"'
+      - ! '"6a0d4d7d942a0bfa61101d5b4d4815db"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a77c1db910e6f8a7420ed8c62705a773
+      - 3dcd6dff132875b476f7e941531e0ec7
       X-Runtime:
-      - '0.114842'
+      - '0.509059'
       Content-Length:
       - '384'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 29 Aug 2012 00:16:23 GMT
+      - Thu, 30 Aug 2012 16:55:04 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"catalogs":[{"created_at":"2012-08-28T21:11:20Z","description":"GoodGuide
-        catalog","id":1,"name":"GoodGuide","updated_at":"2012-08-28T21:11:20Z"},{"created_at":"2012-08-28T23:57:48Z","description":"ESA","id":1524,"name":"test2","updated_at":"2012-08-28T23:57:48Z"},{"created_at":"2012-08-28T23:57:54Z","description":null,"id":1537,"name":"test","updated_at":"2012-08-28T23:57:54Z"}]}'
+        catalog","id":1,"name":"GoodGuide","updated_at":"2012-08-28T21:11:20Z"},{"created_at":"2012-08-29T18:42:41Z","description":"ESA","id":2119,"name":"test2","updated_at":"2012-08-29T18:42:42Z"},{"created_at":"2012-08-29T18:42:53Z","description":null,"id":2136,"name":"test","updated_at":"2012-08-29T18:42:53Z"}]}'
     http_version: 
-  recorded_at: Wed, 29 Aug 2012 00:16:23 GMT
+  recorded_at: Thu, 30 Aug 2012 16:55:04 GMT
 recorded_with: VCR 2.2.4
