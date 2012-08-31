@@ -22,28 +22,28 @@ The entity soup data model consists of uniquely named catalogs and providers, pl
 
 In psuedo code:
 
-   Catalog(name: <unique string>, description: <string)
-     has_many :attrs
-     has_many :entities
+    Catalog(name: <unique string>, description: <string)
+      has_many :attrs
+      has_many :entities
 
-   Provider(name: <unique string>)
-     has_many :attr_values
+    Provider(name: <unique string>)
+      has_many :attr_values
 
-   Entity(type: <enum>)
-     belongs_to :catalog
-     has_many :attr_values
+    Entity(type: <enum>)
+      belongs_to :catalog
+      has_many :attr_values
 
-   Attr(name: <unique string>, type: <enum>, entity_type: <enum>, options: <hash>)
-     belongs_to :catalog
-     has_many :attr_values
+    Attr(name: <unique string>, type: <enum>, entity_type: <enum>, options: <hash>)
+      belongs_to :catalog
+      has_many :attr_values
 
-   AttrValue(value: <object>) 
-     belongs_to :attr
-     belongs_to :entity
-     belongs_to :provider
+    AttrValue(value: <object>) 
+      belongs_to :attr
+      belongs_to :entity
+      belongs_to :provider
 
-   Entity.types = 'Company' | 'Brand' | 'Category' | 'Product' | 'Ingredient'
-   Attr.types = 'StringAttr' | 'DerivedAttr' | 'NumericAttr' | 'IntegerAttr' | 'FloatAttr' | 'PercentageAttr' | 'JSONAttr'
+    Entity.types = 'Company' | 'Brand' | 'Category' | 'Product' | 'Ingredient'
+    Attr.types = 'StringAttr' | 'DerivedAttr' | 'NumericAttr' | 'IntegerAttr' | 'FloatAttr' | 'PercentageAttr' | 'JSONAttr'
 
 In English:
 
@@ -77,7 +77,14 @@ Update objects with `<object>.<field> = <new value>` followed by `<object>.save`
 
 Destroy objects and their dependent objects with `<object>.destroy`
 
+After saving a new object its `#id` method will return the entity soup numeric id.  Any object that has no id when saved is treated as new and the API will attempt to create it.
+
 Be careful with destroy it destroys all the dependent objects so destroying a catalog destroys all the entities, attributes and attribute values contained within it.  There is no system to restrict CRUD operations as yet.
+
+### Multi-get
+
+Not documented yet - see spec tests
+
 
 TODO: 
 * add ACL based access restrictions. 
@@ -136,6 +143,10 @@ TODO:
 * how to flush the cache completely?
 * auto break cache for relevant objects after write?
 
+### Access control
+
+Not yet implemented
+
 
 ## API use
 
@@ -144,6 +155,8 @@ TODO:
 A catalog is uniquely named and exists to contain entities (products, brands, ingredients etc.), definitions of attributes applicable to the entities within it (name, price, toxicity).  The entity soup repository is pre-populated with a catalog named 'GoodGuide' which has an entity soup id of 1.
 
 A catalog requires a unique name (case sensitive string) and optional description accessible via the `#name` and `#description` methods
+
+#### Read
 
 Get catalogs directly via `Catalog.find`, `Catalog.find_all` or `Catalog.find_by_name`
 
@@ -168,6 +181,15 @@ To get all products in the GoodGuide catalog:
 
     products = Catalog.find(1).entities(type: 'Product')
 
+Fields of a category are accessed by the appropriately named method on the object.  For example:
+
+    category = Category.find_by_name("GoodGuide")
+    puts category.name
+    => "GoodGuide"
+
+
+#### Create
+
 Create a new catalog with Catalog.new and then save on the new object:
 
     c = Catalog.new(name: 'Foo', description: 'My new catalog')
@@ -182,6 +204,8 @@ If the save fails find the errors via `#errors` for example trying to create a c
     c.errors
     => {"name"=>["has already been taken"]} 
 
+#### Update
+
 Update a catalog by assigning its attributes and then saving e.g.
 
     c = Catalog.new(name: 'Goo')
@@ -193,11 +217,14 @@ Update a catalog by assigning its attributes and then saving e.g.
     c.save
     => true
 
+
 ### Provider
 
 A provider is uniquely named and identifies the source of an entity's attribute values.  The existance of a provider supports the notion that attribute values may be multi-valued if there are multiple sources of data, and also partitioning data for privacy reasons, and potentially versioning of data.  The entity soup repository is pre-populated with a provider named 'GoodGuide' which has an entity soup id of 1.
 
 A provider has a unique name (case sensitive string) that must be present when creating.
+
+#### Read
 
 Access providers directly via `Provider.find`, `Provider.find_all` or `Provider.find_by_name`
 
@@ -205,20 +232,272 @@ Access providers directly via `Provider.find`, `Provider.find_all` or `Provider.
     provider = Provider.find_by_name(name)  # returns a single provider or nil
     providers = Provider.find_all # returns all providers matching params, or []
 
-Fields of a proviider are access by the appropriately named method on the object.  For example:
+Fields of a provider are accessed by the appropriately named method on the object.  For example:
 
     provider = Provider.find_by_name("GoodGuide")
     puts provider.name
-    _=> "GoodGuide"_
+    => "GoodGuide"
+
+#### Create and update
 
 Providers are created in the same manner as a catalog using `Provider.new` and `#save` methods.  Providers must be uniquely named.
 
-### Attribute
+The name of a provider is mutable and may be changed by assigning the name field and saving it:
+
+    provider.name = 'new name'
+    provider.save
+    => true
+
+#### Destroy
+
+Destroying a provider will remove it permanently from the system along with all associated attribute values.  Be sure this is what you want to do as there is no protection system as yet to prevent accidental deletion.
+
+Destroy an entity with its `#destroy` method:
+
+    provider.destroy
+     => true
 
 ### Entity
 
+Entities are contained within a catalog and are typed.  Entities are typed and the set of types available is not hard coded in the entity soup system and therefore could be extended at any time.  Therefore the API gem use a generic class `Entity` to access them and the caller supplies a `type` parameter to select which entities to access and what type new entities are.  The type of an entity is immutable.
+
+#### Entity types
+The entity types known to the system are returned by `Entity.types` which returns an array of objects with a name method.  Although there are currently no other fields of an entity type object there may be at a later date (and it might be used to support type specific CRUD).
+
+    Entity.types.collect(&:name)
+    => ["Product", "Ingredient", "Brand", "Company", "Category"]
+
+
+TODO:
+* Add an Entity.type_names method
+* Reinstate the Entity.Types class now the namespace problem is resolved?
+* Add bulk entity creation to catalog class via nested attributes support
+
+#### Read
+
+Get catalogs directly via `Entity.find` and `Entity.find_all`
+
+    entity = Entity.find(id) # find one entity, or nil by its id
+    entities = Entity.find_all # find all entities matching params, or []
+
+The only model parameters applicable to an entity query are `type` and `catalog_id` for example:
+
+    Entity.find_all(type: 'Product').count 
+    => # Number of product entities in the soup, or 0 if none
+    Entity.find_all(catalog_id: 1).count 
+    => # Number of entities of any type in the GoodGuide catalog, or 0 if none
+    Entity.find_all(catalog_id: 1, type: 'Product').count 
+    => # Number of product entities in the GoodGuide catalog, or 0 if none
+
+As previously mentioned catalog specific queries may also be performed via an instance of a catalog.  For example
+
+   c = Catalog.find_by_name("GoodGuide")
+   c.entities(type: 'Product')
+   => # All product entities in the GoodGuide catalog
+
+#### Create and Update
+
+Create an entity using the `Entity.new` and then `#save` for example
+
+    e = Entity.new(type: 'Product', catalog_id: 1)
+    e.save
+    => true
+
+The save should always work so long as the catalog is valid (and there are no communications errors).
+
+After creating or reading an entity object there is no valid operation to update it, its type and catalog are fixed.
+
+#### Destroy
+
+Destroying an entity will remove it permanently from the system along with all associated data which means its attribute values.
+
+Destroy an entity with its `#destroy` method:
+
+    entity.destroy
+     => true
+
+##### Attribute Values
+
+For convenience the entity soup RESTful API always returns all the attribute values defined for an entity.  Therefore getting the attribute values is cheap.  Using the `#attr_values` method will always get the previously fetched attr_values if available or query them directly from the AttrValue class with a scope of the current entity.  For example
+
+    e.attr_values
+    => [<attr_value>]  # or []
+
+TODO: 
+* Add Category.new_entity and Category.new_entities for scoped and bulk entity creation?
+* Will we eventually need a move operation to migrate entities between catalogs, or simply allow write to catalog_id?
+* We may eventually want to model destruction with a state flag that flags it as deleted (allowing for other things like blacklisting), alternatively use internally defined attributes as meta-data to do this (but requires extra joins to retrieve entities so not good), or relying on Arroyo logging to log deleted data for possible batch recovery.
+* Bulk Entity.destroy with or list of ids (applies to other models)
+
+### Attribute
+
+Attributes define properties of given entity types within a catalog - without any attributes an entity is a bare id.  Attributes must be named uniquely for a given entity type and catalog so that an attribute called 'size' in one catalog is distinct from 'size' in another catalog.  Similarly an attribute named 'organic' for an ingredient is different from an attribute named 'organic' for a product. 
+
+Only the name of an attribute is mutable after creation, since changing the type and options of an attribute would affect the validation of all its current attribute values. 
+
+Note that to avoid clashes with Rails methods and types the attribute class is named Attr, and values of that attribute for an entity are described by the AttrValue class.
+
+
+#### Attribute types
+The attribute types known to the system are returned by `Attr.types` which returns an array of objects with name and options methods. 
+
+    Attr.types.collect(&:name)
+    => ["DerivedAttr", "NumericAttr", "FloatAttr", "PercentageAttr", "JSONAttr", "StringAttr", "IntegerAttr"] 
+
+The options method returns a hash of type specific options as configured for that attribute.  Standard options available for all types include `allow_nil`, `default_value`, and `list`.  So far only DerivedAttr defines an additional type specific option which is `rule`.
+
+
+#### Read
+
+Access attributes directly via `Attr.find` and `Attr.find_all`:
+
+    attr = Attr.find(id) # returns a single attribute or nil if not found
+    attrs = Attr.find_all(params) # returns all attributes matching params, or []
+
+For example if you wish to find attributes with a given name use:
+
+    attrs = Attr.find_all(name: 'foo')
+
+To constrain to a given catalog and entity_type use:
+
+    attrs = Attr.find_all(catalog_id: catalog.id, entity_type: 'Product', name: 'foo')
+
+Using the attrs method of a catalog instance automatically applies the appropriate catalog_id constraint so the above is equivalent to:
+
+    attrs = catalog.attrs(entity_type: 'Product', name: 'foo')
+
+Fields of an attribute are accessed by the appropriately named method on the object.  For example:
+
+    attrs = catalog.attrs(entity_type: 'Product', name: 'foo')
+    attrs.first.name
+    => 'foo'
+
+You may also introspect on `#type`, `#options`, `#entity_type` and `#catalog_id`.  As previously mentioned the options of an attribute are a Hash which may be introspected via indifferent key names e.g.
+
+    attrs.first.options[:allow_nil]
+    => true
+    attrs.first.options['allow_nil']
+    => true
+
+#### Create and update
+
+Create an attribute using the `Attr.new` and then `#save` on the new object.  When creating an attribute you must supply the attribute type, entity type to which it applies, and catalog in which it exists. The options for the type are optional and will take the default values for the specified type (generally allow_nil=true, default_value=nil and list=false)
+
+    a = Attr.new(name: 'name', type: 'IntegerAttr', entity_type: 'Product', catalog_id: 1)
+    a.save
+    => true
+
+After creating an attribute only its name can be changed, all other fields are immutable. Changes to them will be silently ignored on save.
+
+
+#### Destroy
+
+Destroying an attribute will remove it permanently from the system along with all associated data which means attribute values of that type, regardless of provider.  Be sure this is what you want to do.
+
+Destroy an attribute with its `#destroy` method:
+
+    attr.destroy
+     => true
+
+TODO:
+* Add an Attr.type_names method
+* Add find_by_name method?
+* Add catalog method?
+* Mash the options
+* Consider allowing changing of attribute type and options with optional synchronous revalidation of data.
+* Consider doing the above by a copy/paste type operation i.e. create a new attribute and do bulk copy of values to the new attribute
+
 ### Attribute Value
 
+For convenience the entity soup RESTful API folds in the attribute name into the output for every value, and interpolates attribute names into an attribute id when receiving attribute value data.  Since attribute names are unique for a given entity type this avoids the API user from having to bother with using attribute ids (unless they really want to).  If any attribute id is supplied then this overrides any name that might have been provided.  Remember attr names are mutable so attr_ids are the most persistent way to reference them.
+
+#### Read
+
+Access attribute values directly via `AttrValue.find` and `AttrValue.find_all`:
+
+    attr_value = AttrValue.find(id) # returns a single attribute value or nil if not found
+    attr_values = AttrValue.find_all(params) # returns all attribute values matching params, or []
+
+For example if you wish to find attribute values for a given entity use:
+
+    attr_values = AttrValue.find_all(entity_id: entity.id)
+
+Because attribute values belong to a given provider you may find more than one value per attribute and entity.  Supply a specific provider_id to eliminate this problem
+
+To get the value of a specific attribute for an entity you can either provide the attribute id or a name which will be resolved to an attribute id internally
+
+    attr_values = AttrValue.find_all(entity_id: entity.id, name: 'foo')
+   
+which assuming the entity is in catalog 1 is equivalent to:
+
+    attr = Attr.find_all(name: 'foo', catalog_id: 1).first
+    attr_values = AttrValue.find_all(entity_id: entity.id, attr.id)
+
+For convenience you can also use the `#attr_values` method of an entity instance:
+
+    attr_values = entity.attr_values
+
+However if you do this since they are usually internally cached when the entity was returned you must filter by provider or attribute name manually.
 
 
+#### Create
+
+You can either create attribute values directly with the standard `AttrValue.new` followed by `#save` or you can attach them directly to an entity via `Entity#update_attr_values`
+
+    a = AttrValue.new(name: 'size, entity_id: entity.id, provider_id: provider.id)
+    a.save
+    => true
+    a.value
+    => nil
+
+Note in this case the value starts as nil because it is allowed and no value was specified when creating the attribute value instance.  Override that behavior by specifying the value directly on create:
+
+    a = AttrValue.new(name: 'size, entity_id: entity.id, provider_id: provider.id, value: 42)
+    a.save
+    => true
+    a.value
+    => 42
+
+As a convenience if you have an entity use update_attr_values which allows you to set one or more attribute values for an entity.  The attribute values are specified either as a single set of hash params, or an array of hashes.  If the hash contains an id key it is assumed it is updating an existing attribute value, if not it is assumed it is creating a new attribute value. A feature lets you supply an attribute name instead of an id and that will get resolved to attr_id and id values appropriately (however a bug prevents this working correctly if multiple providers supply data for that attribute).
+
+#### Update
+
+After creating only the value field can be modified and saved.  Changes to any other field will be silently ignored.
+
+    a.value = 42
+    a.save
+    => true
+
+Note that if you set the value to a non-conforming object for that type it may be coerced on save by the API, so the string "42" can be coerced to a number 42.  But the string "asdasd" is not a valid number and will cause a save error
+
+    a.value = "42
+    a.save
+    => true
+    AttrValue.find(a.id).value
+    => 42
+    a.value = "not a number"
+    a.save
+    => false
+    a.errors
+    => {value"=>["not a number is not an integer"]}
+
+Or if you try to define the same attribute value twice with the same entity and provider you'll get an error like:
+
+    {'attr_id'=> ['has already been taken']}
+
+
+#### Destroy
+
+Destroying an attribute value will remove it permanently from the system along with all associated data which means its attribute values.
+
+Destroy an attribute value with its `#destroy` method:
+
+    attr_value.destroy
+     => true
+
+
+TODO:
+* update to attribute values via Entity#save instead of Entity#update_attr_values 
+* what to do about having to manually filter cached attr_values, remove caching feature or implement include mechanism?
+* fix bug of attribute name to id and attr_id resolution where there are multiple providers supplying values for that attribute and entity.
 
