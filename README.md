@@ -318,10 +318,24 @@ Destroy an entity with its `#destroy` method:
 
 ##### Attribute Values
 
-For convenience the entity soup RESTful API always returns all the attribute values defined for an entity.  Therefore getting the attribute values is cheap.  Using the `#attr_values` method will always get the previously fetched attr_values if available or query them directly from the AttrValue class with a scope of the current entity.  For example
+For convenience the Entity Soup gem always requests all the attribute values defined for an entity using an implicit addition of `include: :attr_values` (this is in the default 'view' for an entity resource).  Using the `#attr_values` method will always get the previously fetched attr_values:
 
     e.attr_values
     => [<attr_value>]  # or []
+
+To force a reload of the attribute values of an entity, within the bounds of the current caching configuration, use the `#attr_values!` method e.g.
+
+    e.attr_values!
+    e.attr_values!(break: true)   # force any API level caching to be ignored
+
+If you need to load entities without the attribute values either explicitly override the `include` paramter or use the `bare` view:
+
+    e = Entity.find(1, include: nil)
+    e.attr_values
+    -> []
+    e = Entity.find(1. view: :bare)
+    e.attr_values
+    -> []
 
 TODO: 
 * Add Category.new_entity and Category.new_entities for scoped and bulk entity creation?
