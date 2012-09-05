@@ -440,12 +440,22 @@ describe GoodGuide::EntitySoup do
       value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id)
       value.save.should be_true
       
+      @entity = Entity.find(@entity.id)
       attr_values = @entity.attr_values
       #attr_values = GoodGuide::EntitySoup::AttrValue.find_all(entity_id: entity.id)
       attr_values.should be_a Array
       attr_values[0].should be_a AttrValue
     end
 
+    it 'are not fetched for an entity using a bare view' do
+      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id)
+      value.save.should be_true
+      
+      @entity = Entity.find(@entity.id, view: :bare)
+      @entity.attr_values.should be_empty
+      @entity.attr_values!.should_not be_empty
+      @entity.attr_values.should_not be_empty
+    end
 
     # Note: set means define or update existing value
     it 'of an entity can be created and updated singularly' do

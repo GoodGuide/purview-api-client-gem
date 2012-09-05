@@ -23,29 +23,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"91ba3c34b941f3dd47f14511e9336bee"'
+      - ! '"a4a350a313e122a938dbae7cc88e6d08"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fc145b4fd9d8effe83b7ac4c20887a02
+      - 540d40e16b007c70bcdf9fb8ef000a45
       X-Runtime:
-      - '0.007167'
+      - '0.006244'
       Content-Length:
-      - '133'
+      - '132'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 30 Aug 2012 16:55:05 GMT
+      - Wed, 05 Sep 2012 18:09:03 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[{"created_at":"2012-08-29T18:42:41Z","description":"ESA","id":2119,"name":"test2","updated_at":"2012-08-29T18:42:42Z"}]}'
+      string: ! '{"catalogs":[{"created_at":"2012-09-05T17:42:25Z","description":"ESA","id":108,"name":"test2","updated_at":"2012-09-05T17:42:25Z"}]}'
     http_version: 
-  recorded_at: Thu, 30 Aug 2012 16:55:05 GMT
+  recorded_at: Wed, 05 Sep 2012 18:09:03 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/catalogs/2119
+    uri: http://localhost:3000/catalogs/108
     body:
       encoding: US-ASCII
       string: ''
@@ -64,20 +64,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f1ef8b48356d8c1df149e992336efa93
+      - 03c7868e32cd79ee4df449a30bf8456d
       X-Runtime:
-      - '0.023475'
+      - '0.013266'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 30 Aug 2012 16:55:05 GMT
+      - Wed, 05 Sep 2012 18:09:03 GMT
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Thu, 30 Aug 2012 16:55:05 GMT
+  recorded_at: Wed, 05 Sep 2012 18:09:03 GMT
 - request:
     method: post
     uri: http://localhost:3000/catalogs
@@ -97,35 +97,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/catalogs/2138
+      - http://localhost:3000/catalogs/137
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"84fce84af5a586978f5decbdcf7952f2"'
+      - ! '"b86f99c09f8c4353c35d3e6d4d43863d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 053c1ecea391c2ff2a735c5e2df9695e
+      - 385c4b4b548e0a87e0579bccc8ab793b
       X-Runtime:
-      - '0.022490'
+      - '0.015403'
       Content-Length:
-      - '119'
+      - '118'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 30 Aug 2012 16:55:05 GMT
+      - Wed, 05 Sep 2012 18:09:03 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-30T16:55:05Z","description":"NASA","id":2138,"name":"test2","updated_at":"2012-08-30T16:55:05Z"}'
+      string: ! '{"created_at":"2012-09-05T18:09:03Z","description":"NASA","id":137,"name":"test2","updated_at":"2012-09-05T18:09:03Z"}'
     http_version: 
-  recorded_at: Thu, 30 Aug 2012 16:55:05 GMT
+  recorded_at: Wed, 05 Sep 2012 18:09:03 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/2138
+    uri: http://localhost:3000/catalogs/137
     body:
       encoding: US-ASCII
       string: ''
@@ -146,32 +146,32 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"84fce84af5a586978f5decbdcf7952f2"'
+      - ! '"b86f99c09f8c4353c35d3e6d4d43863d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2f960fbab2e85e61cada8cb2ad4856d3
+      - 59c9940a63f50cec58f19df4a65541f5
       X-Runtime:
-      - '0.006476'
+      - '0.005900'
       Content-Length:
-      - '119'
+      - '118'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 30 Aug 2012 16:55:05 GMT
+      - Wed, 05 Sep 2012 18:09:03 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-30T16:55:05Z","description":"NASA","id":2138,"name":"test2","updated_at":"2012-08-30T16:55:05Z"}'
+      string: ! '{"created_at":"2012-09-05T18:09:03Z","description":"NASA","id":137,"name":"test2","updated_at":"2012-09-05T18:09:03Z"}'
     http_version: 
-  recorded_at: Thu, 30 Aug 2012 16:55:05 GMT
+  recorded_at: Wed, 05 Sep 2012 18:09:03 GMT
 - request:
     method: put
-    uri: http://localhost:3000/catalogs/2138
+    uri: http://localhost:3000/catalogs/137
     body:
       encoding: UTF-8
-      string: created_at=2012-08-30T16%3A55%3A05Z&description=ESA&id=2138&name=test2&updated_at=2012-08-30T16%3A55%3A05Z
+      string: created_at=2012-09-05T18%3A09%3A03Z&description=ESA&id=137&name=test2&updated_at=2012-09-05T18%3A09%3A03Z
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -189,23 +189,23 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - fa9ea1243e14f4d8887ecf23f537b975
+      - 22adb14ff1b9ca2a6029530b0b0ec18f
       X-Runtime:
-      - '0.023374'
+      - '0.017249'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 30 Aug 2012 16:55:05 GMT
+      - Wed, 05 Sep 2012 18:09:03 GMT
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Thu, 30 Aug 2012 16:55:05 GMT
+  recorded_at: Wed, 05 Sep 2012 18:09:03 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/2138
+    uri: http://localhost:3000/catalogs/137
     body:
       encoding: US-ASCII
       string: ''
@@ -226,24 +226,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"579710872897ac76618ddc74f9c090fc"'
+      - ! '"1b944b84528069f5a02b1f5a940a3037"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d038404f0227c6cd29fd33355d5819ca
+      - fcc8c1557ecf304524c35b683c2dcdf2
       X-Runtime:
-      - '0.011567'
+      - '0.004979'
       Content-Length:
-      - '118'
+      - '117'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Thu, 30 Aug 2012 16:55:05 GMT
+      - Wed, 05 Sep 2012 18:09:03 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-08-30T16:55:05Z","description":"ESA","id":2138,"name":"test2","updated_at":"2012-08-30T16:55:05Z"}'
+      string: ! '{"created_at":"2012-09-05T18:09:03Z","description":"ESA","id":137,"name":"test2","updated_at":"2012-09-05T18:09:03Z"}'
     http_version: 
-  recorded_at: Thu, 30 Aug 2012 16:55:05 GMT
+  recorded_at: Wed, 05 Sep 2012 18:09:03 GMT
 recorded_with: VCR 2.2.4

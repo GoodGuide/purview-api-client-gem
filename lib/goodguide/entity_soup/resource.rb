@@ -199,7 +199,7 @@ module GoodGuide::EntitySoup::Resource
     ########
     def has(type)
       type = type.to_s
-      model = "GoodGuide::API::#{type.camelize}".constantize
+      model = "GoodGuide::EntitySoup::#{type.camelize}".constantize
       relations << type
 
       define_cached_method(type) do
@@ -208,7 +208,7 @@ module GoodGuide::EntitySoup::Resource
 
       define_method(type+'=') do |val|
         self.resource[type] = val
-        instance_variable_set("@#{type}", nil)
+        instance_variable_set("@#{type}", val)
       end
     end
 
@@ -225,7 +225,7 @@ module GoodGuide::EntitySoup::Resource
 
       define_method(type+'=') do |val|
         self.resource[type] = val
-        instance_variable_set("@#{type}", nil)
+        instance_variable_set("@#{type}", val)
       end
     end
 
