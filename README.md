@@ -333,7 +333,7 @@ If you need to load entities without the attribute values either explicitly over
     e = Entity.find(1, include: nil)
     e.attr_values
     -> []
-    e = Entity.find(1. view: :bare)
+    e = Entity.find(1, view: :bare)
     e.attr_values
     -> []
 
