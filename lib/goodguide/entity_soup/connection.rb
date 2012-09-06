@@ -119,18 +119,18 @@ module GoodGuide::EntitySoup
       return [] if ids.blank?
       return [get(ids.first, opts)] if ids.size == 1
 
-      cacher = opts.delete(:cacher) || Cacher
+      cacher = opts.delete(:cacher) || cacher_klass
 
       # XXX HACK XXX pass the "busting" boolean into the
       # new threads.
-      busting = cacher.busting?
+      busting = cacher && cacher.busting?
 
       benchmark "parallel load: #{ids.inspect}" do
         pool_size = (opts.delete(:pool_size) || 10)
         keys = ids.map { |id| key(id, opts) }
 
-        results = if Cacher.enabled?
-          ids.map(&:to_i).zip(Cacher.get_multi(keys))
+        results = if cacher_klass && cacher_klass.enabled?
+          ids.map(&:to_i).zip(cacher_klass.get_multi(keys))
         else
           ids.map{|id| [id.to_i, nil]}
         end
@@ -182,16 +182,30 @@ module GoodGuide::EntitySoup
     end
 
     def cache_and_benchmark(key, cacher=nil, break_cache=false, &b)
-      cacher ||= Cacher
+      cacher ||= cacher_klass
 
       message = "#{path} load (#{key})"
 
       result = nil
       benchmark(message) do
-        result = cacher.get(key, break: break_cache, &b)
+        if cacher
+          result = cacher.get(key, break: break_cache, &b)
+        else
+          result = yield
+        end
       end
 
       result
+    end
+
+    def cacher_available?
+      defined? Cacher
+    end
+
+    def cacher_klass
+      return @cacher_klass if defined? @cacher_klass
+
+      @cacher_klass = Cacher if cacher_available?
     end
 
     def logger

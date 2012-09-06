@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "goodguide"
   s.files = Dir['Gemfile', 'goodguide-entity_soup.gemspec', 'lib/**/*.rb']
 
-  # s.add_dependency('faraday', '~> 0.7')
-  # s.add_dependency('faraday_middleware')
-  # s.add_dependency('hashie')
+  s.add_dependency('faraday')
+  s.add_dependency('workqueue')
+  s.add_dependency('hashie')
 end

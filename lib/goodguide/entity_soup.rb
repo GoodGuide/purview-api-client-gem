@@ -16,8 +16,6 @@ end
 
 require 'logger'
 require "faraday"
-require "cacher"
-require "wrappable"
 require "workqueue"
 require "active_support/json"
 require "active_support/memoizable"

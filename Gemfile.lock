@@ -1,13 +1,10 @@
-GIT
-  remote: git@github.com:GoodGuide/cacher
-  revision: 4e3414039af7405ee0db379254cea54d7b478eae
-  specs:
-    cacher (0.2.1)
-
 PATH
   remote: .
   specs:
     goodguide-entity_soup (0.1)
+      faraday
+      hashie
+      workqueue
 
 GEM
   remote: http://rubygems.org/
@@ -17,7 +14,6 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.2)
     crack (0.3.1)
-    dalli (2.1.0)
     diff-lcs (1.1.3)
     faraday (0.8.4)
       multipart-post (~> 1.1)
@@ -40,7 +36,6 @@ GEM
       addressable (>= 2.2.7)
       crack (>= 0.1.7)
     workqueue (0.1.4)
-    wrappable (0.0.5)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -48,16 +43,10 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  cacher (~> 0.2.1)!
-  dalli
-  faraday
   goodguide-entity_soup!
-  hashie
   rake
   rr
   rspec
   vcr
   webmock
-  workqueue
-  wrappable (~> 0.0.5)
   yajl-ruby

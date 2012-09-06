@@ -1,11 +1,6 @@
 source 'http://rubygems.org/'
 gemspec
 
-gem 'wrappable', '~> 0.0.5'
-gem 'workqueue'
-gem 'cacher', '~> 0.2.1', :git => 'git@github.com:GoodGuide/cacher'
-gem 'faraday'
-gem 'hashie'
 gem 'activesupport'
 
 group :test, :development do
@@ -15,5 +10,4 @@ group :test, :development do
   gem 'yajl-ruby'
   gem 'webmock'        
   gem 'vcr'
-  gem 'dalli'
 end
