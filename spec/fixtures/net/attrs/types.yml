@@ -23,24 +23,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"6a764fa178e68a3896fa8dd10fe167ae"'
+      - ! '"35a31cba674f8b0a1d09512b81e1509b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d2ec0e22edf426030940021474a317e3
+      - 83e7708a81c9ec7014aae31bdc7e3018
       X-Runtime:
-      - '0.002424'
+      - '0.003002'
       Content-Length:
-      - '628'
+      - '801'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:03 GMT
+      - Fri, 05 Oct 2012 02:03:10 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attr_types":[{"name":"DerivedAttr","options":{"list":false,"allow_nil":false,"default_value":null,"rule":"{}"}},{"name":"NumericAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"FloatAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"PercentageAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"JSONAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"StringAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"IntegerAttr","options":{"list":false,"allow_nil":true,"default_value":null}}]}'
+      string: ! '{"attr_types":[{"name":"DerivedAttr","options":{"list":false,"allow_nil":false,"default_value":null,"rule":"{}"}},{"name":"NumericAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"FloatAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"IdentityAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"PercentageAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"BooleanAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"JSONAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"StringAttr","options":{"list":false,"allow_nil":true,"default_value":null}},{"name":"IntegerAttr","options":{"list":false,"allow_nil":true,"default_value":null}}]}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:03 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:10 GMT
 recorded_with: VCR 2.2.4

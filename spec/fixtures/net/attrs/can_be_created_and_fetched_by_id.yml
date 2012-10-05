@@ -23,29 +23,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"43321d1f83bfb063cb70240b48c7e5ce"'
+      - ! '"b743209dfcf25e57c999f99c94a82bc3"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f84a7193a5aedfa0f420b45467b27bd0
+      - 2e775183c06487e0b3392a5347773252
       X-Runtime:
-      - '0.004720'
+      - '0.004687'
       Content-Length:
-      - '130'
+      - '129'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[{"created_at":"2012-09-05T18:09:10Z","description":null,"id":149,"name":"test","updated_at":"2012-09-05T18:09:10Z"}]}'
+      string: ! '{"catalogs":[{"created_at":"2012-10-05T02:03:16Z","description":null,"id":80,"name":"test","updated_at":"2012-10-05T02:03:16Z"}]}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/catalogs/149
+    uri: http://localhost:3000/catalogs/80
     body:
       encoding: US-ASCII
       string: ''
@@ -64,20 +64,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 745ac23cd6c6beaf77b129b1bce98ee5
+      - eabcc38297dc7a3f8e22c1752457a6a1
       X-Runtime:
-      - '0.029037'
+      - '0.024376'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/catalogs
@@ -97,38 +97,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/catalogs/150
+      - http://localhost:3000/catalogs/81
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"50539b88c59ba1f848c229d7f07e11d3"'
+      - ! '"6bcec36f8ba8a3e8a8576170b6ce3e8b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2e23145d3e0f879c24b003f77b53419d
+      - f9c44588a1d26602c8a45f98eb6288cc
       X-Runtime:
-      - '0.016266'
+      - '0.012133'
       Content-Length:
-      - '115'
+      - '114'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-09-05T18:09:11Z","description":null,"id":150,"name":"test","updated_at":"2012-09-05T18:09:11Z"}'
+      string: ! '{"created_at":"2012-10-05T02:03:17Z","description":null,"id":81,"name":"test","updated_at":"2012-10-05T02:03:17Z"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr1&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr1&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -142,38 +142,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/242
+      - http://localhost:3000/attrs/132
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"94568e05f8f2d16d02d999caa1d138b0"'
+      - ! '"4ce03f01b3c5e8883bf297f9403e056c"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e41e436f80e9530c61b5033a4330ba87
+      - 5c6e5a177de5594a1be6d78e9ef50238
       X-Runtime:
-      - '0.027111'
+      - '0.021878'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":242,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":132,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr2&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr2&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -187,38 +187,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/243
+      - http://localhost:3000/attrs/133
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"944abeccaaa4ac1ef4a0fa0ab0ab5a45"'
+      - ! '"fe7688605d98369ac9a36bb773fa4d57"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 19d69222895abaa7fc31f363fd25e864
+      - 427299b9cbf182515232a9b9e89c6fc7
       X-Runtime:
-      - '0.028509'
+      - '0.067879'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":243,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":133,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr3&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr3&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -232,38 +232,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/244
+      - http://localhost:3000/attrs/134
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"a4e4de6904c43d96f4fe0ed543aac50e"'
+      - ! '"836f5dc8d5b767c91ee8f35f650ff1f5"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - acad144024febf15aec072d78c306dd7
+      - f26975161e808b3e63dc8b978f24c62a
       X-Runtime:
-      - '0.024419'
+      - '0.020935'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":244,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":134,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr4&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr4&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -277,38 +277,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/245
+      - http://localhost:3000/attrs/135
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"9926de323cc250a9289830d8fe69b6d8"'
+      - ! '"f2101d48cdac759a5b041831273e3852"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 95996f55474f476bd68116f0d5dc1cd8
+      - 14d2341d90e18b441f5154b3c4f2ec16
       X-Runtime:
-      - '0.022376'
+      - '0.022782'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":245,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":135,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr5&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr5&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -322,38 +322,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/246
+      - http://localhost:3000/attrs/136
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"e99e72bbcd1b4a20056587b83201783f"'
+      - ! '"82c71f871af437be16ba589e9aaa5b51"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d299797a8765d5dc7f22faaa03a6aaf0
+      - c000c1c3edb971d17ec99b781757ec97
       X-Runtime:
-      - '0.022249'
+      - '0.020465'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":246,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":136,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr6&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr6&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -367,38 +367,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/247
+      - http://localhost:3000/attrs/137
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"77cca6f381bd40ca97d3369546927c2d"'
+      - ! '"2cac2b3c82beacd1105ad301a61703b7"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4a4b7bbdfe8cc581508f5f68a5e24d48
+      - 36890ce856e107397638a3971e5760d7
       X-Runtime:
-      - '0.070822'
+      - '0.018839'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":247,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":137,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr7&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr7&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -412,38 +412,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/248
+      - http://localhost:3000/attrs/138
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"d1a34203cbc40f17feb8989961e196b7"'
+      - ! '"bcda0ec693ade929c97a555c814a5964"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2c691900af5b07b341ef6fbf50173c79
+      - 8938cd00799fdc057b0eb4e99cf2d3a9
       X-Runtime:
-      - '0.026945'
+      - '0.019902'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":248,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":138,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr8&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr8&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -457,38 +457,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/249
+      - http://localhost:3000/attrs/139
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"fddb2d106e11fc27045564952e380b3a"'
+      - ! '"f7cf8ba80fd9fcb49004e7415f0c1f69"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f0bc14d7f547a1ba93399f3a6ee55d98
+      - ccdd286fa809be722d7ed8b062515c56
       X-Runtime:
-      - '0.023682'
+      - '0.020881'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":249,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":139,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr9&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr9&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -502,38 +502,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/250
+      - http://localhost:3000/attrs/140
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"1e76816740dc290241ca14daab460596"'
+      - ! '"a93a2b601508eb487910c24af2897e53"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4fa100da06ce665f765c4cd21e5f682d
+      - f0450029fa24434a2e7c0a7c17e53323
       X-Runtime:
-      - '0.022741'
+      - '0.019630'
       Content-Length:
-      - '222'
+      - '221'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":250,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":140,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: post
     uri: http://localhost:3000/attrs
     body:
       encoding: US-ASCII
-      string: name=attr10&entity_type=Product&type=IntegerAttr&catalog_id=150
+      string: name=attr10&entity_type=Product&type=IntegerAttr&catalog_id=81
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -547,121 +547,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/attrs/251
+      - http://localhost:3000/attrs/141
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"ed3e13dabd4480fb86d0798a709be653"'
+      - ! '"9305c55a2853d6713a991566d1bff85c"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9638d1ab9f245f73cec1244e0c728913
+      - 2aa36e65889bb4ca1b0e7e960dd931d4
       X-Runtime:
-      - '0.024647'
-      Content-Length:
-      - '223'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
-      Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":251,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
-    http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/attrs?catalog_id=150
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"72f797a162c9276f44840a6c7c7eecc8"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - cb39c04beafa2be8438482dbea50ef6a
-      X-Runtime:
-      - '0.085915'
-      Content-Length:
-      - '2242'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
-      Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":242,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":243,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":244,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":245,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":246,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":247,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":248,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":249,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":250,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":251,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}]}'
-    http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/attrs/244
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"a4e4de6904c43d96f4fe0ed543aac50e"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 30eaebff3829d2fddbf161b2d854f4bd
-      X-Runtime:
-      - '0.016317'
+      - '0.063455'
       Content-Length:
       - '222'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":244,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":141,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/242
+    uri: http://localhost:3000/attrs?catalog_id=81&schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -682,29 +596,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"94568e05f8f2d16d02d999caa1d138b0"'
+      - ! '"edc7de6b8cd74d33d687931c963722a3"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5f20ae83d41978fdbc2c350b1f743c69
+      - 886c809caa28df0ffef3e815019349a2
       X-Runtime:
-      - '0.014174'
+      - '0.040630'
       Content-Length:
-      - '222'
+      - '2843'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":242,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"attrs":[{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":132,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr1","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":133,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr2","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":134,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr3","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":135,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr4","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":136,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr5","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":137,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr6","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":138,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr7","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":139,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr8","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":140,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr9","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":141,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr10","required":false},"type":"IntegerAttr"}]}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/245
+    uri: http://localhost:3000/attrs/132?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -725,29 +639,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"9926de323cc250a9289830d8fe69b6d8"'
+      - ! '"c2f5ac0c5ddb728495068ef4a7a22ba2"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b4dd766afb740cfc6c7a0d9911d3ffc5
+      - 2a12e014255390f8ae711b95dbaadccc
       X-Runtime:
-      - '0.014515'
+      - '0.024399'
       Content-Length:
-      - '222'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":245,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":132,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr1","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/246
+    uri: http://localhost:3000/attrs/133?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -768,29 +682,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"e99e72bbcd1b4a20056587b83201783f"'
+      - ! '"946950d94ffd2e67d0793d89b58b0254"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b35622ec8971d72128c0989b5c8f6131
+      - a2264647a8611fbeb7eeeb2000535366
       X-Runtime:
-      - '0.020253'
+      - '0.016957'
       Content-Length:
-      - '222'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":246,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":133,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr2","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/243
+    uri: http://localhost:3000/attrs/136?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -811,29 +725,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"944abeccaaa4ac1ef4a0fa0ab0ab5a45"'
+      - ! '"c01ecadeca1ee4a7f40f950aabea92e0"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b7b6bd6e1186de345f50d6937942f66a
+      - 2c8cdae09469398daea211552b64a0da
       X-Runtime:
-      - '0.014843'
+      - '0.010783'
       Content-Length:
-      - '222'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":243,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":136,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr5","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/249
+    uri: http://localhost:3000/attrs/137?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -854,29 +768,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"fddb2d106e11fc27045564952e380b3a"'
+      - ! '"f9fe87a4e417f85dde764bd79345a473"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 14b4fa94a40d42bc7c72229c30545588
+      - 0f3499f86c987d2638ea96fb781f89c1
       X-Runtime:
-      - '0.057104'
+      - '0.009347'
       Content-Length:
-      - '222'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":249,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":137,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr6","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/251
+    uri: http://localhost:3000/attrs/139?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -897,29 +811,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"ed3e13dabd4480fb86d0798a709be653"'
+      - ! '"2201030da045cdd015044e3d95e07aa9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6bf78a64025d3771119dd4ee597024c3
+      - 929e7c27711b8976887ffad363f33400
       X-Runtime:
-      - '0.010733'
+      - '0.009194'
       Content-Length:
-      - '223'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":251,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":139,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr8","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/248
+    uri: http://localhost:3000/attrs/138?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -940,29 +854,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"d1a34203cbc40f17feb8989961e196b7"'
+      - ! '"158f464a736ab043f71af2868e5b1e7e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 06807bc4fb750ed8c588a280cc681e05
+      - ba1617cdea95e8b3a87f9d4f3cae3e20
       X-Runtime:
-      - '0.011249'
+      - '0.010378'
       Content-Length:
-      - '222'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":248,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":138,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr7","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/250
+    uri: http://localhost:3000/attrs/141?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -983,29 +897,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"1e76816740dc290241ca14daab460596"'
+      - ! '"ebce332200758095e518421329389b59"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 67ce90359d5e488129771ee2b4f11114
+      - b3b7f8620bfe8c91ebda0b6d482c9b8d
       X-Runtime:
-      - '0.013681'
+      - '0.009391'
       Content-Length:
-      - '222'
+      - '284'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":250,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":141,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr10","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs/247
+    uri: http://localhost:3000/attrs/140?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -1026,29 +940,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"77cca6f381bd40ca97d3369546927c2d"'
+      - ! '"c2f80ba45b219322ea7b1dca8c86833e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f0083f93a27eb9b5e9a9a4eabe9826a0
+      - ed1532dc56d4bfbec35445617cf8a25c
       X-Runtime:
-      - '0.012373'
+      - '0.010216'
       Content-Length:
-      - '222'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:11 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":247,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":140,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr9","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:11 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?id%5B0%5D=242&id%5B1%5D=243&id%5B2%5D=244&id%5B3%5D=245&id%5B4%5D=246&id%5B5%5D=247&id%5B6%5D=248&id%5B7%5D=249&id%5B8%5D=250&id%5B9%5D=251
+    uri: http://localhost:3000/attrs/135?schema=true
     body:
       encoding: US-ASCII
       string: ''
@@ -1069,24 +983,110 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"668f80c2fab2262e29718c6a6875635a"'
+      - ! '"381154b37ef705bf273a0cf573a16f79"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 40e145e86eb82c6fe35536e53ad88245
+      - 03d839d7cd661d03834f6ffe5ef09142
       X-Runtime:
-      - '0.080344'
+      - '0.010567'
       Content-Length:
-      - '2683'
+      - '282'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
       Date:
-      - Wed, 05 Sep 2012 18:09:12 GMT
+      - Fri, 05 Oct 2012 02:03:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-09-05T18:09:04Z","entity_type":"Product","id":219,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:04Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-09-05T18:09:05Z","entity_type":"Product","id":224,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:05Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":242,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":243,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":244,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":245,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":246,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":247,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":248,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":249,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":250,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"},{"catalog_id":150,"created_at":"2012-09-05T18:09:11Z","entity_type":"Product","id":251,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-09-05T18:09:11Z","type":"IntegerAttr"}]}'
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":135,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr4","required":false},"type":"IntegerAttr"}'
     http_version: 
-  recorded_at: Wed, 05 Sep 2012 18:09:12 GMT
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/attrs/134?schema=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"7ec30e55b4d316a17f1e64ee600e855d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9c279d50fb6ecb3bd9493a850cc2d73b
+      X-Runtime:
+      - '0.049298'
+      Content-Length:
+      - '282'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Fri, 05 Oct 2012 02:03:17 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":134,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr3","required":false},"type":"IntegerAttr"}'
+    http_version: 
+  recorded_at: Fri, 05 Oct 2012 02:03:17 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/attrs?id%5B0%5D=132&id%5B1%5D=133&id%5B2%5D=134&id%5B3%5D=135&id%5B4%5D=136&id%5B5%5D=137&id%5B6%5D=138&id%5B7%5D=139&id%5B8%5D=140&id%5B9%5D=141&schema=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"76a533b003531fe876bb6404804b9f67"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b59998a92311dcba13fb6445e8f5244e
+      X-Runtime:
+      - '0.110888'
+      Content-Length:
+      - '4797'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      Date:
+      - Fri, 05 Oct 2012 02:03:18 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-10-05T01:20:44Z","entity_type":"Product","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null},"updated_at":"2012-10-05T01:20:44Z","schema":{"type":"string","title":"name","required":true},"type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-10-05T01:20:44Z","entity_type":"Ingredient","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null},"updated_at":"2012-10-05T01:20:44Z","schema":{"type":"string","title":"name","required":true},"type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-10-05T01:20:44Z","entity_type":"Brand","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null},"updated_at":"2012-10-05T01:20:44Z","schema":{"type":"string","title":"name","required":true},"type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-10-05T01:20:44Z","entity_type":"Company","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null},"updated_at":"2012-10-05T01:20:44Z","schema":{"type":"string","title":"name","required":true},"type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-10-05T01:20:44Z","entity_type":"Category","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null},"updated_at":"2012-10-05T01:20:44Z","schema":{"type":"string","title":"name","required":true},"type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-10-05T02:03:11Z","entity_type":"Product","id":108,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:11Z","schema":{"type":"integer","title":"test","required":false},"type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-10-05T02:03:12Z","entity_type":"Product","id":113,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:12Z","schema":{"type":"integer","title":"test2","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":132,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr1","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":133,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr2","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":134,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr3","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":135,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr4","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":136,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr5","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":137,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr6","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":138,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr7","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":139,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr8","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":140,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr9","required":false},"type":"IntegerAttr"},{"catalog_id":81,"created_at":"2012-10-05T02:03:17Z","entity_type":"Product","id":141,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null},"updated_at":"2012-10-05T02:03:17Z","schema":{"type":"integer","title":"attr10","required":false},"type":"IntegerAttr"}]}'
+    http_version: 
+  recorded_at: Fri, 05 Oct 2012 02:03:18 GMT
 recorded_with: VCR 2.2.4

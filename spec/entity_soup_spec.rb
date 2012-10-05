@@ -26,75 +26,82 @@ describe GoodGuide::EntitySoup do
   # TODO - restrict catalog access by role/ACL
   context 'catalogs' do
 
+    around(:each) do |x|
+      vcr("catalogs/#{example.description}") do
+        ensure_deleted Catalog, 'test'
+        #@catalog = Catalog.new(name: 'test')
+        #@catalog.save.should be_true
+        
+        x.run
+      end
+    end
+
     it 'can be listed' do
       # GoodGuide catalog id 1 always exists
-      catalogs = vcr('catalogs/all') { Catalog.find_all }
+      catalogs = Catalog.find_all
       catalogs.should be_a Array
       catalogs.each { |c| c.should be_a Catalog }
-      catalogs.first.id.should == 1
-      catalogs.first.name.should_not be_nil
-      catalogs.first.description.should_not be_nil
+      catalog = catalogs.find {|c| c.id == 1 } 
+      catalog.name.should_not be_nil
+      catalog.description.should_not be_nil
     end
 
     it 'can be fetched by id' do
-      catalog = vcr('catalogs/find_by_id') { Catalog.find(1) }
+      catalog = Catalog.find(1)
       catalog.should be_a Catalog
       catalog.id.should == 1
     end
     
     it 'has a name and description' do
-      catalog = vcr('catalogs/find_by_id') { Catalog.find(1) }
+      catalog = Catalog.find(1)
       catalog.description.should_not be_nil
       catalog.name.should_not be_nil
     end
 
     it 'can be created' do
-      vcr('catalogs/create') do
-        ensure_deleted Catalog, "test"
-        catalog = Catalog.new(name: "test", description: "NASA")
-        catalog.save.should be_true
-        catalog.id.should_not be_nil
-        catalog2 = Catalog.find(catalog.id, break: true)
-        catalog2.name.should == catalog.name
-      end
+      catalog = Catalog.new(name: "test", description: "NASA")
+      catalog.save.should be_true
+      catalog.id.should_not be_nil
+      catalog2 = Catalog.find(catalog.id, break: true)
+      catalog2.name.should == catalog.name
     end
 
     it 'cant be created with a duplicate name' do
       catalog = Catalog.new(name: "GoodGuide")
-      vcr('catalogs/create-duplicate') { catalog.save }.should be_false
+      catalog.save.should be_false
       catalog.errors.should_not be_nil
     end
 
     it 'can be updated' do
-      vcr('catalogs/updated') do
-        ensure_deleted Catalog, 'test2'
-        catalog = Catalog.new(name: "test2", description: "NASA")
-        catalog.save.should be_true
-        catalog2 = Catalog.find(catalog.id, break: true)
-        catalog2.description.should == "NASA"
-        catalog2.description = "ESA"
-        catalog2.save.should be_true
-        catalog3 = Catalog.find(catalog.id, break: true)
-        catalog3.description.should == "ESA"
-      end
+      ensure_deleted Catalog, 'test2'
+      catalog = Catalog.new(name: "test2", description: "NASA")
+      catalog.save.should be_true
+      catalog2 = Catalog.find(catalog.id, break: true)
+      catalog2.description.should == "NASA"
+      catalog2.description = "ESA"
+      catalog2.save.should be_true
+      catalog3 = Catalog.find(catalog.id, break: true)
+      catalog3.description.should == "ESA"
     end
 
     it 'can be destroyed' do
-      vcr('catalogs/destroy') do
-        ensure_deleted Catalog, 'test'
-        catalog = Catalog.new(name: "test", description: "NASA")
-        catalog.save.should be_true
-        catalog.destroy.should be_true
-        Catalog.find(catalog.id, break: true).should be_nil
-      end
+      catalog = Catalog.new(name: "test", description: "NASA")
+      catalog.save.should be_true
+      catalog.destroy.should be_true
+      Catalog.find(catalog.id, break: true).should be_nil
     end
 
     it 'cant destroy non-existant id' do
-      vcr('catalogs/destroy-non-existant') do
-        catalog = Catalog.new
-        catalog.attributes[:id] = "non-existant"
-        catalog.destroy.should be_false
-      end
+      catalog = Catalog.new
+      catalog.attributes[:id] = "non-existant"
+      catalog.destroy.should be_false
+    end
+
+    it 'have a schema for products' do
+      catalog = Catalog.new(name: "test")
+      catalog.save.should be_true
+      schema = catalog.entity_schema('Product')
+      schema.should be_a Hash
     end
 
   end
@@ -216,6 +223,8 @@ describe GoodGuide::EntitySoup do
         attr2.type.should == attr.type
         attr2.catalog_id.should == catalog.id
         attr2.options.should be_a Hash
+        attr2.schema.should be_a Hash
+        attr2.schema.should == { "type" => "integer", "title" => "test", "required" => false }
       end
     end
     
