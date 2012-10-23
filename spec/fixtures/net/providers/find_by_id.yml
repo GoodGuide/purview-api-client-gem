@@ -23,24 +23,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"0c75bfbd6012e0e4c02dbfff84f8acba"'
+      - ! '"8dd0770655bddd6e3cf46d8341fbf356"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d72eb671af42287750b4c2cd8165e11e
+      - 78b7f7aba45610c972ec67f86b1371b0
       X-Runtime:
-      - '0.007295'
+      - '0.029006'
       Content-Length:
       - '99'
       Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Fri, 05 Oct 2012 02:03:10 GMT
+      - Tue, 23 Oct 2012 23:12:55 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-10-05T01:20:43Z","id":1,"name":"GoodGuide","updated_at":"2012-10-05T01:20:43Z"}'
+      string: ! '{"created_at":"2012-10-23T22:09:53Z","id":1,"name":"GoodGuide","updated_at":"2012-10-23T22:09:53Z"}'
     http_version: 
-  recorded_at: Fri, 05 Oct 2012 02:03:10 GMT
+  recorded_at: Tue, 23 Oct 2012 23:12:55 GMT
 recorded_with: VCR 2.2.4

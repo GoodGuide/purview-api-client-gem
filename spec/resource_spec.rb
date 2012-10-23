@@ -56,6 +56,7 @@ describe GoodGuide::EntitySoup::Resource do
     end
 
   end
+
   describe 'finding' do
     after { reset_connection! }
 
@@ -111,4 +112,35 @@ describe GoodGuide::EntitySoup::Resource do
       list.stats[:total].should == 100
     end
   end
+
+  describe 'errors' do
+    after { reset_connection! }
+
+    it 'handles get server errors' do
+      stub_connection! do |stub|
+        stub.get('tests/123') {
+          body = "foo bar exception"
+          [500, {}, body]
+        }
+      end
+
+      tr = TestResource.find(123)
+      tr.should be_nil
+
+    end
+
+    it 'handles put server errors' do
+      stub_connection! do |stub|
+        stub.put {
+          body = "foo bar exception"
+          [500, {}, body]
+        }
+      end
+
+      resource = TestResource.new
+      tr = resource.save
+      tr.should be_false
+    end
+  end
+    
 end

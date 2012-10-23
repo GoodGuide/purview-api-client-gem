@@ -36,20 +36,26 @@ module GoodGuide::EntitySoup::Resource
   def save
     if id.nil?
       result = connection.post(attributes)
-      if result['error']
+      if result.is_a?(Hash) and result['error']
         @errors = result['error']
         false
-      else
+      elsif result
         @attributes = result.with_indifferent_access
         true
+      else
+        @errors = { 'base' => 'server error' } 
+        false
       end
     else
       result = connection.put(id, attributes)
       if result.is_a?(Hash) and result['error']
         @errors = result['error'].with_indifferent_access
         false
-      else
+      elsif result
         true
+      else
+        @errors = { 'base' => 'server error' }
+        false
       end
     end
   end

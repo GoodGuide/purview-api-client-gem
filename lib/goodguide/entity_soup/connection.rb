@@ -38,6 +38,9 @@ module GoodGuide::EntitySoup
         if not res.respond_to?(:status) or (res.status == 200)
           parse ? JSON.load(res.body) : res.body
         else
+          # Note - no way to return error info here which is perhaps where we should be
+          # throwing exceptions from connection class but that is a pretty substantial 
+          # refactor.
           nil
         end
       end

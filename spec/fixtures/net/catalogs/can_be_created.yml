@@ -27,22 +27,22 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c1e3d6535757a76b9ed879c85cc115ba
+      - e58716364114bfb1c0dac8055621fee6
       X-Runtime:
-      - '0.004584'
+      - '0.003888'
       Content-Length:
       - '15'
       Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Fri, 05 Oct 2012 02:03:10 GMT
+      - Tue, 23 Oct 2012 23:12:54 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"catalogs":[]}'
     http_version: 
-  recorded_at: Fri, 05 Oct 2012 02:03:10 GMT
+  recorded_at: Tue, 23 Oct 2012 23:12:54 GMT
 - request:
     method: post
     uri: http://localhost:3000/catalogs
@@ -62,35 +62,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/catalogs/66
+      - http://localhost:3000/catalogs/178
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"76323f89a6c8439865c5ab41b8a28370"'
+      - ! '"bfed098126b19e31336191f19559f0bd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8002d1acea10f80e678fa78bad748685
+      - c068579178f21f399f5841603ecad27c
       X-Runtime:
-      - '0.019496'
+      - '0.193876'
       Content-Length:
-      - '116'
+      - '117'
       Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Fri, 05 Oct 2012 02:03:10 GMT
+      - Tue, 23 Oct 2012 23:12:54 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-10-05T02:03:10Z","description":"NASA","id":66,"name":"test","updated_at":"2012-10-05T02:03:10Z"}'
+      string: ! '{"created_at":"2012-10-23T23:12:54Z","description":"NASA","id":178,"name":"test","updated_at":"2012-10-23T23:12:54Z"}'
     http_version: 
-  recorded_at: Fri, 05 Oct 2012 02:03:10 GMT
+  recorded_at: Tue, 23 Oct 2012 23:12:54 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/66
+    uri: http://localhost:3000/catalogs/178
     body:
       encoding: US-ASCII
       string: ''
@@ -111,24 +111,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"76323f89a6c8439865c5ab41b8a28370"'
+      - ! '"bfed098126b19e31336191f19559f0bd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1e46d2a3c05ce78276cfca945f6cbeb1
+      - ee0fbc516f8a3230b6024032c63b9f0d
       X-Runtime:
-      - '0.004129'
+      - '0.007505'
       Content-Length:
-      - '116'
+      - '117'
       Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Fri, 05 Oct 2012 02:03:10 GMT
+      - Tue, 23 Oct 2012 23:12:54 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-10-05T02:03:10Z","description":"NASA","id":66,"name":"test","updated_at":"2012-10-05T02:03:10Z"}'
+      string: ! '{"created_at":"2012-10-23T23:12:54Z","description":"NASA","id":178,"name":"test","updated_at":"2012-10-23T23:12:54Z"}'
     http_version: 
-  recorded_at: Fri, 05 Oct 2012 02:03:10 GMT
+  recorded_at: Tue, 23 Oct 2012 23:12:54 GMT
 recorded_with: VCR 2.2.4
