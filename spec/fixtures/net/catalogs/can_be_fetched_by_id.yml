@@ -27,22 +27,22 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5701629e5b1ffec00b3fd6bfe02c65ca
+      - 61cc0f7416519ab5f0da7c47349828ec
       X-Runtime:
-      - '0.004288'
+      - '0.009251'
       Content-Length:
       - '15'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Tue, 23 Oct 2012 23:12:54 GMT
+      - Tue, 13 Nov 2012 01:05:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"catalogs":[]}'
     http_version: 
-  recorded_at: Tue, 23 Oct 2012 23:12:54 GMT
+  recorded_at: Tue, 13 Nov 2012 01:05:17 GMT
 - request:
     method: get
     uri: http://localhost:3000/catalogs/1
@@ -66,24 +66,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"f825132bac6433aef275c37c3e9af9b0"'
+      - ! '"0da36acd969648d9b3df1864f09e4b87"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c4bb59e4985d656151ef39d478381662
+      - bd6805d18d5517650651156b14fa3062
       X-Runtime:
-      - '0.006722'
+      - '0.009476'
       Content-Length:
       - '133'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Tue, 23 Oct 2012 23:12:54 GMT
+      - Tue, 13 Nov 2012 01:05:17 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-10-23T22:09:53Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","updated_at":"2012-10-23T22:09:53Z"}'
+      string: ! '{"created_at":"2012-11-07T19:00:55Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","updated_at":"2012-11-07T19:00:55Z"}'
     http_version: 
-  recorded_at: Tue, 23 Oct 2012 23:12:54 GMT
+  recorded_at: Tue, 13 Nov 2012 01:05:17 GMT
 recorded_with: VCR 2.2.4

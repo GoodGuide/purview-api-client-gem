@@ -23,26 +23,26 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"f825132bac6433aef275c37c3e9af9b0"'
+      - ! '"0da36acd969648d9b3df1864f09e4b87"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d3bb13e3be28eb360c128e2f6d8a8752
+      - 530d649755738a855e0b928a21bb887e
       X-Runtime:
-      - '0.006469'
+      - '0.004768'
       Content-Length:
       - '133'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Tue, 23 Oct 2012 23:12:58 GMT
+      - Tue, 13 Nov 2012 01:05:21 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-10-23T22:09:53Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","updated_at":"2012-10-23T22:09:53Z"}'
+      string: ! '{"created_at":"2012-11-07T19:00:55Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","updated_at":"2012-11-07T19:00:55Z"}'
     http_version: 
-  recorded_at: Tue, 23 Oct 2012 23:12:58 GMT
+  recorded_at: Tue, 13 Nov 2012 01:05:21 GMT
 - request:
     method: post
     uri: http://localhost:3000/entities
@@ -62,32 +62,32 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/entities/156
+      - http://localhost:3000/entities/401
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"6bcc7dd03d743a4b7e44598378eaf4d2"'
+      - ! '"39c85f35ad11bdca1ea40e94d7fdae6d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 345d3e6f9e6429747ff00b26a448da8b
+      - 42275d53921cb9b45a55e400f0ccac85
       X-Runtime:
-      - '0.016028'
+      - '0.034278'
       Content-Length:
       - '114'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Tue, 23 Oct 2012 23:12:58 GMT
+      - Tue, 13 Nov 2012 01:05:21 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":1,"created_at":"2012-10-23T23:12:58Z","id":156,"updated_at":"2012-10-23T23:12:58Z","type":"Product"}'
+      string: ! '{"catalog_id":1,"created_at":"2012-11-13T01:05:21Z","id":401,"updated_at":"2012-11-13T01:05:21Z","type":"Product"}'
     http_version: 
-  recorded_at: Tue, 23 Oct 2012 23:12:58 GMT
+  recorded_at: Tue, 13 Nov 2012 01:05:21 GMT
 - request:
     method: post
     uri: http://localhost:3000/entities
@@ -107,32 +107,32 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/entities/157
+      - http://localhost:3000/entities/402
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"8f2e345f8dbeae17e08ac67a9d6f8346"'
+      - ! '"9cf4d1832eb2a981364ce9b07566c132"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f7125d019cc47d65554a42206541684a
+      - d9f9579a7d42b87517cb8d4ca81a8d9c
       X-Runtime:
-      - '0.013754'
+      - '0.036412'
       Content-Length:
       - '112'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Tue, 23 Oct 2012 23:12:58 GMT
+      - Tue, 13 Nov 2012 01:05:21 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":1,"created_at":"2012-10-23T23:12:58Z","id":157,"updated_at":"2012-10-23T23:12:58Z","type":"Brand"}'
+      string: ! '{"catalog_id":1,"created_at":"2012-11-13T01:05:21Z","id":402,"updated_at":"2012-11-13T01:05:21Z","type":"Brand"}'
     http_version: 
-  recorded_at: Tue, 23 Oct 2012 23:12:58 GMT
+  recorded_at: Tue, 13 Nov 2012 01:05:21 GMT
 - request:
     method: get
     uri: http://localhost:3000/entities?include%5B0%5D=attr_values&type=Product
@@ -156,24 +156,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"9f862edb0ea5dc8b0807d26bdbdc59b2"'
+      - ! '"29bcc6bc2ef7930d0d13b7823b28a99c"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e530ff93068a181e67c4d84da15d5a5e
+      - f75003aac647113c99befec489bc9ff0
       X-Runtime:
-      - '0.009235'
+      - '0.024980'
       Content-Length:
-      - '804'
+      - '1202'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Tue, 23 Oct 2012 23:12:58 GMT
+      - Tue, 13 Nov 2012 01:05:21 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"entities":[{"catalog_id":1,"created_at":"2012-10-23T22:21:15Z","id":98,"updated_at":"2012-10-23T22:21:15Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-10-23T22:21:15Z","id":99,"updated_at":"2012-10-23T22:21:15Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-10-23T22:21:15Z","id":100,"updated_at":"2012-10-23T22:21:15Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-10-23T23:12:58Z","id":154,"updated_at":"2012-10-23T23:12:58Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-10-23T23:12:58Z","id":155,"updated_at":"2012-10-23T23:12:58Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-10-23T23:12:58Z","id":156,"updated_at":"2012-10-23T23:12:58Z","attr_values":[],"type":"Product"}]}'
+      string: ! '{"entities":[{"catalog_id":1,"created_at":"2012-11-13T00:54:50Z","id":287,"updated_at":"2012-11-13T00:54:50Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T00:54:50Z","id":288,"updated_at":"2012-11-13T00:54:50Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T00:54:50Z","id":289,"updated_at":"2012-11-13T00:54:50Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T01:02:00Z","id":343,"updated_at":"2012-11-13T01:02:00Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T01:02:00Z","id":344,"updated_at":"2012-11-13T01:02:00Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T01:02:00Z","id":345,"updated_at":"2012-11-13T01:02:00Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T01:05:21Z","id":399,"updated_at":"2012-11-13T01:05:21Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T01:05:21Z","id":400,"updated_at":"2012-11-13T01:05:21Z","attr_values":[],"type":"Product"},{"catalog_id":1,"created_at":"2012-11-13T01:05:21Z","id":401,"updated_at":"2012-11-13T01:05:21Z","attr_values":[],"type":"Product"}]}'
     http_version: 
-  recorded_at: Tue, 23 Oct 2012 23:12:58 GMT
+  recorded_at: Tue, 13 Nov 2012 01:05:21 GMT
 recorded_with: VCR 2.2.4

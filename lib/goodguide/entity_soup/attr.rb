@@ -5,7 +5,7 @@ module GoodGuide::EntitySoup
     
     attributes :type, :name, :options, :entity_type, :catalog_id, :schema
     
-    default_view schema: 'true'
+    default_view include: ['schema']
     view :bare, inherits: nil, schema: nil
 
     def self.types
