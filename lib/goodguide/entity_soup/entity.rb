@@ -4,7 +4,7 @@ module GoodGuide::EntitySoup
   class Entity
     include Resource
 
-    attributes :catalog_id, :type, :created_at, :updated_at
+    attributes :catalog_id, :provider_id, :type, :created_at, :updated_at
     has_many :attr_values
 
     default_view include: 'attr_values'
