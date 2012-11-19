@@ -46,7 +46,7 @@ describe GoodGuide::EntitySoup do
         ensure_deleted Catalog, 'test'
         @catalog = Catalog.new(name: 'test')
         @catalog.save.should be_true
-        @entities = (1..10).collect {|i| Entity.new(catalog_id: @catalog.id, type: 'Product') }
+        @entities = (1..10).collect {|i| Entity.new(catalog_id: @catalog.id, provider_id: 1, type: 'Product') }
         @entity_ids = []
         @entities.each do |e|
           e.save.should be_true

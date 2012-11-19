@@ -322,7 +322,7 @@ describe GoodGuide::EntitySoup do
 
     it 'can be created' do
       vcr('entities/create') do
-        entity = Entity.new(type: 'Product', catalog_id: catalog.id )
+        entity = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
         entity.save.should be_true
         entity.id.should_not be_nil
 
@@ -335,7 +335,7 @@ describe GoodGuide::EntitySoup do
 
     it 'can be listed in a catalog' do
       vcr('entities/by_catalog') do
-        entity = Entity.new(type: 'Product', catalog_id: catalog.id )
+        entity = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
         entity.save.should be_true
         entity.id.should_not be_nil
         
@@ -347,8 +347,8 @@ describe GoodGuide::EntitySoup do
 
     it 'can be listed by type' do
       vcr('entities/by_type') do
-        product = Entity.new(type: 'Product', catalog_id: catalog.id )
-        brand = Entity.new(type: 'Brand', catalog_id: catalog.id )
+        product = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
+        brand = Entity.new(type: 'Brand', provider_id: 1, catalog_id: catalog.id )
         product.save.should be_true
         brand.save.should be_true
         
@@ -376,7 +376,7 @@ describe GoodGuide::EntitySoup do
         @attr = Attr.new(name: 'attr1', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
         @attr.save.should be_true
 
-        @entity = Entity.new(catalog_id: @catalog.id, type: 'Product')
+        @entity = Entity.new(catalog_id: @catalog.id, provider_id: 1, type: 'Product')
         @entity.save.should be_true
 
         x.run
@@ -384,14 +384,13 @@ describe GoodGuide::EntitySoup do
     end
 
     it 'can be created' do
-        value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id, value: 42)
+        value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, value: 42)
         value.save.should be_true
 
         found_value = AttrValue.find(value.id)
         found_value.should be_a AttrValue
         found_value.entity_id.should == @entity.id
         found_value.attr_id.should == @attr.id
-        found_value.provider_id.should == @provider.id
         found_value.value.should == 42
     end
 
@@ -401,14 +400,13 @@ describe GoodGuide::EntitySoup do
         attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'StringAttr', options: { default_value: "taoit" }, catalog_id: @catalog.id)
         attr2.save.should be_true
         
-        value = AttrValue.new(entity_id: @entity.id, attr_id: attr2.id, provider_id: @provider.id)
+        value = AttrValue.new(entity_id: @entity.id, attr_id: attr2.id)
         value.save.should be_true
 
         found_value = AttrValue.find(value.id)
         found_value.should be_a AttrValue
         found_value.entity_id.should == @entity.id
         found_value.attr_id.should == attr2.id
-        found_value.provider_id.should == @provider.id
         found_value.value.should == "taoit"
     end
 
@@ -418,14 +416,13 @@ describe GoodGuide::EntitySoup do
                          options: { list: true, allow_nil: true, default_value: nil })
         attr2.save.should be_true
         
-        value = AttrValue.new(entity_id: @entity.id, attr_id: attr2.id, provider_id: @provider.id)
+        value = AttrValue.new(entity_id: @entity.id, attr_id: attr2.id)
         value.save.should be_true
 
         found_value = AttrValue.find(value.id)
         found_value.should be_a AttrValue
         found_value.entity_id.should == @entity.id
         found_value.attr_id.should == attr2.id
-        found_value.provider_id.should == @provider.id
         found_value.value.should be_nil
 
         value.value = [42]
@@ -435,7 +432,7 @@ describe GoodGuide::EntitySoup do
     end
 
     it 'have an attribute and an entity' do
-      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id)
+      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id)
       value.save.should be_true
       found_value = AttrValue.find(value.id)
       found_value.should be_a AttrValue
@@ -452,7 +449,7 @@ describe GoodGuide::EntitySoup do
     end
      
     it 'can be fetched for an entity' do
-      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id)
+      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id)
       value.save.should be_true
       
       @entity = Entity.find(@entity.id)
@@ -463,7 +460,7 @@ describe GoodGuide::EntitySoup do
     end
 
     it 'are not fetched for an entity using a bare view' do
-      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id, provider_id: @provider.id)
+      value = AttrValue.new(entity_id: @entity.id, attr_id: @attr.id)
       value.save.should be_true
       
       @entity = Entity.find(@entity.id, view: :bare)
@@ -474,7 +471,7 @@ describe GoodGuide::EntitySoup do
 
     # Note: set means define or update existing value
     it 'of an entity can be created and updated singularly' do
-      @entity.update_attr_values(attr_id: @attr.id, provider_id: @provider.id, value: 1).should be_true
+      @entity.update_attr_values(attr_id: @attr.id, value: 1).should be_true
       @entity = Entity.find(@entity.id)
       attr_values = @entity.attr_values
       attr_values.length.should == 1
@@ -489,7 +486,7 @@ describe GoodGuide::EntitySoup do
     end
 
     it 'cannot be updated with a bogus value' do
-      @entity.update_attr_values(attr_id: @attr.id, provider_id: @provider.id, value: 1).should be_true
+      @entity.update_attr_values(attr_id: @attr.id, value: 1).should be_true
       @entity = Entity.find(@entity.id)
       attr_values = @entity.attr_values
       attr_values.length.should == 1
@@ -503,8 +500,8 @@ describe GoodGuide::EntitySoup do
     it 'of an entity can be created with an array' do
       attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
       attr2.save.should be_true
-      @entity.update_attr_values([{attr_id: @attr.id, provider_id: @provider.id, value: 1},
-                                  {attr_id: attr2.id, provider_id: @provider.id, value: 2}]).should be_true
+      @entity.update_attr_values([{attr_id: @attr.id, value: 1},
+                                  {attr_id: attr2.id, value: 2}]).should be_true
       @entity = Entity.find(@entity.id)
       attr_values = @entity.attr_values
       attr_values.length.should == 2
@@ -514,8 +511,8 @@ describe GoodGuide::EntitySoup do
     it 'of an entity are created transactionally' do
       attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
       attr2.save.should be_true
-      @entity.update_attr_values([{attr_id: @attr.id, provider_id: @provider.id, value: 1},
-                                  {attr_id: attr2.id, provider_id: @provider.id, value: "not a number"}]).should be_false
+      @entity.update_attr_values([{attr_id: @attr.id, value: 1},
+                                  {attr_id: attr2.id, value: "not a number"}]).should be_false
       @entity.errors.should be_a Hash
       @provider.attr_values.should be_empty
     end
@@ -523,8 +520,8 @@ describe GoodGuide::EntitySoup do
     it 'of an entity are updated transactionally' do
       attr2 = Attr.new(name: 'attr2', entity_type: 'Product', type: 'IntegerAttr', catalog_id: @catalog.id)
       attr2.save.should be_true
-      @entity.update_attr_values([{attr_id: @attr.id, provider_id: @provider.id, value: 1},
-                                  {attr_id: attr2.id, provider_id: @provider.id, value: 2}]).should be_true
+      @entity.update_attr_values([{attr_id: @attr.id, value: 1},
+                                  {attr_id: attr2.id, value: 2}]).should be_true
       @entity = Entity.find(@entity.id)
       attr_values = @entity.attr_values
       attr_values.length.should == 2
@@ -538,7 +535,7 @@ describe GoodGuide::EntitySoup do
 
     # Probably wont allow for now - just set them to nil?  Or have seperate delete_attr_values/delete_all_attr_values API
     it 'of an entity can be deleted' do
-      @entity.update_attr_values(attr_id: @attr.id, provider_id: @provider.id, value: 1).should be_true
+      @entity.update_attr_values(attr_id: @attr.id, value: 1).should be_true
       @entity = Entity.find(@entity.id)
       attr_values = @entity.attr_values
       attr_values.length.should == 1

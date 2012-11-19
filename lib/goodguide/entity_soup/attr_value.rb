@@ -3,7 +3,7 @@ module GoodGuide::EntitySoup
   class AttrValue
     include Resource
     
-    attributes :entity_id, :attr_id, :provider_id, :value, :name
+    attributes :entity_id, :attr_id, :value, :name
     
     def entity(params = {})
       Entity.find(entity_id, params)

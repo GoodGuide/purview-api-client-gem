@@ -27,20 +27,20 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 695334f89131e1b97c6a49c2b8b26931
+      - dfb3ba2003adc5267ea4fe5c2fba0a95
       X-Runtime:
-      - '0.005233'
+      - '0.005847'
       Content-Length:
       - '1469'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
       Date:
-      - Tue, 13 Nov 2012 01:05:17 GMT
+      - Mon, 19 Nov 2012 22:24:03 GMT
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"attr_types":[{"name":"BooleanAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"IdentityAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"DerivedAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"rule":"{}"}},{"name":"NumericAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"ReferenceAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"referenced_attr_id":null}},{"name":"FloatAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"IntegerAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"JSONAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"EntityAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"entity_type":null}},{"name":"StringAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"PercentageAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}}]}'
     http_version: 
-  recorded_at: Tue, 13 Nov 2012 01:05:17 GMT
+  recorded_at: Mon, 19 Nov 2012 22:24:03 GMT
 recorded_with: VCR 2.2.4
