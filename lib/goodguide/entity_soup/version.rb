@@ -1,7 +1,7 @@
 module GoodGuide
   module EntitySoup
     def self.version
-      '0.1'
+      '1.0'
     end
   end
 end

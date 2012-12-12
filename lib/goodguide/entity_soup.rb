@@ -33,7 +33,6 @@ require 'active_support/cache'
 
 require "goodguide/entity_soup/connection"
 require "goodguide/entity_soup/resource"
-require "goodguide/entity_soup/attr_value"
 require "goodguide/entity_soup/attr"
 require "goodguide/entity_soup/entity"
 require "goodguide/entity_soup/catalog"

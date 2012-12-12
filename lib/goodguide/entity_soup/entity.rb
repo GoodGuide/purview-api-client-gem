@@ -4,10 +4,8 @@ module GoodGuide::EntitySoup
   class Entity
     include Resource
 
-    attributes :catalog_id, :provider_id, :type, :created_at, :updated_at
-    has_many :attr_values
+    attributes :catalog_id, :provider_id, :type, :created_at, :updated_at, :attr_values
 
-    default_view include: 'attr_values'
     view :bare, inherits: nil, include: nil
 
     def self.types
@@ -16,10 +14,6 @@ module GoodGuide::EntitySoup
 
     def catalog(params = {})
       Catalog.find(self.catalog_id, params)
-    end
-
-    def attr_values!(params = {})
-      self.attr_values = AttrValue.find_all(params.merge!(entity_id: self.id))
     end
 
     def update_attr_values(params)
@@ -32,7 +26,7 @@ module GoodGuide::EntitySoup
         raise ArgumentError("params are not a hash or Array")
       end
 
-      e = Entity.new(id: self.id, attr_values_attributes: params)
+      e = Entity.new(id: self.id, attr_values: params)
       result = e.save
       @errors = e.errors
       result
