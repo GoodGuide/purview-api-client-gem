@@ -1,7 +1,7 @@
 module GoodGuide
   module EntitySoup
 
-    DEFAULT_URL = "http://entity-soup.goodguide.com"
+    DEFAULT_URL = "http://entity-soup.goodguide.com/v1"
 
     def self.url=(url)
       Connection.site = url
