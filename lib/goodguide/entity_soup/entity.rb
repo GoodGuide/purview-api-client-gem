@@ -32,5 +32,16 @@ module GoodGuide::EntitySoup
       result
     end
 
+    def method_missing(method, *args, &block)
+      titleized = method.to_s.titleize
+      if attr_values.has_key?(method)
+        attr_values[method]
+      elsif attr_values.has_key?(titleized)
+        attr_values[titleized]
+      else
+        super
+      end
+    end
+
   end
 end
