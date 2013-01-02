@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/attrs?include%5B0%5D=schema&name=test1
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?include%5B0%5D=schema&name=test1
     body:
       encoding: US-ASCII
       string: ''
@@ -16,36 +16,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"0b69ca846431e6acf66e53b2e7468f67"'
+      - ! '"93e6dc719ac8b1c4f73308df14e8c776"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1a6f63216c79a2d1a4e6f24d2fb7df1a
+      - 2f488ef3edaf1991b641aee84f323289
       X-Runtime:
-      - '0.005665'
-      Content-Length:
-      - '334'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.007046'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":523,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":620,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/attrs/523
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/620
     body:
       encoding: US-ASCII
       string: ''
@@ -57,30 +51,29 @@ http_interactions:
   response:
     status:
       code: 204
-      message: ! 'No Content '
+      message: No Content
     headers:
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Cache-Control:
       - no-cache
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTczNTA4MWU4YWRlMTJlMzQwMWQ0ZDdkYTc1ZTJjNjkzBjsAVA%3D%3D--03fbccacad0db624257f51d18b60208a39f947b7;
+        path=/; HttpOnly
       X-Request-Id:
-      - 7f7361a5edc630074bbcb21c790a051d
+      - e11dfae3f0041a726f8697cd749bb5c3
       X-Runtime:
-      - '0.009855'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.007728'
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?include%5B0%5D=schema&name=test2
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?include%5B0%5D=schema&name=test2
     body:
       encoding: US-ASCII
       string: ''
@@ -94,36 +87,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"7e7c8c1bd632563aafff183c32cfa31f"'
+      - ! '"a2050ffe3ac5f8211ea6f343932e71cd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ffd303cc29dc0e8dac59218fafe3d5fb
+      - 7e6d751b42b2ec4194a1bb324b80eabc
       X-Runtime:
-      - '0.011618'
-      Content-Length:
-      - '330'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.006034'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Brand","id":524,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"StringAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":621,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/attrs/524
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/621
     body:
       encoding: US-ASCII
       string: ''
@@ -135,30 +122,29 @@ http_interactions:
   response:
     status:
       code: 204
-      message: ! 'No Content '
+      message: No Content
     headers:
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Cache-Control:
       - no-cache
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTFjZWFjMDVhYTBjZDJlMTE5ODQ3ODNjMzUxOGIxMmViBjsAVA%3D%3D--8949a05d9eb2bf562c8143f6d7133538959040cb;
+        path=/; HttpOnly
       X-Request-Id:
-      - 686a0dca581580f8f61d2711f24a302d
+      - 678b8519d1a970c018d2d34fe2e1cec9
       X-Runtime:
-      - '0.018246'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.008376'
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/1
+    uri: http://entity-soup-test.goodguide.dev/v1/catalogs/1
     body:
       encoding: US-ASCII
       string: ''
@@ -172,36 +158,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"7150a6b861b3a8261e9e8cf1038b9f87"'
+      - ! '"059f71654520b4c73c70a143254880af"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 531e63213407cf12af5c5b3a5edce996
+      - e0c60a82d9f7af79cea9854164b013f7
       X-Runtime:
-      - '0.009220'
-      Content-Length:
-      - '133'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.004089'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-11-19T21:29:34Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","updated_at":"2012-11-19T21:29:34Z"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"created_at":"2012-12-21T21:03:16Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","options":{"image_src":null},"updated_at":"2012-12-21T21:03:16Z"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: post
-    uri: http://localhost:3000/attrs
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs
     body:
       encoding: US-ASCII
       string: name=test1&type=IntegerAttr&entity_type=Product&catalog_id=1
@@ -215,38 +195,35 @@ http_interactions:
   response:
     status:
       code: 201
-      message: ! 'Created '
+      message: Created
     headers:
       Location:
-      - http://localhost:3000/attrs/525
+      - http://entity-soup-test.goodguide.dev/v1/attrs/622
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"3d276a4bdeb99fef23d5f8444d2c6044"'
+      - ! '"4bd0640848d317f26dd2859bf0773b4a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTllOWRiYTllNjAwNTRjNDQzYzI2ZDFiN2FhYmRkN2JmBjsAVA%3D%3D--011e3a4b9929599e9648f038f992a3cdccc23ce7;
+        path=/; HttpOnly
       X-Request-Id:
-      - 331636d9f82507578c003e1d0f946309
+      - ae78dfb068ae9a4c1d78f6945ec7e57d
       X-Runtime:
-      - '0.028560'
-      Content-Length:
-      - '321'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.016126'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":1,"created_at":"2012-11-19T22:24:06Z","entity_type":"Product","id":525,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test1","required":false},"updated_at":"2012-11-19T22:24:06Z","type":"IntegerAttr"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":622,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: post
-    uri: http://localhost:3000/attrs
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs
     body:
       encoding: US-ASCII
       string: name=test2&type=StringAttr&entity_type=Brand&catalog_id=1
@@ -260,38 +237,35 @@ http_interactions:
   response:
     status:
       code: 201
-      message: ! 'Created '
+      message: Created
     headers:
       Location:
-      - http://localhost:3000/attrs/526
+      - http://entity-soup-test.goodguide.dev/v1/attrs/623
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"ec2c39c5c4f2ccef8fc09ac291e47d05"'
+      - ! '"d41ea38f610cc17c9478ab133c7eef12"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWEzM2I5OGRlYzVjYzBkYWRmMmFiZmRlN2UyZWU4NmY1BjsAVA%3D%3D--34ff4a6a74cc8b176a9a912b1d13c9805d881471;
+        path=/; HttpOnly
       X-Request-Id:
-      - e477d8187734004ded6b532507e6296e
+      - 4df92559dd57ded7398c12981758df03
       X-Runtime:
-      - '0.024504'
-      Content-Length:
-      - '318'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.011672'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":1,"created_at":"2012-11-19T22:24:06Z","entity_type":"Brand","id":526,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:06Z","type":"StringAttr"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":623,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?catalog_id=1&include%5B0%5D=schema
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?catalog_id=1&include%5B0%5D=schema
     body:
       encoding: US-ASCII
       string: ''
@@ -305,36 +279,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"49eefaa877b045e75ae56ed4844cc571"'
+      - ! '"c60df799f63511980cdbe8396ec1b320"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a097798ad08475dcf989ba97d81dc159
+      - c46ec0b751879852b66715d1bf7b4169
       X-Runtime:
-      - '0.018935'
-      Content-Length:
-      - '2571'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.059811'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Product","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Ingredient","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Brand","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Company","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Category","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":522,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:06Z","entity_type":"Product","id":525,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2012-11-19T22:24:06Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:06Z","entity_type":"Brand","id":526,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:06Z","type":"StringAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Brand","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Category","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Company","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Ingredient","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Product","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":619,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":622,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":623,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?catalog_id=1&include%5B0%5D=schema&type=IntegerAttr
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?catalog_id=1&include%5B0%5D=schema&type=IntegerAttr
     body:
       encoding: US-ASCII
       string: ''
@@ -348,36 +316,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"6e11e121cd001a6a41ebbeb1451feac6"'
+      - ! '"981b42bdb9cdbf3a747ef43c4eb4e031"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - caa19b309efd64c0e8cf645a36f7823c
+      - cca805cf312b37a8044b551d91b956e8
       X-Runtime:
-      - '0.013764'
-      Content-Length:
-      - '655'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.005375'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":522,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:06Z","entity_type":"Product","id":525,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2012-11-19T22:24:06Z","type":"IntegerAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":619,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":622,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?catalog_id=1&entity_type=Brand&include%5B0%5D=schema
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?catalog_id=1&entity_type=Brand&include%5B0%5D=schema
     body:
       encoding: US-ASCII
       string: ''
@@ -391,31 +353,25 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"2518d4e4d7f9c7f9c42c365d2aff57e1"'
+      - ! '"b3bf6ee1f2eb39bb7add66079e8cf158"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e64c96a2188437474852b81784ccce35
+      - 61bf7e4212ffb5cc9ecbadd7c51dd6a6
       X-Runtime:
-      - '0.012281'
-      Content-Length:
-      - '647'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.004802'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Brand","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:06Z","entity_type":"Brand","id":526,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:06Z","type":"StringAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Brand","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":623,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 recorded_with: VCR 2.2.4

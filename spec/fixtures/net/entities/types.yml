@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/entities/types
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/types
     body:
       encoding: US-ASCII
       string: ''
@@ -16,31 +16,25 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"a5429af1a0a4f6b6ec9a48d15fbb351a"'
+      - ! '"caf7e0d6b1356660e821fe276ef224cb"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9d51687091340bfd45f1ec8659bd8a26
+      - d0d66080e04baed4b19c74d0c76907b4
       X-Runtime:
-      - '0.006847'
-      Content-Length:
-      - '115'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:03 GMT
+      - '0.002457'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"entity_types":[{"name":"Product"},{"name":"Ingredient"},{"name":"Brand"},{"name":"Company"},{"name":"Category"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:03 GMT
+      string: ! '{"entity_types":[{"name":"Brand"},{"name":"Category"},{"name":"Company"},{"name":"Ingredient"},{"name":"Product"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
 recorded_with: VCR 2.2.4

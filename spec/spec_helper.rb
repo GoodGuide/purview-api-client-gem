@@ -38,7 +38,7 @@ module SpecHelpers
   end
 
   def random_string
-    Digest.bubblebabble(Digest::SHA1::hexdigest("random string")[8..12]) 
+    Digest.bubblebabble(Digest::SHA1::hexdigest("random string")[8..12])
   end
 
   def ensure_deleted(klass, name)
@@ -62,5 +62,5 @@ RSpec.configure do |config|
 
 end
 
-GoodGuide::EntitySoup.url="http://localhost:3000"
+GoodGuide::EntitySoup.url="http://entity-soup-test.goodguide.dev/v1"
 

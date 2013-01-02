@@ -39,7 +39,7 @@ module GoodGuide::EntitySoup
           parse ? JSON.load(res.body) : res.body
         else
           # Note - no way to return error info here which is perhaps where we should be
-          # throwing exceptions from connection class but that is a pretty substantial 
+          # throwing exceptions from connection class but that is a pretty substantial
           # refactor.
           nil
         end
@@ -87,20 +87,6 @@ module GoodGuide::EntitySoup
       nil
     end
 
-    def get_json(opts={})
-      opts = opts.dup
-      cacher = opts.delete(:cacher)
-      break_cache = opts.delete(:break)
-
-      query = opts.to_query
-      key = "#{path}?#{query}"
-
-      cache_and_benchmark(key, cacher, break_cache) do
-        res = http.get("#{rel_path}", opts)
-        JSON.load(res.body)
-      end
-    end
-
     def key(id, opts)
       "#{path}/#{id}?#{query(opts)}"
     end
@@ -110,11 +96,26 @@ module GoodGuide::EntitySoup
     end
 
     def get_all(elements, opts={})
-      hash = get_json(opts).dup
+      opts = opts.dup
+      cacher = opts.delete(:cacher)
+      break_cache = opts.delete(:break)
+      format = opts.fetch(:format, 'json')
 
-      # use ResponseList to wrap the other keys
-      ResponseList.new(hash.delete(elements) || []).tap do |rl|
-        rl.stats = hash
+      query = opts.to_query
+      key = "#{path}?#{query}"
+
+      result = cache_and_benchmark(key, cacher, break_cache) do
+        http.get("#{rel_path}.#{format}", opts)
+      end
+
+      if format != 'json'
+        result
+      else
+        hash = JSON.load(result.body)
+        # use ResponseList to wrap the other keys
+        ResponseList.new(hash.delete(elements) || []).tap do |rl|
+          rl.stats = hash
+        end
       end
     end
 

@@ -43,7 +43,7 @@ module GoodGuide::EntitySoup::Resource
         @attributes = result.with_indifferent_access
         true
       else
-        @errors = { 'base' => 'server error' } 
+        @errors = { 'base' => 'server error' }
         false
       end
     else
@@ -80,7 +80,7 @@ module GoodGuide::EntitySoup::Resource
   def errors
     @errors
   end
-    
+
   def as_json(opts={})
     # Pull JSON from relations directly, because they may have been
     # modified/inflated
@@ -132,8 +132,16 @@ module GoodGuide::EntitySoup::Resource
     end
 
     def find_all(opts={})
+      get(opts).map! { |r| new(r) }
+    end
+
+    def get(opts={})
       params = view_params_for(opts)
-      connection.get_all(resource_name.pluralize, params).map! { |r| new(r) }
+      if params[:format] and params[:format] != 'json'
+        connection.get_all("#{resource_name.pluralize}.#{params[:format]}", params.merge(parse: false))
+      else
+        connection.get_all(resource_name.pluralize, params)
+      end
     end
 
     def inflate_all!(records, opts={})
@@ -170,11 +178,19 @@ module GoodGuide::EntitySoup::Resource
       view = opts.fetch(:view, :default)
       opts.delete(:view)
 
-      if view
+      params = if view
         merge_params(views[view], opts)
       else
         opts
       end
+
+      if params[:exclude] && params[:include]
+        params[:exclude] = params[:exclude].split(',') if params[:exclude].is_a? String
+        params[:include] = params[:include].split(',') if params[:include].is_a? String
+        params[:include] -= params[:exclude]
+      end
+
+      params
     end
 
     def deep_copy(object)

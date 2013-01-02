@@ -15,9 +15,9 @@ describe GoodGuide::EntitySoup do
     attr_types.first.name.should_not be_nil
     attr_types.first.options.keys.should include 'allow_nil'
   end
-  
+
   it 'gets list of entity types' do
-    entity_types = vcr('entities/types') { Entity.types }
+    entity_types = vcr('entities/types') { GoodGuide::EntitySoup::Entity.types }
     entity_types.should be_a Array
     entity_types.collect(&:name).should include 'Product'
   end
@@ -31,7 +31,7 @@ describe GoodGuide::EntitySoup do
         ensure_deleted Catalog, 'test'
         #@catalog = Catalog.new(name: 'test')
         #@catalog.save.should be_true
-        
+
         x.run
       end
     end
@@ -41,7 +41,7 @@ describe GoodGuide::EntitySoup do
       catalogs = Catalog.find_all
       catalogs.should be_a Array
       catalogs.each { |c| c.should be_a Catalog }
-      catalog = catalogs.find {|c| c.id == 1 } 
+      catalog = catalogs.find {|c| c.id == 1 }
       catalog.name.should_not be_nil
       catalog.description.should_not be_nil
     end
@@ -51,7 +51,7 @@ describe GoodGuide::EntitySoup do
       catalog.should be_a Catalog
       catalog.id.should == 1
     end
-    
+
     it 'has a name and description' do
       catalog = Catalog.find(1)
       catalog.description.should_not be_nil
@@ -208,9 +208,9 @@ describe GoodGuide::EntitySoup do
     it 'can be created and fetched by id' do
       vcr('attrs/create') do
         ensure_deleted(Attr, 'test')
-        attr = Attr.new(name: 'test', 
-                        type: 'IntegerAttr', 
-                        entity_type: 'Product', 
+        attr = Attr.new(name: 'test',
+                        type: 'IntegerAttr',
+                        entity_type: 'Product',
                         catalog_id: catalog.id )
         attr.save.should be_true
         attr.id.should_not be_nil
@@ -227,7 +227,7 @@ describe GoodGuide::EntitySoup do
         attr2.schema.should == { "type" => "integer", "title" => "test", "required" => false }
       end
     end
-    
+
     it 'can listed all, or by catalog, name, type and entity type' do
       vcr('attrs/find_all') do
         ensure_deleted(Attr, 'test1')
@@ -268,7 +268,7 @@ describe GoodGuide::EntitySoup do
         attrs = [Attr.new(name: 'test1', type: 'IntegerAttr', entity_type: 'Product', catalog_id: catalog.id),
                  Attr.new(name: 'test2', type: 'StringAttr', entity_type: 'Brand', catalog_id: catalog.id)]
         attrs.each {|a| a.save.should be_true }
-        
+
         found_attrs = catalog.attrs
         found_attrs.should be_a Array
         found_attrs.collect(&:id).should include(*attrs.collect(&:id))
@@ -311,7 +311,7 @@ describe GoodGuide::EntitySoup do
         Attr.find(attr.id, break: true).should be_nil
       end
     end
-    
+
   end
 
 
@@ -322,12 +322,12 @@ describe GoodGuide::EntitySoup do
 
     it 'can be created' do
       vcr('entities/create') do
-        entity = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
+        entity = GoodGuide::EntitySoup::Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
         entity.save.should be_true
         entity.id.should_not be_nil
 
-        entity2 = Entity.find(entity.id, break: true)
-        entity2.should be_a Entity
+        entity2 = GoodGuide::EntitySoup::Entity.find(entity.id, break: true)
+        entity2.should be_a GoodGuide::EntitySoup::Entity
         entity.catalog_id.should == entity.catalog_id
         entity2.type.should == 'Product'
       end
@@ -338,10 +338,21 @@ describe GoodGuide::EntitySoup do
         entity = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
         entity.save.should be_true
         entity.id.should_not be_nil
-        
+
         entities = catalog.entities
         entities.should be_a Array
         entities.collect(&:id).should include(entity.id)
+      end
+    end
+
+    it 'can be accessed as an excel spreadsheet' do
+      vcr('entities/as_excel') do
+        entity = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
+        entity.save.should be_true
+        entity.id.should_not be_nil
+
+        excel = catalog.as_excel
+        excel.should be_a String
       end
     end
 
@@ -351,7 +362,7 @@ describe GoodGuide::EntitySoup do
         brand = Entity.new(type: 'Brand', provider_id: 1, catalog_id: catalog.id )
         product.save.should be_true
         brand.save.should be_true
-        
+
         entities = Entity.find_all(type: 'Product')
         entities.should be_a Array
         entities.collect(&:id).should include(product.id)

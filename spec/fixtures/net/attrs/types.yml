@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/attrs/types
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/types
     body:
       encoding: US-ASCII
       string: ''
@@ -16,31 +16,25 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"49eeb34c52843027e1d16a1b76d32d66"'
+      - ! '"78998be29aa33124222170d1f6009ed3"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - dfb3ba2003adc5267ea4fe5c2fba0a95
+      - a074e24148ba22456a1b11bf838c21c3
       X-Runtime:
-      - '0.005847'
-      Content-Length:
-      - '1469'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:03 GMT
+      - '0.004192'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attr_types":[{"name":"BooleanAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"IdentityAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"DerivedAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"rule":"{}"}},{"name":"NumericAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"ReferenceAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"referenced_attr_id":null}},{"name":"FloatAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"IntegerAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"JSONAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"EntityAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"entity_type":null}},{"name":"StringAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}},{"name":"PercentageAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false}}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:03 GMT
+      string: ! '{"attr_types":[{"name":"BooleanAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}},{"name":"DerivedAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null,"rule":"{}"}},{"name":"EntityAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null,"entity_type":null}},{"name":"FloatAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}},{"name":"IdentityAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}},{"name":"IntegerAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}},{"name":"JSONAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}},{"name":"NumericAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}},{"name":"PercentageAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}},{"name":"StringAttr","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null}}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
 recorded_with: VCR 2.2.4

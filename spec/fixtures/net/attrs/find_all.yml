@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/attrs?include%5B0%5D=schema&name=test1
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?include%5B0%5D=schema&name=test1
     body:
       encoding: US-ASCII
       string: ''
@@ -16,36 +16,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
       - ! '"308935acf8b376bbce7e14cd1371b33e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e46ad6ea729db6eda1424bd5cf896dd8
+      - 35ef4afbe7c80656a9b4478058ff48e2
       X-Runtime:
-      - '0.005278'
-      Content-Length:
-      - '12'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.004050'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
       string: ! '{"attrs":[]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?include%5B0%5D=schema&name=test2
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?include%5B0%5D=schema&name=test2
     body:
       encoding: US-ASCII
       string: ''
@@ -59,36 +53,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"60ea4115202afb4a4368fe997cba80d9"'
+      - ! '"4d0bde5651beee858623bd19b3520eb7"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ef12ee93a9e8033c3e98f474836b0b48
+      - ab50d3e40b61386d877aae8840d98c67
       X-Runtime:
-      - '0.007765'
-      Content-Length:
-      - '340'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.005074'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T22:20:26Z","entity_type":"Product","id":493,"name":"test2","options":{"list":"false","allow_nil":"true","default_value":null,"sort":null,"position":null,"hide":"false"},"schema":{"type":"integer","title":"test2","required":false},"updated_at":"2012-11-19T22:20:26Z","type":"IntegerAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2013-01-02T22:26:28Z","entity_type":"Product","id":562,"name":"test2","options":{"list":"false","allow_nil":"true","default_value":null,"sort":null,"position":null,"hide":"false","title":null},"schema":{"type":"integer","title":"test2","required":false},"updated_at":"2013-01-02T22:26:28Z","type":"IntegerAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/attrs/493
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/562
     body:
       encoding: US-ASCII
       string: ''
@@ -100,30 +88,29 @@ http_interactions:
   response:
     status:
       code: 204
-      message: ! 'No Content '
+      message: No Content
     headers:
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Cache-Control:
       - no-cache
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWViYjE5ZWU0ZWZkM2E2MzQwNDBiNWIxOWQzNWI2ZDdlBjsAVA%3D%3D--93000c2f62691117525ea6899204770b9fbfdbf2;
+        path=/; HttpOnly
       X-Request-Id:
-      - 7741f87bc2ee158bffcc6f3e20d9d089
+      - 6cf17859cf7f9f9a0a563da1636f28ff
       X-Runtime:
-      - '0.008317'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.005965'
       Connection:
       - close
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/1
+    uri: http://entity-soup-test.goodguide.dev/v1/catalogs/1
     body:
       encoding: US-ASCII
       string: ''
@@ -137,36 +124,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"7150a6b861b3a8261e9e8cf1038b9f87"'
+      - ! '"059f71654520b4c73c70a143254880af"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 05c781049be6f377d52d6defa29c43b4
+      - 5682f2cc83c8d274c6d5954b6a17c847
       X-Runtime:
-      - '0.010487'
-      Content-Length:
-      - '133'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.003600'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-11-19T21:29:34Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","updated_at":"2012-11-19T21:29:34Z"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+      string: ! '{"created_at":"2012-12-21T21:03:16Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","options":{"image_src":null},"updated_at":"2012-12-21T21:03:16Z"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: post
-    uri: http://localhost:3000/attrs
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs
     body:
       encoding: US-ASCII
       string: name=test1&type=IntegerAttr&entity_type=Product&catalog_id=1
@@ -180,38 +161,35 @@ http_interactions:
   response:
     status:
       code: 201
-      message: ! 'Created '
+      message: Created
     headers:
       Location:
-      - http://localhost:3000/attrs/523
+      - http://entity-soup-test.goodguide.dev/v1/attrs/620
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"d5238d15fc5b2a101d40eef22baf8aa7"'
+      - ! '"ac473510b839cb89ef585ff6eea73120"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWNjMDI0MTMyYjMyZDc0ZWU5NWQxYzVkMzRkYjZkNzFkBjsAVA%3D%3D--1171cc671e0ac9699dbcb26f34845d161c3cd515;
+        path=/; HttpOnly
       X-Request-Id:
-      - 7e1a4c1a7f2f9e545453b57a6913bc46
+      - 1b6207e01999606c553750661c07d4c9
       X-Runtime:
-      - '0.029218'
-      Content-Length:
-      - '321'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.010197'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":523,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test1","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+      string: ! '{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":620,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: post
-    uri: http://localhost:3000/attrs
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs
     body:
       encoding: US-ASCII
       string: name=test2&type=StringAttr&entity_type=Brand&catalog_id=1
@@ -225,38 +203,35 @@ http_interactions:
   response:
     status:
       code: 201
-      message: ! 'Created '
+      message: Created
     headers:
       Location:
-      - http://localhost:3000/attrs/524
+      - http://entity-soup-test.goodguide.dev/v1/attrs/621
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"e54422d4224662ca1a339230ccf196c2"'
+      - ! '"01d54e830cc6b358f05397702e11de1f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWZmMzNlYmE4YjczODc5YTczNGFhMDE1MjY3MjI5ODI5BjsAVA%3D%3D--d80c72c101e4aec82cd47b6e5755eda5115cf391;
+        path=/; HttpOnly
       X-Request-Id:
-      - ce884cd7e1514933c7cd73d558416bd6
+      - 582be451248e30c5a87a6fd873d9b85c
       X-Runtime:
-      - '0.020493'
-      Content-Length:
-      - '318'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.011125'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Brand","id":524,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"StringAttr"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+      string: ! '{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":621,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?include%5B0%5D=schema
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?include%5B0%5D=schema
     body:
       encoding: US-ASCII
       string: ''
@@ -270,36 +245,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"d9d3e17c5173611dae8f832b10e6459e"'
+      - ! '"6835000e0d05dad9cb35263326d0a041"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2cd91c6ebb290c04111c0a254d5039f2
+      - 95d769bd782fc608b1b3ead9acb8e948
       X-Runtime:
-      - '0.018663'
-      Content-Length:
-      - '2571'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.012295'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Product","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Ingredient","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Brand","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Company","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Category","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":522,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":523,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Brand","id":524,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"StringAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Brand","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Category","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Company","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Ingredient","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Product","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Brand","id":604,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Category","id":605,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Company","id":606,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Ingredient","id":607,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":608,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Brand","id":614,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Category","id":615,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Company","id":616,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Ingredient","id":617,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":618,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":619,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":620,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":621,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?entity_type=Product&include%5B0%5D=schema
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?entity_type=Product&include%5B0%5D=schema
     body:
       encoding: US-ASCII
       string: ''
@@ -313,36 +282,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"7838c5584368f1d40a91a593280a3047"'
+      - ! '"0b124b14bc3063d77634ffe271bd5eda"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 445152fce7d55be6824785d8e65ea440
+      - 8d141b707e758ce606692959fb924755
       X-Runtime:
-      - '0.008988'
-      Content-Length:
-      - '974'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.006451'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Product","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":522,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":523,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Product","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":608,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":618,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":619,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":620,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?include%5B0%5D=schema&type=StringAttr
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?include%5B0%5D=schema&type=StringAttr
     body:
       encoding: US-ASCII
       string: ''
@@ -356,36 +319,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"7e7c8c1bd632563aafff183c32cfa31f"'
+      - ! '"206633552c95e50290e79b9b27a7ebc5"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1fa967466bad38ac7131a6bb56f41300
+      - 530a1d74d7f7fa7f1d8271725d1cac0e
       X-Runtime:
-      - '0.011223'
-      Content-Length:
-      - '330'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:05 GMT
+      - '0.010501'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Brand","id":524,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"StringAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:05 GMT
+      string: ! '{"attrs":[{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Brand","id":604,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Category","id":605,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Company","id":606,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Ingredient","id":607,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":608,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Brand","id":614,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Category","id":615,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Company","id":616,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Ingredient","id":617,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":618,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":621,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?catalog_id=1&include%5B0%5D=schema
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?catalog_id=1&include%5B0%5D=schema
     body:
       encoding: US-ASCII
       string: ''
@@ -399,36 +356,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"d9d3e17c5173611dae8f832b10e6459e"'
+      - ! '"82f6aa2c589a9875e65d9a98290c2300"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ddb1fd0b878c4627e3123b7187c2107b
+      - 4de75b77b9c3efcae26942e4b4f3a292
       X-Runtime:
-      - '0.016614'
-      Content-Length:
-      - '2571'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.008499'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Product","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Ingredient","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Brand","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Company","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Category","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":522,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":523,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Brand","id":524,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"StringAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Brand","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Category","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Company","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Ingredient","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Product","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":619,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":620,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Brand","id":621,"name":"test2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"test2","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"StringAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?catalog_id=0&include%5B0%5D=schema
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?catalog_id=0&include%5B0%5D=schema
     body:
       encoding: US-ASCII
       string: ''
@@ -442,36 +393,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
       - ! '"308935acf8b376bbce7e14cd1371b33e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7bf57e63b19f321fd088f8c7fcf0273a
+      - 6c37002cfb5b6177034789d253d61012
       X-Runtime:
-      - '0.008730'
-      Content-Length:
-      - '12'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.004049'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
       string: ! '{"attrs":[]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?catalog_id=1&include%5B0%5D=schema&name=test1
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?catalog_id=1&include%5B0%5D=schema&name=test1
     body:
       encoding: US-ASCII
       string: ''
@@ -485,36 +430,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"0b69ca846431e6acf66e53b2e7468f67"'
+      - ! '"93e6dc719ac8b1c4f73308df14e8c776"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a4d0bf28ff04efef5d0c7dfd3b028000
+      - f1bb4e400478cbab5471231735dbde73
       X-Runtime:
-      - '0.012313'
-      Content-Length:
-      - '334'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.004165'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":523,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":620,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test1","required":false},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 - request:
     method: get
-    uri: http://localhost:3000/attrs?entity_type=Product&exclude=schema&include%5B0%5D=schema
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs.json?entity_type=Product&exclude%5B0%5D=schema
     body:
       encoding: US-ASCII
       string: ''
@@ -528,31 +467,25 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"33dbe8e5cb6cd8a0fafded568cba24ff"'
+      - ! '"794b010b44ff7c90238fd2b3323fc4b5"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f68a91f2c6485e4e33ea599de630b89c
+      - 5416305327dc5affd80db186064bd8ca
       X-Runtime:
-      - '0.015026'
-      Content-Length:
-      - '795'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:06 GMT
+      - '0.005198'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-11-19T21:29:34Z","entity_type":"Product","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false},"updated_at":"2012-11-19T21:29:34Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":522,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2012-11-19T22:24:05Z","entity_type":"Product","id":523,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false},"updated_at":"2012-11-19T22:24:05Z","type":"IntegerAttr"}]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:06 GMT
+      string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Product","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":89,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":608,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":91,"created_at":"2013-01-02T22:29:07Z","entity_type":"Product","id":618,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"updated_at":"2013-01-02T22:29:07Z","type":"StringAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":619,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:29:08Z","entity_type":"Product","id":620,"name":"test1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"updated_at":"2013-01-02T22:29:08Z","type":"IntegerAttr"}]}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:08 GMT
 recorded_with: VCR 2.2.4

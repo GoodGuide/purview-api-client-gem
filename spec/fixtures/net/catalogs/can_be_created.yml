@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/catalogs?name=test
+    uri: http://entity-soup-test.goodguide.dev/v1/catalogs.json?name=test
     body:
       encoding: US-ASCII
       string: ''
@@ -16,36 +16,30 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
       - ! '"c71c80842aa45595550864feda0df031"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 85e7bf0eeaf5d65a4ed4f3f706ce9702
+      - 11687db89aced4c7419d5a5d2b9d303b
       X-Runtime:
-      - '0.007332'
-      Content-Length:
-      - '15'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:03 GMT
+      - '0.003322'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
       string: ! '{"catalogs":[]}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:03 GMT
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
 - request:
     method: post
-    uri: http://localhost:3000/catalogs
+    uri: http://entity-soup-test.goodguide.dev/v1/catalogs
     body:
       encoding: US-ASCII
       string: name=test&description=NASA
@@ -59,38 +53,35 @@ http_interactions:
   response:
     status:
       code: 201
-      message: ! 'Created '
+      message: Created
     headers:
       Location:
-      - http://localhost:3000/catalogs/570
+      - http://entity-soup-test.goodguide.dev/v1/catalogs/88
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"df5df626c8534759a1f1d8805ad27972"'
+      - ! '"eb6ccd830ac110a7bb8bcad487b6fc85"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTFhYjRhMGRkNzVlM2MzZTg2OGQ4NTExMjcwZjE5YTY4BjsAVA%3D%3D--281067a86a2dcd0b87a0b66f5a7b972eaf2f59ac;
+        path=/; HttpOnly
       X-Request-Id:
-      - 67fa10be9798f1917ff71566c5ad8469
+      - 5cce2453f4c32a2c3cdfd5ce8db015f9
       X-Runtime:
-      - '0.019448'
-      Content-Length:
-      - '117'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:03 GMT
+      - '0.105557'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-11-19T22:24:03Z","description":"NASA","id":570,"name":"test","updated_at":"2012-11-19T22:24:03Z"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:03 GMT
+      string: ! '{"created_at":"2013-01-02T22:29:06Z","description":"NASA","id":88,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:06Z"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
 - request:
     method: get
-    uri: http://localhost:3000/catalogs/570
+    uri: http://entity-soup-test.goodguide.dev/v1/catalogs/88
     body:
       encoding: US-ASCII
       string: ''
@@ -104,31 +95,25 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - IE=Edge
       Etag:
-      - ! '"df5df626c8534759a1f1d8805ad27972"'
+      - ! '"eb6ccd830ac110a7bb8bcad487b6fc85"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b1924d74a8ae7054f87309c847a3e6a5
+      - 4e94bec95074aa74b1ce3e694f4dce00
       X-Runtime:
-      - '0.009704'
-      Content-Length:
-      - '117'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-10-12)
-      Date:
-      - Mon, 19 Nov 2012 22:24:03 GMT
+      - '0.003948'
       Connection:
-      - Keep-Alive
+      - close
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2012-11-19T22:24:03Z","description":"NASA","id":570,"name":"test","updated_at":"2012-11-19T22:24:03Z"}'
-    http_version: 
-  recorded_at: Mon, 19 Nov 2012 22:24:03 GMT
+      string: ! '{"created_at":"2013-01-02T22:29:06Z","description":"NASA","id":88,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:06Z"}'
+    http_version: !!null 
+  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
 recorded_with: VCR 2.2.4

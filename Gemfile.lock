@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    goodguide-entity_soup (0.1)
+    goodguide-entity_soup (1.0)
       faraday
       hashie
       workqueue

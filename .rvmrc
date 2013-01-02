@@ -1,2 +1,2 @@
 
-rvm use --create 1.9.3@goodguide-entity-soup
+rvm use --create 1.9.2@goodguide-entity-soup
