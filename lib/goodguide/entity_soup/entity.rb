@@ -16,6 +16,10 @@ module GoodGuide::EntitySoup
       Catalog.find(self.catalog_id, params)
     end
 
+    def provider(params = {})
+      Provider.find(self.provider_id, params)
+    end
+
     def update_attr_values(params)
       case params
       when Hash
