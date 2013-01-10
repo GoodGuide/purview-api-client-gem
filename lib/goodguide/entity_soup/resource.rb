@@ -5,11 +5,16 @@
 #
 # Unlike an Entity, a Resource is not necessarily rated.
 
+require 'active_model/naming'
+require 'active_model/errors'
+
 module GoodGuide::EntitySoup::Resource
   extend ActiveSupport::Concern
 
   included do
     extend ClassMethods
+    extend ActiveModel::Naming
+    attr_reader :errors
     attr_reader :attributes
     class_attribute :connection, :views
     self.views = {}
@@ -18,6 +23,7 @@ module GoodGuide::EntitySoup::Resource
   end
 
   def initialize(o = {})
+    @errors = ActiveModel::Errors.new(self)
     case
     when Fixnum === o
       @attributes = { id: o }
@@ -34,30 +40,29 @@ module GoodGuide::EntitySoup::Resource
   end
 
   def save
-    if id.nil?
-      result = connection.post(attributes)
-      if result.is_a?(Hash) and result['error']
-        @errors = result['error']
-        false
-      elsif result
-        @attributes = result.with_indifferent_access
-        true
-      else
-        @errors = { 'base' => 'server error' }
-        false
-      end
+    result = if id.nil?
+      connection.post(attributes)
     else
-      result = connection.put(id, attributes)
-      if result.is_a?(Hash) and result['error']
-        @errors = result['error'].with_indifferent_access
-        false
-      elsif result
-        true
-      else
-        @errors = { 'base' => 'server error' }
-        false
-      end
+      connection.put(id, attributes)
     end
+
+    errors.clear
+
+    unless result
+      errors.set(:base, ['server error'])
+      return false
+    end
+
+    if result.is_a?(Hash) and result['error']
+      result['error'].each {|field, messages| errors.set(field.to_sym, messages)}
+      return false
+    end
+
+    if id.nil?
+      @attributes = result.with_indifferent_access
+    end
+
+    return true
   end
 
   def destroy
@@ -75,10 +80,6 @@ module GoodGuide::EntitySoup::Resource
 
   def id
     @attributes.fetch(:id, nil)
-  end
-
-  def errors
-    @errors
   end
 
   def as_json(opts={})

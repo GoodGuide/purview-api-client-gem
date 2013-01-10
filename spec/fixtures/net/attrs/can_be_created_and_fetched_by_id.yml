@@ -977,4 +977,616 @@ http_interactions:
       string: ! '{"attrs":[{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Brand","id":1,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Category","id":2,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Company","id":3,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Ingredient","id":4,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":1,"created_at":"2012-12-21T21:03:16Z","entity_type":"Product","id":5,"name":"name","options":{"list":false,"allow_nil":false,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"string","title":"name","required":true},"updated_at":"2012-12-21T21:03:16Z","type":"IdentityAttr"},{"catalog_id":80,"created_at":"2013-01-02T22:26:27Z","entity_type":"Brand","id":542,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:26:27Z","type":"StringAttr"},{"catalog_id":80,"created_at":"2013-01-02T22:26:27Z","entity_type":"Category","id":543,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:26:27Z","type":"StringAttr"},{"catalog_id":80,"created_at":"2013-01-02T22:26:27Z","entity_type":"Company","id":544,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:26:27Z","type":"StringAttr"},{"catalog_id":80,"created_at":"2013-01-02T22:26:27Z","entity_type":"Ingredient","id":545,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:26:27Z","type":"StringAttr"},{"catalog_id":80,"created_at":"2013-01-02T22:26:27Z","entity_type":"Product","id":546,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:26:27Z","type":"StringAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:26:28Z","entity_type":"Product","id":557,"name":"test","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"test","required":false},"updated_at":"2013-01-02T22:26:28Z","type":"IntegerAttr"},{"catalog_id":1,"created_at":"2013-01-02T22:26:28Z","entity_type":"Product","id":562,"name":"test2","options":{"list":"false","allow_nil":"true","default_value":null,"sort":null,"position":null,"hide":"false","title":null},"schema":{"type":"integer","title":"test2","required":false},"updated_at":"2013-01-02T22:26:28Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:03Z","entity_type":"Brand","id":564,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:03Z","type":"StringAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:03Z","entity_type":"Category","id":565,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:03Z","type":"StringAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Company","id":566,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"StringAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Ingredient","id":567,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"StringAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":568,"name":"name","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":1,"hide":false,"title":"Name"},"schema":{"type":"string","title":"name","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"StringAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":569,"name":"attr1","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr1","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":570,"name":"attr2","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr2","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":571,"name":"attr3","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr3","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":572,"name":"attr4","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr4","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":573,"name":"attr5","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr5","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":574,"name":"attr6","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr6","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":575,"name":"attr7","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr7","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":576,"name":"attr8","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr8","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":577,"name":"attr9","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr9","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"},{"catalog_id":83,"created_at":"2013-01-02T22:29:04Z","entity_type":"Product","id":578,"name":"attr10","options":{"list":false,"allow_nil":true,"default_value":null,"sort":null,"position":null,"hide":false,"title":null},"schema":{"type":"integer","title":"attr10","required":false},"updated_at":"2013-01-02T22:29:04Z","type":"IntegerAttr"}]}'
     http_version: !!null 
   recorded_at: Wed, 02 Jan 2013 22:29:04 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/573?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:19 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/575?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:19 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/574?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:19 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/569?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:19 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/571?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/572?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/576?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/574?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/attrs/573?include%5B0%5D=schema
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
 recorded_with: VCR 2.2.4

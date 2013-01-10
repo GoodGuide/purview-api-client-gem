@@ -111,36 +111,92 @@ describe GoodGuide::EntitySoup::Resource do
       list.map(&:id).should == [1, 2, 3]
       list.stats[:total].should == 100
     end
+
+    describe 'errors' do
+      after { reset_connection! }
+
+      it 'handles get server errors' do
+        stub_connection! do |stub|
+          stub.get('tests/123') {
+            body = "foo bar exception"
+            [500, {}, body]
+          }
+        end
+
+        tr = TestResource.find(123)
+        tr.should be_nil
+
+      end
+    end
   end
 
-  describe 'errors' do
+  describe 'saving' do
+
+    shared_examples_for 'it handles errors' do |method, url|
+      describe 'errors' do
+
+        it 'handles server errors' do
+          stub_connection! do |stub|
+            stub.send(method, url) {
+              body = "foo bar exception"
+              [500, {}, body]
+            }
+          end
+
+          result = resource.save
+          result.should be_false
+          resource.errors['base'].should == ['server error']
+        end
+
+
+        it 'handles error hashes' do
+          stub_connection! do |stub|
+            stub.send(method, url) {
+              body = {error: {base: ['all messed up'], name: ['must be unique']}}.to_json
+              [422, {}, body]
+            }
+          end
+
+          result = resource.save
+
+          result.should be_false
+          resource.errors['base'].should == ['all messed up']
+          resource.errors['name'].should == ['must be unique']
+        end
+
+      end
+    end
+
+
     after { reset_connection! }
 
-    it 'handles get server errors' do
-      stub_connection! do |stub|
-        stub.get('tests/123') {
-          body = "foo bar exception"
-          [500, {}, body]
-        }
+    context 'when the resource is new' do
+
+      let(:resource) { TestResource.new }
+
+      it 'posts the resource and updates its attributes' do
+        stub_connection! do |stub|
+          stub.post('tests') {
+            body = {id: 23}.to_json
+            [201, {}, body]
+          }
+        end
+
+        resource.save
+        resource.id.should == 23
       end
 
-      tr = TestResource.find(123)
-      tr.should be_nil
+
+      it_behaves_like 'it handles errors', :post, '/tests'
 
     end
 
-    it 'handles put server errors' do
-      stub_connection! do |stub|
-        stub.put {
-          body = "foo bar exception"
-          [500, {}, body]
-        }
-      end
+    context 'when the resource already exists' do
+      let(:resource) { TestResource.new(id: 23) }
 
-      resource = TestResource.new
-      tr = resource.save
-      tr.should be_false
+      it_behaves_like 'it handles errors', :put, '/tests/23'
     end
+
   end
 
 end

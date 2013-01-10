@@ -2,6 +2,7 @@ source 'http://rubygems.org/'
 gemspec
 
 gem 'activesupport'
+gem 'activemodel'
 
 group :test, :development do
   gem 'rspec'

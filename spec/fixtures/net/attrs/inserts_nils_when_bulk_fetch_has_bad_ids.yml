@@ -938,4 +938,616 @@ http_interactions:
       string: ! '{"error":{"base":"not found: Couldn''t find Entity with id=-1"},"status":404}'
     http_version: !!null 
   recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
-recorded_with: VCR 2.2.4
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/450
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/449
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/443
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 22:10:57 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 22:10:57 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/446
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 23:49:31 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 23:49:31 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/442
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 23:49:31 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 23:49:31 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/450
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 23:49:31 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 23:49:31 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/449
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 23:49:31 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 23:49:31 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/448
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 23:49:31 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 23:49:31 GMT
+- request:
+    method: get
+    uri: http://entity-soup-test.goodguide.dev/v1/entities/447
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Content-Type:
+      - text/html; charset=utf8
+      X-Pow-Template:
+      - application_not_found
+      Date:
+      - Thu, 10 Jan 2013 23:49:31 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
+        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
+        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
+        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
+        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
+        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
+        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
+        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
+        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
+        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
+        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
+        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
+        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
+        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
+        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
+        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
+        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
+        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
+        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
+        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
+        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
+        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
+        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
+        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
+        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
+        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
+        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
+        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
+        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
+        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
+        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
+        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
+        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
+        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
+        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
+        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+    http_version: !!null 
+  recorded_at: Thu, 10 Jan 2013 23:49:31 GMT
+recorded_with: VCR 2.4.0
