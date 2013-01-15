@@ -24,7 +24,6 @@ module GoodGuide::EntitySoup
     end
 
     def label_for(value)
-      puts "Looking up #{value} in #{enum.to_yaml}"
       enum[value] || value
     end
   end
