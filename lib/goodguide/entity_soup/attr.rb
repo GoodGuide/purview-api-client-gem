@@ -8,8 +8,8 @@ module GoodGuide::EntitySoup
     default_view include: ['schema']
     view :bare, inherits: nil, schema: nil
 
-    def self.types
-      connection.get('types')['attr_types'].collect { |t| Hashie::Mash.new(t) }
+    def self.types(options = {})
+      connection.get('types', options).collect { |t| Hashie::Mash.new(t) }
     end
 
     def enum

@@ -223,8 +223,6 @@ describe GoodGuide::EntitySoup do
         attr2.type.should == attr.type
         attr2.catalog_id.should == catalog.id
         attr2.options.should be_a Hash
-        attr2.schema.should be_a Hash
-        attr2.schema.should == { "type" => "integer", "title" => "test", "required" => false }
       end
     end
 
@@ -255,9 +253,7 @@ describe GoodGuide::EntitySoup do
         attrs_all_by_type.collect(&:id).should include(attrs[1].id)
         attrs_all_by_type.collect(&:id).should_not include(attrs[0].id)
 
-        attrs_all_by_product.first.schema.should_not be_nil
-        attrs_all_by_product = Attr.find_all(entity_type: 'Product', exclude: 'schema')
-        attrs_all_by_product.first.schema.should be_nil
+        attrs_all_by_product = Attr.find_all(entity_type: 'Product')
       end
     end
 
@@ -275,8 +271,6 @@ describe GoodGuide::EntitySoup do
         found_attrs = catalog.attrs(type: 'IntegerAttr')
         found_attrs.collect(&:id).should include(attrs[0].id)
         found_attrs.collect(&:id).should_not include(attrs[1].id)
-        found_attrs[0].schema.should == { "type" => "integer", "title" => "test", "required" => false }
-        found_attrs[1].schema.should == { "type" => "integer", "title" => "test1", "required" => false }
         found_attrs = catalog.attrs(entity_type: 'Brand')
         found_attrs.collect(&:id).should include(attrs[1].id)
         found_attrs.collect(&:id).should_not include(attrs[0].id)

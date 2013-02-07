@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs.json?name=test
+    uri: http://localhost:3000/v1/catalogs.json?name=test
     body:
       encoding: US-ASCII
       string: ''
@@ -16,30 +16,36 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: ! 'OK '
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"62f60bc24ac17285411b0191f97e0375"'
+      - ! '"cb5db6580329f4471cf6d4ed65177d79"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b26c3c2223e0702e3752edbe318c83e1
+      - 3418cb04e34895ac3b333f9c3996a5b0
       X-Runtime:
-      - '0.004203'
+      - '0.009041'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
+      Content-Length:
+      - '145'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[{"created_at":"2013-01-02T22:29:04Z","description":null,"id":84,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:04Z"}]}'
+      string: ! '[{"created_at":"2013-02-07T22:22:50Z","description":null,"id":21,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:50Z"}]'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: delete
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs/84
+    uri: http://localhost:3000/v1/catalogs/21
     body:
       encoding: US-ASCII
       string: ''
@@ -51,29 +57,28 @@ http_interactions:
   response:
     status:
       code: 204
-      message: No Content
+      message: ! 'No Content '
     headers:
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Cache-Control:
       - no-cache
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTdiNTJjZDg4NDVlY2ZjODk0OTFlNDZkN2ExYjA5NTA2BjsAVA%3D%3D--d4946c5f50136a6067601bfab8dd65c01894b1c4;
-        path=/; HttpOnly
       X-Request-Id:
-      - 63b4d9fc2a9106cd9e80f4066f502dc6
+      - b2a7863d98f7808ed15b94db164fe652
       X-Runtime:
-      - '0.022219'
-      Connection:
-      - close
+      - '0.068894'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs
+    uri: http://localhost:3000/v1/catalogs
     body:
       encoding: US-ASCII
       string: name=test
@@ -87,38 +92,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/catalogs/85
+      - http://localhost:3000/v1/catalogs/22
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"da562f0c5e96a0b3f893e921175f33dc"'
+      - ! '"ad615d24b8655e242f1dffa00bd6f71a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWZjOTA2YzQ4MGUyMjIwMzIxZGI4ZDZkZjEwMTIyMGYxBjsAVA%3D%3D--9cda4b1f85523b204275b602fdba83a43e966cbe;
-        path=/; HttpOnly
       X-Request-Id:
-      - 721f00b3daeba595b510adff771e3d1a
+      - a436c9875cf8f5d1a8c57f9e010e83ff
       X-Runtime:
-      - '0.054006'
+      - '0.068226'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
+      Content-Length:
+      - '143'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-01-02T22:29:05Z","description":null,"id":85,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:05Z"}'
+      string: ! '{"created_at":"2013-02-07T22:22:51Z","description":null,"id":22,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:51Z"}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -129,38 +137,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/421
+      - http://localhost:3000/v1/entities/101
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"28437220263170072bc3fc6162aa2f90"'
+      - ! '"bd40bdacf2dea63043f3c7b22a191505"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWEzYjFmODNmODQ0YjhhNDIxN2E2ZTVjMWU1ODQxNDc0BjsAVA%3D%3D--b6a28aeb8866ac28b78f88c0709015018024e4aa;
-        path=/; HttpOnly
       X-Request-Id:
-      - 0439697f70e1c6cc0b7d24529b4903da
+      - b088c8786dac7d21a20e2611b34767bb
       X-Runtime:
-      - '0.010273'
+      - '0.030806'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":421,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":101,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -171,38 +182,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/422
+      - http://localhost:3000/v1/entities/102
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"b30abf22cfa9c0da5b5ea6e2e4641f2c"'
+      - ! '"9c993e86ee12f08501bc4cbf8a5cd873"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWYyZDlkNWM2NmYzN2UxNjkyNjc5NzhmNGZjYmViOTkyBjsAVA%3D%3D--fb4129f124ef7aedab5247aeca0b216e689ea29b;
-        path=/; HttpOnly
       X-Request-Id:
-      - 4e94cd48110113ce14aaf3077d0186fb
+      - 2452bd6e05cdecfb08114716ce8f00ae
       X-Runtime:
-      - '0.010635'
+      - '0.029967'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":422,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":102,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -213,38 +227,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/423
+      - http://localhost:3000/v1/entities/103
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"2f13eb15bd8b5a4eab6854620302a1f1"'
+      - ! '"7c5aa3039fb7dd5fece54e098cb5a63f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTQxYmUxOTY3MDQ2ZTM1YmM1Zjc5YjY2YWVjYTgzZjhiBjsAVA%3D%3D--73acf221f123d26e91620d8a7781e3848ca31773;
-        path=/; HttpOnly
       X-Request-Id:
-      - 512431bf25efce6f809691e403fdf3c0
+      - 25fb3eb9aa818db2ccb3e18a0c1a68ea
       X-Runtime:
-      - '0.011243'
+      - '0.029307'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":423,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":103,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -255,38 +272,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/424
+      - http://localhost:3000/v1/entities/104
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"6d5bb49cda0ced77735bd101adef9b81"'
+      - ! '"00c74ee7163c606c6517184bda4c7d74"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTlhYmFmNGQ4ZTJlNzFjMTgwOGZlNTZhM2Y0YzA0ODI4BjsAVA%3D%3D--3aec9edbfe13e9c01f6a2d91590bfd17f2ebc502;
-        path=/; HttpOnly
       X-Request-Id:
-      - c0e479baa4af19741a00456026f9ae4e
+      - c40a93b4388fc94a3fb2139499ab0ea3
       X-Runtime:
-      - '0.010631'
+      - '0.030679'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":424,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":104,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -297,38 +317,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/425
+      - http://localhost:3000/v1/entities/105
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"4725aad80eabcd5ba87839e631c11a35"'
+      - ! '"625acf0337097ffbf6ee7b934d1fe717"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWRjYTk2YzFmODYzYjM4NjI1NDdhYWQ0MmU5MTM3NTMxBjsAVA%3D%3D--71c205e6dadeeb75d6f189157bf5f02c7b7c5a08;
-        path=/; HttpOnly
       X-Request-Id:
-      - 578c62a99263db0673daa8c0f11a2991
+      - 79cd8b6f8e263838d3abbd4390f8ab95
       X-Runtime:
-      - '0.011765'
+      - '0.018906'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:51 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":425,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":105,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:51 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -339,38 +362,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/426
+      - http://localhost:3000/v1/entities/106
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"61795b720dc135fa28ed19ad8c7fb624"'
+      - ! '"1e1b8f3d164de3570eb6d29c72e352f4"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTE0ZjAzNzg1Yjc0MzdkOTlmMGVkNDRmODE2M2ExYmYyBjsAVA%3D%3D--f2b99a202fd935f3e1c1706bf9bf356199290e4a;
-        path=/; HttpOnly
       X-Request-Id:
-      - 33846168b6b20edb43653fb66d69bfc4
+      - b52d85b5a3b4422cc5fe7e531b9f70d1
       X-Runtime:
-      - '0.010894'
+      - '0.030808'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":426,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":106,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -381,38 +407,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/427
+      - http://localhost:3000/v1/entities/107
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"636787ec47023b572034f82c716e87f6"'
+      - ! '"0864c446b21189d2ff9a03df14625805"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTNlMjc5OTA3NDVhODBiYzYzMTNmM2M2NDM1N2E5MTliBjsAVA%3D%3D--3e2d99bb60ce613e98ff14b47f9d327ba3ac6ed2;
-        path=/; HttpOnly
       X-Request-Id:
-      - b2601dcc7a451b31d858bf289a3c64e7
+      - 075fcb9d0c0da5d1a64377d112fa6e27
       X-Runtime:
-      - '0.011248'
+      - '0.030428'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":427,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":107,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -423,38 +452,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/428
+      - http://localhost:3000/v1/entities/108
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"35346ba7d855a553b4f662d19319305d"'
+      - ! '"cd2c414d785cb63343fa3f19996a3886"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWUxNjViZjYyY2JhODRhODBkMjk0MjUyNjdmMmYyM2QxBjsAVA%3D%3D--e7a30e9dc80832194f680108bcfa165d9cd6aa46;
-        path=/; HttpOnly
       X-Request-Id:
-      - c8c84c7f7a3ec42e15cb78e3dc6a7260
+      - 4a5c3b73f3273c1c548a397dc4d23eeb
       X-Runtime:
-      - '0.010744'
+      - '0.072254'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":428,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":108,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -465,38 +497,41 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/429
+      - http://localhost:3000/v1/entities/109
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"7ceefafdc3852e095c1b251e871d72b7"'
+      - ! '"dfa6476de4173f8d02e761ca2c9ef060"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJThkZWM5MWJiM2ViZTA2MWE1NGUxNThhMTU5MWE2OTliBjsAVA%3D%3D--748a9250bebc4aef6b38864f10ad1b692b5760e9;
-        path=/; HttpOnly
       X-Request-Id:
-      - 719dc5128841064d73fc4f9f30c8d20d
+      - 17d02a6662f5ae75eee4607a672b78e5
       X-Runtime:
-      - '0.011063'
+      - '0.076251'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":429,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":109,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
+    uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: catalog_id=85&provider_id=1&type=Product
+      string: catalog_id=22&provider_id=1&type=Product
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -507,30 +542,33 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/430
+      - http://localhost:3000/v1/entities/110
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"1865acbd3f9dcc1d799e99d41f0fa855"'
+      - ! '"54595c9819867387c3963b8565435bf5"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTk4ODVjNWNhZWE2YTIyZDRlNjVmZDdlZThlZmNmMDEyBjsAVA%3D%3D--b6520f5b65f6d0e2c6437f5280a15281e9ed6d34;
-        path=/; HttpOnly
       X-Request-Id:
-      - e34f7ae0f6cb2da122aef50d785337b2
+      - 4e47216aff17ca4936704a45dfe25934
       X-Runtime:
-      - '0.011592'
+      - '0.024380'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":430,"type":"Product","attr_values":{},"catalog_id":85,"provider_id":1}'
+      string: ! '{"id":110,"type":"Product","attr_values":{},"catalog_id":22,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+recorded_with: VCR 2.4.0

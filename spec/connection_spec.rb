@@ -43,7 +43,7 @@ describe GoodGuide::EntitySoup::Connection do
   end
 
   it 'must get all resources' do
-    stub_get anything, entities: [{name: 'boom'}, {name: 'bip'}]
+    stub_get anything, [{name: 'boom'}, {name: 'bip'}]
     results = connection.get_all('entities')
     results.size.should == 2
     results.first['name'].should == 'boom'

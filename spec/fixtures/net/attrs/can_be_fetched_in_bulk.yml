@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs.json?name=test
+    uri: http://localhost:3000/v1/catalogs.json?name=test
     body:
       encoding: US-ASCII
       string: ''
@@ -16,30 +16,36 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: ! 'OK '
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"c8159e7b479797a1e6c97d7fff567207"'
+      - ! '"c9114bf8c5fe86b1a65df85dfdfa0cfc"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 05ffd25e59674856e010bbed09e8007b
+      - dcb46b75328dd875725062c2dec8641d
       X-Runtime:
-      - '0.004407'
+      - '0.009142'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '145'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[{"created_at":"2013-01-02T22:29:05Z","description":null,"id":85,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:05Z"}]}'
+      string: ! '[{"created_at":"2013-02-07T22:22:51Z","description":null,"id":22,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:51Z"}]'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
 - request:
     method: delete
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs/85
+    uri: http://localhost:3000/v1/catalogs/22
     body:
       encoding: US-ASCII
       string: ''
@@ -51,29 +57,28 @@ http_interactions:
   response:
     status:
       code: 204
-      message: No Content
+      message: ! 'No Content '
     headers:
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Cache-Control:
       - no-cache
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTY0N2NlMjYxZmJkZmMzYThiZmU2ZmNhOGU1OGJjZjM0BjsAVA%3D%3D--1803f04931917317054c4cccfad5230f8a6f7a78;
-        path=/; HttpOnly
       X-Request-Id:
-      - c35d23194f69c9b120a3414bb17242b3
+      - 64fea5b46707c281bdc346e4728a7a84
       X-Runtime:
-      - '0.021770'
-      Connection:
-      - close
+      - '0.075626'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs
+    uri: http://localhost:3000/v1/catalogs
     body:
       encoding: US-ASCII
       string: name=test
@@ -87,893 +92,488 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/catalogs/86
+      - http://localhost:3000/v1/catalogs/23
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"83d9e5f3cd6e270af989271dfe3d88fd"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWRjNmJlMWEzMTcwZmYwOTI4YTIxNzFjMDU2Yjk4MWE3BjsAVA%3D%3D--2704ebe698096a6988b18b5b260b30bc0cab140d;
-        path=/; HttpOnly
-      X-Request-Id:
-      - eed31b2eb26392cbb3c30466c1babfa9
-      X-Runtime:
-      - '0.051494'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"created_at":"2013-01-02T22:29:05Z","description":null,"id":86,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:05Z"}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/431
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"dd1607cfda766dbf954098506ae754c1"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWRkMGZmNmVhMjZjZDQwYmU1MTNiODRiMWNlMTQ5YjBjBjsAVA%3D%3D--8687e9dc327543e5fc54c377b72afd241bdbcf16;
-        path=/; HttpOnly
-      X-Request-Id:
-      - a6b3f7e2b9b9826eda671cc1c93db778
-      X-Runtime:
-      - '0.011266'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":431,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/432
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"13141d53e44baade564f884c6b109ac4"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTY2MTliNTk3ZGExODQ3MmZjYzUwMzEwNTQyZjgxMTlhBjsAVA%3D%3D--2c400ab24bb6d5b3e866378a474caab1a01ad477;
-        path=/; HttpOnly
-      X-Request-Id:
-      - 4383407a768c40009c58288a27b60fc4
-      X-Runtime:
-      - '0.010855'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":432,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/433
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"42231ea18c2194eb9b7a5cb86ffcf8a0"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTc1Y2U2NGQzYjJiYTVhNGVkNzc3NGJhZTVlYTg5MjliBjsAVA%3D%3D--5b6ae1a30d4e5ef4e80cd9df9d7c8561576ddb95;
-        path=/; HttpOnly
-      X-Request-Id:
-      - f825690d7cb808f6a0ecaeab59f76d1f
-      X-Runtime:
-      - '0.012807'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":433,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/434
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"52b7bccabec659121a6a9a88a7934031"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTYyYTZhNjUxOTI2NTQ1ZjM5ZGQwYjE0MzI3ODA4ZjE2BjsAVA%3D%3D--05407a6811418f41cdc2fbd78e449b5aed676130;
-        path=/; HttpOnly
-      X-Request-Id:
-      - 7af59be8867bc386999b9ced13de7c96
-      X-Runtime:
-      - '0.010715'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":434,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/435
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"b1343f79120d9317b4859582db0bc284"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTE3OWQzMjA2YTUxMTFiMmQwNjU4NDEwZWZiMmFhOTJjBjsAVA%3D%3D--bcbcb3779b2b03e31f4a93fab071a0f1a9c43b3b;
-        path=/; HttpOnly
-      X-Request-Id:
-      - 035400a63a0e34794d859c01cd8ed76b
-      X-Runtime:
-      - '0.010851'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":435,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/436
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"65d9f8c6fc79f352473105cd4646e0cd"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTQ1NjQwOWNhMDRhYjJhZTVhZjEwMTdmNTJmNTA1ODZkBjsAVA%3D%3D--c3c75927189ea6bdcb2eba24cbdd72313d216c43;
-        path=/; HttpOnly
-      X-Request-Id:
-      - eee287ee5b5666898b1d19ff22537b3b
-      X-Runtime:
-      - '0.064063'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":436,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/437
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"f9c25822784033b77626a5e8084c497e"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTA0Zjc5ZjI0MGEwNTFiZjVjODllNWFmNDFiZjU0YTFlBjsAVA%3D%3D--06ba0ce1e94134924b62bd79737e022831f9e2f7;
-        path=/; HttpOnly
-      X-Request-Id:
-      - 5e57397f464214eca88126444cd63e7e
-      X-Runtime:
-      - '0.012795'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":437,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/438
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"67098d36cdfc333eabd30d61a29f69cc"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTE0ZWQxZThlY2JmM2JjYzk2MGY1ZGQ3MjUwYTZmNzk2BjsAVA%3D%3D--471463943ae141267bf137d9d09a84a8be22e060;
-        path=/; HttpOnly
-      X-Request-Id:
-      - f26a06898ff6740d907b0950eeaa75fc
-      X-Runtime:
-      - '0.011814'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":438,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/439
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"71d811e855bf75b5f3afc0a9261d7e3e"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTlmYWVlZjBhOTJhMzg5NDRmNTBjMzlmMDM5YTI0ZWQxBjsAVA%3D%3D--6c10890980076c18af264adb95a5c036d2ef9adb;
-        path=/; HttpOnly
-      X-Request-Id:
-      - 70bb5445ba44fc0c20dac6efc8283af0
-      X-Runtime:
-      - '0.010801'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":439,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/entities
-    body:
-      encoding: US-ASCII
-      string: catalog_id=86&provider_id=1&type=Product
-    headers:
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://entity-soup-test.goodguide.dev/v1/entities/440
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"fe44787c29b09e6cfaf19fdbe127545d"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTZlN2FjMWI2Yzg1NGIzOGFkMWE1NjA2M2Q5YTgxOWVkBjsAVA%3D%3D--044a2eee2740896ef0c68b51aaf2196581701275;
-        path=/; HttpOnly
-      X-Request-Id:
-      - 1ce3c53e7c63e1744a93de47caadabfc
-      X-Runtime:
-      - '0.012439'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":440,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/431
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"dd1607cfda766dbf954098506ae754c1"'
+      - ! '"dc835360e1684231aa2eb2a306a467ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0a38ad7530f29145b8b9ee69b6e026f7
+      - 91a0bf33a56d83ed003d548e498bd761
       X-Runtime:
-      - '0.006476'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":431,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/439
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"71d811e855bf75b5f3afc0a9261d7e3e"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 202d9aa57f8043c4623d4177f7135748
-      X-Runtime:
-      - '0.006387'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":439,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/437
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"f9c25822784033b77626a5e8084c497e"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 7ecb81928663c6a03a8d31dc0db916f5
-      X-Runtime:
-      - '0.007311'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":437,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/438
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"67098d36cdfc333eabd30d61a29f69cc"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 96f882e4ff4a576694540248780b2b24
-      X-Runtime:
-      - '0.006637'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":438,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/434
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"52b7bccabec659121a6a9a88a7934031"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a5561f1fd0fc7d7426c30a2c601e7b0c
-      X-Runtime:
-      - '0.005190'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":434,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/433
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"42231ea18c2194eb9b7a5cb86ffcf8a0"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 03034e30106124d34c7ad5b54709b2c4
-      X-Runtime:
-      - '0.004698'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":433,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/435
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"b1343f79120d9317b4859582db0bc284"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - fe5989b4c3fff9b5c790e32caf0b0074
-      X-Runtime:
-      - '0.005375'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":435,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/436
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"65d9f8c6fc79f352473105cd4646e0cd"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 972b157c2374885dd00e995cf39d61ed
-      X-Runtime:
-      - '0.005917'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":436,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/440
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"fe44787c29b09e6cfaf19fdbe127545d"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 7042b71a4039b8176ff800a7b54f73b8
-      X-Runtime:
-      - '0.005132'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":440,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/432
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - ! '"13141d53e44baade564f884c6b109ac4"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a40667bfa42b1833c679c7b0a6914847
-      X-Runtime:
-      - '0.005175'
-      Connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":432,"type":"Product","attr_values":{},"catalog_id":86,"provider_id":1}'
-    http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:05 GMT
-- request:
-    method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/435
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 503
-      message: Service Unavailable
-    headers:
-      Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - '0.077646'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 22:10:19 GMT
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '143'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"created_at":"2013-02-07T22:22:52Z","description":null,"id":23,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:52Z"}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/111
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"a4ab9f1670a19558bcdbc99184e981bc"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c22474093b3cc4dadbb4b34f629dd3dc
+      X-Runtime:
+      - '0.031472'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":111,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/112
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"2c5ae412487aa83f64a48d0fdc5d13b6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b93e665d138b9969b783554662dcae3b
+      X-Runtime:
+      - '0.029917'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":112,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/113
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"faca79f081778a2c1d86fb2d5d3e5e02"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 27f23dd1f3be4b4354d859df8cc885b9
+      X-Runtime:
+      - '0.031084'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":113,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/114
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"a0238a298c4bf8bc9f9c985ef09f9bf8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1a4b8f2a0cffb3c745da3085075d6707
+      X-Runtime:
+      - '0.031177'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":114,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/115
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"eca02ca4758b37eb8a227b43fedcb1aa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0def2cc8aec1fcfb7ff61aefe166b4ec
+      X-Runtime:
+      - '0.030692'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":115,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/116
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"9b24a26be47426a0428b6ca0825adc14"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 92c1eb91bee05c715148e09b2950ef6b
+      X-Runtime:
+      - '0.030395'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":116,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/117
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"47bac5334bcad6ada0e5a69598934d1c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 88676cb074ae23bd568c7801510a956f
+      X-Runtime:
+      - '0.030612'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":117,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/118
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"2792f156c2e9a0f4e24938dc26df4dd8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e7e512c8de7a9d4aad09c0338746cfd8
+      X-Runtime:
+      - '0.030454'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":118,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/119
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"3d882c24276d15a8c3f8376e625d92aa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 73392e841cc3851b240398c19e8daaf4
+      X-Runtime:
+      - '0.021453'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":119,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/v1/entities
+    body:
+      encoding: US-ASCII
+      string: catalog_id=23&provider_id=1&type=Product
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/v1/entities/120
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"19cb97dd7167e6ab713318f740e20b45"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1b41677fb361ebd32c100510ed808e15
+      X-Runtime:
+      - '0.029616'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:52 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":120,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:52 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/439
+    uri: http://localhost:3000/v1/entities/116
     body:
       encoding: US-ASCII
       string: ''
@@ -986,62 +586,37 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 200
+      message: ! 'OK '
     headers:
       Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"9b24a26be47426a0428b6ca0825adc14"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 99b9b7327d8b02f18d24bc1f6893202a
+      X-Runtime:
+      - '0.007339'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 22:10:19 GMT
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"id":116,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/440
+    uri: http://localhost:3000/v1/entities/111
     body:
       encoding: US-ASCII
       string: ''
@@ -1054,62 +629,37 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 200
+      message: ! 'OK '
     headers:
       Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"a4ab9f1670a19558bcdbc99184e981bc"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e10412eaeda1afbe63307834fdeac651
+      X-Runtime:
+      - '0.039260'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 22:10:19 GMT
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"id":111,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/431
+    uri: http://localhost:3000/v1/entities/113
     body:
       encoding: US-ASCII
       string: ''
@@ -1122,62 +672,37 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 200
+      message: ! 'OK '
     headers:
       Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"faca79f081778a2c1d86fb2d5d3e5e02"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 05059a0e075ed9ea3a82099201ecbcad
+      X-Runtime:
+      - '0.012951'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 22:10:19 GMT
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"id":113,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/438
+    uri: http://localhost:3000/v1/entities/112
     body:
       encoding: US-ASCII
       string: ''
@@ -1190,62 +715,37 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 200
+      message: ! 'OK '
     headers:
       Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"2c5ae412487aa83f64a48d0fdc5d13b6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fc02d045b48fdc5178a6e0d067a42f65
+      X-Runtime:
+      - '0.012861'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 22:10:19 GMT
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"id":112,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/436
+    uri: http://localhost:3000/v1/entities/119
     body:
       encoding: US-ASCII
       string: ''
@@ -1258,62 +758,37 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 200
+      message: ! 'OK '
     headers:
       Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"3d882c24276d15a8c3f8376e625d92aa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 81a1ad6a4fd1f88668fd6a23be5bed0c
+      X-Runtime:
+      - '0.013418'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 22:10:19 GMT
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"id":119,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/434
+    uri: http://localhost:3000/v1/entities/115
     body:
       encoding: US-ASCII
       string: ''
@@ -1326,62 +801,37 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 200
+      message: ! 'OK '
     headers:
       Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"eca02ca4758b37eb8a227b43fedcb1aa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 59360e07427b1ae6ae04fcb0ef98b44e
+      X-Runtime:
+      - '0.011453'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 22:10:19 GMT
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"id":115,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 22:10:19 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/entities/437
+    uri: http://localhost:3000/v1/entities/118
     body:
       encoding: US-ASCII
       string: ''
@@ -1394,57 +844,161 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 200
+      message: ! 'OK '
     headers:
       Content-Type:
-      - text/html; charset=utf8
-      X-Pow-Template:
-      - application_not_found
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"2792f156c2e9a0f4e24938dc26df4dd8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4c6f730bfe75dc895253773cb6d6b344
+      X-Runtime:
+      - '0.013203'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 10 Jan 2013 23:49:30 GMT
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
       Connection:
-      - keep-alive
-      Transfer-Encoding:
-      - chunked
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
-      string: ! "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Application
-        not found</title>\n  <style>\n    body {\n      margin: 0;\n      padding:
-        0;\n      background: #e0e0d8;\n      line-height: 18px;\n    }\n    div.page
-        {\n      margin: 72px auto;\n      margin: 36px auto;\n      background: #fff;\n
-        \     border-radius: 18px;\n      -webkit-box-shadow: 0px 2px 7px #999;\n
-        \     -moz-box-shadow: 0px 2px 7px #999;\n      padding: 36px 90px;\n      width:
-        480px;\n      position: relative;\n    }\n    .big div.page {\n      width:
-        720px;\n    }\n    h1, h2, p, li {\n      font-family: Helvetica, sans-serif;\n
-        \     font-size: 13px;\n    }\n    h1 {\n      line-height: 45px;\n      font-size:
-        36px;\n      margin: 0;\n    }\n    h1:before {\n      font-size: 66px;\n
-        \     line-height: 42px;\n      position: absolute;\n      right: 576px;\n
-        \   }\n    .big h1:before {\n      right: 819px;\n    }\n    h1.ok {\n      color:
-        #060;\n    }\n    h1.ok:before {\n      content: \"✓\";\n      color: #090;\n
-        \   }\n    h1.err {\n      color: #600;\n    }\n    h1.err:before {\n      content:
-        \"✗\";\n      color: #900;\n    }\n    h2 {\n      line-height: 27px;\n      font-size:
-        18px;\n      font-weight: normal;\n      margin: 0;\n    }\n    a, pre span
-        {\n      color: #776;\n    }\n    h2, p, pre {\n      color: #222;\n    }\n
-        \   pre {\n      white-space: pre-wrap;\n      font-size: 13px;\n    }\n    pre,
-        code {\n      font-family: Menlo, Monaco, monospace;\n    }\n    p code {\n
-        \     font-size: 12px;\n    }\n    pre.breakout {\n      border-top: 1px solid
-        #ddd;\n      border-bottom: 1px solid #ddd;\n      background: #fafcf4;\n
-        \     margin-left: -90px;\n      margin-right: -90px;\n      padding: 8px
-        0 8px 90px;\n    }\n    pre.small_text {\n      font-size: 10px;\n    }\n
-        \   pre.small_text strong {\n      font-size: 13px;\n    }\n    ul {\n      padding:
-        0;\n    }\n    li {\n      list-style-type: none;\n    }\n  </style>\n</head>\n<body
-        class=\"\">\n  <div class=\"page\">\n    \n  <h1 class=\"err\">Application
-        not found</h1>\n  <h2>Symlink your app to <code>~/.pow/entity-soup-test.goodguide</code>
-        first.</h2>\n  <section>\n    <p>When you access <code>http://entity-soup-test.goodguide.dev/</code>,
-        Pow looks for a Rack application at <code>~/.pow/entity-soup-test.goodguide</code>.
-        To run your app at this domain:</p>\n    <pre><span>$</span> cd ~/.pow\n<span>$</span>
-        ln -s /path/to/myapp entity-soup-test.goodguide\n<span>$</span> open http://entity-soup-test.goodguide.dev/</pre>\n
-        \ </section>\n\n    <ul>\n      <li><a href=\"http://pow.cx/manual\">Pow User&rsquo;s
-        Manual</a></li>\n      <li><a href=\"https://github.com/37signals/pow/wiki/Troubleshooting\">Troubleshooting</a></li>\n
-        \     <li><a href=\"https://github.com/37signals/pow/wiki/FAQ\">Frequently
-        Asked Questions</a></li>\n      <li><a href=\"https://github.com/37signals/pow/issues\">Issue
-        Tracker</a></li>\n    </ul>\n  </div>\n</body>\n</html>\n\n"
+      encoding: US-ASCII
+      string: ! '{"id":118,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Thu, 10 Jan 2013 23:49:30 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/v1/entities/114
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"a0238a298c4bf8bc9f9c985ef09f9bf8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a2a214747e435237bfd096286bc15106
+      X-Runtime:
+      - '0.011735'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":114,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/v1/entities/117
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"47bac5334bcad6ada0e5a69598934d1c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c935feece7a3848ec5a911b8d51db0d9
+      X-Runtime:
+      - '0.013234'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":117,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/v1/entities/120
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"19cb97dd7167e6ab713318f740e20b45"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d789f53e93020bfe6772f70de7086421
+      X-Runtime:
+      - '0.009841'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:53 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":120,"type":"Product","attr_values":{},"catalog_id":23,"provider_id":1}'
+    http_version: !!null 
+  recorded_at: Thu, 07 Feb 2013 22:22:53 GMT
 recorded_with: VCR 2.4.0

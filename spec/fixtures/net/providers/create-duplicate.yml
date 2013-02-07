@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/providers
+    uri: http://localhost:3000/v1/providers
     body:
       encoding: US-ASCII
       string: name=GoodGuide
@@ -16,26 +16,29 @@ http_interactions:
   response:
     status:
       code: 422
-      message: Unprocessable Entity
+      message: ''
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Cache-Control:
       - no-cache
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTIxOTYxMjBiNTkzODgzYjBkM2Q1ZTAyZDc5ZTQ5MDA3BjsAVA%3D%3D--bc70bec8588388a3f62f17f7bb19f95b505aec0e;
-        path=/; HttpOnly
       X-Request-Id:
-      - 70bd0d4595f43fc6faa783c02578145a
+      - 98dbc178ee6b271703ed0b03862a89be
       X-Runtime:
-      - '0.007399'
+      - '0.009354'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:55 GMT
+      Content-Length:
+      - '77'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
       string: ! '{"error":{"name":["has already been taken"]},"status":"unprocessable_entity"}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:07 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+recorded_with: VCR 2.4.0

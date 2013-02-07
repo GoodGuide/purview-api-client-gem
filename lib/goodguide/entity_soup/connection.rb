@@ -9,16 +9,6 @@ module GoodGuide::EntitySoup
       @path = path
     end
 
-    class ResponseList < Array
-      def stats
-        @stats ||= HashWithIndifferentAccess.new
-      end
-
-      def stats=(s={})
-        @stats = s.with_indifferent_access
-      end
-    end
-
     def path_for(id)
       "#{rel_path}/#{id}"
     end
@@ -112,10 +102,6 @@ module GoodGuide::EntitySoup
         result
       else
         hash = JSON.load(result.body)
-        # use ResponseList to wrap the other keys
-        ResponseList.new(hash.delete(elements) || []).tap do |rl|
-          rl.stats = hash
-        end
       end
     end
 

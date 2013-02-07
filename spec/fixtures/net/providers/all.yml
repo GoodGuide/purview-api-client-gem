@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/providers.json
+    uri: http://localhost:3000/v1/providers.json
     body:
       encoding: US-ASCII
       string: ''
@@ -16,25 +16,31 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: ! 'OK '
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"820d74496f5cbb7ce79eee8dfcd4535a"'
+      - ! '"066049e0b0ee2c68bf0d8a6053808753"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1247b0a1119ed257ac007ee62327ef12
+      - 4986c44d0207b25e10aaef93a0194f86
       X-Runtime:
-      - '0.004163'
+      - '0.005867'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:55 GMT
+      Content-Length:
+      - '198'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"providers":[{"created_at":"2012-12-21T21:03:16Z","id":1,"name":"GoodGuide","updated_at":"2012-12-21T21:03:16Z"},{"created_at":"2013-01-02T22:26:27Z","id":70,"name":"test2","updated_at":"2013-01-02T22:26:27Z"}]}'
+      string: ! '[{"created_at":"2013-02-07T21:45:07Z","id":1,"name":"GoodGuide","updated_at":"2013-02-07T21:45:07Z"},{"created_at":"2013-02-07T22:21:05Z","id":10,"name":"test2","updated_at":"2013-02-07T22:21:05Z"}]'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:07 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+recorded_with: VCR 2.4.0

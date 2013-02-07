@@ -9,7 +9,7 @@ module GoodGuide::EntitySoup
     view :bare, inherits: nil, include: nil
 
     def self.types
-      connection.get('types')['entity_types'].collect { |t| Hashie::Mash.new(t) }
+      connection.get('types').collect { |t| Hashie::Mash.new(t) }
     end
 
     def catalog(params = {})

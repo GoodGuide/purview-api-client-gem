@@ -62,5 +62,5 @@ RSpec.configure do |config|
 
 end
 
-GoodGuide::EntitySoup.url="http://entity-soup-test.goodguide.dev/v1"
+GoodGuide::EntitySoup.url="http://localhost:3000/v1"
 

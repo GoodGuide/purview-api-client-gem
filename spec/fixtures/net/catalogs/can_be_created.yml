@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs.json?name=test
+    uri: http://localhost:3000/v1/catalogs.json?name=test
     body:
       encoding: US-ASCII
       string: ''
@@ -16,30 +16,36 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: ! 'OK '
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"c71c80842aa45595550864feda0df031"'
+      - ! '"d751713988987e9331980363e24189ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 11687db89aced4c7419d5a5d2b9d303b
+      - e21c8ad1ef8d9d06a499c18e5dba3ff0
       X-Runtime:
-      - '0.003322'
+      - '0.005511'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:54 GMT
+      Content-Length:
+      - '2'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"catalogs":[]}'
+      string: ! '[]'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:54 GMT
 - request:
     method: post
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs
+    uri: http://localhost:3000/v1/catalogs
     body:
       encoding: US-ASCII
       string: name=test&description=NASA
@@ -53,35 +59,38 @@ http_interactions:
   response:
     status:
       code: 201
-      message: Created
+      message: ! 'Created '
     headers:
       Location:
-      - http://entity-soup-test.goodguide.dev/v1/catalogs/88
+      - http://localhost:3000/v1/catalogs/25
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"eb6ccd830ac110a7bb8bcad487b6fc85"'
+      - ! '"09ba8288e354028bca24252602d85fa7"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _entity_soup_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTFhYjRhMGRkNzVlM2MzZTg2OGQ4NTExMjcwZjE5YTY4BjsAVA%3D%3D--281067a86a2dcd0b87a0b66f5a7b972eaf2f59ac;
-        path=/; HttpOnly
       X-Request-Id:
-      - 5cce2453f4c32a2c3cdfd5ce8db015f9
+      - c32fa4d790979d544e2bfb972e6c958a
       X-Runtime:
-      - '0.105557'
+      - '0.075964'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:54 GMT
+      Content-Length:
+      - '145'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-01-02T22:29:06Z","description":"NASA","id":88,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:06Z"}'
+      string: ! '{"created_at":"2013-02-07T22:22:54Z","description":"NASA","id":25,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:54Z"}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
+  recorded_at: Thu, 07 Feb 2013 22:22:54 GMT
 - request:
     method: get
-    uri: http://entity-soup-test.goodguide.dev/v1/catalogs/88
+    uri: http://localhost:3000/v1/catalogs/25
     body:
       encoding: US-ASCII
       string: ''
@@ -95,25 +104,31 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: ! 'OK '
     headers:
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"eb6ccd830ac110a7bb8bcad487b6fc85"'
+      - ! '"ff159c7269d3619eba658dee2fa6a45f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4e94bec95074aa74b1ce3e694f4dce00
+      - 93f83c14871ad04878841ae345be13dd
       X-Runtime:
-      - '0.003948'
+      - '0.014805'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Thu, 07 Feb 2013 22:22:54 GMT
+      Content-Length:
+      - '2232'
       Connection:
-      - close
+      - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-01-02T22:29:06Z","description":"NASA","id":88,"name":"test","options":{"image_src":null},"updated_at":"2013-01-02T22:29:06Z"}'
+      string: ! '{"created_at":"2013-02-07T22:22:54Z","description":"NASA","id":25,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:54Z","attrs":[{"catalog_id":25,"created_at":"2013-02-07T22:22:54Z","entity_type":"Brand","id":165,"name":"name","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":0,"hide":false,"title":"Name","enum_titles":null},"updated_at":"2013-02-07T22:22:54Z"},{"catalog_id":25,"created_at":"2013-02-07T22:22:54Z","entity_type":"Category","id":166,"name":"name","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":0,"hide":false,"title":"Name","enum_titles":null},"updated_at":"2013-02-07T22:22:54Z"},{"catalog_id":25,"created_at":"2013-02-07T22:22:54Z","entity_type":"Company","id":167,"name":"name","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":0,"hide":false,"title":"Name","enum_titles":null},"updated_at":"2013-02-07T22:22:54Z"},{"catalog_id":25,"created_at":"2013-02-07T22:22:54Z","entity_type":"Ingredient","id":168,"name":"name","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":0,"hide":false,"title":"Name","enum_titles":null},"updated_at":"2013-02-07T22:22:54Z"},{"catalog_id":25,"created_at":"2013-02-07T22:22:54Z","entity_type":"Product","id":169,"name":"name","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":0,"hide":false,"title":"Name","enum_titles":null},"updated_at":"2013-02-07T22:22:54Z"}]}'
     http_version: !!null 
-  recorded_at: Wed, 02 Jan 2013 22:29:06 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 07 Feb 2013 22:22:54 GMT
+recorded_with: VCR 2.4.0

@@ -94,12 +94,10 @@ describe GoodGuide::EntitySoup::Resource do
     it "searches resources" do
       stub_connection! do |stub|
         stub.get('tests.json?include[]=foo&limit=3') do
-          body = {
-            tests: [
+          body = 
+            [
               { id: 1 }, { id: 2 }, { id: 3 }
-            ],
-            total: 100,
-          }.to_json
+            ].to_json
 
 
           [200, {}, body]
@@ -109,7 +107,6 @@ describe GoodGuide::EntitySoup::Resource do
       list = TestResource.find_all(limit: 3, include: 'foo')
       list.should be_a Array
       list.map(&:id).should == [1, 2, 3]
-      list.stats[:total].should == 100
     end
 
     describe 'errors' do
