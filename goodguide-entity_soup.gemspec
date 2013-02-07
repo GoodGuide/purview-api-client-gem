@@ -14,6 +14,4 @@ Gem::Specification.new do |s|
   s.add_dependency('faraday')
   s.add_dependency('workqueue')
   s.add_dependency('hashie')
-  s.add_dependency('activemodel')
-  s.add_dependency('activesupport')
 end
