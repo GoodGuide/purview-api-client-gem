@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     goodguide-entity_soup (1.0)
+      activemodel
+      activesupport
       faraday
       hashie
       workqueue
