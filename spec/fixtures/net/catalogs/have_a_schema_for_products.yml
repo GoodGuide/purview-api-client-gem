@@ -27,13 +27,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 35f6c2dc3afe130c1bd5eb511c10c83e
+      - 4ddad181efe0b154b85088cb671cf9d0
       X-Runtime:
-      - '0.005776'
+      - '0.005876'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:43 GMT
       Content-Length:
       - '2'
       Connection:
@@ -42,7 +42,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '[]'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:43 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/catalogs
@@ -62,35 +62,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/v1/catalogs/28
+      - http://localhost:3000/v1/catalogs/88
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"3ddf90a004e7532365c78e43c3a26c44"'
+      - ! '"bb89befb58e4c96b8c50c9d36be84cd8"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b60ebcbacc552feece1a7b92f6a81905
+      - e184e77ad5af137a8db6eaea9f4a3b21
       X-Runtime:
-      - '0.129606'
+      - '0.064675'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
       Content-Length:
       - '143'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-02-07T22:22:55Z","description":null,"id":28,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:55Z"}'
+      string: ! '{"created_at":"2013-02-08T01:13:43Z","description":null,"id":88,"name":"test","options":{"image_src":null},"updated_at":"2013-02-08T01:13:43Z"}'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 - request:
     method: get
-    uri: http://localhost:3000/v1/catalogs/28/schemas/Product
+    uri: http://localhost:3000/v1/catalogs/88/schemas/Product
     body:
       encoding: US-ASCII
       string: ''
@@ -111,24 +111,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"406fd81d2c07ff7b2d77db40f7b05452"'
+      - ! '"a6fe04ff082449e87a8b955d266288f9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 99b40fb294286a893e029c3f81303eaf
+      - c9de9840b77a4f0dbd22d95de4e008d4
       X-Runtime:
-      - '0.014145'
+      - '0.011474'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
       Content-Length:
       - '451'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":"/catalogs/28/schemas/Product","title":"Product","type":"object","additionalProperties":false,"properties":{"id":{"type":"integer","readonly":"true"},"type":{"type":"string","required":"true","readonly":"true"},"catalog_id":{"type":"integer","readonly":"true"},"provider_id":{"type":"integer","readonly":"true"},"attr_values":{"type":"object","additionalProperties":false,"properties":{"184":{"type":"string","title":"name","required":false}}}}}'
+      string: ! '{"id":"/catalogs/88/schemas/Product","title":"Product","type":"object","additionalProperties":false,"properties":{"id":{"type":"integer","readonly":"true"},"type":{"type":"string","required":"true","readonly":"true"},"catalog_id":{"type":"integer","readonly":"true"},"provider_id":{"type":"integer","readonly":"true"},"attr_values":{"type":"object","additionalProperties":false,"properties":{"589":{"type":"string","title":"name","required":false}}}}}'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 recorded_with: VCR 2.4.0

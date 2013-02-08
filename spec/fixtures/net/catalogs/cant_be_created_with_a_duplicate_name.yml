@@ -23,29 +23,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"dde399834c5c2b7ae37d19c595ff18e8"'
+      - ! '"6615e4263e92d086d3bac100d70657e8"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 64ffe1edd47a94f269685818b9ac4eb1
+      - a0e2c22b00dc6f6ec0f6ff2afbbec91d
       X-Runtime:
-      - '0.006570'
+      - '0.007375'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:54 GMT
+      - Fri, 08 Feb 2013 01:13:43 GMT
       Content-Length:
       - '147'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '[{"created_at":"2013-02-07T22:22:54Z","description":"NASA","id":25,"name":"test","options":{"image_src":null},"updated_at":"2013-02-07T22:22:54Z"}]'
+      string: ! '[{"created_at":"2013-02-08T01:13:43Z","description":"NASA","id":85,"name":"test","options":{"image_src":null},"updated_at":"2013-02-08T01:13:43Z"}]'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:54 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:43 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/v1/catalogs/25
+    uri: http://localhost:3000/v1/catalogs/85
     body:
       encoding: US-ASCII
       string: ''
@@ -64,18 +64,18 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - d72fdaa698272a9a67ed9eaf8259a567
+      - d97da3b26fcc8f315cc0e7bbf45dd829
       X-Runtime:
-      - '0.029525'
+      - '0.028973'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:54 GMT
+      - Fri, 08 Feb 2013 01:13:43 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:54 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:43 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/catalogs
@@ -101,13 +101,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 05fd24869cfc9cf385d8d577b6e5610e
+      - a8a8f812d37087d8c2378ab61ab8e72c
       X-Runtime:
-      - '0.010442'
+      - '0.009779'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:54 GMT
+      - Fri, 08 Feb 2013 01:13:43 GMT
       Content-Length:
       - '77'
       Connection:
@@ -116,5 +116,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"error":{"name":["has already been taken"]},"status":"unprocessable_entity"}'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:54 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:43 GMT
 recorded_with: VCR 2.4.0

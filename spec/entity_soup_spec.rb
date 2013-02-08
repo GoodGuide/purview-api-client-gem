@@ -312,47 +312,74 @@ describe GoodGuide::EntitySoup do
   # TODO - restrcit entity creation and access by role/ACL
   context 'entities' do
 
-    let(:catalog) { Catalog.find(1) }
+    around(:each) do |x|
+      vcr("attrs/#{example.description}") do
+        ensure_deleted Catalog, 'test'
+        @catalog = Catalog.new(name: 'test')
+        @catalog.save.should be_true
+        
+        x.run
+      end
+    end
+
+    let(:catalog) { @catalog }
+    let(:provider) { Provider.find(1) }
+    let(:product) { GoodGuide::EntitySoup::Entity.new(type: 'Product', provider_id: provider.id, catalog_id: catalog.id) }
 
     it 'can be created' do
-      vcr('entities/create') do
-        entity = GoodGuide::EntitySoup::Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
-        entity.save.should be_true
-        entity.id.should_not be_nil
+        product.save.should be_true
+        product.id.should_not be_nil
 
-        entity2 = GoodGuide::EntitySoup::Entity.find(entity.id, break: true)
+        entity2 = GoodGuide::EntitySoup::Entity.find(product.id, break: true)
         entity2.should be_a GoodGuide::EntitySoup::Entity
-        entity.catalog_id.should == entity.catalog_id
+        entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
-      end
+    end
+
+    it 'can be created with attr_values' do
+        attr = Attr.new(name: 'test1', type: 'IntegerAttr', entity_type: 'Product', catalog_id: catalog.id)
+        attr.save.should be_true
+        product.attr_values = { attr.id => 42 }
+        product.save.should be_true
+
+        entity2 = GoodGuide::EntitySoup::Entity.find(product.id, break: true)
+        entity2.should be_a GoodGuide::EntitySoup::Entity
+        entity2.catalog_id.should == product.catalog_id
+        entity2.type.should == 'Product'
+        entity2.attr_values.should == { attr.id.to_s => 42 }
+    end
+
+    it 'can be updated with attr_values' do
+      product.save.should be_true
+      attr = Attr.new(name: 'test1', type: 'IntegerAttr', entity_type: 'Product', catalog_id: catalog.id)
+      attr.save.should be_true
+      product.update_attr_values(attr.id => 42).should be_true
+
+      entity2 = GoodGuide::EntitySoup::Entity.find(product.id, break: true)
+      entity2.should be_a GoodGuide::EntitySoup::Entity
+      entity2.catalog_id.should == product.catalog_id
+      entity2.type.should == 'Product'
+      entity2.attr_values.should == { attr.id.to_s => 42 }
     end
 
     it 'can be listed in a catalog' do
-      vcr('entities/by_catalog') do
-        entity = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
-        entity.save.should be_true
-        entity.id.should_not be_nil
+        product.save.should be_true
+        product.id.should_not be_nil
 
         entities = catalog.entities
         entities.should be_a Array
-        entities.collect(&:id).should include(entity.id)
-      end
+        entities.collect(&:id).should include(product.id)
     end
 
     it 'can be accessed as an excel spreadsheet' do
-      vcr('entities/as_excel') do
-        entity = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
-        entity.save.should be_true
-        entity.id.should_not be_nil
+        product.save.should be_true
+        product.id.should_not be_nil
 
         excel = catalog.as_excel
         excel.should be_a String
-      end
     end
 
     it 'can be listed by type' do
-      vcr('entities/by_type') do
-        product = Entity.new(type: 'Product', provider_id: 1, catalog_id: catalog.id )
         brand = Entity.new(type: 'Brand', provider_id: 1, catalog_id: catalog.id )
         product.save.should be_true
         brand.save.should be_true
@@ -361,7 +388,6 @@ describe GoodGuide::EntitySoup do
         entities.should be_a Array
         entities.collect(&:id).should include(product.id)
         entities.collect(&:id).should_not include(brand.id)
-      end
     end
 
   end

@@ -23,29 +23,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"8bdebfa8413b38a7ee30d1b73a59e004"'
+      - ! '"4696a931b5dbd9c5abaed2cbca561001"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 04e13f697877fdbdeebc99d03f65bbe8
+      - 2cd195651bdb79a4733ff30855143efc
       X-Runtime:
-      - '0.005755'
+      - '0.005584'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
       Content-Length:
       - '97'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '[{"created_at":"2013-02-07T22:22:55Z","id":12,"name":"test","updated_at":"2013-02-07T22:22:55Z"}]'
+      string: ! '[{"created_at":"2013-02-08T01:13:44Z","id":42,"name":"test","updated_at":"2013-02-08T01:13:44Z"}]'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/v1/providers/12
+    uri: http://localhost:3000/v1/providers/42
     body:
       encoding: US-ASCII
       string: ''
@@ -64,18 +64,18 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - ae46d5afeb55521f49b3bc1990483601
+      - 9d4aba6e30b7ba4d1887a670ed3ec5f6
       X-Runtime:
-      - '0.010949'
+      - '0.010193'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 - request:
     method: get
     uri: http://localhost:3000/v1/providers.json?name=test2
@@ -99,29 +99,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"6fb9a2762b56c1cb49ea8cb593ae8e2f"'
+      - ! '"1abc2e35d3de272067b65dd85a20947f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b50c80651a599c4573235a703825b2dc
+      - 2421d839fddd8fc43f5740f983d98eda
       X-Runtime:
-      - '0.005637'
+      - '0.005618'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
       Content-Length:
       - '98'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '[{"created_at":"2013-02-07T22:21:05Z","id":10,"name":"test2","updated_at":"2013-02-07T22:21:05Z"}]'
+      string: ! '[{"created_at":"2013-02-08T01:04:39Z","id":40,"name":"test2","updated_at":"2013-02-08T01:04:39Z"}]'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/v1/providers/10
+    uri: http://localhost:3000/v1/providers/40
     body:
       encoding: US-ASCII
       string: ''
@@ -140,18 +140,18 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f3173299fcdd7752e0d96fcda9650a73
+      - e73905f7e6b6b2aa8735d42af7c9070d
       X-Runtime:
-      - '0.010363'
+      - '0.008594'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/providers
@@ -171,38 +171,38 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/v1/providers/13
+      - http://localhost:3000/v1/providers/43
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"fbf107aba16ac1cafecaabd7991b8aec"'
+      - ! '"61967f4d20084a4d2b101836964667a8"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 945e9bbcd46e91b5ae2e56d14cee3192
+      - 57ef3d2f5c9bac5b0303882096366897
       X-Runtime:
-      - '0.010132'
+      - '0.010724'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
       Content-Length:
       - '95'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-02-07T22:22:55Z","id":13,"name":"test","updated_at":"2013-02-07T22:22:55Z"}'
+      string: ! '{"created_at":"2013-02-08T01:13:44Z","id":43,"name":"test","updated_at":"2013-02-08T01:13:44Z"}'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 - request:
     method: put
-    uri: http://localhost:3000/v1/providers/13
+    uri: http://localhost:3000/v1/providers/43
     body:
       encoding: UTF-8
-      string: created_at=2013-02-07T22%3A22%3A55Z&id=13&name=test2&updated_at=2013-02-07T22%3A22%3A55Z
+      string: created_at=2013-02-08T01%3A13%3A44Z&id=43&name=test2&updated_at=2013-02-08T01%3A13%3A44Z
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -220,21 +220,21 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - bf3dc755c4eb700175460c0fe572ec5e
+      - 4edbef71582b7ceb513c1845e4f7958a
       X-Runtime:
-      - '0.011169'
+      - '0.010949'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 - request:
     method: get
-    uri: http://localhost:3000/v1/providers/13
+    uri: http://localhost:3000/v1/providers/43
     body:
       encoding: US-ASCII
       string: ''
@@ -255,24 +255,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"67e30d5393240275a5bcdf13312016a5"'
+      - ! '"8e4176b6f8cc5dbcdb01343768a58b1d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e3e529cbe6e205036cc8b13639606e0e
+      - 0891e421720e646bd5cfe6a1a1d777e2
       X-Runtime:
-      - '0.005374'
+      - '0.005306'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Thu, 07 Feb 2013 22:22:55 GMT
+      - Fri, 08 Feb 2013 01:13:44 GMT
       Content-Length:
       - '96'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-02-07T22:22:55Z","id":13,"name":"test2","updated_at":"2013-02-07T22:22:55Z"}'
+      string: ! '{"created_at":"2013-02-08T01:13:44Z","id":43,"name":"test2","updated_at":"2013-02-08T01:13:44Z"}'
     http_version: !!null 
-  recorded_at: Thu, 07 Feb 2013 22:22:55 GMT
+  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
 recorded_with: VCR 2.4.0
