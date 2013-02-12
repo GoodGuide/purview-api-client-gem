@@ -23,29 +23,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"fde92c85d2f6d5aca48f1f79fcb1d657"'
+      - ! '"3b8d3282561869f3d28b2361b959d737"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2ca2a556d71ab5c41e24a31501e23fac
+      - 7c7e5819dcf4bc06679d560278f68ac8
       X-Runtime:
-      - '0.007987'
+      - '0.005755'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:47 GMT
+      - Tue, 12 Feb 2013 22:30:56 GMT
       Content-Length:
       - '145'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '[{"created_at":"2013-02-08T01:13:47Z","description":null,"id":92,"name":"test","options":{"image_src":null},"updated_at":"2013-02-08T01:13:47Z"}]'
+      string: ! '[{"created_at":"2013-02-12T22:30:56Z","description":null,"id":14,"name":"test","options":{"image_src":null},"updated_at":"2013-02-12T22:30:56Z"}]'
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:47 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:56 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/v1/catalogs/92
+    uri: http://localhost:3000/v1/catalogs/14
     body:
       encoding: US-ASCII
       string: ''
@@ -64,18 +64,18 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 68ed918e86df2d5f49a4a355dd05e65e
+      - 49c7c780ed60b19e1e0b7838f9ce792e
       X-Runtime:
-      - '0.035671'
+      - '0.083614'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:47 GMT
+      - Tue, 12 Feb 2013 22:30:56 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:47 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:56 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/catalogs
@@ -95,32 +95,32 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/v1/catalogs/93
+      - http://localhost:3000/v1/catalogs/15
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"20c98546fca79c802155d17f2d6377c4"'
+      - ! '"7064bcbd866f026c53689dfa9e586df4"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - baa8c522881e2235c0f791883d5a30ff
+      - da470cbff008ba12e84458c44b8e1cfb
       X-Runtime:
-      - '0.077835'
+      - '0.078128'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:47 GMT
+      - Tue, 12 Feb 2013 22:30:56 GMT
       Content-Length:
       - '143'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-02-08T01:13:47Z","description":null,"id":93,"name":"test","options":{"image_src":null},"updated_at":"2013-02-08T01:13:47Z"}'
+      string: ! '{"created_at":"2013-02-12T22:30:56Z","description":null,"id":15,"name":"test","options":{"image_src":null},"updated_at":"2013-02-12T22:30:56Z"}'
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:47 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:56 GMT
 - request:
     method: get
     uri: http://localhost:3000/v1/providers/1
@@ -144,32 +144,32 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"5b5e5b6e09b9cc7d5a698f7adb1e13d5"'
+      - ! '"59a5a7957e4323f5d179d6832cbb0ff6"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6b3bdfea6aa3cbd6ba1d68a2b5812df8
+      - 9bf862519ddea24feabcfd97ec4d02d1
       X-Runtime:
-      - '0.006078'
+      - '0.005982'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:47 GMT
+      - Tue, 12 Feb 2013 22:30:56 GMT
       Content-Length:
       - '99'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-02-07T21:45:07Z","id":1,"name":"GoodGuide","updated_at":"2013-02-07T21:45:07Z"}'
+      string: ! '{"created_at":"2013-02-12T22:29:01Z","id":1,"name":"GoodGuide","updated_at":"2013-02-12T22:29:01Z"}'
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:47 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:56 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/entities
     body:
       encoding: US-ASCII
-      string: type=Product&provider_id=1&catalog_id=93
+      string: type=Product&provider_id=1&catalog_id=15
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -183,35 +183,35 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/v1/entities/399
+      - http://localhost:3000/v1/entities/45
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"ce01d121bcfbec2d81041ac98239d015"'
+      - ! '"988acb60d053948d5cfc364fe54b2ead"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c437ebffeb26df652c401d520fea2a84
+      - 37f667169785874a79d4ccba9a7f74f3
       X-Runtime:
-      - '0.045503'
+      - '0.033903'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:47 GMT
+      - Tue, 12 Feb 2013 22:30:56 GMT
       Content-Length:
-      - '76'
+      - '75'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":399,"type":"Product","attr_values":{},"catalog_id":93,"provider_id":1}'
+      string: ! '{"id":45,"type":"Product","attr_values":{},"catalog_id":15,"provider_id":1}'
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:47 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:56 GMT
 - request:
     method: get
-    uri: http://localhost:3000/v1/entities.xlsx?catalog_id=93&format=xlsx&parse=false
+    uri: http://localhost:3000/v1/entities.xlsx?catalog_id=15&format=xlsx&parse=false
     body:
       encoding: US-ASCII
       string: ''
@@ -234,17 +234,17 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"e6e242d9fb20acd6ab923b9b338d9101"'
+      - ! '"7c9157645dbe651c126f8d50d03cdf39"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b1dc8406b8a054d0a4212529f5928509
+      - 335cafdd2add7139a2175da15a8ccf8b
       X-Runtime:
-      - '0.098275'
+      - '0.145242'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:47 GMT
+      - Tue, 12 Feb 2013 22:30:56 GMT
       Content-Length:
       - '3642'
       Connection:
@@ -252,13 +252,13 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        UEsDBBQAAAAIALeJR0JjOGvU2QAAAEECAAALAAAAX3JlbHMvLnJlbHOtksFO
+        UEsDBBQAAAAIANxzTEJjOGvU2QAAAEECAAALAAAAX3JlbHMvLnJlbHOtksFO
         wzAMhu88ReT7mm5ICKFluyCk3RAqD2ASt43axJEToLw9gQNiaAgOO1r2//3f
         wdv9Emb1QpI9RwPrpgVF0bLzcTDw2N2trmG/2z7QjKVe5NGnrGokZgNjKelG
         62xHCpgbThTrpmcJWOoog05oJxxIb9r2Sst3BhwzVYcyUDGwzPqVZXpinpoK
         A9W9JfpPFfe9t3TL9jlQLCcaf1yAOjgDcnBr0L+4OLb3wjVpWejcNoEKOiz4
-        CV+l2kNSPOUvr83fXpjSubVoKRQduVNGlx9G+ugVdhfvUEsDBBQAAAAIALeJ
-        R0KggFOiQAIAAHUHAAANAAAAeGwvc3R5bGVzLnhtbMVV22rcMBB971cIfUBl
+        CV+l2kNSPOUvr83fXpjSubVoKRQduVNGlx9G+ugVdhfvUEsDBBQAAAAIANxz
+        TEKggFOiQAIAAHUHAAANAAAAeGwvc3R5bGVzLnhtbMVV22rcMBB971cIfUBl
         b5tAg21ICwuFNgSyD33V2uO1QRcjy1s7X9+R5PiSbvDSFuqH1Wh8ztHM7Iyc
         tHYQ8FQBWNJLodqUVtY2d4y1eQWSt+91AwrflNpIbnFrTqxtDPCidSQp2C6K
         bpnktaJZojq5l7Ylue6UTelucpGwfC1SGkcRJUHuiy4gpQM+TEpWFJSwi4T4
@@ -271,41 +271,41 @@ http_interactions:
         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
-        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
+        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
-        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
+        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
-        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
+        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
-        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
+        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
-        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
+        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
-        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
+        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
@@ -319,20 +319,20 @@ http_interactions:
         kyPLglF8kDIja0hjYirvxzn/mGLgmR15ZoHnrK8bcuJR3WDeSp17Abdae/Pe
         rFEWh3vwscYqQ/dNWAG/uKS4hbe8HmBH0qvQqnc09LcQy4G3+6iv3VEMx13x
         y/RN2p3iKkGAPJ7JYi4iHWTY21sk7vT+s0HY7K0SeT2sT5r35QYnHra0bbzT
-        B1ch389+7LM7fHayD38AUEsBAjQDFAAAAAgAt4lHQmM4a9TZAAAAQQIAAAsA
-        AAAAAAAAAQAAAKSBAAAAAF9yZWxzLy5yZWxzUEsBAjQDFAAAAAgAt4lHQqCA
+        B1ch389+7LM7fHayD38AUEsBAjQDFAAAAAgA3HNMQmM4a9TZAAAAQQIAAAsA
+        AAAAAAAAAQAAAKSBAAAAAF9yZWxzLy5yZWxzUEsBAjQDFAAAAAgA3HNMQqCA
         U6JAAgAAdQcAAA0AAAAAAAAAAQAAAKSBAgEAAHhsL3N0eWxlcy54bWxQSwEC
-        NAMUAAAACAC3iUdCWiNcEw4BAADmAQAAEQAAAAAAAAABAAAApIFtAwAAZG9j
-        UHJvcHMvY29yZS54bWxQSwECNAMUAAAACAC3iUdC0L5Pp44AAADiAAAAEAAA
-        AAAAAAABAAAApIGqBAAAZG9jUHJvcHMvYXBwLnhtbFBLAQI0AxQAAAAIALeJ
-        R0ITaqAuuQAAAJcBAAAaAAAAAAAAAAEAAACkgWYFAAB4bC9fcmVscy93b3Jr
-        Ym9vay54bWwucmVsc1BLAQI0AxQAAAAIALeJR0Ixz6hmIwEAAIUDAAATAAAA
+        NAMUAAAACADcc0xCaVAcqw4BAADmAQAAEQAAAAAAAAABAAAApIFtAwAAZG9j
+        UHJvcHMvY29yZS54bWxQSwECNAMUAAAACADcc0xC0L5Pp44AAADiAAAAEAAA
+        AAAAAAABAAAApIGqBAAAZG9jUHJvcHMvYXBwLnhtbFBLAQI0AxQAAAAIANxz
+        TEITaqAuuQAAAJcBAAAaAAAAAAAAAAEAAACkgWYFAAB4bC9fcmVscy93b3Jr
+        Ym9vay54bWwucmVsc1BLAQI0AxQAAAAIANxzTEIxz6hmIwEAAIUDAAATAAAA
         AAAAAAEAAACkgVcGAABbQ29udGVudF9UeXBlc10ueG1sUEsBAjQDFAAAAAgA
-        t4lHQvkNWVnEAAAAKwEAAA8AAAAAAAAAAQAAAKSBqwcAAHhsL3dvcmtib29r
-        LnhtbFBLAQI0AxQAAAAIALeJR0LaKINqcwAAAIsAAAAjAAAAAAAAAAEAAACk
+        3HNMQvkNWVnEAAAAKwEAAA8AAAAAAAAAAQAAAKSBqwcAAHhsL3dvcmtib29r
+        LnhtbFBLAQI0AxQAAAAIANxzTELaKINqcwAAAIsAAAAjAAAAAAAAAAEAAACk
         gZwIAAB4bC93b3Jrc2hlZXRzL19yZWxzL3NoZWV0MS54bWwucmVsc1BLAQI0
-        AxQAAAAIALeJR0IbnrE9UAIAAKkEAAAYAAAAAAAAAAEAAACkgVAJAAB4bC93
+        AxQAAAAIANxzTEIbnrE9UAIAAKkEAAAYAAAAAAAAAAEAAACkgVAJAAB4bC93
         b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwUGAAAAAAkACQBOAgAA1gsAAAAA
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:47 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:56 GMT
 recorded_with: VCR 2.4.0

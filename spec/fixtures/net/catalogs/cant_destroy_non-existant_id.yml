@@ -27,13 +27,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - beb9b59e420e071e4c49a2d3c1bafead
+      - 006313a7bb8b87f766d0342da9f43951
       X-Runtime:
-      - '0.006401'
+      - '0.003758'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:43 GMT
+      - Tue, 12 Feb 2013 22:30:53 GMT
       Content-Length:
       - '2'
       Connection:
@@ -42,7 +42,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '[]'
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:43 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:53 GMT
 - request:
     method: delete
     uri: http://localhost:3000/v1/catalogs/non-existant
@@ -66,13 +66,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f573f4ce145a2dbd83109e4302a4caba
+      - 8ee0ae4a598111308d4b9cfadcf89312
       X-Runtime:
-      - '0.005363'
+      - '0.004383'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:43 GMT
+      - Tue, 12 Feb 2013 22:30:53 GMT
       Content-Length:
       - '43'
       Connection:
@@ -81,5 +81,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"error":{"base":"not found"},"status":404}'
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:43 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:53 GMT
 recorded_with: VCR 2.4.0

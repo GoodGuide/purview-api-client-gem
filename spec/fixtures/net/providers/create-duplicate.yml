@@ -25,13 +25,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 00d37c289e9930362fade1b5f1ffc0a0
+      - 0f7816f18331273d1bf63f376a0c2c06
       X-Runtime:
-      - '0.005296'
+      - '0.010867'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Fri, 08 Feb 2013 01:13:44 GMT
+      - Tue, 12 Feb 2013 22:30:53 GMT
       Content-Length:
       - '77'
       Connection:
@@ -40,5 +40,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"error":{"name":["has already been taken"]},"status":"unprocessable_entity"}'
     http_version: !!null 
-  recorded_at: Fri, 08 Feb 2013 01:13:44 GMT
+  recorded_at: Tue, 12 Feb 2013 22:30:53 GMT
 recorded_with: VCR 2.4.0
