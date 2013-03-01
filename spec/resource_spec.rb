@@ -3,17 +3,19 @@ require 'spec_helper'
 describe GoodGuide::EntitySoup::Resource do
   class TestResource
     include Resource
-    resource_path '/tests'
     resource_name 'test'
+    resource_path 'tests'
+    resource_json_root 'tests'
   end
 
-  class Entity
+  class TestEntity
     include Resource
   end
 
+
   describe 'wrapping' do
     it 'wraps an entity' do
-      r = TestResource.new(Entity.new(id: 123))
+      r = TestResource.new(TestEntity.new(id: 123))
 
       r.should be_a TestResource
       r.id.should == 123
@@ -35,18 +37,18 @@ describe GoodGuide::EntitySoup::Resource do
 
   describe 'entity' do
 
-    class Entity
+    class TestEntity
       attributes :foo, :bar
     end
 
     it 'has fields' do
-      r = Entity.new(foo: 'foo', bar: 'bar')
+      r = TestEntity.new(foo: 'foo', bar: 'bar')
       r.foo.should == 'foo'
       r.bar.should == 'bar'
     end
 
     it 'has editable fields' do
-      r = Entity.new(foo: 'foo', bar: 'bar')
+      r = TestEntity.new(foo: 'foo', bar: 'bar')
       r.foo.should == 'foo'
       r.bar.should == 'bar'
       r.foo = 'bar'
@@ -57,15 +59,14 @@ describe GoodGuide::EntitySoup::Resource do
 
   end
 
+
   describe 'finding' do
-    after { reset_connection! }
+
+    before { reset_connection! }
 
     it 'finds a single resource' do
       stub_connection! do |stub|
-        stub.get('tests/123') {
-          body = { id: 123 }.to_json
-          [200, {}, body]
-        }
+        stub.get('/v1/tests/123.json') { [200, {}, { id: 123 }.to_json] }
       end
 
       tr = TestResource.find(123)
@@ -73,99 +74,69 @@ describe GoodGuide::EntitySoup::Resource do
       tr.id.should == 123
     end
 
-    it "finds multiple resources" do
-      ids = [1, 2, 3]
-
-      stub_connection! do |stub|
-        ids.each do |id|
-          stub.get("tests/#{id}") {
-            body = { id: id }.to_json
-            [200, {}, body]
-          }
-        end
-      end
-
-      resources = TestResource.find_multi(ids, pool_size: 1)
-
-      resources.should be_a Array
-      resources.map(&:id).should == [1, 2, 3]
-    end
-
     it "searches resources" do
-      stub_connection! do |stub|
-        stub.get('tests.json?include[]=foo&limit=3') do
-          body = 
-            [
-              { id: 1 }, { id: 2 }, { id: 3 }
-            ].to_json
-
-
-          [200, {}, body]
-        end
-      end
-
+      stub_request(:get, "/v1/tests.json?include%5B%5D=foo&limit=3", {
+                     tests: [
+                             { id: 1 }, 
+                             { id: 2 }, 
+                             { id: 3 }
+                            ],
+                     count: 3
+                   })
       list = TestResource.find_all(limit: 3, include: 'foo')
       list.should be_a Array
       list.map(&:id).should == [1, 2, 3]
     end
 
     describe 'errors' do
-      after { reset_connection! }
 
       it 'handles get server errors' do
         stub_connection! do |stub|
-          stub.get('tests/123') {
-            body = "foo bar exception"
-            [500, {}, body]
-          }
+          stub.get('/v1/tests/123.json') { [500, {}, "foo bar exception"] }
         end
 
-        tr = TestResource.find(123)
-        tr.should be_nil
-
+        expect { TestResource.find(123) }.to raise_error(Faraday::Error::ClientError)
       end
+
+      it 'handles get not found errors' do
+        stub_connection! do |stub|
+          stub.get('/v1/tests/123.json') { [404, {}, {errors: { base: ["not found"]} }.to_json ] }
+        end
+
+        TestResource.find(123).should be_nil
+      end
+
     end
   end
 
   describe 'saving' do
 
+    before { reset_connection! }
+
     shared_examples_for 'it handles errors' do |method, url|
       describe 'errors' do
 
         it 'handles server errors' do
-          stub_connection! do |stub|
-            stub.send(method, url) {
-              body = "foo bar exception"
-              [500, {}, body]
-            }
-          end
+          stub_connection! { |stub| stub.send(method, url) { [500, {}, "foo bar exception"] } }
 
-          result = resource.save
-          result.should be_false
-          resource.errors['base'].should == ['server error']
+          resource.save.should be_false
+          resource.errors.should_not be_empty
         end
 
 
         it 'handles error hashes' do
           stub_connection! do |stub|
-            stub.send(method, url) {
-              body = {error: {base: ['all messed up'], name: ['must be unique']}}.to_json
-              [422, {}, body]
-            }
+            stub.send(method, url) { [422, {}, {error: {base: ['all messed up'], name: ['must be unique']}}.to_json ] }
           end
 
-          result = resource.save
-
-          result.should be_false
-          resource.errors['base'].should == ['all messed up']
-          resource.errors['name'].should == ['must be unique']
+          resource.errors.should be_empty
+          resource.save.should be_false
+          resource.errors.should_not be_empty
+          
         end
 
       end
     end
-
-
-    after { reset_connection! }
 
     context 'when the resource is new' do
 
@@ -173,7 +144,7 @@ describe GoodGuide::EntitySoup::Resource do
 
       it 'posts the resource and updates its attributes' do
         stub_connection! do |stub|
-          stub.post('tests') {
+          stub.post('/v1/tests.json') {
             body = {id: 23}.to_json
             [201, {}, body]
           }
@@ -183,15 +154,14 @@ describe GoodGuide::EntitySoup::Resource do
         resource.id.should == 23
       end
 
-
-      it_behaves_like 'it handles errors', :post, '/tests'
+      it_behaves_like 'it handles errors', :post, '/v1/tests.json'
 
     end
 
     context 'when the resource already exists' do
       let(:resource) { TestResource.new(id: 23) }
 
-      it_behaves_like 'it handles errors', :put, '/tests/23'
+      it_behaves_like 'it handles errors', :put, '/v1/tests/23.json'
     end
 
   end

@@ -17,20 +17,21 @@ VCR.configure do |c|
   c.cassette_library_dir = File.expand_path('fixtures/net', File.dirname(__FILE__))
   c.hook_into :webmock
   c.default_cassette_options = { :record => :once }
+  c.configure_rspec_metadata!
 end
 
 module SpecHelpers
 
   def stub_connection!(&b)
-    connection_stack << Connection.http
+    Connection.http.builder.swap Faraday::Adapter::NetHttp, Faraday::Adapter::Test, &b
+  end
 
-    Connection.http = Faraday.new do |f|
-      f.adapter(:test, &b)
-    end
+  def stub_request(method, url, data, status = 200, raw = false)
+    stub_connection! { |stub| stub.send(method, url) { [status, {}, raw ? data : data.to_json ] } }
   end
 
   def reset_connection!
-    Connection.http = connection_stack.pop
+    Connection.http = nil
   end
 
   def vcr(name, &b)
@@ -41,26 +42,18 @@ module SpecHelpers
     Digest.bubblebabble(Digest::SHA1::hexdigest("random string")[8..12])
   end
 
-  def ensure_deleted(klass, name)
-    things = klass.find_all(name: name)
-    (things.first.destroy.should be_true) if things.any?
-  end
-
-
-
 private
-  def connection_stack
-    @connection_stack ||= []
+  def adapter_stack
+    @adapter_stack ||= []
   end
 
 end
 
 RSpec.configure do |config|
-  config.extend VCR::RSpec::Macros
   config.mock_framework = :rr
   config.include SpecHelpers
 
 end
 
-GoodGuide::EntitySoup.url="http://localhost:3000/v1"
+GoodGuide::EntitySoup.url="http://localhost:3000"
 

@@ -16,7 +16,7 @@ module GoodGuide::EntitySoup::Resource
     extend ActiveModel::Naming
     attr_reader :errors
     attr_reader :attributes
-    class_attribute :connection, :views
+    class_attribute :connection, :views, :json_root
     self.views = {}
     alias_method :resource, :attributes
     initialize_resource!
@@ -40,42 +40,28 @@ module GoodGuide::EntitySoup::Resource
   end
 
   def save
-    result = if id.nil?
-      connection.post(attributes)
-    else
-      connection.put(id, attributes)
-    end
-
     errors.clear
-
-    unless result
-      errors.set(:base, ['server error'])
-      return false
-    end
-
-    if result.is_a?(Hash) and result['error']
-      result['error'].each {|field, messages| errors.set(field.to_sym, messages)}
-      return false
-    end
-
-    if id.nil?
-      @attributes = result.with_indifferent_access
-    end
-
-    return true
+    result = if id
+               connection.put(id, attributes)
+             else
+               connection.post(attributes)
+             end
+      
+    @attributes = result.with_indifferent_access if id.nil?  # saved a new record
+    true
+  rescue Faraday::Error::ClientError => e
+    !parse_errors(e.response[:body], e.response[:status])
   end
 
   def destroy
-    if id.nil?
-      false
+    if id
+        result = connection.delete(id)
+        !parse_errors(result)
     else
-      result = connection.delete(id)
-      if result.is_a?(Hash) and result['error']
-        false
-      else
-        result
-      end
+      false
     end
+  rescue Faraday::Error::ClientError => e
+    !parse_errors(e.response[:body], e.response[:status])
   end
 
   def id
@@ -100,7 +86,7 @@ module GoodGuide::EntitySoup::Resource
 
     def initialize_resource!
       resource_name self.name.demodulize.underscore
-      resource_path "/" + self.resource_name.pluralize
+      resource_path self.resource_name.pluralize
     end
 
     def default_view(params)
@@ -120,37 +106,23 @@ module GoodGuide::EntitySoup::Resource
 
     def find(id, opts={})
       params = view_params_for(opts)
-      if (result = connection.get(id, params))
-        new(result)
-      else
-        nil
-      end
-    end
-
-    def find_multi(ids, opts={})
-      params = view_params_for(opts)
-      connection.get_multi(ids, params).map { |r| r ? new(r) : nil }
+      result = connection.get(id, params)
+      new(result)
+    rescue Faraday::Error::ResourceNotFound => e
+      nil
     end
 
     def find_all(opts={})
-      get(opts).map! { |r| new(r) }
-    end
-
-    def get(opts={})
       params = view_params_for(opts)
-      if params[:format] and params[:format] != 'json'
-        connection.get_all("#{resource_name.pluralize}.#{params[:format]}", params.merge(parse: false))
-      else
-        connection.get_all(resource_name.pluralize, params)
-      end
+      connection.get_all(nil, params.merge!(json_root: self.json_root)).map! { |r| new(r) }
+    rescue Faraday::Error::ResourceNotFound => e
+      # NOTE: can currently happen if find params reference a non-existant entity, a bug in EntitySoup?
+      []
     end
 
-    def inflate_all!(records, opts={})
-      find_multi(records.map(&:id), opts).zip(records) do |data, record|
-        record.resource.merge!(data.resource)
-      end
-
-      records
+    def get(elements, opts={})
+      params = view_params_for(opts)
+      connection.get_all(elements, params)
     end
 
     def name
@@ -166,11 +138,19 @@ module GoodGuide::EntitySoup::Resource
     end
 
     def resource_path(path)
-      self.connection = GoodGuide::EntitySoup::Connection.new(path)
+      self.connection = GoodGuide::EntitySoup::Connection.new("#{resource_version_path}/#{path}")
     end
 
-    def relations
-      @relations ||= []
+    def resource_version(version = nil)
+      @version ||= (version || GoodGuide::EntitySoup.version)
+    end
+
+    def resource_version_path
+      "v#{resource_version.split('.').first}"
+    end
+
+    def resource_json_root(json_root)
+      self.json_root = json_root
     end
 
   private
@@ -217,41 +197,6 @@ module GoodGuide::EntitySoup::Resource
       one.merge(two)
     end
 
-    ########
-    # relation macros
-    ########
-    def has(type)
-      type = type.to_s
-      model = "GoodGuide::EntitySoup::#{type.camelize}".constantize
-      relations << type
-
-      define_cached_method(type) do
-        model.new(self.resource[type])
-      end
-
-      define_method(type+'=') do |val|
-        self.resource[type] = val
-        instance_variable_set("@#{type}", val)
-      end
-    end
-
-    def has_many(type, opts={})
-      type = type.to_s
-      klass_name = opts.fetch(:model, type).to_s.singularize.camelize
-      model_name = "GoodGuide::EntitySoup::" + klass_name
-      model = model_name.constantize
-      relations << type
-
-      define_cached_method(type) do
-        self.resource.fetch(type,[]).map { |r| model.new(r) }
-      end
-
-      define_method(type+'=') do |val|
-        self.resource[type] = val
-        instance_variable_set("@#{type}", val)
-      end
-    end
-
     # shortcut for direct method accessors to
     # attributes of the returned hash
     def attributes(*attrs)
@@ -278,6 +223,8 @@ module GoodGuide::EntitySoup::Resource
     end
   end
 
+  private
+
   # re-wrap this object with new data from the API
   def inflate!(opts={})
     new = self.class.find(self.id)
@@ -285,4 +232,23 @@ module GoodGuide::EntitySoup::Resource
 
     self
   end
+
+  def parse_errors(body, status = 0)
+    case status / 100 
+    when 4
+      if body.is_a?(Hash) and body['error']
+        body['error'].each {|field, messages| errors.set(field.to_sym, messages)}
+      else
+        errors.set(:base, ['unknown client error #{status}'])
+      end
+      true
+    when 5
+      errors.set(:base, ['server error #{status}'])
+      true
+    else
+      false
+    end
+  end
+      
+
 end

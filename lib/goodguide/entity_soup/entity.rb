@@ -4,6 +4,9 @@ module GoodGuide::EntitySoup
   class Entity
     include Resource
 
+    # NOTE: at the moment API returns only entities within a JSON object
+    resource_json_root :entities
+
     attributes :catalog_id, :provider_id, :type, :created_at, :updated_at, :attr_values
 
     view :bare, inherits: nil, include: nil
@@ -16,8 +19,8 @@ module GoodGuide::EntitySoup
       Catalog.find(self.catalog_id, params)
     end
 
-    def provider(params = {})
-      Provider.find(self.provider_id, params)
+    def account(params = {})
+      Account.find(self.provider_id, params)
     end
 
     def update_attr_values(params)

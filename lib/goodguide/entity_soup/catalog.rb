@@ -18,7 +18,7 @@ module GoodGuide::EntitySoup
     end
 
     def as_excel(params = {})
-      Entity.get(params.merge(catalog_id: self.id, format: 'xlsx')).body
+      Entity.get(nil, params.merge(catalog_id: self.id, format: 'xlsx'))
     end
 
     def self.find_by_name(name, opts = {})

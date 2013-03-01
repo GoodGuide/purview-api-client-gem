@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/users/session.json
+    body:
+      encoding: UTF-8
+      string: ! '{"email":"admin@goodguide.com","password":"password"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.6
+      Content-Type:
+      - application/json
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 201
+      message: ! 'Created '
+    headers:
+      Location:
+      - http://localhost:3000/
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"f68ccd4d3f2865f94cfc25cd600a5b8f"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3874f5dd5df54df4f4effab72378b16b
+      X-Runtime:
+      - '0.015875'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Fri, 01 Mar 2013 11:50:56 GMT
+      Content-Length:
+      - '525'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJThmYTY0MGQ0YTk4MmI4MDVjODcxY2Y0MWNiNTE4NWJkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JGtlZXlHUWFlNVlTVDRESUsyUFNFbU8GOwBU--14ab7c9b48c1a57b8c8a5c11cb7bf779f5722362;
+        path=/; HttpOnly
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":1,"created_at":"2013-03-01T05:39:12Z","email":"admin@goodguide.com","first_name":null,"id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":null,"updated_at":"2013-03-01T05:39:12Z","account_name":"GoodGuide","roles":[{"created_at":"2013-03-01T05:39:12Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-03-01T05:39:12Z","description":"superuser","resource_name":null}]}'
+    http_version: !!null 
+  recorded_at: Fri, 01 Mar 2013 11:50:56 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/v1/attrs/types.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.6
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJThmYTY0MGQ0YTk4MmI4MDVjODcxY2Y0MWNiNTE4NWJkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JGtlZXlHUWFlNVlTVDRESUsyUFNFbU8GOwBU--14ab7c9b48c1a57b8c8a5c11cb7bf779f5722362
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: ! 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"4a52f0f9914d028e5193f1faea03cb34"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8db9fe001307d595532de670dbb05080
+      X-Runtime:
+      - '0.015767'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+      Date:
+      - Fri, 01 Mar 2013 11:50:56 GMT
+      Content-Length:
+      - '3676'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '[{"name":"BooleanAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"DerivedAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null,"rule":"{}"}},{"name":"EntityAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null,"entity_type":null}},{"name":"FloatAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"IdentityAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"IntegerAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"JSONAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"NumericAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"PercentageAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"ReferenceAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"StringAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null}},{"name":"AttachmentAttr","options":{"enum":null,"list":false,"allow_nil":true,"default_value":null,"min_items":null,"max_items":null,"unique_items":null,"referenced_catalog_id":null,"referenced_attr_id":null,"source_attr_id":null,"sort":null,"position":null,"hide":false,"title":null,"enum_titles":null,"mime_types":null}}]'
+    http_version: !!null 
+  recorded_at: Fri, 01 Mar 2013 11:50:56 GMT
+recorded_with: VCR 2.4.0

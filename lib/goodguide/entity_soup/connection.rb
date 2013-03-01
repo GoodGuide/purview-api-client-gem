@@ -1,145 +1,71 @@
 module GoodGuide::EntitySoup
+
   class Connection
-    include ActiveSupport::Benchmarkable
+
+    class << self
+      attr_reader :site
+
+      def site=(new_site)
+        if new_site != @site
+          @site = new_site
+          @http = nil # Force re-initialization of Faraday next time http is used
+        end
+        @site
+      end
+
+    end
 
     attr_reader :path
-    class_attribute :site
 
     def initialize(path)
       @path = path
     end
 
-    def path_for(id)
-      "#{rel_path}/#{id}"
-    end
+    def get(id, opts={})
+      opts = opts.dup
+      format = (opts.delete(:format) || 'json')
 
-    def get(id, opts={}, cacher=nil, break_cache=false, parse=true)
-      unless cacher
-        opts = opts.dup
-        cacher = opts.delete(:cacher)
-        break_cache = opts.delete(:break)
-        parse = opts.fetch(:parse, true)
-        opts.delete(:pool_size)
-        opts.delete(:parse)
-      end
-
-      cache_and_benchmark(key(id, opts), cacher, break_cache) do
-        res = http.get(path_for(id), opts)
-        if not res.respond_to?(:status) or (res.status == 200)
-          parse ? JSON.load(res.body) : res.body
-        else
-          # Note - no way to return error info here which is perhaps where we should be
-          # throwing exceptions from connection class but that is a pretty substantial
-          # refactor.
-          nil
-        end
-      end
+      res = http.get("#{path_for(id)}.#{format}", opts)
+      res.body
     end
 
     def put(id, opts={})
       opts = opts.dup
-      parse = opts.fetch(:parse, true)
-      opts.delete(:parse)
+      format = (opts.delete(:format) || 'json')
 
-      res = http.put(path_for(id), opts)
-      if not res.respond_to?(:status) or no_content(res)
-        true
-      else
-        parse ? JSON.load(res.body) : res.body
-      end
-    rescue
-      nil
+      res = http.put("#{path_for(id)}.#{format}", opts)
+      res.body
     end
 
     def post(opts={})
       opts = opts.dup
-      parse = opts.fetch(:parse, true)
-      opts.delete(:parse)
+      format = (opts.delete(:format) || 'json')
 
-      res = http.post(rel_path, opts)
-      parse ? JSON.load(res.body) : res.body
-    rescue
-      nil
+      res = http.post("#{rel_path}.#{format}", opts)
+      res.body
     end
 
     def delete(id, opts={})
       opts = opts.dup
-      parse = opts.fetch(:parse, true)
-      opts.delete(:parse)
+      format = (opts.delete(:format) || 'json')
 
-      res = http.delete(path_for(id), opts)
-      if not res.respond_to?(:status) or no_content(res)
-        true
-      else
-        parse ? JSON.load(res.body) : res.body
-      end
-    rescue
-      nil
-    end
-
-    def key(id, opts)
-      "#{path}/#{id}?#{query(opts)}"
-    end
-
-    def query(opts)
-      query = opts.to_query
+      res = http.delete("#{path_for(id)}.#{format}", opts)
+      res.body
     end
 
     def get_all(elements, opts={})
       opts = opts.dup
-      cacher = opts.delete(:cacher)
-      break_cache = opts.delete(:break)
-      format = opts.fetch(:format, 'json')
+      json_root = opts.delete(:json_root)
+      format = (opts.delete(:format) || 'json')
 
-      query = opts.to_query
-      key = "#{path}?#{query}"
+      url = (elements ? "#{rel_path}/#{elements}.#{format}" :  "#{rel_path}.#{format}")
 
-      result = cache_and_benchmark(key, cacher, break_cache) do
-        http.get("#{rel_path}.#{format}", opts)
-      end
+      res = http.get(url, opts)
 
-      if format != 'json'
-        result
+      if json_root and res.body.is_a?(Hash)
+        res.body[json_root.to_s]
       else
-        hash = JSON.load(result.body)
-      end
-    end
-
-    def get_multi(ids=[], opts={})
-      return [] if ids.blank?
-      return [get(ids.first, opts)] if ids.size == 1
-
-      cacher = opts.delete(:cacher) || cacher_klass
-
-      # XXX HACK XXX pass the "busting" boolean into the
-      # new threads.
-      busting = cacher && cacher.busting?
-
-      benchmark "parallel load: #{ids.inspect}" do
-        pool_size = (opts.delete(:pool_size) || 10)
-        keys = ids.map { |id| key(id, opts) }
-
-        results = if cacher_klass && cacher_klass.enabled?
-          ids.map(&:to_i).zip(cacher_klass.get_multi(keys))
-        else
-          ids.map{|id| [id.to_i, nil]}
-        end
-
-        uncached_results = results.select { |r| r[1].blank? }
-        uncached_ids = uncached_results.map(&:first)
-
-        if uncached_ids.present?
-          pool_size = [pool_size, uncached_ids.size].min
-          fetched_results = WorkQueue.new(uncached_ids, size: pool_size) do |id|
-            get(id, opts, cacher, busting)
-          end.run.results.compact.index_by { |r| r['id'].to_i }
-
-          uncached_results.each do |result|
-            result[1] = fetched_results[result[0]]
-          end
-        end
-
-        results.map(&:last)
+        res.body
       end
     end
 
@@ -153,53 +79,35 @@ module GoodGuide::EntitySoup
       end
     end
 
-    def success(response)
-      response.respond_to?(:status) and (response.status >= 200) and (response.status < 300)
+    def path_for(id)
+      "#{rel_path}/#{id}"
     end
 
-    def no_content(response)
-      response.respond_to?(:status) and (response.status == 204)
+    def query(opts)
+      query = opts.to_query
+    end
+
+    def key(id, opts)
+      "#{path}/#{id}?#{query(opts)}"
     end
 
     # allow overriding in tests
-    def self.http=(h); @@http = h; end
+    def self.http=(h); @http = h; end
+
     def self.http
-      @@http ||= Faraday.new(site || GoodGuide::EntitySoup::DEFAULT_URL)
+      @http ||= Faraday.new(site) do |builder|
+        builder.use Request::CookieAuth
+        builder.request  :multi_json
+        builder.response :multi_json
+        builder.response :raise_error
+        builder.response :logger if ENV['GG_TEST_FARADAY_LOGGING'] =~ /^true/i
+        builder.adapter Faraday.default_adapter
+      end
     end
 
     def http
       self.class.http
     end
 
-    def cache_and_benchmark(key, cacher=nil, break_cache=false, &b)
-      cacher ||= cacher_klass
-
-      message = "#{path} load (#{key})"
-
-      result = nil
-      benchmark(message) do
-        if cacher
-          result = cacher.get(key, break: break_cache, &b)
-        else
-          result = yield
-        end
-      end
-
-      result
-    end
-
-    def cacher_available?
-      defined? Cacher
-    end
-
-    def cacher_klass
-      return @cacher_klass if defined? @cacher_klass
-
-      @cacher_klass = Cacher if cacher_available?
-    end
-
-    def logger
-      defined?(Rails) ? Rails.logger : Logger.new("/dev/null")
-    end
   end
 end
