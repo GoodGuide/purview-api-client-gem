@@ -117,7 +117,9 @@ module GoodGuide
 
         def find_all(opts={})
           params = view_params_for(opts)
-          connection.get_all(nil, params.merge!(json_root: self.json_root)).map! { |r| new(r) }
+          elements = params.delete(:elements)
+          
+          connection.get_all(elements, params.merge!(json_root: self.json_root)).map! { |r| new(r) }
         rescue Faraday::Error::ResourceNotFound => e
           # NOTE: can currently happen if find params reference a non-existant entity, a bug in EntitySoup?
           []

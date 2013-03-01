@@ -1,14 +1,17 @@
 require 'hashie/mash'
+require 'goodguide/entity_soup/search'
+
 module GoodGuide
   module EntitySoup
 
     class Entity
       include Resource
+      extend Search
 
       # NOTE: at the moment API returns only entities within a JSON object
       resource_json_root :entities
 
-      attributes :catalog_id, :provider_id, :type, :created_at, :updated_at, :attr_values
+      attributes :catalog_id, :account_id, :type, :created_at, :updated_at, :attr_values
 
       view :bare, inherits: nil, include: nil
 
@@ -21,7 +24,7 @@ module GoodGuide
       end
 
       def account(params = {})
-        Account.find(self.provider_id, params)
+        Account.find(self.account_id, params)
       end
 
       def update_attr_values(params)
@@ -30,6 +33,7 @@ module GoodGuide
         @errors = e.errors
         result
       end
+      
     end
 
   end
