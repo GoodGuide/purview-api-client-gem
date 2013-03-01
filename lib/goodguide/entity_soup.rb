@@ -15,6 +15,7 @@ require 'active_support/core_ext/object/to_query'
 require 'active_support/core_ext/object/to_json'
 require 'active_support/inflector'
 
+require "goodguide/entity_soup/version"
 require "goodguide/entity_soup/connection"
 require "goodguide/entity_soup/resource"
 require "goodguide/entity_soup/attr"

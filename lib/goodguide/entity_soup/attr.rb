@@ -1,30 +1,34 @@
 require 'hashie/mash'
-module GoodGuide::EntitySoup
-  class Attr
-    include Resource
+module GoodGuide
+  module EntitySoup
 
-    attributes :type, :name, :options, :entity_type, :catalog_id, :schema
+    class Attr
+      include Resource
 
-    default_view include: ['schema']
-    view :bare, inherits: nil, schema: nil
+      attributes :type, :name, :options, :entity_type, :catalog_id, :schema
 
-    def self.types(options = {})
-      connection.get('types', options).collect { |t| Hashie::Mash.new(t) }
-    end
+      default_view include: ['schema']
+      view :bare, inherits: nil, schema: nil
 
-    def enum
-      enum = {}
-      if options[:enum] and options[:enum_titles]
-        options[:enum].zip(options[:enum_titles]).each do |(key, value)|
-          enum[key] = value
-        end
+      def self.types(options = {})
+        connection.get('types', options).collect { |t| Hashie::Mash.new(t) }
       end
 
-      enum
+      def enum
+        enum = {}
+        if options[:enum] and options[:enum_titles]
+          options[:enum].zip(options[:enum_titles]).each do |(key, value)|
+            enum[key] = value
+          end
+        end
+
+        enum
+      end
+
+      def label_for(value)
+        enum[value] || value
+      end
     end
 
-    def label_for(value)
-      enum[value] || value
-    end
   end
 end

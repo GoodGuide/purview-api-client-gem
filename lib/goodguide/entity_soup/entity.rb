@@ -1,46 +1,36 @@
 require 'hashie/mash'
-module GoodGuide::EntitySoup
+module GoodGuide
+  module EntitySoup
 
-  class Entity
-    include Resource
+    class Entity
+      include Resource
 
-    # NOTE: at the moment API returns only entities within a JSON object
-    resource_json_root :entities
+      # NOTE: at the moment API returns only entities within a JSON object
+      resource_json_root :entities
 
-    attributes :catalog_id, :provider_id, :type, :created_at, :updated_at, :attr_values
+      attributes :catalog_id, :provider_id, :type, :created_at, :updated_at, :attr_values
 
-    view :bare, inherits: nil, include: nil
+      view :bare, inherits: nil, include: nil
 
-    def self.types
-      connection.get('types').collect { |t| Hashie::Mash.new(t) }
+      def self.types
+        connection.get('types').collect { |t| Hashie::Mash.new(t) }
+      end
+
+      def catalog(params = {})
+        Catalog.find(self.catalog_id, params)
+      end
+
+      def account(params = {})
+        Account.find(self.provider_id, params)
+      end
+
+      def update_attr_values(params)
+        e = Entity.new(id: self.id, attr_values: params)
+        result = e.save
+        @errors = e.errors
+        result
+      end
     end
-
-    def catalog(params = {})
-      Catalog.find(self.catalog_id, params)
-    end
-
-    def account(params = {})
-      Account.find(self.provider_id, params)
-    end
-
-    def update_attr_values(params)
-      e = Entity.new(id: self.id, attr_values: params)
-      result = e.save
-      @errors = e.errors
-      result
-    end
-
-    # Doesn't really work any more now that attr_values are passed by '<attr_id>' => '<attr_value>'
-    # def method_missing(method, *args, &block)
-    #   titleized = method.to_s.titleize
-    #   if attr_values.has_key?(method)
-    #     attr_values[method]
-    #   elsif attr_values.has_key?(titleized)
-    #     attr_values[titleized]
-    #   else
-    #     super
-    #   end
-    # end
 
   end
 end
