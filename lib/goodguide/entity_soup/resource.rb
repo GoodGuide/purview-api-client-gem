@@ -53,7 +53,11 @@ module GoodGuide
         @attributes = result.with_indifferent_access if id.nil?  # saved a new record
         true
       rescue Faraday::Error::ClientError => e
-        !parse_errors(e.response[:body], e.response[:status])
+        if e.response
+          !parse_errors(e.response[:body], e.response[:status])
+        else
+          raise e
+        end
       end
 
       def destroy

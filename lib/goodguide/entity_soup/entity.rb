@@ -13,7 +13,7 @@ module GoodGuide
 
       attributes :catalog_id, :account_id, :type, :created_at, :updated_at, :attr_values
 
-      view :bare, inherits: nil, include: nil
+      view :brief, inherits: nil, include_attr_values: false
 
       def self.types
         connection.get('types').collect { |t| Hashie::Mash.new(t) }
