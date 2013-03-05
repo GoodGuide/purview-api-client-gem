@@ -113,8 +113,14 @@ module GoodGuide
 
         def find(id, opts={})
           params = view_params_for(opts)
-          result = connection.get(id, params)
-          new(result)
+          if id.is_a?(Array)
+            found_resources = find_all(opts.merge(id: id))
+            # NOTE: ActiveRecord throws an exception if id isn't found - here we just insert a nil
+            result = id.collect {|requested_id| found_resources.find { |resource| resource.id == requested_id } }
+          else
+            result = connection.get(id, params)
+            new(result)
+          end
         rescue Faraday::Error::ResourceNotFound => e
           nil
         end

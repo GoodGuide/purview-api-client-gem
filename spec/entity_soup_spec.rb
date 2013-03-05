@@ -273,6 +273,18 @@ describe 'entity soup' do
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
       end
+      
+      it 'can be found by an array of ids' do
+        product.save.should be_true
+        product.id.should_not be_nil
+        product2 = GoodGuide::EntitySoup::Entity.new(type: 'Product', account_id: account.id, catalog_id: test_catalog.id)
+        product2.save.should be_true
+        
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id]).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id+1]).collect {|p| p ? p.id : nil }.should == [product.id, nil]
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id], { type: 'Product' }).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id], { type: 'Brand' }).should == [nil, nil]
+      end
 
       it 'can be created with attr_values' do
         attr = Attr.new(name: 'test1', type: 'IntegerAttr', entity_type: 'Product', catalog_id: test_catalog.id)
