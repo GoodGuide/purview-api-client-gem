@@ -251,14 +251,20 @@ module GoodGuide
       def parse_errors(body, status = 0)
         case status / 100 
         when 4
-          if body.is_a?(Hash) and body['error']
-            body['error'].each {|field, messages| errors.set(field.to_sym, messages)}
-          else
-            errors.set(:base, ['unknown client error #{status}'])
+          error_info = nil
+          begin
+            error_info = JSON.load(body)
+            if error_info.is_a?(Hash) and error_info['error']
+            error_info['error'].each {|field, messages| errors.set(field.to_sym, messages)}
+            else
+              errors.set(:base, ["unknown client error #{status}"])
+            end
+          rescue JSON::ParserError => e
+            erros.set(:base, ["unparseable client error #{status} #{e}"])
           end
           true
         when 5
-          errors.set(:base, ['server error #{status}'])
+          errors.set(:base, ["server error #{status}"])
           true
         else
           false

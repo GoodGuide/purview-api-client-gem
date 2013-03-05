@@ -29,25 +29,25 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 08bf4ce0a51ad4aa2844a6c06a323a75
+      - a5dcc7f68bbcd106ef386963e0a67786
       X-Runtime:
-      - '0.015834'
+      - '0.023888'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:58 GMT
+      - Tue, 05 Mar 2013 01:22:07 GMT
       Content-Length:
       - '525'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRlYjcxODBmYzM4ZjM5MzgzMzc1MWM1NzBiODVlYTczBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--7405c998abf025839509888d5e39603e6fc383bb;
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxZDIwNmRiYTljMWMwZmJkYTI0OWE0MDBhOTkxMGZkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--bb1bed728756f664f97b5c95b2ef89a4bd094dad;
         path=/; HttpOnly
     body:
       encoding: US-ASCII
       string: ! '{"account_id":1,"created_at":"2013-03-04T21:11:48Z","email":"admin@goodguide.com","first_name":null,"id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":null,"updated_at":"2013-03-04T21:11:48Z","account_name":"GoodGuide","roles":[{"created_at":"2013-03-04T21:11:48Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-03-04T21:11:48Z","description":"superuser","resource_name":null}]}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:58 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:07 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/catalogs.json
@@ -58,7 +58,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.6
       Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRlYjcxODBmYzM4ZjM5MzgzMzc1MWM1NzBiODVlYTczBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--7405c998abf025839509888d5e39603e6fc383bb
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxZDIwNmRiYTljMWMwZmJkYTI0OWE0MDBhOTkxMGZkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--bb1bed728756f664f97b5c95b2ef89a4bd094dad
       Content-Type:
       - application/json
       Accept:
@@ -69,32 +69,32 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/v1/catalogs/596
+      - http://localhost:3000/v1/catalogs/617
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"80c3732a3ab383eb59f047eae482daf3"'
+      - ! '"4a6fbede4679675cfcd1c748257508a9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 32a242e7da1da8f10674afe11a3f2861
+      - e8b0b2373a45780847d74cd66e16b8a7
       X-Runtime:
-      - '0.061370'
+      - '0.159245'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:58 GMT
+      - Tue, 05 Mar 2013 01:22:08 GMT
       Content-Length:
       - '154'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"created_at":"2013-03-05T00:57:58Z","description":"test_catalog","id":596,"name":"test","options":{"image_src":null},"updated_at":"2013-03-05T00:57:58Z"}'
+      string: ! '{"created_at":"2013-03-05T01:22:07Z","description":"test_catalog","id":617,"name":"test","options":{"image_src":null},"updated_at":"2013-03-05T01:22:07Z"}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:58 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:08 GMT
 - request:
     method: get
     uri: http://localhost:3000/v1/accounts/1.json
@@ -105,7 +105,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.6
       Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRlYjcxODBmYzM4ZjM5MzgzMzc1MWM1NzBiODVlYTczBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--7405c998abf025839509888d5e39603e6fc383bb
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxZDIwNmRiYTljMWMwZmJkYTI0OWE0MDBhOTkxMGZkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--bb1bed728756f664f97b5c95b2ef89a4bd094dad
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -124,13 +124,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 45e05773db5311c92230abe62693e0f7
+      - 3b1c89f6dee47c53278f041f411f3081
       X-Runtime:
-      - '0.004506'
+      - '0.007205'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:58 GMT
+      - Tue, 05 Mar 2013 01:22:08 GMT
       Content-Length:
       - '99'
       Connection:
@@ -139,18 +139,18 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"created_at":"2013-03-04T21:11:47Z","id":1,"name":"GoodGuide","updated_at":"2013-03-04T21:11:47Z"}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:58 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:08 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/entities.json
     body:
       encoding: UTF-8
-      string: ! '{"type":"Product","account_id":1,"catalog_id":596}'
+      string: ! '{"type":"Product","account_id":1,"catalog_id":617}'
     headers:
       User-Agent:
       - Faraday v0.8.6
       Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRlYjcxODBmYzM4ZjM5MzgzMzc1MWM1NzBiODVlYTczBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--7405c998abf025839509888d5e39603e6fc383bb
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxZDIwNmRiYTljMWMwZmJkYTI0OWE0MDBhOTkxMGZkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--bb1bed728756f664f97b5c95b2ef89a4bd094dad
       Content-Type:
       - application/json
       Accept:
@@ -161,43 +161,43 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/v1/entities/250
+      - http://localhost:3000/v1/entities/261
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"87cd198a24fb86e20aa6a5598c13228b"'
+      - ! '"2e0b6110c674d551e5b06137a4738ece"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 137958794b880266bae0403ab188ec39
+      - a1177635ece1a87c9bf399145c46d932
       X-Runtime:
-      - '0.052373'
+      - '0.050062'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:58 GMT
+      - Tue, 05 Mar 2013 01:22:08 GMT
       Content-Length:
       - '88'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":250,"type":"Product","name":null,"attr_values":{},"catalog_id":596,"account_id":1}'
+      string: ! '{"id":261,"type":"Product","name":null,"attr_values":{},"catalog_id":617,"account_id":1}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:58 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:08 GMT
 - request:
     method: post
     uri: http://localhost:3000/v1/entities.json
     body:
       encoding: UTF-8
-      string: ! '{"type":"Brand","account_id":1,"catalog_id":596}'
+      string: ! '{"type":"Brand","account_id":1,"catalog_id":617}'
     headers:
       User-Agent:
       - Faraday v0.8.6
       Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRlYjcxODBmYzM4ZjM5MzgzMzc1MWM1NzBiODVlYTczBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--7405c998abf025839509888d5e39603e6fc383bb
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxZDIwNmRiYTljMWMwZmJkYTI0OWE0MDBhOTkxMGZkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--bb1bed728756f664f97b5c95b2ef89a4bd094dad
       Content-Type:
       - application/json
       Accept:
@@ -208,32 +208,32 @@ http_interactions:
       message: ! 'Created '
     headers:
       Location:
-      - http://localhost:3000/v1/entities/251
+      - http://localhost:3000/v1/entities/262
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"3f15decfc4fb7a1361ca7c2186288e85"'
+      - ! '"d8822f28c39369f51593065eaab83e89"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4d1d766b22148e05f243edf55857bbd6
+      - 245d5f0db0c60523abfb17e6d55a4721
       X-Runtime:
-      - '0.039009'
+      - '0.049975'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:58 GMT
+      - Tue, 05 Mar 2013 01:22:08 GMT
       Content-Length:
       - '86'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":251,"type":"Brand","name":null,"attr_values":{},"catalog_id":596,"account_id":1}'
+      string: ! '{"id":262,"type":"Brand","name":null,"attr_values":{},"catalog_id":617,"account_id":1}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:58 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:08 GMT
 - request:
     method: get
     uri: http://localhost:3000/v1/entities.json
@@ -244,7 +244,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.6
       Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRlYjcxODBmYzM4ZjM5MzgzMzc1MWM1NzBiODVlYTczBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--7405c998abf025839509888d5e39603e6fc383bb
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxZDIwNmRiYTljMWMwZmJkYTI0OWE0MDBhOTkxMGZkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--bb1bed728756f664f97b5c95b2ef89a4bd094dad
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -259,29 +259,29 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"1c2f8cab6909e25656d4a99900e38e0b"'
+      - ! '"60046a46959195c33b5e95c669d62606"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e9610167a89ee7f21480b42e5d39fa25
+      - f81b219306e864164e71968025f293d5
       X-Runtime:
-      - '0.041979'
+      - '0.051490'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:58 GMT
+      - Tue, 05 Mar 2013 01:22:08 GMT
       Content-Length:
       - '200'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '{"count":2,"entities":[{"id":250,"type":"Product","name":null,"attr_values":{},"catalog_id":596,"account_id":1},{"id":251,"type":"Brand","name":null,"attr_values":{},"catalog_id":596,"account_id":1}]}'
+      string: ! '{"count":2,"entities":[{"id":261,"type":"Product","name":null,"attr_values":{},"catalog_id":617,"account_id":1},{"id":262,"type":"Brand","name":null,"attr_values":{},"catalog_id":617,"account_id":1}]}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:58 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:08 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/v1/catalogs/596.json
+    uri: http://localhost:3000/v1/catalogs/617.json
     body:
       encoding: US-ASCII
       string: ''
@@ -289,7 +289,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.6
       Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRlYjcxODBmYzM4ZjM5MzgzMzc1MWM1NzBiODVlYTczBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--7405c998abf025839509888d5e39603e6fc383bb
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxZDIwNmRiYTljMWMwZmJkYTI0OWE0MDBhOTkxMGZkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--bb1bed728756f664f97b5c95b2ef89a4bd094dad
       Accept:
       - ! '*/*'
   response:
@@ -302,16 +302,16 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - ad4511913ad89ea3c979697ea4db5265
+      - 3263a0c95ec8c7a3426447122401d4d3
       X-Runtime:
-      - '0.044072'
+      - '0.061285'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:58 GMT
+      - Tue, 05 Mar 2013 01:22:08 GMT
     body:
       encoding: US-ASCII
       string: ''
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:58 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:08 GMT
 recorded_with: VCR 2.4.0

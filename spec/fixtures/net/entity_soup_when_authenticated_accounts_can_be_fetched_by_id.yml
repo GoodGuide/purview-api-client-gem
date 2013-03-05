@@ -29,25 +29,25 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 098e7fcc345acaaeeb9cff5366f54829
+      - d0dfd9093b78c9071f58ec97df0c6312
       X-Runtime:
-      - '0.020921'
+      - '0.018744'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:52 GMT
+      - Tue, 05 Mar 2013 01:22:02 GMT
       Content-Length:
       - '525'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ5ZTBkOTc0MDBlZThkNjI1YWY5MGVkZTBiZWU5NWY0BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--4ced52e768e47d1c2c121e0f733e783d43e83a67;
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTlhZDEzZGQwN2M5NTMyMTJmZjcyNjFjZGUxZmQwNGRkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--92c19c0cf80532d8467c0e94f90f8ce4d34bee2b;
         path=/; HttpOnly
     body:
       encoding: US-ASCII
       string: ! '{"account_id":1,"created_at":"2013-03-04T21:11:48Z","email":"admin@goodguide.com","first_name":null,"id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":null,"updated_at":"2013-03-04T21:11:48Z","account_name":"GoodGuide","roles":[{"created_at":"2013-03-04T21:11:48Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-03-04T21:11:48Z","description":"superuser","resource_name":null}]}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:52 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:02 GMT
 - request:
     method: get
     uri: http://localhost:3000/v1/accounts/1.json
@@ -58,7 +58,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.8.6
       Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ5ZTBkOTc0MDBlZThkNjI1YWY5MGVkZTBiZWU5NWY0BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--4ced52e768e47d1c2c121e0f733e783d43e83a67
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTlhZDEzZGQwN2M5NTMyMTJmZjcyNjFjZGUxZmQwNGRkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--92c19c0cf80532d8467c0e94f90f8ce4d34bee2b
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -77,13 +77,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f5957a26ee949e58e63bd72674734ebe
+      - 96ee1113903f486126344364306b2f35
       X-Runtime:
-      - '0.003448'
+      - '0.005781'
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
       Date:
-      - Tue, 05 Mar 2013 00:57:52 GMT
+      - Tue, 05 Mar 2013 01:22:02 GMT
       Content-Length:
       - '99'
       Connection:
@@ -92,5 +92,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"created_at":"2013-03-04T21:11:47Z","id":1,"name":"GoodGuide","updated_at":"2013-03-04T21:11:47Z"}'
     http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 00:57:52 GMT
+  recorded_at: Tue, 05 Mar 2013 01:22:02 GMT
 recorded_with: VCR 2.4.0
