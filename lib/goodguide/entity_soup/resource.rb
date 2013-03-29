@@ -5,28 +5,29 @@
 #
 # Unlike an Entity, a Resource is not necessarily rated.
 
-require 'active_model/naming'
-require 'active_model/errors'
+require 'active_record'
+require 'active_record/base'
+require 'active_record/validations'
 
 module GoodGuide
   module EntitySoup
-
     module Resource
-      extend ActiveSupport::Concern
 
-      included do
-        extend ClassMethods
-        extend ActiveModel::Naming
-        attr_reader :errors
-        attr_reader :attributes
-        class_attribute :connection, :views, :json_root
-        self.views = {}
-        alias_method :resource, :attributes
-        initialize_resource!
+      def self.included(base)
+        base.extend(ClassMethods)
+        #base.extend(ActiveModel::Naming)
+        base.class_eval do
+          attr_reader :errors
+          attr_reader :attributes
+          class_attribute :connection, :views, :json_root
+          self.views = {}
+          alias_method :resource, :attributes
+          initialize_resource!
+        end
       end
 
       def initialize(o = {})
-        @errors = ActiveModel::Errors.new(self)
+        @errors = ActiveRecord::Errors.new(self)
         case
         when Fixnum === o
           @attributes = { :id => o }
@@ -255,16 +256,16 @@ module GoodGuide
           begin
             error_info = JSON.load(body)
             if error_info.is_a?(Hash) and error_info['error']
-            error_info['error'].each {|field, messages| errors.set(field.to_sym, messages)}
+            error_info['error'].each {|field, messages| errors.add(field.to_sym, messages)}
             else
-              errors.set(:base, ["unknown client error #{status}"])
+              errors.add(:base, ["unknown client error #{status}"])
             end
           rescue JSON::ParserError => e
-            erros.set(:base, ["unparseable client error #{status} #{e}"])
+            errors.add(:base, ["unparseable client error #{status} #{e}"])
           end
           true
         when 5
-          errors.set(:base, ["server error #{status}"])
+          errors.add(:base, ["server error #{status}"])
           true
         else
           false
