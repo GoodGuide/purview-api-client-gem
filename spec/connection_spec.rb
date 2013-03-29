@@ -12,10 +12,10 @@ describe GoodGuide::EntitySoup::Connection do
 
     context "when putting a single resource" do
 
-      before { stub_request :put, "/foo/1.json", { id: 1, name: "foo" } }
+      before { stub_request :put, "/foo/1.json", { :id => 1, :name => "foo" } }
 
       it 'must put a single resource' do
-        result = connection.put(1, { name: "foo" })
+        result = connection.put(1, { :name => "foo" })
         result.should == { "id" => 1, "name" => "foo" }
       end
     end
@@ -23,15 +23,15 @@ describe GoodGuide::EntitySoup::Connection do
 
   describe 'get_all' do
     it 'must get all resources' do
-      stub_request :get, "/foo/entities.json", [{name: 'boom'}, {name: 'bip'}]
+      stub_request :get, "/foo/entities.json", [{:name => 'boom'}, {:name => 'bip'}]
       results = connection.get_all('entities')
       results.size.should == 2
       results.first['name'].should == 'boom'
     end
 
     it 'must get all resources with a json root' do
-      stub_request :get, "/foo/entities.json", { entities: [{name: 'boom'}, {name: 'bip'}] }
-      results = connection.get_all('entities', json_root: "entities")
+      stub_request :get, "/foo/entities.json", { :entities => [{:name => 'boom'}, {:name => 'bip'}] }
+      results = connection.get_all('entities', {:json_root => "entities"})
       results.size.should == 2
       results.first['name'].should == 'boom'
     end
@@ -41,11 +41,11 @@ describe GoodGuide::EntitySoup::Connection do
 
     context "when posting a single resource" do
       before do
-        stub_request :post, "/foo.json", { id: 42, name: "name" }
+        stub_request :post, "/foo.json", { :id => 42, :name => "name" }
       end
 
       it 'must post a single resource' do
-        result = connection.post(name: "name")
+        result = connection.post(:name => "name")
         result['id'].should == 42
         result['name'].should == 'name'
       end
@@ -61,7 +61,7 @@ describe GoodGuide::EntitySoup::Connection do
       end
     end
   end
-  
+
   describe 'get' do
 
     let(:body) { nil }
@@ -71,10 +71,10 @@ describe GoodGuide::EntitySoup::Connection do
     before do
       stub_request :get, "/foo/1.json", body, status, raw
     end
-    
+
     context "when requesting a single id" do
 
-      let(:body) { {name: 'foo'} }
+      let(:body) { {:name => 'foo'} }
 
       it "must return a single item" do
         result = connection.get(1)
@@ -108,5 +108,5 @@ describe GoodGuide::EntitySoup::Connection do
     end
   end
 
-  
+
 end

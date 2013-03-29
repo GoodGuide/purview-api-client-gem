@@ -7,11 +7,11 @@ module GoodGuide
       attributes :description, :name
 
       def attrs(params = {})
-        Attr.find_all(params.merge(catalog_id: self.id))
+        Attr.find_all(params.merge(:catalog_id => self.id))
       end
 
       def entities(params = {})
-        Entity.find_all(params.merge(catalog_id: self.id))
+        Entity.find_all(params.merge(:catalog_id => self.id))
       end
 
       def entity_schema(entity_type)
@@ -19,11 +19,11 @@ module GoodGuide
       end
 
       def as_excel(params = {})
-        Entity.get(nil, params.merge(catalog_id: self.id, format: 'xlsx'))
+        Entity.get(nil, params.merge(:catalog_id => self.id, :format => 'xlsx'))
       end
 
       def self.find_by_name(name, opts = {})
-        Catalog.find_all(opts.merge(name: name)).first
+        Catalog.find_all(opts.merge(:name => name)).first
       end
 
     end

@@ -10,7 +10,7 @@ require 'active_model/errors'
 
 module GoodGuide
   module EntitySoup
-    
+
     module Resource
       extend ActiveSupport::Concern
 
@@ -29,14 +29,14 @@ module GoodGuide
         @errors = ActiveModel::Errors.new(self)
         case
         when Fixnum === o
-          @attributes = { id: o }
+          @attributes = { :id => o }
         when Hash === o
           @attributes = o.with_indifferent_access
         # TODO: We don't actually use this anymore, remove?
         when o.respond_to?(:attributes)
           @attributes = o.attributes
         else
-          @attributes = { id: nil }
+          @attributes = { :id => nil }
           super
           #raise ArgumentError
         end
@@ -97,7 +97,7 @@ module GoodGuide
         end
 
         def default_view(params)
-          self.views = views.merge(default: merge_params(views[:default], params))
+          self.views = views.merge(:default => merge_params(views[:default], params))
         end
 
         def view(name, params)
@@ -114,7 +114,7 @@ module GoodGuide
         def find(id, opts={})
           params = view_params_for(opts)
           if id.is_a?(Array)
-            found_resources = find_all(opts.merge(id: id))
+            found_resources = find_all(opts.merge(:id => id))
             # NOTE: ActiveRecord throws an exception if id isn't found - here we just insert a nil
             result = id.collect {|requested_id| found_resources.find { |resource| resource.id == requested_id } }
           else
@@ -128,8 +128,8 @@ module GoodGuide
         def find_all(opts={})
           params = view_params_for(opts)
           elements = params.delete(:elements)
-          
-          connection.get_all(elements, params.merge!(json_root: self.json_root)).map! { |r| new(r) }
+
+          connection.get_all(elements, params.merge!(:json_root => self.json_root)).map! { |r| new(r) }
         rescue Faraday::Error::ResourceNotFound => e
           # NOTE: can currently happen if find params reference a non-existant entity, a bug in EntitySoup?
           []
@@ -249,7 +249,7 @@ module GoodGuide
       end
 
       def parse_errors(body, status = 0)
-        case status / 100 
+        case status / 100
         when 4
           error_info = nil
           begin

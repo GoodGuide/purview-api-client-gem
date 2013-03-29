@@ -13,7 +13,7 @@ module GoodGuide
 
       attributes :catalog_id, :account_id, :type, :created_at, :updated_at, :attr_values
 
-      view :brief, inherits: nil, include_attr_values: false
+      view :brief, {:inherits => nil, :include_attr_values => false}
 
       def self.types
         connection.get('types').collect { |t| Hashie::Mash.new(t) }
@@ -28,12 +28,12 @@ module GoodGuide
       end
 
       def update_attr_values(params)
-        e = Entity.new(id: self.id, attr_values: params)
+        e = Entity.new(:id => self.id, :attr_values => params)
         result = e.save
         @errors = e.errors
         result
       end
-      
+
     end
 
   end

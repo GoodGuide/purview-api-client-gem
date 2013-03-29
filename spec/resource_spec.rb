@@ -15,14 +15,14 @@ describe GoodGuide::EntitySoup::Resource do
 
   describe 'wrapping' do
     it 'wraps an entity' do
-      r = TestResource.new(TestEntity.new(id: 123))
+      r = TestResource.new(TestEntity.new(:id => 123))
 
       r.should be_a TestResource
       r.id.should == 123
     end
 
     it 'wraps a Hash' do
-      r = TestResource.new(id: 456)
+      r = TestResource.new(:id => 456)
       r.should be_a TestResource
       r.id.should == 456
     end
@@ -42,13 +42,13 @@ describe GoodGuide::EntitySoup::Resource do
     end
 
     it 'has fields' do
-      r = TestEntity.new(foo: 'foo', bar: 'bar')
+      r = TestEntity.new(:foo => 'foo', :bar => 'bar')
       r.foo.should == 'foo'
       r.bar.should == 'bar'
     end
 
     it 'has editable fields' do
-      r = TestEntity.new(foo: 'foo', bar: 'bar')
+      r = TestEntity.new(:foo => 'foo', :bar => 'bar')
       r.foo.should == 'foo'
       r.bar.should == 'bar'
       r.foo = 'bar'
@@ -66,7 +66,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'finds a single resource' do
       stub_connection! do |stub|
-        stub.get('/v1/tests/123.json') { [200, {}, { id: 123 }.to_json] }
+        stub.get('/v1/tests/123.json') { [200, {}, { :id => 123 }.to_json] }
       end
 
       tr = TestResource.find(123)
@@ -76,14 +76,14 @@ describe GoodGuide::EntitySoup::Resource do
 
     it "searches resources" do
       stub_request(:get, "/v1/tests.json?include%5B%5D=foo&limit=3", {
-                     tests: [
-                             { id: 1 }, 
-                             { id: 2 }, 
-                             { id: 3 }
+                     :tests => [
+                             { :id => 1 },
+                             { :id => 2 },
+                             { :id => 3 }
                             ],
-                     count: 3
+                     :count => 3
                    })
-      list = TestResource.find_all(limit: 3, include: 'foo')
+      list = TestResource.find_all(:limit => 3, :include => 'foo')
       list.should be_a Array
       list.map(&:id).should == [1, 2, 3]
     end
@@ -100,7 +100,7 @@ describe GoodGuide::EntitySoup::Resource do
 
       it 'handles get not found errors' do
         stub_connection! do |stub|
-          stub.get('/v1/tests/123.json') { [404, {}, {errors: { base: ["not found"]} }.to_json ] }
+          stub.get('/v1/tests/123.json') { [404, {}, {:errors => { :base => ["not found"]} }.to_json ] }
         end
 
         TestResource.find(123).should be_nil
@@ -126,13 +126,13 @@ describe GoodGuide::EntitySoup::Resource do
 
         it 'handles error hashes' do
           stub_connection! do |stub|
-            stub.send(method, url) { [422, {}, {error: {base: ['all messed up'], name: ['must be unique']}}.to_json ] }
+            stub.send(method, url) { [422, {}, {:error => {:base => ['all messed up'], :name => ['must be unique']}}.to_json ] }
           end
 
           resource.errors.should be_empty
           resource.save.should be_false
           resource.errors.should_not be_empty
-          
+
         end
 
       end
@@ -145,7 +145,7 @@ describe GoodGuide::EntitySoup::Resource do
       it 'posts the resource and updates its attributes' do
         stub_connection! do |stub|
           stub.post('/v1/tests.json') {
-            body = {id: 23}.to_json
+            body = {:id => 23}.to_json
             [201, {}, body]
           }
         end
@@ -159,7 +159,7 @@ describe GoodGuide::EntitySoup::Resource do
     end
 
     context 'when the resource already exists' do
-      let(:resource) { TestResource.new(id: 23) }
+      let(:resource) { TestResource.new(:id => 23) }
 
       it_behaves_like 'it handles errors', :put, '/v1/tests/23.json'
     end

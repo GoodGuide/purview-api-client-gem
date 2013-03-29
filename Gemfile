@@ -3,12 +3,13 @@ gemspec
 
 gem 'activesupport'
 gem 'activemodel'
+gem 'json'
 
 group :test, :development do
   gem 'rspec'
   gem 'rr'
   gem 'rake'
   gem 'yajl-ruby'
-  gem 'webmock'        
+  gem 'webmock'
   gem 'vcr'
 end

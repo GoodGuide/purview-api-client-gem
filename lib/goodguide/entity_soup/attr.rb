@@ -7,8 +7,8 @@ module GoodGuide
 
       attributes :type, :name, :options, :entity_type, :catalog_id, :schema
 
-      default_view include: ['schema']
-      view :bare, inherits: nil, schema: nil
+      default_view :include => ['schema']
+      view :bare, {:inherits => nil, :schema => nil}
 
       def self.types(options = {})
         connection.get('types', options).collect { |t| Hashie::Mash.new(t) }

@@ -34,22 +34,22 @@ module GoodGuide
       def url=(new_url)
         Connection.site = new_url
       end
-        
+
       def url
         Connection.site || DEFAULT_URL
       end
-      
-      
+
+
       def authenticate(email, password)
         connection = Connection.new('/users/session')
-        connection.post(email: email, password: password) 
+        connection.post(:email => email, :password => password)
         true
       rescue Faraday::Error::ClientError
         false
       end
 
     end
-      
+
   end
 end
 
