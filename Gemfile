@@ -1,8 +1,8 @@
 source 'http://rubygems.org/'
 gemspec
 
-gem 'activesupport'
-gem 'activemodel'
+gem 'activesupport', '2.3.17'
+gem 'activerecord', '2.3.17'
 gem 'json'
 
 group :test, :development do
