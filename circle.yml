@@ -2,5 +2,5 @@ test:
   override:
     - bundle exec rake
     - bundle exec rake:
-      environment:
-        RAILS2: true
+        environment:
+          RAILS2: true
