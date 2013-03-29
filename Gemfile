@@ -1,8 +1,14 @@
 source 'http://rubygems.org/'
 gemspec
 
-gem 'activesupport', '2.3.17'
-gem 'activerecord', '2.3.17'
+if ENV['RAILS2']
+  gem 'activesupport', '2.3.17'
+  gem 'activerecord', '2.3.17'
+else
+  gem 'activesupport', '>=3'
+  gem 'activerecord', '>=3'
+end
+
 gem 'json'
 
 group :test, :development do

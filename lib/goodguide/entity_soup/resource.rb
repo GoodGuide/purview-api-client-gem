@@ -15,7 +15,11 @@ module GoodGuide
 
       def self.included(base)
         base.extend(ClassMethods)
-        #base.extend(ActiveModel::Naming)
+
+        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Naming")
+          base.extend(ActiveModel::Naming)
+        end
+
         base.class_eval do
           attr_reader :errors
           attr_reader :attributes
@@ -27,7 +31,15 @@ module GoodGuide
       end
 
       def initialize(o = {})
-        @errors = ActiveRecord::Errors.new(self)
+        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Errors")
+          @errors = ActiveModel::Errors.new(self)
+        else
+          @errors = ActiveRecord::Errors.new(self)
+          class << @errors
+            alias :set :add
+          end
+        end
+
         case
         when Fixnum === o
           @attributes = { :id => o }
@@ -256,16 +268,16 @@ module GoodGuide
           begin
             error_info = JSON.load(body)
             if error_info.is_a?(Hash) and error_info['error']
-            error_info['error'].each {|field, messages| errors.add(field.to_sym, messages)}
+            error_info['error'].each {|field, messages| errors.set(field.to_sym, messages)}
             else
-              errors.add(:base, ["unknown client error #{status}"])
+              errors.set(:base, ["unknown client error #{status}"])
             end
           rescue JSON::ParserError => e
-            errors.add(:base, ["unparseable client error #{status} #{e}"])
+            errors.set(:base, ["unparseable client error #{status} #{e}"])
           end
           true
         when 5
-          errors.add(:base, ["server error #{status}"])
+          errors.set(:base, ["server error #{status}"])
           true
         else
           false
