@@ -1,7 +1,7 @@
 source 'http://rubygems.org/'
 gemspec
 
-if ENV['RAILS2']
+if ENV['RAILS_VERSION'].to_i == 2
   gem 'activesupport', '2.3.17'
   gem 'activerecord', '2.3.17'
 else
