@@ -20,11 +20,11 @@ The entity soup RESTful API endpoint is located by the url property which must b
 
 This gem supports Rails/ActiveRecord versions 2 and 3.  To test in a Rails 2 environment, run
 
-    RAILS2=true rake
+    RAILS_VERSION=2 rake
 
 And to test in a Rails 3 environment, run
 
-    rake
+    RAILS_VERSION=3 rake # Or just rake, since this is the default.
 
 
 ## Entity Soup Data Model
