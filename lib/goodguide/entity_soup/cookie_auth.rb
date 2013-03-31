@@ -1,7 +1,6 @@
 module GoodGuide
   module EntitySoup
     module Request
-
       class CookieAuth < Faraday::Middleware
 
         def initialize(app, cookie = nil)
@@ -13,14 +12,22 @@ module GoodGuide
           env[:request_headers]['Cookie'] = @cookie if @cookie
 
           @app.call(env).on_complete do |finished_env|
-            if finished_env[:response_headers]['set-cookie']
-              @cookie = finished_env[:response_headers]['set-cookie'].split('; ')[0]
+            if found = cookie(finished_env)
+              @cookie = found
             end
           end
         end
 
-      end
+      private
 
+        def cookie(env)
+          if cookie=env[:response_headers]['set-cookie']
+            match = cookie.match(/_platform_session=[^;]+/)
+            match && match.to_s
+          end
+        end
+
+      end
     end
   end
 end
