@@ -1,0 +1,8 @@
+test:
+  override:
+    - bundle && bundle exec rake:
+        environment:
+          RAILS_VERSION: 3
+    - bundle && bundle exec rake:
+        environment:
+          RAILS_VERSION: 2

@@ -5,28 +5,41 @@
 #
 # Unlike an Entity, a Resource is not necessarily rated.
 
-require 'active_model/naming'
-require 'active_model/errors'
+require 'active_record'
+require 'active_record/base'
+require 'active_record/validations'
 
 module GoodGuide
   module EntitySoup
-
     module Resource
-      extend ActiveSupport::Concern
 
-      included do
-        extend ClassMethods
-        extend ActiveModel::Naming
-        attr_reader :errors
-        attr_reader :attributes
-        class_attribute :connection, :views, :json_root
-        self.views = {}
-        alias_method :resource, :attributes
-        initialize_resource!
+      def self.included(base)
+        base.extend(ClassMethods)
+
+        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Naming")
+          base.extend(ActiveModel::Naming)
+        end
+
+        base.class_eval do
+          attr_reader :errors
+          attr_reader :attributes
+          class_attribute :connection, :views, :json_root
+          self.views = {}
+          alias_method :resource, :attributes
+          initialize_resource!
+        end
       end
 
       def initialize(o = {})
-        @errors = ActiveModel::Errors.new(self)
+        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Errors")
+          @errors = ActiveModel::Errors.new(self)
+        else
+          @errors = ActiveRecord::Errors.new(self)
+          class << @errors
+            alias :set :add
+          end
+        end
+
         case
         when Fixnum === o
           @attributes = { :id => o }
@@ -260,7 +273,7 @@ module GoodGuide
               errors.set(:base, ["unknown client error #{status}"])
             end
           rescue JSON::ParserError => e
-            erros.set(:base, ["unparseable client error #{status} #{e}"])
+            errors.set(:base, ["unparseable client error #{status} #{e}"])
           end
           true
         when 5

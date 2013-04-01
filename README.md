@@ -16,9 +16,20 @@ The entity soup RESTful API endpoint is located by the url property which must b
 
     GoodGuide::EntitySoup.url = 'http://localhost:3000'
 
-## Entity Soup Data Model  
+## Testing
 
-The entity soup data model consists of uniquely named catalogs and providers, plus typed entities and attributes, and attribute values.  
+This gem supports Rails/ActiveRecord versions 2 and 3.  To test in a Rails 2 environment, run
+
+    RAILS_VERSION=2 rake
+
+And to test in a Rails 3 environment, run
+
+    RAILS_VERSION=3 rake # Or just rake, since this is the default.
+
+
+## Entity Soup Data Model
+
+The entity soup data model consists of uniquely named catalogs and providers, plus typed entities and attributes, and attribute values.
 
 In psuedo code:
 
@@ -37,7 +48,7 @@ In psuedo code:
       belongs_to :catalog
       has_many :attr_values
 
-    AttrValue(value: <object>) 
+    AttrValue(value: <object>)
       belongs_to :attr
       belongs_to :entity
       belongs_to :provider
@@ -47,7 +58,7 @@ In psuedo code:
 
 In English:
 
-Catalogs contain typed entities such as products, brands, ingredients etc.  A catalog also contains attributes which apply to the entities within the catalog, each attribute is applicable to a specific type of entity and attributes of that entity type are uniquely named.  Therefore a product 'toxocity' attribute is distinct from an ingredient 'toxicty' attribute.  Attributes are also typed so a product 'name' attribute can be a string, but a product 'weight' can be a float with applicable checking on setting and updating of the attribute value at the repository level.  
+Catalogs contain typed entities such as products, brands, ingredients etc.  A catalog also contains attributes which apply to the entities within the catalog, each attribute is applicable to a specific type of entity and attributes of that entity type are uniquely named.  Therefore a product 'toxocity' attribute is distinct from an ingredient 'toxicty' attribute.  Attributes are also typed so a product 'name' attribute can be a string, but a product 'weight' can be a float with applicable checking on setting and updating of the attribute value at the repository level.
 
 Every entity within a catalog may have attribute values according to the attributes defined for that entity type within the catalog. If not defined the attribute values simply don't exist and querying for them will return nil.
 
@@ -65,7 +76,7 @@ it means
 
 ### Identity
 
-All objects within the entity soup have an internal numeric id that is unique for the class of objects to which they apply.  Ids are immutable and are not reused. Catalogs, providers, and attributes also have a name.  Names are mutable but cannot be null.  Catalog and provider names are unique to within their class e.g. you can have a catalog and provider called "Foo", but only one of each.  Attribute names must be unique for the entity type and catalog in which they are definied, e.g. within a catalog you can have a company attribute called 'country' and a product attribute called 'country' and they can have distinct definitions. 
+All objects within the entity soup have an internal numeric id that is unique for the class of objects to which they apply.  Ids are immutable and are not reused. Catalogs, providers, and attributes also have a name.  Names are mutable but cannot be null.  Catalog and provider names are unique to within their class e.g. you can have a catalog and provider called "Foo", but only one of each.  Attribute names must be unique for the entity type and catalog in which they are definied, e.g. within a catalog you can have a company attribute called 'country' and a product attribute called 'country' and they can have distinct definitions.
 
 ### CRUD
 
@@ -86,8 +97,8 @@ Be careful with destroy it destroys all the dependent objects so destroying a ca
 Not documented yet - see spec tests
 
 
-TODO: 
-* add ACL based access restrictions. 
+TODO:
+* add ACL based access restrictions.
 * add updated and created timestamp access
 * add reload
 * make find(name) work for catalog, provider (because they have a unique name)
@@ -104,14 +115,14 @@ Non-communication errors do not cause exceptions so #find returns nil if the id 
     c2.save  #will fail because catalog names must be unique
     => false
     c2.errors
-    => {"name"=>["has already been taken"]} 
+    => {"name"=>["has already been taken"]}
 
 Communication and other errors will cause standard Ruby exceptions to be thrown but these are as to be expected "exceptional".
 
 TODO
 * implement save! and destroy! to raise exceptions instead of return true or false
-            
-### Constraining scope 
+
+### Constraining scope
 
 Constraining the scope of a read operation is done by adding params in the form of a hash (implicitly or explicitly).  For example to find all integer attributes known to product soup use:
 
@@ -128,7 +139,7 @@ The interface to the entity soup RESTful API supports caching via the Cacher gem
     require 'active_support/cache/dalli_store'
     cache = ActiveSupport::Cache::DalliStore.new(<dalli params>)
     Cacher.configure { |cacher| cacher.cache = cache }
-    
+
 then
 
     Cacher.enable!
@@ -137,7 +148,7 @@ Once you have enabled the cacher to read new data directly and repopulate the ca
 
      Cacher.disable!
 
-but remember that re-enabling it will give you old cached data. 
+but remember that re-enabling it will give you old cached data.
 
 TODO:
 * how to flush the cache completely?
@@ -202,7 +213,7 @@ If the save fails find the errors via `#errors` for example trying to create a c
     c.save
     => false
     c.errors
-    => {"name"=>["has already been taken"]} 
+    => {"name"=>["has already been taken"]}
 
 #### Update
 
@@ -211,7 +222,7 @@ Update a catalog by assigning its attributes and then saving e.g.
     c = Catalog.new(name: 'Goo')
     c.save
     => true
-    c.description 
+    c.description
     => nil
     c.description = 'Another new catalog'
     c.save
@@ -228,7 +239,7 @@ A provider has a unique name (case sensitive string) that must be present when c
 
 Access providers directly via `Provider.find`, `Provider.find_all` or `Provider.find_by_name`
 
-    provider = Provider.find(id) # returns a single provider or nil  
+    provider = Provider.find(id) # returns a single provider or nil
     provider = Provider.find_by_name(name)  # returns a single provider or nil
     providers = Provider.find_all # returns all providers matching params, or []
 
@@ -282,11 +293,11 @@ Get catalogs directly via `Entity.find` and `Entity.find_all`
 
 The only model parameters applicable to an entity query are `type` and `catalog_id` for example:
 
-    Entity.find_all(type: 'Product').count 
+    Entity.find_all(type: 'Product').count
     => # Number of product entities in the soup, or 0 if none
-    Entity.find_all(catalog_id: 1).count 
+    Entity.find_all(catalog_id: 1).count
     => # Number of entities of any type in the GoodGuide catalog, or 0 if none
-    Entity.find_all(catalog_id: 1, type: 'Product').count 
+    Entity.find_all(catalog_id: 1, type: 'Product').count
     => # Number of product entities in the GoodGuide catalog, or 0 if none
 
 As previously mentioned catalog specific queries may also be performed via an instance of a catalog.  For example
@@ -337,7 +348,7 @@ If you need to load entities without the attribute values either explicitly over
     e.attr_values
     -> []
 
-TODO: 
+TODO:
 * Add Category.new_entity and Category.new_entities for scoped and bulk entity creation?
 * Will we eventually need a move operation to migrate entities between catalogs, or simply allow write to catalog_id?
 * We may eventually want to model destruction with a state flag that flags it as deleted (allowing for other things like blacklisting), alternatively use internally defined attributes as meta-data to do this (but requires extra joins to retrieve entities so not good), or relying on Arroyo logging to log deleted data for possible batch recovery.
@@ -345,18 +356,18 @@ TODO:
 
 ### Attribute
 
-Attributes define properties of given entity types within a catalog - without any attributes an entity is a bare id.  Attributes must be named uniquely for a given entity type and catalog so that an attribute called 'size' in one catalog is distinct from 'size' in another catalog.  Similarly an attribute named 'organic' for an ingredient is different from an attribute named 'organic' for a product. 
+Attributes define properties of given entity types within a catalog - without any attributes an entity is a bare id.  Attributes must be named uniquely for a given entity type and catalog so that an attribute called 'size' in one catalog is distinct from 'size' in another catalog.  Similarly an attribute named 'organic' for an ingredient is different from an attribute named 'organic' for a product.
 
-Only the name of an attribute is mutable after creation, since changing the type and options of an attribute would affect the validation of all its current attribute values. 
+Only the name of an attribute is mutable after creation, since changing the type and options of an attribute would affect the validation of all its current attribute values.
 
 Note that to avoid clashes with Rails methods and types the attribute class is named Attr, and values of that attribute for an entity are described by the AttrValue class.
 
 
 #### Attribute types
-The attribute types known to the system are returned by `Attr.types` which returns an array of objects with name and options methods. 
+The attribute types known to the system are returned by `Attr.types` which returns an array of objects with name and options methods.
 
     Attr.types.collect(&:name)
-    => ["DerivedAttr", "NumericAttr", "FloatAttr", "PercentageAttr", "JSONAttr", "StringAttr", "IntegerAttr"] 
+    => ["DerivedAttr", "NumericAttr", "FloatAttr", "PercentageAttr", "JSONAttr", "StringAttr", "IntegerAttr"]
 
 The options method returns a hash of type specific options as configured for that attribute.  Standard options available for all types include `allow_nil`, `default_value`, and `list`.  So far only DerivedAttr defines an additional type specific option which is `rule`.
 
@@ -441,7 +452,7 @@ Because attribute values belong to a given provider you may find more than one v
 To get the value of a specific attribute for an entity you can either provide the attribute id or a name which will be resolved to an attribute id internally
 
     attr_values = AttrValue.find_all(entity_id: entity.id, name: 'foo')
-   
+
 which assuming the entity is in catalog 1 is equivalent to:
 
     attr = Attr.find_all(name: 'foo', catalog_id: 1).first
@@ -511,7 +522,7 @@ Destroy an attribute value with its `#destroy` method:
 
 
 TODO:
-* update to attribute values via Entity#save instead of Entity#update_attr_values 
+* update to attribute values via Entity#save instead of Entity#update_attr_values
 * what to do about having to manually filter cached attr_values, remove caching feature or implement include mechanism?
 * fix bug of attribute name to id and attr_id resolution where there are multiple providers supplying values for that attribute and entity.
 
