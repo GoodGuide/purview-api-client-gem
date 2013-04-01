@@ -258,8 +258,10 @@ describe 'entity soup' do
     context 'entities' do
 
       let!(:test_catalog) { Catalog.new(:name => "test", :description => "test_catalog") }
+      let(:product_name_attr) { Attr.find_all(:name => 'name', :entity_type => 'Product', :catalog_id => test_catalog.id).first }
+      let(:brand_name_attr) { Attr.find_all(:name => 'name', :entity_type => 'Brand', :catalog_id => test_catalog.id).first }
       let(:account) { Account.find(1) }
-      let(:product) { GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id) }
+      let(:product) { GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id, :attr_values => { product_name_attr.id => "Name" } ) }
 
       before { test_catalog.save.should be_true }
       after { test_catalog.destroy }
@@ -277,7 +279,7 @@ describe 'entity soup' do
       it 'can be found by an array of ids' do
         product.save.should be_true
         product.id.should_not be_nil
-        product2 = GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id)
+        product2 = GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id, :attr_values => { product_name_attr.id => "Name 2" } )
         product2.save.should be_true
 
         GoodGuide::EntitySoup::Entity.find([product.id, product2.id]).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
@@ -289,27 +291,27 @@ describe 'entity soup' do
       it 'can be created with attr_values' do
         attr = Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id)
         attr.save.should be_true
-        product.attr_values = { attr.id => 42 }
+        product.attr_values[attr.id] = 42
         product.save.should be_true
 
         entity2 = GoodGuide::EntitySoup::Entity.find(product.id)
         entity2.should be_a GoodGuide::EntitySoup::Entity
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
-        entity2.attr_values.should == { attr.id.to_s => 42 }
+        entity2.attr_values.should == { attr.id.to_s => 42, product_name_attr.id.to_s => "Name" }
       end
 
       it 'can be updated with attr_values' do
         product.save.should be_true
         attr = Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id)
         attr.save.should be_true
-        product.update_attr_values(attr.id => 42).should be_true
+        product.update_attr_values(product.attr_values.merge(attr.id => 42)).should be_true
 
         entity2 = GoodGuide::EntitySoup::Entity.find(product.id)
         entity2.should be_a GoodGuide::EntitySoup::Entity
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
-        entity2.attr_values.should == { attr.id.to_s => 42 }
+        entity2.attr_values.should == { attr.id.to_s => 42, product_name_attr.id.to_s => "Name" }
       end
 
       it 'can be listed in a catalog' do
@@ -330,21 +332,21 @@ describe 'entity soup' do
       end
 
       it 'can be listed' do
-        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id )
+        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id, :attr_values => { brand_name_attr.id => "Name" } )
         product.save.should be_true
         brand.save.should be_true
 
-        entities = Entity.find_all
+        entities = Entity.find_all(:catalog_id => test_catalog.id)
         entities.should be_a Array
         entities.collect(&:id).should include(product.id, brand.id)
       end
 
       it 'can be listed by type' do
-        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id )
+        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id, :attr_values => { brand_name_attr.id => "Name" } )
         product.save.should be_true
         brand.save.should be_true
 
-        entities = Entity.find_all(:type => 'Product')
+        entities = Entity.find_all(:type => 'Product', :catalog_id => test_catalog.id)
         entities.should be_a Array
         entities.collect(&:id).should include(product.id)
         entities.collect(&:id).should_not include(brand.id)

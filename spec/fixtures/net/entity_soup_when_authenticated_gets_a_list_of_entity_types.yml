@@ -1,96 +1,89 @@
----
-http_interactions:
-- request:
+--- 
+recorded_with: VCR 2.4.0
+http_interactions: 
+- request: 
     method: post
     uri: http://localhost:3000/users/session.json
-    body:
-      encoding: UTF-8
-      string: ! '{"email":"admin@goodguide.com","password":"password"}'
-    headers:
-      User-Agent:
-      - Faraday v0.8.6
-      Content-Type:
+    body: 
+      string: "{\"password\":\"password\",\"email\":\"admin@goodguide.com\"}"
+    headers: 
+      User-Agent: 
+      - Faraday v0.8.7
+      Content-Type: 
       - application/json
-      Accept:
-      - ! '*/*'
-  response:
-    status:
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
       code: 201
-      message: ! 'Created '
-    headers:
-      Location:
-      - http://localhost:3000/
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"75131a408ec889e352cb0fb4a6e7c2e2"'
-      Cache-Control:
+      message: "Created "
+    headers: 
+      Cache-Control: 
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 0444454eec33110d6258a652a10f1b0e
-      X-Runtime:
-      - '0.016215'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
-      Date:
-      - Tue, 05 Mar 2013 01:21:59 GMT
-      Content-Length:
-      - '525'
-      Connection:
+      Connection: 
       - Keep-Alive
-      Set-Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQyYzRlNmI2Y2E1NjU0MTE3MGJhYzYzNDRkZDI2NWE2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--78eda4a6f07c07b003832d7280afda18e46177f2;
-        path=/; HttpOnly
-    body:
-      encoding: US-ASCII
-      string: ! '{"account_id":1,"created_at":"2013-03-04T21:11:48Z","email":"admin@goodguide.com","first_name":null,"id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":null,"updated_at":"2013-03-04T21:11:48Z","account_name":"GoodGuide","roles":[{"created_at":"2013-03-04T21:11:48Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-03-04T21:11:48Z","description":"superuser","resource_name":null}]}'
-    http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 01:21:59 GMT
-- request:
+      Location: 
+      - http://localhost:3000/
+      X-Ua-Compatible: 
+      - IE=Edge
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Content-Length: 
+      - "571"
+      Date: 
+      - Mon, 01 Apr 2013 23:43:23 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Request-Id: 
+      - 42a206b14b89af286627b1ae8802b8ec
+      Set-Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU1MThhOWIyYjIxYjNhMWNiMzZlNDljYmJmYzc4Mjk4BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJDVOMkZTQkE0TUI4Z2o4aWRseS5FZXUGOwBU--5ddc524e8440d5b3a698f65511ed3e40ca886cf9; path=/; HttpOnly
+      Etag: 
+      - "\"976c03dfcf2072dd6f14bbfeeb362e3e\""
+      X-Runtime: 
+      - "0.106727"
+    body: 
+      string: "{\"account_id\":1,\"created_at\":\"2013-01-24T23:03:51Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"User\",\"updated_at\":\"2013-04-01T23:43:23Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":\"2013-03-23T00:13:12Z\",\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":\"2013-03-23T00:13:12Z\",\"description\":\"Superuser\",\"resource_name\":null}],\"last_sign_in_at\":\"2013-04-01T23:43:23Z\"}"
+    http_version: 
+  recorded_at: Mon, 01 Apr 2013 23:43:23 GMT
+- request: 
     method: get
     uri: http://localhost:3000/v1/entities/types.json
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.6
-      Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQyYzRlNmI2Y2E1NjU0MTE3MGJhYzYzNDRkZDI2NWE2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--78eda4a6f07c07b003832d7280afda18e46177f2
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
+    body: 
+      string: ""
+    headers: 
+      Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU1MThhOWIyYjIxYjNhMWNiMzZlNDljYmJmYzc4Mjk4BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJDVOMkZTQkE0TUI4Z2o4aWRseS5FZXUGOwBU--5ddc524e8440d5b3a698f65511ed3e40ca886cf9
+      User-Agent: 
+      - Faraday v0.8.7
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
       code: 200
-      message: ! 'OK '
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"b25d62d40c80a8eab017d71559f1f88f"'
-      Cache-Control:
+      message: "OK "
+    headers: 
+      Cache-Control: 
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 878fd4f12579abfa367df627f9a65e2b
-      X-Runtime:
-      - '0.028279'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
-      Date:
-      - Tue, 05 Mar 2013 01:21:59 GMT
-      Content-Length:
-      - '98'
-      Connection:
+      Connection: 
       - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: ! '[{"name":"Brand"},{"name":"Category"},{"name":"Company"},{"name":"Ingredient"},{"name":"Product"}]'
-    http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 01:21:59 GMT
-recorded_with: VCR 2.4.0
+      X-Ua-Compatible: 
+      - IE=Edge
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Content-Length: 
+      - "98"
+      Date: 
+      - Mon, 01 Apr 2013 23:43:23 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Request-Id: 
+      - 776ce4393e5051d86d1d670a8af9cefc
+      Etag: 
+      - "\"b25d62d40c80a8eab017d71559f1f88f\""
+      X-Runtime: 
+      - "0.019897"
+    body: 
+      string: "[{\"name\":\"Brand\"},{\"name\":\"Category\"},{\"name\":\"Company\"},{\"name\":\"Ingredient\"},{\"name\":\"Product\"}]"
+    http_version: 
+  recorded_at: Mon, 01 Apr 2013 23:43:23 GMT

@@ -1,178 +1,169 @@
----
-http_interactions:
-- request:
+--- 
+recorded_with: VCR 2.4.0
+http_interactions: 
+- request: 
     method: post
     uri: http://localhost:3000/users/session.json
-    body:
-      encoding: UTF-8
-      string: ! '{"email":"admin@goodguide.com","password":"password"}'
-    headers:
-      User-Agent:
-      - Faraday v0.8.6
-      Content-Type:
+    body: 
+      string: "{\"password\":\"password\",\"email\":\"admin@goodguide.com\"}"
+    headers: 
+      User-Agent: 
+      - Faraday v0.8.7
+      Content-Type: 
       - application/json
-      Accept:
-      - ! '*/*'
-  response:
-    status:
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
       code: 201
-      message: ! 'Created '
-    headers:
-      Location:
-      - http://localhost:3000/
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"75131a408ec889e352cb0fb4a6e7c2e2"'
-      Cache-Control:
+      message: "Created "
+    headers: 
+      Cache-Control: 
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - c5f3767e89da6a8a71b516bdd145c882
-      X-Runtime:
-      - '0.010947'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
-      Date:
-      - Tue, 05 Mar 2013 01:22:00 GMT
-      Content-Length:
-      - '525'
-      Connection:
+      Connection: 
       - Keep-Alive
-      Set-Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTIxODdjZTQ5YWZmYzk0MjYxYjJjMjg3ZjkyMWU1YzNmBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--78db96c66f8f9c464b27dcfce87a5ff2ca185871;
-        path=/; HttpOnly
-    body:
-      encoding: US-ASCII
-      string: ! '{"account_id":1,"created_at":"2013-03-04T21:11:48Z","email":"admin@goodguide.com","first_name":null,"id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":null,"updated_at":"2013-03-04T21:11:48Z","account_name":"GoodGuide","roles":[{"created_at":"2013-03-04T21:11:48Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-03-04T21:11:48Z","description":"superuser","resource_name":null}]}'
-    http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 01:22:00 GMT
-- request:
+      Location: 
+      - http://localhost:3000/
+      X-Ua-Compatible: 
+      - IE=Edge
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Content-Length: 
+      - "571"
+      Date: 
+      - Mon, 01 Apr 2013 23:43:23 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Request-Id: 
+      - c0b571175bf65aced25353cc027bc12e
+      Set-Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgxOWVhMTA2MWNkOTljNDJhMDhkMmI0MmJmNWYzOWNkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJDVOMkZTQkE0TUI4Z2o4aWRseS5FZXUGOwBU--8629428c75fccc47f0dcfdc004f5018bf80801b6; path=/; HttpOnly
+      Etag: 
+      - "\"976c03dfcf2072dd6f14bbfeeb362e3e\""
+      X-Runtime: 
+      - "0.114191"
+    body: 
+      string: "{\"account_id\":1,\"created_at\":\"2013-01-24T23:03:51Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"User\",\"updated_at\":\"2013-04-01T23:43:23Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":\"2013-03-23T00:13:12Z\",\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":\"2013-03-23T00:13:12Z\",\"description\":\"Superuser\",\"resource_name\":null}],\"last_sign_in_at\":\"2013-04-01T23:43:23Z\"}"
+    http_version: 
+  recorded_at: Mon, 01 Apr 2013 23:43:23 GMT
+- request: 
     method: post
     uri: http://localhost:3000/v1/catalogs.json
-    body:
-      encoding: UTF-8
-      string: ! '{"name":"test","description":"test_catalog"}'
-    headers:
-      User-Agent:
-      - Faraday v0.8.6
-      Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTIxODdjZTQ5YWZmYzk0MjYxYjJjMjg3ZjkyMWU1YzNmBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--78db96c66f8f9c464b27dcfce87a5ff2ca185871
-      Content-Type:
+    body: 
+      string: "{\"description\":\"test_catalog\",\"name\":\"test\"}"
+    headers: 
+      Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgxOWVhMTA2MWNkOTljNDJhMDhkMmI0MmJmNWYzOWNkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJDVOMkZTQkE0TUI4Z2o4aWRseS5FZXUGOwBU--8629428c75fccc47f0dcfdc004f5018bf80801b6
+      User-Agent: 
+      - Faraday v0.8.7
+      Content-Type: 
       - application/json
-      Accept:
-      - ! '*/*'
-  response:
-    status:
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
       code: 201
-      message: ! 'Created '
-    headers:
-      Location:
-      - http://localhost:3000/v1/catalogs/599
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"d99e2485b566cc3dbe8614fd70c3db6d"'
-      Cache-Control:
+      message: "Created "
+    headers: 
+      Cache-Control: 
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 125297c87b395362b3bc7b7eb5935f3f
-      X-Runtime:
-      - '0.075605'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
-      Date:
-      - Tue, 05 Mar 2013 01:22:00 GMT
-      Content-Length:
-      - '154'
-      Connection:
+      Connection: 
       - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: ! '{"created_at":"2013-03-05T01:22:00Z","description":"test_catalog","id":599,"name":"test","options":{"image_src":null},"updated_at":"2013-03-05T01:22:00Z"}'
-    http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 01:22:00 GMT
-- request:
+      Location: 
+      - http://localhost:3000/v1/catalogs/203
+      X-Ua-Compatible: 
+      - IE=Edge
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Content-Length: 
+      - "154"
+      Date: 
+      - Mon, 01 Apr 2013 23:43:24 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Request-Id: 
+      - d56f1cd83bec28e9882fb9944da1a025
+      Etag: 
+      - "\"7c30ca53076c3a98c4daa4ec4397e5ff\""
+      X-Runtime: 
+      - "0.167715"
+    body: 
+      string: "{\"created_at\":\"2013-04-01T23:43:23Z\",\"description\":\"test_catalog\",\"id\":203,\"name\":\"test\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-04-01T23:43:23Z\"}"
+    http_version: 
+  recorded_at: Mon, 01 Apr 2013 23:43:24 GMT
+- request: 
     method: get
     uri: http://localhost:3000/v1/catalogs.json
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.6
-      Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTIxODdjZTQ5YWZmYzk0MjYxYjJjMjg3ZjkyMWU1YzNmBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--78db96c66f8f9c464b27dcfce87a5ff2ca185871
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
+    body: 
+      string: ""
+    headers: 
+      Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgxOWVhMTA2MWNkOTljNDJhMDhkMmI0MmJmNWYzOWNkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJDVOMkZTQkE0TUI4Z2o4aWRseS5FZXUGOwBU--8629428c75fccc47f0dcfdc004f5018bf80801b6
+      User-Agent: 
+      - Faraday v0.8.7
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
       code: 200
-      message: ! 'OK '
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"9d30457db76ebea1681eaf9ab8158e62"'
-      Cache-Control:
+      message: "OK "
+    headers: 
+      Cache-Control: 
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - c325bc50ed65c8ce948e49fa827eaae7
-      X-Runtime:
-      - '0.039002'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
-      Date:
-      - Tue, 05 Mar 2013 01:22:00 GMT
-      Content-Length:
-      - '406'
-      Connection:
+      Connection: 
       - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: ! '[{"created_at":"2013-03-04T21:11:48Z","description":"GoodGuide catalog","id":1,"name":"GoodGuide","options":{"image_src":null},"updated_at":"2013-03-04T21:11:48Z","entity_types":["Category","Company","Brand","Product","Ingredient"]},{"created_at":"2013-03-05T01:22:00Z","description":"test_catalog","id":599,"name":"test","options":{"image_src":null},"updated_at":"2013-03-05T01:22:00Z","entity_types":[]}]'
-    http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 01:22:00 GMT
-- request:
+      X-Ua-Compatible: 
+      - IE=Edge
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Content-Length: 
+      - "7917"
+      Date: 
+      - Mon, 01 Apr 2013 23:43:24 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Request-Id: 
+      - eeeadb75e76a00aa40554c1ee393edbd
+      Etag: 
+      - "\"06efcd71b11f90aaed440f9cb8d80226\""
+      X-Runtime: 
+      - "0.049229"
+    body: 
+      string: "[{\"created_at\":\"2013-03-23T00:59:58Z\",\"description\":null,\"id\":1,\"name\":\"Real GoodGuide\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-03-30T00:13:46Z\",\"entity_types\":[\"Company\",\"Ingredient\"]},{\"created_at\":\"2012-12-10T18:19:04Z\",\"description\":null,\"id\":16,\"name\":\"Target\",\"options\":{\"image_src\":null,\"primary_rating\":\"212\",\"entity_pages\":\"1\",\"short_description\":\"My Description\"},\"updated_at\":\"2013-03-01T19:02:20Z\",\"entity_types\":[\"Product\",\"Ingredient\"]},{\"created_at\":\"2012-12-11T00:15:21Z\",\"description\":null,\"id\":17,\"name\":\"GoodGuide\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-03-14T23:18:25Z\",\"entity_types\":[\"Product\",\"Ingredient\"]},{\"created_at\":\"2012-12-18T00:18:07Z\",\"description\":null,\"id\":18,\"name\":\"UL Sustainability Quotient\",\"options\":{\"image_src\":\"http://sustainabilityquotient.questionpro.com/userimages/sub-2/1695432/UL_SQ_Stacked_Bk_resized.jpg\",\"methodology\":\"## Sustainability Quotient (SQ) Program\\n\\nSustainability Quotient (UL/SQ) is a comprehensive enterprise-level sustainability program to facilitate the integration of corporate sustainability best practices in enterprises. We deliver services based on a foundation of auditable standards developed in accordance with UL's rigorous standards development practices. UL's thoroughness, integrity, and technical expertise makes us a trusted partner, and the UL/SQ Program offers credibility and reputation risk mitigation to aspiring sustainability leaders.\\n\\n### Assessment Services\\n\\nMore companies are realizing the benefits of incorporating sustainable practices, noting that it can improve the bottom line, mitigate potential risks and build customer loyalty. Despite that recognition, many companies are unsure how to begin or where to focus their current sustainability offerings.\\n\\nThe UL/SQ Program and the standards upon which it is based contribute to a common language and platform for enterprise sustainability. By completing an SQ Readiness Assessment, a company is able to gauge its readiness to progress towards certification against one of UL's enterprise level standards. Once the assessment is completed, the company receives a detailed report indicating gaps between the enterprise's existing program and the requirements of the SQ program standard for purposes of certification.\\n\\nThrough UL's SQ Analytics, companies will be able to get detailed benchmark and gap analysis of their sustainability initiatives as measured against the program standards. This service is best suited for companies that have specific objectives in mind beyond eventual certification such as merger and acquisition assessments or targeted risk mitigation. [Learn more](http://www.ul.com/global/eng/pages/offerings/businesses/environment/services/sq/services/analyticsandsupplychain/index.jsp).\\n\\n### Supply Chain Support Services\\n\\nThis service provides support to enterprises that seek to use the SQ program and standards as a foundation for how they interact with their supply chain. Supply Chain Support Services can be highly customized to meet specific needs in assessing supply chains from a sustainability perspective. [Learn more](http://www.ul.com/global/eng/pages/offerings/businesses/environment/services/sq/services/analyticsandsupplychain/index.jsp).\\n\\n### Certification\\n\\nMeasuring the progress of corporate sustainability goals and communicating related achievements is difficult. As sustainability becomes integrated into the normal course of business, communication of these targets and goals has a greater importance. Verification of the data used to do so become essential.\\n\\nThe UL/SQ certification requirements are based on standards that cover enterprise sustainability comprehensively through five domains -- governance for sustainability, environment, work force, customers and suppliers, and community engagement and human rights. Developed with input from hundreds of stakeholders who provided thousands of comments, UL's enterprise level standards represent leading thinking on enterprise level sustainability. [Learn more](http://www.ul.com/global/eng/pages/offerings/businesses/environment/services/sq/services/certification/index.jsp).\\n\\nRecognizing that sustainability is a journey and many companies are in different stages on that voyage, UL offers [Focus Area and Full certification](http://www.ul.com/global/eng/pages/offerings/businesses/environment/services/sq/services/certification/index.jsp).\\n\\nInterested in collaborating with UL on the UL/SQ Program? Learn more about how to become an SQ Qualified Consultant or an SQ Qualified Business Application Vendor by contacting [environment@ul.com](mailto:environment@ul.com).\\n\\nTo request an online quote, [click here](http://www.ul.com/global/eng/pages/offerings/businesses/environment/services/sq/request/index.jsp).\",\"introduction\":\"<p class='lead'>The UL Sustainability Quotient lets you see how your company's environmental policies and practices compares with others.  You can:</p>\\n\\n* Provide the most up-to-date information to consumers\\n* See how you compare to industry leaders\\n* Control who has access to your sustainability data\\n* Get certified and learn how to improve your score\",\"entity_pages\":\"1\",\"primary_rating\":\"302\",\"landing_page\":\"1\"},\"updated_at\":\"2013-03-05T00:10:12Z\",\"entity_types\":[\"Company\"]},{\"created_at\":\"2013-01-18T00:05:12Z\",\"description\":null,\"id\":19,\"name\":\"GoodGuide Mobile\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-02-15T19:17:22Z\",\"entity_types\":[\"Company\",\"Product\",\"Ingredient\"]},{\"created_at\":\"2013-01-18T00:32:44Z\",\"description\":\"Ingredients suspected of causing skin or sense organ toxicity, according to sources compiled by [Scorecard][1].\\n\\n  [1]: http://www.scorecard.org\",\"id\":20,\"name\":\"Sense Organ Toxicity List\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-02-15T19:17:22Z\",\"entity_types\":[\"Company\",\"Product\",\"Ingredient\"]},{\"created_at\":\"2013-01-29T21:26:28Z\",\"description\":null,\"id\":25,\"name\":\"Washington State <script>alert('pwnd')</script>\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-03-25T17:55:20Z\",\"entity_types\":[\"Ingredient\"]},{\"created_at\":\"2013-01-30T16:58:16Z\",\"description\":null,\"id\":26,\"name\":\"SDW Demo\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-03-19T19:54:06Z\",\"entity_types\":[\"Product\",\"Ingredient\"]},{\"created_at\":\"2013-01-31T22:53:08Z\",\"description\":null,\"id\":27,\"name\":\"McDonalds Paint Screen\",\"options\":{\"image_src\":null,\"landing_page\":\"1\",\"entity_pages\":\"1\"},\"updated_at\":\"2013-03-15T22:32:38Z\",\"entity_types\":[\"Company\",\"Product\",\"Ingredient\"]},{\"created_at\":\"2013-02-18T23:10:27Z\",\"description\":null,\"id\":46,\"name\":\"Food Ratings\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-02-19T16:41:44Z\",\"entity_types\":[\"Category\",\"Product\"]},{\"created_at\":\"2013-02-20T19:08:58Z\",\"description\":null,\"id\":49,\"name\":\"SQ Test\",\"options\":{\"image_src\":null,\"primary_rating\":\"865\",\"entity_pages\":\"1\",\"landing_page\":\"1\"},\"updated_at\":\"2013-03-27T22:24:10Z\",\"entity_types\":[\"Company\"]},{\"created_at\":\"2013-03-12T21:42:32Z\",\"description\":null,\"id\":61,\"name\":\"Performance Test\",\"options\":{\"image_src\":null,\"entity_pages\":\"1\",\"landing_page\":\"1\"},\"updated_at\":\"2013-03-12T22:59:49Z\",\"entity_types\":[\"Company\",\"Ingredient\"]},{\"created_at\":\"2013-03-13T05:46:58Z\",\"description\":\"\",\"id\":62,\"name\":\"Upload Test\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-03-13T05:46:58Z\",\"entity_types\":[\"Product\",\"Ingredient\"]},{\"created_at\":\"2013-03-13T22:08:19Z\",\"description\":null,\"id\":63,\"name\":\"ffffff\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-03-13T22:08:19Z\",\"entity_types\":[\"Product\",\"Ingredient\"]},{\"created_at\":\"2013-03-13T22:18:33Z\",\"description\":null,\"id\":65,\"name\":\"a test\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-03-13T22:18:33Z\",\"entity_types\":[\"Product\",\"Ingredient\"]},{\"created_at\":\"2013-04-01T23:43:23Z\",\"description\":\"test_catalog\",\"id\":203,\"name\":\"test\",\"options\":{\"image_src\":null},\"updated_at\":\"2013-04-01T23:43:23Z\",\"entity_types\":[]}]"
+    http_version: 
+  recorded_at: Mon, 01 Apr 2013 23:43:24 GMT
+- request: 
     method: delete
-    uri: http://localhost:3000/v1/catalogs/599.json
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.6
-      Cookie:
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTIxODdjZTQ5YWZmYzk0MjYxYjJjMjg3ZjkyMWU1YzNmBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JE5JbVFTMlBBeEFvZGRJbzFSck8wc08GOwBU--78db96c66f8f9c464b27dcfce87a5ff2ca185871
-      Accept:
-      - ! '*/*'
-  response:
-    status:
+    uri: http://localhost:3000/v1/catalogs/203.json
+    body: 
+      string: ""
+    headers: 
+      Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgxOWVhMTA2MWNkOTljNDJhMDhkMmI0MmJmNWYzOWNkBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJDVOMkZTQkE0TUI4Z2o4aWRseS5FZXUGOwBU--8629428c75fccc47f0dcfdc004f5018bf80801b6
+      User-Agent: 
+      - Faraday v0.8.7
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
       code: 204
-      message: ! 'No Content '
-    headers:
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
+      message: "No Content "
+    headers: 
+      Cache-Control: 
       - no-cache
-      X-Request-Id:
-      - 4d22c45f4b96e9094a6ff0c46b0de19f
-      X-Runtime:
-      - '0.106157'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
-      Date:
-      - Tue, 05 Mar 2013 01:22:00 GMT
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: !!null 
-  recorded_at: Tue, 05 Mar 2013 01:22:00 GMT
-recorded_with: VCR 2.4.0
+      Connection: 
+      - close
+      X-Ua-Compatible: 
+      - IE=Edge
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Date: 
+      - Mon, 01 Apr 2013 23:43:24 GMT
+      X-Request-Id: 
+      - b2a505c3c36b86df0fc635755c3d95ee
+      X-Runtime: 
+      - "0.036643"
+    body: 
+      string: ""
+    http_version: 
+  recorded_at: Mon, 01 Apr 2013 23:43:24 GMT
