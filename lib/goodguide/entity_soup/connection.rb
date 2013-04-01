@@ -99,6 +99,7 @@ module GoodGuide
         @http ||= Faraday.new(site) do |builder|
           builder.use Request::CookieAuth
           builder.request  :multi_json
+          builder.request  :retry, 10
           builder.response :multi_json
           builder.response :raise_error
           builder.response :logger if ENV['GG_TEST_FARADAY_LOGGING'] =~ /^true/i
