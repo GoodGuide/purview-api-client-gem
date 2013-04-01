@@ -22,7 +22,7 @@ module GoodGuide
 
         def cookie(env)
           if cookie=env[:response_headers]['set-cookie']
-            match = cookie.match(/_platform_session=[^;]+/)
+            match = cookie.match(/_(?:platform_)?session(?:_id)?=[^;]+/)
             match && match.to_s
           end
         end
