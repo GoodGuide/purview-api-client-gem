@@ -2,10 +2,10 @@ require 'hashie/mash'
 module GoodGuide
   module EntitySoup
 
-    class Attr
+    class Field
       include Resource
 
-      attributes :type, :name, :options, :entity_type, :catalog_id, :schema
+      attributes :type, :name, :entity_type, :catalog_id, :schema, :allow_nil
 
       default_view :include => ['schema']
       view :bare, {:inherits => nil, :schema => nil}

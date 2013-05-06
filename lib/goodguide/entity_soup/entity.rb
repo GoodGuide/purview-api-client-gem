@@ -11,9 +11,9 @@ module GoodGuide
       # NOTE: at the moment API returns only entities within a JSON object
       resource_json_root :entities
 
-      attributes :catalog_id, :account_id, :type, :created_at, :updated_at, :attr_values
+      attributes :catalog_id, :account_id, :type, :created_at, :updated_at, :value_bindings
 
-      view :brief, {:inherits => nil, :include_attr_values => false}
+      view :brief, {:inherits => nil, :include_value_bindings => false}
 
       def self.types
         connection.get('types').collect { |t| Hashie::Mash.new(t) }
@@ -27,8 +27,8 @@ module GoodGuide
         Account.find(self.account_id, params)
       end
 
-      def update_attr_values(params)
-        e = Entity.new(:id => self.id, :attr_values => params)
+      def update_value_bindings(params)
+        e = Entity.new(:id => self.id, :value_bindings => params)
         result = e.save
         @errors = e.errors
         result

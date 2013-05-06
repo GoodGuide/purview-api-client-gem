@@ -6,8 +6,8 @@ module GoodGuide
 
       attributes :description, :name
 
-      def attrs(params = {})
-        Attr.find_all(params.merge(:catalog_id => self.id))
+      def fields(params = {})
+        Field.find_all(params.merge(:catalog_id => self.id))
       end
 
       def entities(params = {})

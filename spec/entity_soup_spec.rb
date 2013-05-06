@@ -4,7 +4,7 @@ describe 'entity soup' do
 
   # Assume: all things that are uniquely named within the access context
   # will be access via a name instead of internal id.  Applies to catalog,
-  # attribute, and account (when exposed)
+  # field, and account (when exposed)
 
   # pending 'can authenticate' # TODO - to enable role based restrictions to data
 
@@ -42,12 +42,12 @@ describe 'entity soup' do
       GoodGuide::EntitySoup.authenticate(email, password).should be_true
     end
 
-    it 'gets a list of attribute types' do
-      attr_types = Attr.types
-      attr_types.should be_a Array
-      attr_types.collect(&:name).should include 'IntegerAttr'
-      attr_types.first.name.should_not be_nil
-      attr_types.first.options.keys.should include 'allow_nil'
+    it 'gets a list of field types' do
+      field_types = Field.types
+      field_types.should be_a Array
+      field_types.collect(&:name).should include 'IntegerField'
+      field_types.first.name.should_not be_nil
+      field_types.first.allow_nil.should_not be_nil
     end
 
     it 'gets a list of entity types' do
@@ -161,7 +161,7 @@ describe 'entity soup' do
     end
 
     # TODO - restrict attr editing by role/ACL
-    context 'attrs' do
+    context 'fields' do
 
       let!(:test_catalog) { Catalog.new(:name => "test", :description => "test_catalog") }
 
@@ -169,86 +169,85 @@ describe 'entity soup' do
       after { test_catalog.destroy }
 
       it 'can be created and fetched by id' do
-        attr = Attr.new(:name => 'test',
-                        :type => 'IntegerAttr',
-                        :entity_type => 'Product',
-                        :catalog_id => test_catalog.id)
-        attr.save.should be_true
-        attr.id.should_not be_nil
-        attr2 = Attr.find(attr.id)
-        attr2.should be_a Attr
-        attr2.name.should == attr.name
-        attr2.entity_type.should_not be_nil
-        attr2.entity_type.should == attr.entity_type
-        attr2.type.should_not be_nil
-        attr2.type.should == attr.type
-        attr2.catalog_id.should == test_catalog.id
-        attr2.options.should be_a Hash
+        field = Field.new(:name => 'test',
+                          :type => 'IntegerField',
+                          :entity_type => 'Product',
+                          :catalog_id => test_catalog.id)
+        field.save.should be_true
+        field.id.should_not be_nil
+        field2 = Field.find(field.id)
+        field2.should be_a Field
+        field2.name.should == field.name
+        field2.entity_type.should_not be_nil
+        field2.entity_type.should == field.entity_type
+        field2.type.should_not be_nil
+        field2.type.should == field.type
+        field2.catalog_id.should == test_catalog.id
       end
 
       it 'can listed all, or by catalog, name, type and entity type' do
-        attrs = [Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id),
-                 Attr.new(:name => 'test2', :type => 'StringAttr', :entity_type => 'Brand', :catalog_id => test_catalog.id)]
-        attrs.each {|a| a.save.should be_true }
-        attrs_all = Attr.find_all
-        attrs_all_by_product = Attr.find_all(:entity_type => 'Product')
-        attrs_all_by_type = Attr.find_all(:type => 'StringAttr')
-        attrs_all_by_catalog = Attr.find_all(:catalog_id => test_catalog.id)
-        attrs_all_by_bad_catalog = Attr.find_all(:catalog_id => 0)
-        attrs_all_by_catalog_and_name = Attr.find_all(:catalog_id => test_catalog.id, :name => 'test1')
+        fields = [Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id),
+                 Field.new(:name => 'test2', :type => 'StringField', :entity_type => 'Brand', :catalog_id => test_catalog.id)]
+        fields.each {|a| a.save.should be_true }
+        fields_all = Field.find_all
+        fields_all_by_product = Field.find_all(:entity_type => 'Product')
+        fields_all_by_type = Field.find_all(:type => 'StringField')
+        fields_all_by_catalog = Field.find_all(:catalog_id => test_catalog.id)
+        fields_all_by_bad_catalog = Field.find_all(:catalog_id => 0)
+        fields_all_by_catalog_and_name = Field.find_all(:catalog_id => test_catalog.id, :name => 'test1')
 
-        attrs_all.should be_a Array
-        attrs_all.each {|a| a.should be_a Attr}
-        attrs_all.collect(&:id).should include(*attrs.collect(&:id))
+        fields_all.should be_a Array
+        fields_all.each {|a| a.should be_a Field}
+        fields_all.collect(&:id).should include(*fields.collect(&:id))
 
-        attrs_all_by_catalog.collect(&:id).should include(*attrs.collect(&:id))
-        attrs_all_by_bad_catalog.should == []
-        attrs_all_by_catalog_and_name.collect(&:id).should == [attrs.first.id]
+        fields_all_by_catalog.collect(&:id).should include(*fields.collect(&:id))
+        fields_all_by_bad_catalog.should == []
+        fields_all_by_catalog_and_name.collect(&:id).should == [fields.first.id]
 
-        attrs_all_by_product.collect(&:id).should include(attrs[0].id)
-        attrs_all_by_product.collect(&:id).should_not include(attrs[1].id)
-        attrs_all_by_type.collect(&:id).should include(attrs[1].id)
-        attrs_all_by_type.collect(&:id).should_not include(attrs[0].id)
+        fields_all_by_product.collect(&:id).should include(fields[0].id)
+        fields_all_by_product.collect(&:id).should_not include(fields[1].id)
+        fields_all_by_type.collect(&:id).should include(fields[1].id)
+        fields_all_by_type.collect(&:id).should_not include(fields[0].id)
 
-        attrs_all_by_product = Attr.find_all(:entity_type => 'Product')
+        fields_all_by_product = Field.find_all(:entity_type => 'Product')
       end
 
       it 'can be listed within a catalog' do
-        attrs = [Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id),
-                 Attr.new(:name => 'test2', :type => 'StringAttr', :entity_type => 'Brand', :catalog_id => test_catalog.id)]
-        attrs.each {|a| a.save.should be_true }
+        fields = [Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id),
+                 Field.new(:name => 'test2', :type => 'StringField', :entity_type => 'Brand', :catalog_id => test_catalog.id)]
+        fields.each {|a| a.save.should be_true }
 
-        found_attrs = test_catalog.attrs
-        found_attrs.should be_a Array
-        found_attrs.collect(&:id).should include(*attrs.collect(&:id))
-        found_attrs = test_catalog.attrs(:type => 'IntegerAttr')
-        found_attrs.collect(&:id).should include(attrs[0].id)
-        found_attrs.collect(&:id).should_not include(attrs[1].id)
-        found_attrs = test_catalog.attrs(:entity_type => 'Brand')
-        found_attrs.collect(&:id).should include(attrs[1].id)
-        found_attrs.collect(&:id).should_not include(attrs[0].id)
+        found_fields = test_catalog.fields
+        found_fields.should be_a Array
+        found_fields.collect(&:id).should include(*fields.collect(&:id))
+        found_fields = test_catalog.fields(:type => 'IntegerField')
+        found_fields.collect(&:id).should include(fields[0].id)
+        found_fields.collect(&:id).should_not include(fields[1].id)
+        found_fields = test_catalog.fields(:entity_type => 'Brand')
+        found_fields.collect(&:id).should include(fields[1].id)
+        found_fields.collect(&:id).should_not include(fields[0].id)
       end
 
-      it 'can only update name or options' do
-        attr = Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id)
-        attr.save.should be_true
-        attr.name = 'test2'
-        attr.entity_type = 'Brand'
-        attr.type = 'StringAttr'
-        attr.catalog_id = 2
-        attr.save.should be_true
-        attr2 = Attr.find(attr.id)
-        attr2.name.should == 'test2'
-        attr2.entity_type.should == 'Product'
-        attr2.type.should == 'IntegerAttr'
-        attr2.catalog_id.should == test_catalog.id
+      it 'can update' do
+        field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
+        field.save.should be_true
+        field.name = 'test2'
+        field.entity_type = 'Brand'
+        field.type = 'StringField'
+        field.catalog_id = test_catalog.id
+        field.save.should be_true
+        field2 = Field.find(field.id)
+        field2.name.should == 'test2'
+        field2.entity_type.should == 'Brand'
+        field2.type.should == 'StringField'
+        field2.catalog_id.should == test_catalog.id
       end
 
       it 'can be destroyed' do
-        attr = Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id)
-        attr.save.should be_true
-        attr.destroy.should be_true
-        Attr.find(attr.id, {:break => true}).should be_nil
+        field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
+        field.save.should be_true
+        field.destroy.should be_true
+        Field.find(field.id, {:break => true}).should be_nil
       end
 
     end
@@ -258,10 +257,10 @@ describe 'entity soup' do
     context 'entities' do
 
       let!(:test_catalog) { Catalog.new(:name => "test", :description => "test_catalog") }
-      let(:product_name_attr) { Attr.find_all(:name => 'name', :entity_type => 'Product', :catalog_id => test_catalog.id).first }
-      let(:brand_name_attr) { Attr.find_all(:name => 'name', :entity_type => 'Brand', :catalog_id => test_catalog.id).first }
+      let(:product_name_field) { Field.find_all(:name => 'name', :entity_type => 'Product', :catalog_id => test_catalog.id).first }
+      let(:brand_name_field) { Field.find_all(:name => 'name', :entity_type => 'Brand', :catalog_id => test_catalog.id).first }
       let(:account) { Account.find(1) }
-      let(:product) { GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id, :attr_values => { product_name_attr.id => "Name" } ) }
+      let(:product) { GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id, :value_bindings => { product_name_field.id => "Name" } ) }
 
       before { test_catalog.save.should be_true }
       after { test_catalog.destroy }
@@ -279,7 +278,7 @@ describe 'entity soup' do
       it 'can be found by an array of ids' do
         product.save.should be_true
         product.id.should_not be_nil
-        product2 = GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id, :attr_values => { product_name_attr.id => "Name 2" } )
+        product2 = GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id, :value_bindings => { product_name_field.id => "Name 2" } )
         product2.save.should be_true
 
         GoodGuide::EntitySoup::Entity.find([product.id, product2.id]).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
@@ -288,30 +287,30 @@ describe 'entity soup' do
         GoodGuide::EntitySoup::Entity.find([product.id, product2.id], { :type => 'Brand' }).should == [nil, nil]
       end
 
-      it 'can be created with attr_values' do
-        attr = Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id)
-        attr.save.should be_true
-        product.attr_values[attr.id] = 42
+      it 'can be created with value_bindings' do
+        field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
+        field.save.should be_true
+        product.value_bindings[field.id] = 42
         product.save.should be_true
 
         entity2 = GoodGuide::EntitySoup::Entity.find(product.id)
         entity2.should be_a GoodGuide::EntitySoup::Entity
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
-        entity2.attr_values.should == { attr.id.to_s => 42, product_name_attr.id.to_s => "Name" }
+        entity2.value_bindings.should == { field.id.to_s => 42, product_name_field.id.to_s => "Name" }
       end
 
-      it 'can be updated with attr_values' do
+      it 'can be updated with value_bindings' do
         product.save.should be_true
-        attr = Attr.new(:name => 'test1', :type => 'IntegerAttr', :entity_type => 'Product', :catalog_id => test_catalog.id)
-        attr.save.should be_true
-        product.update_attr_values(product.attr_values.merge(attr.id => 42)).should be_true
+        field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
+        field.save.should be_true
+        product.update_value_bindings(product.value_bindings.merge(field.id => 42)).should be_true
 
         entity2 = GoodGuide::EntitySoup::Entity.find(product.id)
         entity2.should be_a GoodGuide::EntitySoup::Entity
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
-        entity2.attr_values.should == { attr.id.to_s => 42, product_name_attr.id.to_s => "Name" }
+        entity2.value_bindings.should == { field.id.to_s => 42, product_name_field.id.to_s => "Name" }
       end
 
       it 'can be listed in a catalog' do
@@ -332,7 +331,7 @@ describe 'entity soup' do
       end
 
       it 'can be listed' do
-        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id, :attr_values => { brand_name_attr.id => "Name" } )
+        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id, :value_bindings => { brand_name_field.id => "Name" } )
         product.save.should be_true
         brand.save.should be_true
 
@@ -342,7 +341,7 @@ describe 'entity soup' do
       end
 
       it 'can be listed by type' do
-        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id, :attr_values => { brand_name_attr.id => "Name" } )
+        brand = Entity.new(:type => 'Brand', :account_id => 1, :catalog_id => test_catalog.id, :value_bindings => { brand_name_field.id => "Name" } )
         product.save.should be_true
         brand.save.should be_true
 

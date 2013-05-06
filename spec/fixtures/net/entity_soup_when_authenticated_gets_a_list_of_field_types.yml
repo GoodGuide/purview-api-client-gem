@@ -1,0 +1,89 @@
+--- 
+recorded_with: VCR 2.4.0
+http_interactions: 
+- request: 
+    method: post
+    uri: http://localhost:3000/users/session.json
+    body: 
+      string: "{\"email\":\"admin@goodguide.com\",\"password\":\"password\"}"
+    headers: 
+      User-Agent: 
+      - Faraday v0.8.7
+      Accept: 
+      - "*/*"
+      Content-Type: 
+      - application/json
+  response: 
+    status: 
+      code: 201
+      message: "Created "
+    headers: 
+      X-Runtime: 
+      - "0.123628"
+      Etag: 
+      - "\"774bca40ad9120cf1b32acebd8ed5b50\""
+      Date: 
+      - Mon, 06 May 2013 17:11:47 GMT
+      Set-Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZjMmQ3YjEzMmJhY2VkZWFiMzIzNmNkZDNmN2QwMTk2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJGJYcVFsUHZpdnhSWnhUcE1TOHQ1cnUGOwBU--02b415ead3751866ad071812f839ba079542224d; path=/; HttpOnly
+      Content-Length: 
+      - "509"
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Connection: 
+      - Keep-Alive
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 2c6c61d3af289c431a8229d63a91e37a
+      Content-Type: 
+      - application/json; charset=utf-8
+      Location: 
+      - http://localhost:3000/
+      X-Ua-Compatible: 
+      - IE=Edge
+    body: 
+      string: "{\"account_id\":1,\"created_at\":\"2013-02-12T01:37:31Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"User\",\"updated_at\":\"2013-05-06T17:11:47Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":null,\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":null,\"resource_name\":null}],\"last_sign_in_at\":\"2013-05-06T17:11:46Z\"}"
+    http_version: 
+  recorded_at: Mon, 06 May 2013 17:11:47 GMT
+- request: 
+    method: get
+    uri: http://localhost:3000/v1/fields/types.json
+    body: 
+      string: ""
+    headers: 
+      Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZjMmQ3YjEzMmJhY2VkZWFiMzIzNmNkZDNmN2QwMTk2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJGJYcVFsUHZpdnhSWnhUcE1TOHQ1cnUGOwBU--02b415ead3751866ad071812f839ba079542224d
+      User-Agent: 
+      - Faraday v0.8.7
+      Accept: 
+      - "*/*"
+  response: 
+    status: 
+      code: 200
+      message: "OK "
+    headers: 
+      X-Runtime: 
+      - "0.017181"
+      Etag: 
+      - "\"1c5f878f13325707cbb1ebb4f2745155\""
+      Date: 
+      - Mon, 06 May 2013 17:11:47 GMT
+      Content-Length: 
+      - "5395"
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Connection: 
+      - Keep-Alive
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      X-Request-Id: 
+      - 8a0c18fd345faba68dec17efcf44c96f
+      Content-Type: 
+      - application/json; charset=utf-8
+      X-Ua-Compatible: 
+      - IE=Edge
+    body: 
+      string: "[{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"BooleanField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"DerivedField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"EntityField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"FloatField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"IdentityField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"IntegerField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"JSONField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"NumericField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"PercentageField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"ReferenceField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"StringField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"TextField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"AttachmentField\"}]"
+    http_version: 
+  recorded_at: Mon, 06 May 2013 17:11:47 GMT

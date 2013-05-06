@@ -142,7 +142,7 @@ describe GoodGuide::EntitySoup::Resource do
 
       let(:resource) { TestResource.new }
 
-      it 'posts the resource and updates its attributes' do
+      it 'posts the resource and updates its fields' do
         stub_connection! do |stub|
           stub.post('/v1/tests.json') {
             body = {:id => 23}.to_json
