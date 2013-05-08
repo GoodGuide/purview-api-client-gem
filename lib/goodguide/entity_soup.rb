@@ -2,7 +2,7 @@ require "logger"
 require "faraday"
 
 ENTITY_SOUP_RAILS_VERSION = begin
-  Bundler.gem('activesupport', '2.3.17')
+  Bundler.gem('activesupport', '~>2.3.17')
   2
 rescue Gem::LoadError => e
   3
