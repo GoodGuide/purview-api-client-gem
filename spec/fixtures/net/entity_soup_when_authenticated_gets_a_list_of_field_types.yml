@@ -5,12 +5,12 @@ http_interactions:
     method: post
     uri: http://localhost:3000/users/session.json
     body: 
-      string: "{\"email\":\"admin@goodguide.com\",\"password\":\"password\"}"
+      string: "{\"password\":\"password\",\"email\":\"admin@goodguide.com\"}"
     headers: 
-      User-Agent: 
-      - Faraday v0.8.7
       Accept: 
       - "*/*"
+      User-Agent: 
+      - Faraday v0.8.7
       Content-Type: 
       - application/json
   response: 
@@ -18,34 +18,34 @@ http_interactions:
       code: 201
       message: "Created "
     headers: 
-      X-Runtime: 
-      - "0.123628"
-      Etag: 
-      - "\"774bca40ad9120cf1b32acebd8ed5b50\""
-      Date: 
-      - Mon, 06 May 2013 17:11:47 GMT
-      Set-Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZjMmQ3YjEzMmJhY2VkZWFiMzIzNmNkZDNmN2QwMTk2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJGJYcVFsUHZpdnhSWnhUcE1TOHQ1cnUGOwBU--02b415ead3751866ad071812f839ba079542224d; path=/; HttpOnly
-      Content-Length: 
-      - "509"
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Connection: 
-      - Keep-Alive
-      Cache-Control: 
-      - max-age=0, private, must-revalidate
-      X-Request-Id: 
-      - 2c6c61d3af289c431a8229d63a91e37a
-      Content-Type: 
-      - application/json; charset=utf-8
       Location: 
       - http://localhost:3000/
       X-Ua-Compatible: 
-      - IE=Edge
+      - IE=Edge,chrome=1
+      Date: 
+      - Mon, 01 Jul 2013 23:44:30 GMT
+      Content-Type: 
+      - application/json; charset=utf-8
+      Etag: 
+      - "\"582335498d43132b72de98efd00f9a1e\""
+      Set-Cookie: 
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFiNGEzYWI5YWRiMzU3ZmE3ZWQwNmI0Y2Y0NDMyMWZmBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--9bd88f2ab6b543a32d4d9a86902acec75e2fd785; path=/; HttpOnly
+      X-Runtime: 
+      - "0.028216"
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Content-Length: 
+      - "609"
+      Connection: 
+      - Keep-Alive
+      X-Request-Id: 
+      - 23b3b16dbf96905be9413994d41af40d
     body: 
-      string: "{\"account_id\":1,\"created_at\":\"2013-02-12T01:37:31Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"User\",\"updated_at\":\"2013-05-06T17:11:47Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":null,\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":null,\"resource_name\":null}],\"last_sign_in_at\":\"2013-05-06T17:11:46Z\"}"
+      string: "{\"account_id\":1,\"created_at\":\"2013-07-01T23:43:53Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"Vandelay\",\"provider\":null,\"terms_of_service_accepted\":null,\"uid\":null,\"updated_at\":\"2013-07-01T23:44:30Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":\"2013-07-01T23:43:53Z\",\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":\"2013-07-01T23:43:53Z\",\"resource_name\":null}],\"last_sign_in_at\":\"2013-07-01T23:44:29Z\"}"
     http_version: 
-  recorded_at: Mon, 06 May 2013 17:11:47 GMT
+  recorded_at: Mon, 01 Jul 2013 23:44:30 GMT
 - request: 
     method: get
     uri: http://localhost:3000/v1/fields/types.json
@@ -53,37 +53,37 @@ http_interactions:
       string: ""
     headers: 
       Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZjMmQ3YjEzMmJhY2VkZWFiMzIzNmNkZDNmN2QwMTk2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDEwJGJYcVFsUHZpdnhSWnhUcE1TOHQ1cnUGOwBU--02b415ead3751866ad071812f839ba079542224d
-      User-Agent: 
-      - Faraday v0.8.7
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFiNGEzYWI5YWRiMzU3ZmE3ZWQwNmI0Y2Y0NDMyMWZmBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--9bd88f2ab6b543a32d4d9a86902acec75e2fd785
       Accept: 
       - "*/*"
+      User-Agent: 
+      - Faraday v0.8.7
   response: 
     status: 
       code: 200
       message: "OK "
     headers: 
-      X-Runtime: 
-      - "0.017181"
-      Etag: 
-      - "\"1c5f878f13325707cbb1ebb4f2745155\""
+      X-Ua-Compatible: 
+      - IE=Edge,chrome=1
       Date: 
-      - Mon, 06 May 2013 17:11:47 GMT
-      Content-Length: 
-      - "5395"
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Connection: 
-      - Keep-Alive
-      Cache-Control: 
-      - max-age=0, private, must-revalidate
-      X-Request-Id: 
-      - 8a0c18fd345faba68dec17efcf44c96f
+      - Mon, 01 Jul 2013 23:44:30 GMT
       Content-Type: 
       - application/json; charset=utf-8
-      X-Ua-Compatible: 
-      - IE=Edge
+      Etag: 
+      - "\"2e8ca0365575a3db4a27f19e7753f520\""
+      X-Runtime: 
+      - "0.031704"
+      Cache-Control: 
+      - max-age=0, private, must-revalidate
+      Server: 
+      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
+      Content-Length: 
+      - "5135"
+      Connection: 
+      - Keep-Alive
+      X-Request-Id: 
+      - 5fe086654edf7b04fb4b447e6fb3986f
     body: 
-      string: "[{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"BooleanField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"DerivedField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"EntityField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"FloatField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"IdentityField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"IntegerField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"JSONField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"NumericField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"PercentageField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"ReferenceField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"StringField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"TextField\"},{\"allow_nil\":true,\"default_value\":null,\"enforces_uniqueness\":false,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"rule\":null,\"sort\":null,\"source_field_id\":null,\"title\":null,\"visualization\":null,\"name\":\"AttachmentField\"}]"
+      string: "[{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"BooleanField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"DerivedField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"EntityField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"FloatField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"IdentityField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"IntegerField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"JSONField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"NumericField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"PercentageField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"ReferenceField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"StringField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"TextField\"},{\"default_value\":null,\"enum\":null,\"enum_titles\":null,\"group\":null,\"hint\":null,\"is_autocompleting\":false,\"is_hidden\":false,\"is_identifier\":false,\"is_list\":false,\"max_items\":null,\"min_items\":null,\"position\":null,\"referenced_catalog_id\":null,\"referenced_field_id\":null,\"required\":\"no\",\"rule\":null,\"source_field_id\":null,\"title\":null,\"unique_items\":false,\"visualization\":null,\"name\":\"AttachmentField\"}]"
     http_version: 
-  recorded_at: Mon, 06 May 2013 17:11:47 GMT
+  recorded_at: Mon, 01 Jul 2013 23:44:30 GMT
