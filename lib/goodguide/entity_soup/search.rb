@@ -14,7 +14,7 @@ module GoodGuide
       end
 
       def search(params = {})
-        find_all({:elements => 'search'}.merge(params))
+        find_all(params)
       end
     end
   end
