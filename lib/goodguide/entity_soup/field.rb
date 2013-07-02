@@ -5,10 +5,7 @@ module GoodGuide
     class Field
       include Resource
 
-      attributes :type, :name, :entity_type, :catalog_id, :schema, :allow_nil
-
-      default_view :include => ['schema']
-      view :bare, {:inherits => nil, :schema => nil}
+      attributes :type, :name, :entity_type, :catalog_id, :listing_id, :required
 
       def self.types(options = {})
         connection.get('types', options).collect { |t| Hashie::Mash.new(t) }

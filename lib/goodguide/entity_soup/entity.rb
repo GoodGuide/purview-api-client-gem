@@ -28,7 +28,7 @@ module GoodGuide
       end
 
       def update_value_bindings(params)
-        e = Entity.new(:id => self.id, :value_bindings => params)
+        e = Entity.new(:id => self.id, :value_bindings => params, :catalog_id => self.catalog_id)
         result = e.save
         @errors = e.errors
         result

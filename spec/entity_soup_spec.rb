@@ -47,15 +47,8 @@ describe 'entity soup' do
       field_types.should be_a Array
       field_types.collect(&:name).should include 'IntegerField'
       field_types.first.name.should_not be_nil
-      field_types.first.allow_nil.should_not be_nil
+      field_types.first.required.should_not be_nil
     end
-
-    it 'gets a list of entity types' do
-      entity_types = GoodGuide::EntitySoup::Entity.types
-      entity_types.should be_a Array
-      entity_types.collect(&:name).should include 'Product'
-    end
-
 
     # TODO - restrict catalog access by role/ACL
     context 'catalogs' do
@@ -112,11 +105,6 @@ describe 'entity soup' do
         catalog.destroy.should be_false
       end
 
-      it 'have a schema for products' do
-        schema = test_catalog.entity_schema('Product')
-        schema.should be_a Hash
-      end
-
     end
 
 
@@ -163,10 +151,10 @@ describe 'entity soup' do
     # TODO - restrict attr editing by role/ACL
     context 'fields' do
 
-      let!(:test_catalog) { Catalog.new(:name => "test", :description => "test_catalog") }
+      let!(:test_catalog) { Catalog.new(:name => "test", :description => "test_catalog", :entity_types => ["Product", "Brand"]) }
 
       before { test_catalog.save.should be_true }
-      after { test_catalog.destroy }
+      after { test_catalog.destroy.should be_true }
 
       it 'can be created and fetched by id' do
         field = Field.new(:name => 'test',
@@ -190,22 +178,18 @@ describe 'entity soup' do
                  Field.new(:name => 'test2', :type => 'StringField', :entity_type => 'Brand', :catalog_id => test_catalog.id)]
         fields.each {|a| a.save.should be_true }
         fields_all = Field.find_all
-        fields_all_by_product = Field.find_all(:entity_type => 'Product')
         fields_all_by_type = Field.find_all(:type => 'StringField')
-        fields_all_by_catalog = Field.find_all(:catalog_id => test_catalog.id)
-        fields_all_by_bad_catalog = Field.find_all(:catalog_id => 0)
-        fields_all_by_catalog_and_name = Field.find_all(:catalog_id => test_catalog.id, :name => 'test1')
+        fields_all_by_listing = Field.find_all(:listing_id => fields.first.listing_id)
+        fields_all_by_name = Field.find_all(:name => 'test1')
 
         fields_all.should be_a Array
         fields_all.each {|a| a.should be_a Field}
         fields_all.collect(&:id).should include(*fields.collect(&:id))
 
-        fields_all_by_catalog.collect(&:id).should include(*fields.collect(&:id))
-        fields_all_by_bad_catalog.should == []
-        fields_all_by_catalog_and_name.collect(&:id).should == [fields.first.id]
+        fields_all_by_listing.length.should == 2
+        fields_all_by_listing.collect(&:id).should include(fields.first.id)
+        fields_all_by_name.collect(&:id).should == [fields.first.id]
 
-        fields_all_by_product.collect(&:id).should include(fields[0].id)
-        fields_all_by_product.collect(&:id).should_not include(fields[1].id)
         fields_all_by_type.collect(&:id).should include(fields[1].id)
         fields_all_by_type.collect(&:id).should_not include(fields[0].id)
 
@@ -228,7 +212,7 @@ describe 'entity soup' do
         found_fields.collect(&:id).should_not include(fields[0].id)
       end
 
-      it 'can update' do
+      it 'cannot update immutable fields' do
         field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
         field.save.should be_true
         field.name = 'test2'
@@ -237,10 +221,22 @@ describe 'entity soup' do
         field.catalog_id = test_catalog.id
         field.save.should be_true
         field2 = Field.find(field.id)
-        field2.name.should == 'test2'
-        field2.entity_type.should == 'Brand'
-        field2.type.should == 'StringField'
+        # Names, entity_type and type are immutable
+        field2.name.should_not == 'test2'
+        field2.entity_type.should_not == 'Brand'
+        field2.type.should_not == 'StringField'
         field2.catalog_id.should == test_catalog.id
+      end
+
+      it 'can update mutable fields' do
+        field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
+        field.save.should be_true
+        field.required.should == "no"
+        field.required = "yes"
+        field.save.should be_true
+        field2 = Field.find(field.id)
+        # Names, entity_type and type are immutable
+        field2.required.should == "no"
       end
 
       it 'can be destroyed' do
@@ -256,7 +252,7 @@ describe 'entity soup' do
     # TODO - restrcit entity creation and access by role/ACL
     context 'entities' do
 
-      let!(:test_catalog) { Catalog.new(:name => "test", :description => "test_catalog") }
+      let!(:test_catalog) { Catalog.new(:name => "test", :description => "test_catalog", :entity_types => ['Product', 'Brand']) }
       let(:product_name_field) { Field.find_all(:name => 'name', :entity_type => 'Product', :catalog_id => test_catalog.id).first }
       let(:brand_name_field) { Field.find_all(:name => 'name', :entity_type => 'Brand', :catalog_id => test_catalog.id).first }
       let(:account) { Account.find(1) }
@@ -269,7 +265,7 @@ describe 'entity soup' do
         product.save.should be_true
         product.id.should_not be_nil
 
-        entity2 = GoodGuide::EntitySoup::Entity.find(product.id)
+        entity2 = GoodGuide::EntitySoup::Entity.find(product.id, :catalog_id =>test_catalog.id )
         entity2.should be_a GoodGuide::EntitySoup::Entity
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
@@ -281,10 +277,10 @@ describe 'entity soup' do
         product2 = GoodGuide::EntitySoup::Entity.new(:type => 'Product', :account_id => account.id, :catalog_id => test_catalog.id, :value_bindings => { product_name_field.id => "Name 2" } )
         product2.save.should be_true
 
-        GoodGuide::EntitySoup::Entity.find([product.id, product2.id]).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
-        GoodGuide::EntitySoup::Entity.find([product.id, product2.id+1]).collect {|p| p ? p.id : nil }.should == [product.id, nil]
-        GoodGuide::EntitySoup::Entity.find([product.id, product2.id], { :type => 'Product' }).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
-        GoodGuide::EntitySoup::Entity.find([product.id, product2.id], { :type => 'Brand' }).should == [nil, nil]
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id], :catalog_id => test_catalog.id).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id+1], :catalog_id => test_catalog.id).collect {|p| p ? p.id : nil }.should == [product.id, nil]
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id], :type => 'Product', :catalog_id => test_catalog.id).collect {|p| p ? p.id : nil }.should == [product.id, product2.id]
+        GoodGuide::EntitySoup::Entity.find([product.id, product2.id], :type => 'Brand', :catalog_id => test_catalog.id).should == [nil, nil]
       end
 
       it 'can be created with value_bindings' do
@@ -293,7 +289,7 @@ describe 'entity soup' do
         product.value_bindings[field.id] = 42
         product.save.should be_true
 
-        entity2 = GoodGuide::EntitySoup::Entity.find(product.id)
+        entity2 = GoodGuide::EntitySoup::Entity.find(product.id, :catalog_id => test_catalog.id)
         entity2.should be_a GoodGuide::EntitySoup::Entity
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
@@ -306,7 +302,7 @@ describe 'entity soup' do
         field.save.should be_true
         product.update_value_bindings(product.value_bindings.merge(field.id => 42)).should be_true
 
-        entity2 = GoodGuide::EntitySoup::Entity.find(product.id)
+        entity2 = GoodGuide::EntitySoup::Entity.find(product.id, :catalog_id => test_catalog.id)
         entity2.should be_a GoodGuide::EntitySoup::Entity
         entity2.catalog_id.should == product.catalog_id
         entity2.type.should == 'Product'
