@@ -1,89 +1,96 @@
---- 
-recorded_with: VCR 2.4.0
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: post
     uri: http://localhost:3000/users/session.json
-    body: 
-      string: "{\"password\":\"password\",\"email\":\"admin@goodguide.com\"}"
-    headers: 
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    body:
+      encoding: UTF-8
+      string: ! '{"email":"admin@goodguide.com","password":"password"}'
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-      Content-Type: 
+      Content-Type:
       - application/json
-  response: 
-    status: 
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 201
-      message: "Created "
-    headers: 
-      Location: 
+      message: ! 'Created '
+    headers:
+      Location:
       - http://localhost:3000/
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:34 GMT
-      Content-Type: 
+      Content-Type:
       - application/json; charset=utf-8
-      Etag: 
-      - "\"d5a29ba9d1f07e3a5898d2b68293b8d9\""
-      Set-Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTAzZTAzZmE1YjEwNDg4NTE0OTk2ZDBjZWM0OTA5NTQ4BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a203b07142f784389c55900e1c0ec1b30a26dd4d; path=/; HttpOnly
-      X-Runtime: 
-      - "0.025015"
-      Cache-Control: 
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"06840adf0cda8bfb21405ff7f18b3f84"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      Server: 
+      X-Request-Id:
+      - a6af604e70825e0a6b1b8202d1f72e47
+      X-Runtime:
+      - '0.047603'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "609"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:20 GMT
+      Content-Length:
+      - '646'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - e5c884885e7fc951a0f1b6b57d5bf0d3
-    body: 
-      string: "{\"account_id\":1,\"created_at\":\"2013-07-01T23:43:53Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"Vandelay\",\"provider\":null,\"terms_of_service_accepted\":null,\"uid\":null,\"updated_at\":\"2013-07-01T23:44:34Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":\"2013-07-01T23:43:53Z\",\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":\"2013-07-01T23:43:53Z\",\"resource_name\":null}],\"last_sign_in_at\":\"2013-07-01T23:44:34Z\"}"
+      Set-Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWU5MWQxZjAxMzYyNWNiMjAxODI1YWQ0MjQ1ZGExNTI3BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--a9a6f4085dc6499c69f313e91892e126f34db5ea;
+        path=/; HttpOnly
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":1,"created_at":"2013-07-17T21:20:35Z","email":"admin@goodguide.com","first_name":"Admin","id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":"Vandelay","phone":"1234567890","provider":null,"terms_of_service_accepted":null,"title":"Ruler","uid":null,"updated_at":"2013-07-19T00:40:20Z","account_name":"GoodGuide","roles":[{"created_at":"2013-07-17T21:20:35Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-07-17T21:20:35Z","resource_name":null}],"last_sign_in_at":"2013-07-19T00:40:20Z"}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:34 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:20 GMT
+- request:
     method: get
     uri: http://localhost:3000/v1/accounts.json
-    body: 
-      string: ""
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTAzZTAzZmE1YjEwNDg4NTE0OTk2ZDBjZWM0OTA5NTQ4BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a203b07142f784389c55900e1c0ec1b30a26dd4d
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-  response: 
-    status: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWU5MWQxZjAxMzYyNWNiMjAxODI1YWQ0MjQ1ZGExNTI3BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--a9a6f4085dc6499c69f313e91892e126f34db5ea
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 200
-      message: "OK "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:34 GMT
-      Content-Type: 
+      message: ! 'OK '
+    headers:
+      Content-Type:
       - application/json; charset=utf-8
-      Etag: 
-      - "\"8c4b0a4e637ba0895c307e68cb7159a7\""
-      X-Runtime: 
-      - "0.040161"
-      Cache-Control: 
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"cdf4885accec1855f22029dbc70d3146"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      Server: 
+      X-Request-Id:
+      - f9631778bcca2004a4fbfb14b249ac97
+      X-Runtime:
+      - '0.031790'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "101"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:20 GMT
+      Content-Length:
+      - '233'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - 77c959d147a5b27a4cb7c6bedb1fd297
-    body: 
-      string: "[{\"created_at\":\"2013-07-01T23:43:53Z\",\"id\":1,\"name\":\"GoodGuide\",\"updated_at\":\"2013-07-01T23:43:53Z\"}]"
+    body:
+      encoding: US-ASCII
+      string: ! '[{"address_city":null,"address_state":null,"address_street":null,"address_street2":null,"address_zip":null,"company_name":"GoodGuide","created_at":"2013-07-17T21:20:33Z","id":1,"name":"GoodGuide","updated_at":"2013-07-17T21:20:33Z"}]'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:34 GMT
+  recorded_at: Fri, 19 Jul 2013 00:40:20 GMT
+recorded_with: VCR 2.4.0

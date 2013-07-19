@@ -1,577 +1,176 @@
---- 
-recorded_with: VCR 2.4.0
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: post
     uri: http://localhost:3000/users/session.json
-    body: 
-      string: "{\"password\":\"password\",\"email\":\"admin@goodguide.com\"}"
-    headers: 
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    body:
+      encoding: UTF-8
+      string: ! '{"email":"admin@goodguide.com","password":"password"}'
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-      Content-Type: 
+      Content-Type:
       - application/json
-  response: 
-    status: 
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 201
-      message: "Created "
-    headers: 
-      Location: 
+      message: ! 'Created '
+    headers:
+      Location:
       - http://localhost:3000/
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:31 GMT
-      Content-Type: 
+      Content-Type:
       - application/json; charset=utf-8
-      Etag: 
-      - "\"a9575208248fc26de4917ba670cbcff3\""
-      Set-Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717; path=/; HttpOnly
-      X-Runtime: 
-      - "0.023598"
-      Cache-Control: 
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"6a917eef645ba6c67b74dc81c8693aba"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      Server: 
+      X-Request-Id:
+      - 33f940d5b98cb07afbc8e72bec2528d9
+      X-Runtime:
+      - '0.034372'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "609"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Content-Length:
+      - '646'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - 179d99b548af785b7fb9155d0c81dd08
-    body: 
-      string: "{\"account_id\":1,\"created_at\":\"2013-07-01T23:43:53Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"Vandelay\",\"provider\":null,\"terms_of_service_accepted\":null,\"uid\":null,\"updated_at\":\"2013-07-01T23:44:31Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":\"2013-07-01T23:43:53Z\",\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":\"2013-07-01T23:43:53Z\",\"resource_name\":null}],\"last_sign_in_at\":\"2013-07-01T23:44:31Z\"}"
+      Set-Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTlkMGNmY2VjZjRiNjMwYzRmMTE2YmMwZDFjYTFkYTgwBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--535fd33cd5a72b5de8a93709c3cbd41236eaf1a4;
+        path=/; HttpOnly
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":1,"created_at":"2013-07-17T21:20:35Z","email":"admin@goodguide.com","first_name":"Admin","id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":"Vandelay","phone":"1234567890","provider":null,"terms_of_service_accepted":null,"title":"Ruler","uid":null,"updated_at":"2013-07-19T00:40:18Z","account_name":"GoodGuide","roles":[{"created_at":"2013-07-17T21:20:35Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-07-17T21:20:35Z","resource_name":null}],"last_sign_in_at":"2013-07-19T00:40:18Z"}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:31 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+- request:
     method: post
     uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"description\":\"test_catalog\",\"name\":\"test\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    body:
+      encoding: UTF-8
+      string: ! '{"name":"test","description":"test_catalog"}'
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-      Content-Type: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTlkMGNmY2VjZjRiNjMwYzRmMTE2YmMwZDFjYTFkYTgwBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--535fd33cd5a72b5de8a93709c3cbd41236eaf1a4
+      Content-Type:
       - application/json
-  response: 
-    status: 
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 201
-      message: "Created "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:31 GMT
-      Content-Type: 
+      message: ! 'Created '
+    headers:
+      Content-Type:
       - application/json; charset=utf-8
-      Etag: 
-      - "\"4afd3ede691e01c04f8c7785476a903b\""
-      X-Runtime: 
-      - "0.034483"
-      Cache-Control: 
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"7b86af27c035b7919572b6e25ddc35ae"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      Server: 
+      X-Request-Id:
+      - 12c236074bfc6bdd21602d85e09bb336
+      X-Runtime:
+      - '0.036698'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "531"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Content-Length:
+      - '546'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - b685e2c214d86572e6806bddd0de0a19
-    body: 
-      string: "{\"created_at\":\"2013-07-01T23:44:31Z\",\"description\":\"test_catalog\",\"has_entity_pages\":false,\"has_landing_page\":false,\"id\":5,\"image_src\":null,\"introduction\":null,\"is_reference\":null,\"name\":\"test\",\"primary_rating_field_id\":null,\"short_description\":null,\"start_action\":\"index\",\"step_one_description\":null,\"step_one_image\":null,\"step_one_title\":null,\"step_three_description\":null,\"step_three_image\":null,\"step_three_title\":null,\"step_two_description\":null,\"step_two_image\":null,\"step_two_title\":null,\"updated_at\":\"2013-07-01T23:44:31Z\"}"
+    body:
+      encoding: US-ASCII
+      string: ! '{"created_at":"2013-07-19T00:40:19Z","description":"test_catalog","has_entity_pages":false,"has_landing_page":false,"id":63,"image_src":null,"introduction":null,"is_reference":null,"name":"test","primary_rating_field_id":null,"short_description":null,"slug":"test","start_action":"index","step_one_description":null,"step_one_image":null,"step_one_title":null,"step_three_description":null,"step_three_image":null,"step_three_title":null,"step_two_description":null,"step_two_image":null,"step_two_title":null,"updated_at":"2013-07-19T00:40:19Z"}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:31 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+- request:
     method: post
     uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"name\":\"test\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    body:
+      encoding: UTF-8
+      string: ! '{"name":"test"}'
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-      Content-Type: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTlkMGNmY2VjZjRiNjMwYzRmMTE2YmMwZDFjYTFkYTgwBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--535fd33cd5a72b5de8a93709c3cbd41236eaf1a4
+      Content-Type:
       - application/json
-  response: 
-    status: 
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:31 GMT
-      Content-Type: 
+      message: ''
+    headers:
+      Content-Type:
       - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.027320"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "78"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - c2653b63b50ec972e39e8b0b4633f801
-    body: 
-      string: "{\"errors\":{\"name\":[\"has already been taken\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:31 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"has already been taken\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:31 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.031204"
-      Cache-Control: 
+      Cache-Control:
       - no-cache
-      Server: 
+      X-Request-Id:
+      - bfc287c12c1c8a55b99c0cce8d13f5b4
+      X-Runtime:
+      - '0.033416'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Content-Length:
+      - '78'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - dddeb32096a140dca30a94447b6d06a0
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
+    body:
+      encoding: US-ASCII
+      string: ! '{"errors":{"name":["has already been taken"]},"status":"unprocessable_entity"}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:31 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:31 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.032350"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 9430b653cd6f753dbb2600187e7a1f77
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:31 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.027252"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 5a9cdd18b743f9cb42b7c147a5df6a7c
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.024955"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - a4d74df475af82770ee3b90f67c87770
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.024175"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - afb8a8ddc2e5b70a6ad867e020e82821
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.027507"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - cf926991d563b5ffccd36f20e6b93f17
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.026439"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - a93e0bbf60cc0149dfba9eafb28d936d
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.034528"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 195d2e420e8f8065e899ba8700d7b067
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.023745"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - bec1343fefc70ef2a26f03022c68d075
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
-    method: post
-    uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-      Content-Type: 
-      - application/json
-  response: 
-    status: 
-      code: 422
-      message: ""
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.093061"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "70"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 39560bd816a68fe6fa4174c431fbc700
-    body: 
-      string: "{\"errors\":{\"name\":[\"can't be blank\"]},\"status\":\"unprocessable_entity\"}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+- request:
     method: delete
-    uri: http://localhost:3000/v1/catalogs/5.json
-    body: 
-      string: ""
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJhNWNmYmI0NTA3OGVhODg3MTlhYzRhYTM3NDViNDBiBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--a10f6ca978331c8764f3871db315fa67fae0d717
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    uri: http://localhost:3000/v1/catalogs/63.json?created_at=2013-07-19T00:40:19Z&description=test_catalog&has_entity_pages=false&has_landing_page=false&id=63&image_src&introduction&is_reference&name=test&primary_rating_field_id&short_description&slug=test&start_action=index&step_one_description&step_one_image&step_one_title&step_three_description&step_three_image&step_three_title&step_two_description&step_two_image&step_two_title&updated_at=2013-07-19T00:40:19Z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-  response: 
-    status: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTlkMGNmY2VjZjRiNjMwYzRmMTE2YmMwZDFjYTFkYTgwBjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--535fd33cd5a72b5de8a93709c3cbd41236eaf1a4
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 204
-      message: "No Content "
-    headers: 
-      X-Ua-Compatible: 
+      message: ! 'No Content '
+    headers:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      X-Runtime: 
-      - "0.026654"
-      Cache-Control: 
+      Cache-Control:
       - no-cache
-      Server: 
+      X-Request-Id:
+      - 1f13e98de9ca36a8a0833f54fce2fe85
+      X-Runtime:
+      - '0.034503'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Connection:
       - close
-      X-Request-Id: 
-      - cbd25c72a8a10b2549f0067f46f38132
-    body: 
-      string: ""
+    body:
+      encoding: US-ASCII
+      string: ''
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+recorded_with: VCR 2.4.0

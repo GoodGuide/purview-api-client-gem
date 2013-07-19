@@ -18,6 +18,16 @@ module GoodGuide
 
       attr_reader :path
 
+      class ResponseList < Array
+        def stats
+          @stats ||= HashWithIndifferentAccess.new
+        end
+
+        def stats=(s={})
+          @stats = s.with_indifferent_access
+        end
+      end
+
       def initialize(path)
         @path = path
       end
@@ -64,7 +74,9 @@ module GoodGuide
         res = http.get(url, opts)
 
         if json_root and res.body.is_a?(Hash)
-          res.body[json_root.to_s]
+          ResponseList.new(res.body.delete(json_root.to_s)).tap do |rl|
+            rl.stats = res.body
+          end
         else
           res.body
         end
@@ -99,7 +111,7 @@ module GoodGuide
         @http ||= Faraday.new(site) do |builder|
           builder.use Request::CookieAuth
           builder.request  :multi_json
-          builder.request  :retry, 10
+          #builder.request  :retry, 10
           builder.response :multi_json
           builder.response :raise_error
           builder.response :logger if ENV['GG_TEST_FARADAY_LOGGING'] =~ /^true/i

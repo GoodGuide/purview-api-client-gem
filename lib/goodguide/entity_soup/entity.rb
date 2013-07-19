@@ -16,7 +16,7 @@ module GoodGuide
       view :brief, {:inherits => nil, :include_value_bindings => false}
 
       def self.types
-        connection.get('types').collect { |t| Hashie::Mash.new(t) }
+        get('types').collect { |t| Hashie::Mash.new(t) }
       end
 
       def catalog(params = {})

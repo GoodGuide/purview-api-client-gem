@@ -45,9 +45,10 @@ require "goodguide/entity_soup/cookie_auth"
 module GoodGuide
   module EntitySoup
 
-    class << self
+    GOODGUIDE_CATALOG_ID = 1
+    DEFAULT_URL = "http://entity-soup.goodguide.com"
 
-      DEFAULT_URL = "http://entity-soup.goodguide.com"
+    class << self
 
       def url=(new_url)
         Connection.site = new_url

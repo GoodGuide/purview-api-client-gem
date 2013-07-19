@@ -75,7 +75,7 @@ module GoodGuide
 
       def destroy
         if id
-            result = connection.delete(id)
+            result = connection.delete(id, attributes)
             !parse_errors(result)
         else
           false
@@ -86,6 +86,10 @@ module GoodGuide
 
       def id
         @attributes.fetch(:id, nil)
+      end
+
+      def get(elements, opts={})
+        connection.get_all("#{id}/#{elements}", opts)
       end
 
       def as_json(opts={})
@@ -144,8 +148,8 @@ module GoodGuide
 
           connection.get_all(elements, params.merge!(:json_root => self.json_root)).map! { |r| new(r) }
         rescue Faraday::Error::ResourceNotFound => e
-          # NOTE: can currently happen if find params reference a non-existant entity, a bug in EntitySoup?
-          []
+          # NOTE: can currently happen if find params reference a non-existent entity, a bug in EntitySoup?
+          GoodGuide::EntitySoup::Connection::ResponseList.new
         end
 
         def get(elements, opts={})

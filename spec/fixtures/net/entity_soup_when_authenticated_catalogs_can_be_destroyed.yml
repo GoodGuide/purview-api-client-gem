@@ -1,984 +1,217 @@
---- 
-recorded_with: VCR 2.4.0
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: post
     uri: http://localhost:3000/users/session.json
-    body: 
-      string: "{\"password\":\"password\",\"email\":\"admin@goodguide.com\"}"
-    headers: 
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    body:
+      encoding: UTF-8
+      string: ! '{"email":"admin@goodguide.com","password":"password"}'
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-      Content-Type: 
+      Content-Type:
       - application/json
-  response: 
-    status: 
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 201
-      message: "Created "
-    headers: 
-      Location: 
+      message: ! 'Created '
+    headers:
+      Location:
       - http://localhost:3000/
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
+      Content-Type:
       - application/json; charset=utf-8
-      Etag: 
-      - "\"7cf3161ca54c526754237b41b5087ef8\""
-      Set-Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c; path=/; HttpOnly
-      X-Runtime: 
-      - "0.026500"
-      Cache-Control: 
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"9d1f1b653fb26f0fa185cb43dd34c3c7"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      Server: 
+      X-Request-Id:
+      - 56120d89bd1785dd4bf13eeb64bba57d
+      X-Runtime:
+      - '0.030301'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "609"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Content-Length:
+      - '646'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - c5e6f7bdf11927f69782ae90f05398d2
-    body: 
-      string: "{\"account_id\":1,\"created_at\":\"2013-07-01T23:43:53Z\",\"email\":\"admin@goodguide.com\",\"first_name\":\"Admin\",\"id\":1,\"invitation_accepted_at\":null,\"invitation_limit\":null,\"invitation_sent_at\":null,\"invitation_token\":null,\"invited_by_id\":null,\"invited_by_type\":null,\"last_name\":\"Vandelay\",\"provider\":null,\"terms_of_service_accepted\":null,\"uid\":null,\"updated_at\":\"2013-07-01T23:44:32Z\",\"account_name\":\"GoodGuide\",\"roles\":[{\"created_at\":\"2013-07-01T23:43:53Z\",\"name\":\"superuser\",\"resource_id\":null,\"resource_type\":null,\"updated_at\":\"2013-07-01T23:43:53Z\",\"resource_name\":null}],\"last_sign_in_at\":\"2013-07-01T23:44:32Z\"}"
+      Set-Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY5Mzg4YzUyOTc2ZWFkMTQyZjA3NmIzYzdjZGM1ZDY3BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--98d8cde20a32e942476dddb457a994692c2383c2;
+        path=/; HttpOnly
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":1,"created_at":"2013-07-17T21:20:35Z","email":"admin@goodguide.com","first_name":"Admin","id":1,"invitation_accepted_at":null,"invitation_limit":null,"invitation_sent_at":null,"invitation_token":null,"invited_by_id":null,"invited_by_type":null,"last_name":"Vandelay","phone":"1234567890","provider":null,"terms_of_service_accepted":null,"title":"Ruler","uid":null,"updated_at":"2013-07-19T00:40:19Z","account_name":"GoodGuide","roles":[{"created_at":"2013-07-17T21:20:35Z","name":"superuser","resource_id":null,"resource_type":null,"updated_at":"2013-07-17T21:20:35Z","resource_name":null}],"last_sign_in_at":"2013-07-19T00:40:19Z"}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+- request:
     method: post
     uri: http://localhost:3000/v1/catalogs.json
-    body: 
-      string: "{\"description\":\"test_catalog\",\"name\":\"test\"}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    body:
+      encoding: UTF-8
+      string: ! '{"name":"test","description":"test_catalog"}'
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-      Content-Type: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY5Mzg4YzUyOTc2ZWFkMTQyZjA3NmIzYzdjZGM1ZDY3BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--98d8cde20a32e942476dddb457a994692c2383c2
+      Content-Type:
       - application/json
-  response: 
-    status: 
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 201
-      message: "Created "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      Content-Type: 
+      message: ! 'Created '
+    headers:
+      Content-Type:
       - application/json; charset=utf-8
-      Etag: 
-      - "\"b5293ca670771ed8ef9e889d7a1fa626\""
-      X-Runtime: 
-      - "0.029791"
-      Cache-Control: 
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"03cfc03ce89583e749d13abd6a684921"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      Server: 
+      X-Request-Id:
+      - 527a49df76d02b2840630a2314b35698
+      X-Runtime:
+      - '0.131514'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "531"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Content-Length:
+      - '546'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - ce3cbba98af22542e11440bf55ea63b7
-    body: 
-      string: "{\"created_at\":\"2013-07-01T23:44:32Z\",\"description\":\"test_catalog\",\"has_entity_pages\":false,\"has_landing_page\":false,\"id\":7,\"image_src\":null,\"introduction\":null,\"is_reference\":null,\"name\":\"test\",\"primary_rating_field_id\":null,\"short_description\":null,\"start_action\":\"index\",\"step_one_description\":null,\"step_one_image\":null,\"step_one_title\":null,\"step_three_description\":null,\"step_three_image\":null,\"step_three_title\":null,\"step_two_description\":null,\"step_two_image\":null,\"step_two_title\":null,\"updated_at\":\"2013-07-01T23:44:32Z\"}"
+    body:
+      encoding: US-ASCII
+      string: ! '{"created_at":"2013-07-19T00:40:19Z","description":"test_catalog","has_entity_pages":false,"has_landing_page":false,"id":65,"image_src":null,"introduction":null,"is_reference":null,"name":"test","primary_rating_field_id":null,"short_description":null,"slug":"test","start_action":"index","step_one_description":null,"step_one_image":null,"step_one_title":null,"step_three_description":null,"step_three_image":null,"step_three_title":null,"step_two_description":null,"step_two_image":null,"step_two_title":null,"updated_at":"2013-07-19T00:40:19Z"}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+- request:
     method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: ""
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    uri: http://localhost:3000/v1/catalogs/65.json?created_at=2013-07-19T00:40:19Z&description=test_catalog&has_entity_pages=false&has_landing_page=false&id=65&image_src&introduction&is_reference&name=test&primary_rating_field_id&short_description&slug=test&start_action=index&step_one_description&step_one_image&step_one_title&step_three_description&step_three_image&step_three_title&step_two_description&step_two_image&step_two_title&updated_at=2013-07-19T00:40:19Z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-  response: 
-    status: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY5Mzg4YzUyOTc2ZWFkMTQyZjA3NmIzYzdjZGM1ZDY3BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--98d8cde20a32e942476dddb457a994692c2383c2
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 204
-      message: "No Content "
-    headers: 
-      X-Ua-Compatible: 
+      message: ! 'No Content '
+    headers:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:32 GMT
-      X-Runtime: 
-      - "0.025866"
-      Cache-Control: 
+      Cache-Control:
       - no-cache
-      Server: 
+      X-Request-Id:
+      - 993e8143f3812aa0e4549b7da196e19d
+      X-Runtime:
+      - '0.031258'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Connection:
       - close
-      X-Request-Id: 
-      - 524586fc0745a46ffd58adf49c793b44
-    body: 
-      string: ""
+    body:
+      encoding: US-ASCII
+      string: ''
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:32 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+- request:
     method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: ""
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    uri: http://localhost:3000/v1/catalogs/65.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-  response: 
-    status: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY5Mzg4YzUyOTc2ZWFkMTQyZjA3NmIzYzdjZGM1ZDY3BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--98d8cde20a32e942476dddb457a994692c2383c2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
+      message: ! 'Not Found '
+    headers:
+      Content-Type:
       - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.018598"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 27525095e628326c38cd16905e686cfa
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.086452"
-      Cache-Control: 
+      Cache-Control:
       - no-cache
-      Server: 
+      X-Request-Id:
+      - 7c7914432a0c4890a16c75633505ec1a
+      X-Runtime:
+      - '0.026256'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Content-Length:
+      - '78'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - 3469002c73edb6bb2864984eb77ab428
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
+    body:
+      encoding: US-ASCII
+      string: ! '{"errors":{"base":"not found: Couldn''t find Catalog with id=65"},"status":404}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.018320"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - fa292c5be81dcf08b974ce815dfb69b6
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.014838"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - ddfba6faae6c28a90611dc3ec06469f3
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.014687"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 1e0e1fbb9def43813c52c90fb4a3a8fa
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.015061"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - ba0f9b71e423e103e8f62e0b7f079c56
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.017755"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 234a8c951c5b01a1bd971b75377ff6de
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.019567"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 607dfdfb8d1c92d03bffb3a69fd847e1
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.013504"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 8cc1d0ff98cd781f283f6523ec834aa5
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.015843"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 83c1bdbd645790bd0b2cb506ff3c742d
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: get
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.016919"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - e263e4cd3348e9e0b586f66e00d73cec
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+- request:
     method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: ""
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
+    uri: http://localhost:3000/v1/catalogs/65.json?created_at=2013-07-19T00:40:19Z&description=test_catalog&has_entity_pages=false&has_landing_page=false&id=65&image_src&introduction&is_reference&name=test&primary_rating_field_id&short_description&slug=test&start_action=index&step_one_description&step_one_image&step_one_title&step_three_description&step_three_image&step_three_title&step_two_description&step_two_image&step_two_title&updated_at=2013-07-19T00:40:19Z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
       - Faraday v0.8.7
-  response: 
-    status: 
+      Cookie:
+      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY5Mzg4YzUyOTc2ZWFkMTQyZjA3NmIzYzdjZGM1ZDY3BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JDM0TTVYSkdwcHV2SC5ISi80Tks3Q08GOwBU--98d8cde20a32e942476dddb457a994692c2383c2
+      Accept:
+      - ! '*/*'
+  response:
+    status:
       code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
+      message: ! 'Not Found '
+    headers:
+      Content-Type:
       - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.014423"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 4f93dac3f8256ba2ef341d30e324143e
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.024030"
-      Cache-Control: 
+      Cache-Control:
       - no-cache
-      Server: 
+      X-Request-Id:
+      - 380d800a241f5f47744300484b410dea
+      X-Runtime:
+      - '0.019890'
+      Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
+      Date:
+      - Fri, 19 Jul 2013 00:40:19 GMT
+      Content-Length:
+      - '78'
+      Connection:
       - Keep-Alive
-      X-Request-Id: 
-      - 457137450b58c075cbff635b789ffff3
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
+    body:
+      encoding: US-ASCII
+      string: ! '{"errors":{"base":"not found: Couldn''t find Catalog with id=65"},"status":404}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.021215"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - ea8f7e8d01e49f3736c9f4ed1d93cff7
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.014601"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - e623e685066e0e4a9fd5a33d402b164c
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.023521"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - ef83e854f8b8acfe9dff219038e5cf73
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.011510"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 3a242013efe6e627ac01dd443aef127a
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.011583"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 51a324684ba1c995673e7e3a5181923e
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.017604"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - ed17d6163d515583a37fe18608da0b36
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.016671"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 06412e23f14990e857d2268de6c2b581
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.023653"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - ac302afc4818da573ebf9a2b89e7be38
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
-- request: 
-    method: delete
-    uri: http://localhost:3000/v1/catalogs/7.json
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    headers: 
-      Cookie: 
-      - _session_id=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyZjIzZjlmYzQyZTMzYjNhYWMwMmY0MTAwZTkzY2U2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsISSIJVXNlcgY7AEZbBmkGSSIiJDJhJDA0JEh2MW10b3hYb01sWTRtbkJtT3pHNU8GOwBU--51050569ccf2cadb27687ebab042731989f9360c
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Faraday v0.8.7
-  response: 
-    status: 
-      code: 404
-      message: "Not Found "
-    headers: 
-      X-Ua-Compatible: 
-      - IE=Edge,chrome=1
-      Date: 
-      - Mon, 01 Jul 2013 23:44:33 GMT
-      Content-Type: 
-      - application/json; charset=utf-8
-      X-Runtime: 
-      - "0.016256"
-      Cache-Control: 
-      - no-cache
-      Server: 
-      - WEBrick/1.3.1 (Ruby/1.9.3/2012-11-10)
-      Content-Length: 
-      - "77"
-      Connection: 
-      - Keep-Alive
-      X-Request-Id: 
-      - 490fdd421f7adfa6a4334af417c44e2d
-    body: 
-      string: "{\"errors\":{\"base\":\"not found: Couldn't find Catalog with id=7\"},\"status\":404}"
-    http_version: 
-  recorded_at: Mon, 01 Jul 2013 23:44:33 GMT
+  recorded_at: Fri, 19 Jul 2013 00:40:19 GMT
+recorded_with: VCR 2.4.0

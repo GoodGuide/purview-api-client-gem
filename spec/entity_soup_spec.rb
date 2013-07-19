@@ -137,7 +137,7 @@ describe 'entity soup' do
       end
 
       it 'can be created and destroyed' do
-        account = Account.new(:name => "test")
+        account = Account.new(:name => "test", :company_name => "Acme Inc.")
         account.save.should be_true
         account.id.should_not be_nil
         found_account = Account.find(account.id)
@@ -219,24 +219,18 @@ describe 'entity soup' do
         field.entity_type = 'Brand'
         field.type = 'StringField'
         field.catalog_id = test_catalog.id
-        field.save.should be_true
-        field2 = Field.find(field.id)
-        # Names, entity_type and type are immutable
-        field2.name.should_not == 'test2'
-        field2.entity_type.should_not == 'Brand'
-        field2.type.should_not == 'StringField'
-        field2.catalog_id.should == test_catalog.id
+        field.save.should be_false
       end
 
       it 'can update mutable fields' do
         field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
         field.save.should be_true
         field.required.should == "no"
-        field.required = "yes"
+        field.required = "for saving"
         field.save.should be_true
         field2 = Field.find(field.id)
         # Names, entity_type and type are immutable
-        field2.required.should == "no"
+        field2.required.should == "for saving"
       end
 
       it 'can be destroyed' do
@@ -309,6 +303,20 @@ describe 'entity soup' do
         entity2.value_bindings.should == { field.id.to_s => 42, product_name_field.id.to_s => "Name" }
       end
 
+      it 'can update value_bindings by assignment' do
+        product.save.should be_true
+        field = Field.new(:name => 'test1', :type => 'IntegerField', :entity_type => 'Product', :catalog_id => test_catalog.id)
+        field.save.should be_true
+        product.value_bindings.merge!(field.id.to_s => 42)
+        product.save.should be_true
+
+        entity2 = GoodGuide::EntitySoup::Entity.find(product.id, :catalog_id => test_catalog.id)
+        entity2.should be_a GoodGuide::EntitySoup::Entity
+        entity2.catalog_id.should == product.catalog_id
+        entity2.type.should == 'Product'
+        entity2.value_bindings.should == { field.id.to_s => 42, product_name_field.id.to_s => "Name" }
+      end
+
       it 'can be listed in a catalog' do
         product.save.should be_true
         product.id.should_not be_nil
@@ -345,6 +353,48 @@ describe 'entity soup' do
         entities.should be_a Array
         entities.collect(&:id).should include(product.id)
         entities.collect(&:id).should_not include(brand.id)
+      end
+
+      context "search in batches" do
+        let(:sample_data) { [0,1,2,3,4,5,6,7,8,9] }
+        let(:received_args) { [] }
+        before { stub(Entity).search { |params|
+          received_args << [params[:start], params[:rows]]
+          Connection::ResponseList.new(sample_data[params[:start], params[:rows]]).tap do |r|
+            r.stats = { total: sample_data.length }
+          end
+          }
+        }
+
+        it "returns starts at the begining by default" do
+          Entity.search_in_batches({}).should == sample_data
+        end
+
+        it "offsets by start rows" do
+          Entity.search_in_batches(start: 5).should == sample_data[5..-1]
+        end
+
+        it "accepts max rows" do
+          Entity.search_in_batches(max_rows: 2).should == sample_data[0,2]
+        end
+
+        it "does things in batches" do
+          Entity.search_in_batches(batch_size: 5)
+          received_args.should == [[0,5],[5,5]]
+        end
+
+        it "does things in batches without returning more than max_rows" do
+          Entity.search_in_batches(batch_size: 4, max_rows: 9)
+          received_args.should == [[0,4],[4,4], [8,1]]
+        end
+
+        it "invokes a block for each batch" do
+          invoked_data = []
+          Entity.search_in_batches(batch_size: 2, max_rows: 5) { |batch| invoked_data << batch }
+          received_args.should == [[0,2], [2,2],[4,1]]
+          invoked_data.should == [[0,1], [2,3], [4]]
+        end
+
       end
 
 

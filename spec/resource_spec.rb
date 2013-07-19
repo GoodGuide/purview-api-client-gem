@@ -86,6 +86,18 @@ describe GoodGuide::EntitySoup::Resource do
       list = TestResource.find_all(:limit => 3, :include => 'foo')
       list.should be_a Array
       list.map(&:id).should == [1, 2, 3]
+      list.stats[:count].should == 3
+    end
+
+    it "handles a empty search result" do
+      stub_connection! do |stub|
+        stub.get("/v1/tests.json?include%5B%5D=foo&limit=3") {
+          [404, {}, {:errors => { :base => ["not found"]} }.to_json ]
+        }
+      end
+      list = TestResource.find_all(:limit => 3, :include => 'foo')
+      list.should be_a Array
+      list.length.should == 0
     end
 
     describe 'errors' do
@@ -107,6 +119,21 @@ describe GoodGuide::EntitySoup::Resource do
       end
 
     end
+  end
+
+  describe 'get' do
+
+    before { reset_connection! }
+
+    it 'gets a resource element' do
+      stub_connection! do |stub|
+        stub.get('/v1/tests/123/element.json') { [200, {}, { :something => 123 }.to_json] }
+      end
+
+      tr = TestResource.new(:id => 123)
+      tr.get("element").should == { "something" => 123 }
+    end
+
   end
 
   describe 'saving' do

@@ -1,1 +1,17 @@
-rvm use --create 1.8.7
+#!/usr/bin/env bash
+ 
+ruby_string="ruby-1.9.3-p327-falcon"
+ruby_alt_string="1.9.3-p327"
+ 
+if (( `rvm list strings | grep -c "${ruby_string}"` ))
+then
+	# Load or create the specified environment
+  rvm --create use "${ruby_string}"
+elif (( `rvm list strings | grep -c "${ruby_alt_string}"` ))
+then
+  # Load or create the specified environment
+  rvm --create use "${ruby_alt_string}"
+else
+  # Notify the user to install the desired interpreter before proceeding.
+  echo "${ruby_string} was not found, please run 'rvm install ${ruby_string}' and then cd back into the project directory."
+fi
