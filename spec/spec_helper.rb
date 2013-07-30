@@ -2,23 +2,13 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-#require './lib/goodguide/entity_soup'
 require 'yajl/json_gem'
-#require 'wrong/adapters/rspec'
-require 'vcr'
 require 'digest/bubblebabble'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'goodguide/entity_soup'
 include GoodGuide::EntitySoup
-
-VCR.configure do |c|
-  c.cassette_library_dir = File.expand_path('fixtures/net', File.dirname(__FILE__))
-  c.hook_into :webmock
-  c.default_cassette_options = { :record => :once }
-  c.configure_rspec_metadata!
-end
 
 module SpecHelpers
 
@@ -32,10 +22,6 @@ module SpecHelpers
 
   def reset_connection!
     Connection.http = nil
-  end
-
-  def vcr(name, &b)
-    VCR.use_cassette(name, &b)
   end
 
   def random_string

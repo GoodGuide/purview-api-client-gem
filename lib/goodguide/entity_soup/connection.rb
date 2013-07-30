@@ -14,6 +14,10 @@ module GoodGuide
           @site
         end
 
+        def reset
+          @http = nil
+        end
+
       end
 
       attr_reader :path
@@ -114,8 +118,12 @@ module GoodGuide
           #builder.request  :retry, 10
           builder.response :multi_json
           builder.response :raise_error
-          builder.response :logger if ENV['GG_TEST_FARADAY_LOGGING'] =~ /^true/i
-          builder.adapter Faraday.default_adapter
+          builder.response :logger if !!(ENV['FARADAY_LOGGING'] =~ /^true/i)
+          if defined?(Rails) and !!(ENV['ENTITY_SOUP_MOUNTED'] =~ /^true/i)
+            builder.adapter :rack, Rails.application
+          else
+            builder.adapter Faraday.default_adapter
+          end
         end
       end
 
