@@ -14,10 +14,6 @@ module GoodGuide
         Entity.find_all(params.merge(:catalog_id => self.id))
       end
 
-      def as_excel(params = {})
-        get("export/listings", params.merge(:format => 'xlsx'))
-      end
-
       def self.find_by_name(name, opts = {})
         Catalog.find_all(opts.merge(:name => name)).first
       end
