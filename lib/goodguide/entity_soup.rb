@@ -5,7 +5,12 @@ ENTITY_SOUP_RAILS_VERSION = begin
   Bundler.gem('activesupport', '~>2.3.17')
   2
 rescue Gem::LoadError => e
-  3
+  begin
+    Bundler.gem('activesupport', '~>3')
+    3
+  rescue Gem::LoadError => e
+    4
+  end
 end
 
 if ENTITY_SOUP_RAILS_VERSION == 2
@@ -23,9 +28,12 @@ else
   require 'active_support/core_ext/object/to_query'
 end
 
+if ENTITY_SOUP_RAILS_VERSION == 2 || ENTITY_SOUP_RAILS_VERSION == 3
+  require "active_support/memoizable"
+end
+
 require "faraday_middleware"
 require "faraday_middleware-multi_json"
-require "active_support/memoizable"
 require "active_support/core_ext/class"
 require "active_support/core_ext/enumerable"
 require 'active_support/core_ext/string'
