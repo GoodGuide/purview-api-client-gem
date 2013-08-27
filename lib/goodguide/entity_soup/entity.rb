@@ -19,6 +19,22 @@ module GoodGuide
         get('types').collect { |t| Hashie::Mash.new(t) }
       end
 
+      def self.merge(representative, others)
+
+        Entity.post('merge',
+                    representative: representative.id,
+                    others: others.collect(&:id),
+                    catalog_id: representative.catalog_id,
+                    type: representative.type)
+      end
+
+      def dedup(others)
+        put('dedup',
+            catalog_id: self.catalog_id,
+            type: self.type,
+            others: others.collect(&:id))
+      end
+
       def catalog(params = {})
         Catalog.find(self.catalog_id, params)
       end

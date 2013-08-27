@@ -63,7 +63,7 @@ module GoodGuide
                    connection.post(attributes)
                  end
 
-        @attributes = result.with_indifferent_access if id.nil?  # saved a new record
+        @attributes = result.with_indifferent_access if id.nil? || result.is_a?(Hash)
         true
       rescue Faraday::Error::ClientError => e
         if e.response
@@ -90,6 +90,22 @@ module GoodGuide
 
       def get(elements, opts={})
         connection.get_all("#{id}/#{elements}", opts)
+      end
+
+      def put(elements, opts={})
+        if elements.is_a?(Hash)
+          opts = elements
+          elements = nil
+        end
+        result = connection.put("#{id}/#{elements}", opts)
+        @attributes = result.with_indifferent_access if result.is_a?(Hash)
+        true
+      rescue Faraday::Error::ClientError => e
+        if e.response
+          !parse_errors(e.response[:body], e.response[:status])
+        else
+          raise e
+        end
       end
 
       def as_json(opts={})
@@ -155,6 +171,11 @@ module GoodGuide
         def get(elements, opts={})
           params = view_params_for(opts)
           connection.get_all(elements, params)
+        end
+
+        def post(elements, opts={})
+          params = view_params_for(opts)
+          new(connection.post(elements, params))
         end
 
         def name

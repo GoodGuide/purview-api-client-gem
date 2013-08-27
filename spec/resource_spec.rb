@@ -6,6 +6,8 @@ describe GoodGuide::EntitySoup::Resource do
     resource_name 'test'
     resource_path 'tests'
     resource_json_root 'tests'
+
+    attributes :something
   end
 
   class TestEntity
@@ -130,11 +132,41 @@ describe GoodGuide::EntitySoup::Resource do
         stub.get('/v1/tests/123/element.json') { [200, {}, { :something => 123 }.to_json] }
       end
 
-      tr = TestResource.new(:id => 123)
+      tr = TestResource.new(id: 123)
       tr.get("element").should == { "something" => 123 }
     end
 
   end
+
+  describe 'post' do
+    before { reset_connection! }
+
+    it 'returns a resource' do
+      stub_connection! do |stub|
+        stub.post('/v1/tests/element.json') { [201, {}, { id: 123, something: 456}.to_json] }
+      end
+
+      tr = TestResource.post('element', something: 456)
+      expect(tr).to be_a(TestResource)
+      expect(tr.id).to eql(123)
+      expect(tr.something).to eql(456)
+    end
+  end
+
+  describe 'put' do
+    before { reset_connection! }
+
+    it 'returns a resource' do
+      stub_connection! do |stub|
+        stub.put('/v1/tests/123/element.json') { [201, {}, { id: 123, something: 456}.to_json] }
+      end
+
+      tr = TestResource.new(id: 123)
+      expect(tr.put('element', random_arg: 111)).to be_true
+      expect(tr.something).to eql(456)
+    end
+  end
+
 
   describe 'saving' do
 
@@ -186,9 +218,25 @@ describe GoodGuide::EntitySoup::Resource do
     end
 
     context 'when the resource already exists' do
+
       let(:resource) { TestResource.new(:id => 23) }
 
       it_behaves_like 'it handles errors', :put, '/v1/tests/23.json'
+
+      it 'updates the resource and updates its fields' do
+        stub_connection! do |stub|
+          stub.put('/v1/tests/23.json') {
+            [200, {}, {id: 23, something: 43}.to_json]
+          }
+        end
+
+        resource.something = 42
+        resource.save
+
+        expect(resource.id).to eql(23)
+        expect(resource.something).to eql(43)
+      end
+
     end
 
   end

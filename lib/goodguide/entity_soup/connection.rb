@@ -52,11 +52,15 @@ module GoodGuide
         res.body
       end
 
-      def post(opts={})
+      def post(id=nil, opts={})
+        if id.is_a?(Hash)
+          opts = id
+          id = nil
+        end
         opts = opts.dup
         format = (opts.delete(:format) || 'json')
 
-        res = http.post("#{rel_path}.#{format}", opts)
+        res = http.post("#{path_for(id)}.#{format}", opts)
         res.body
       end
 
@@ -97,7 +101,7 @@ module GoodGuide
       end
 
       def path_for(id)
-        "#{rel_path}/#{id}"
+        "#{rel_path + (id ? "/#{id}" : '')}"
       end
 
       def query(opts)
