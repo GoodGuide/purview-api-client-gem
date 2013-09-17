@@ -4,7 +4,7 @@ module GoodGuide
     class Catalog
       include Resource
 
-      attributes :description, :name, :entity_types, :is_reference
+      attributes :description, :name, :entity_types, :is_reference, :account_id
 
       def fields(params = {})
         Field.find_all(params.merge(:catalog_id => self.id))
@@ -12,10 +12,6 @@ module GoodGuide
 
       def entities(params = {})
         Entity.find_all(params.merge(:catalog_id => self.id))
-      end
-
-      def as_excel(params = {})
-        get("export/listings", params.merge(:format => 'xlsx'))
       end
 
       def self.find_by_name(name, opts = {})
