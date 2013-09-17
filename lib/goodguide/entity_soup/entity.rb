@@ -28,6 +28,16 @@ module GoodGuide
                     type: representative.type)
       end
 
+      def self.merge_and_update(representative, others, value_bindings)
+
+        Entity.post('merge_and_update',
+                    representative: representative.id,
+                    others: others.collect(&:id),
+                    value_bindings: value_bindings,
+                    catalog_id: representative.catalog_id,
+                    type: representative.type)
+      end
+
       def dedup(others)
         put('dedup',
             catalog_id: self.catalog_id,
