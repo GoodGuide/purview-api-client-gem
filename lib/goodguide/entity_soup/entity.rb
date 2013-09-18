@@ -38,8 +38,8 @@ module GoodGuide
                     type: representative.type)
       end
 
-      def dedup(others)
-        put('dedup',
+      def deduplicate(others)
+        put('deduplicate',
             catalog_id: self.catalog_id,
             type: self.type,
             others: others.collect(&:id))
