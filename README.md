@@ -1,4 +1,5 @@
 # GoodGuide Entity Soup Gem
+# 
 
 This is the gem for access to the GoodGuide entity soup repository via an underlying RESTful API
 
