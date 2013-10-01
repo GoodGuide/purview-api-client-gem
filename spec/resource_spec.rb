@@ -76,7 +76,7 @@ describe GoodGuide::EntitySoup::Resource do
       tr.id.should == 123
     end
 
-    it "searches resources" do
+    it 'searches resources' do
       stub_request(:get, "/v1/tests.json?include%5B%5D=foo&limit=3", {
                      :tests => [
                              { :id => 1 },
@@ -91,7 +91,7 @@ describe GoodGuide::EntitySoup::Resource do
       list.stats[:count].should == 3
     end
 
-    it "handles a empty search result" do
+    it 'handles a empty search result' do
       stub_connection! do |stub|
         stub.get("/v1/tests.json?include%5B%5D=foo&limit=3") {
           [404, {}, {:errors => { :base => ["not found"]} }.to_json ]
@@ -100,6 +100,15 @@ describe GoodGuide::EntitySoup::Resource do
       list = TestResource.find_all(:limit => 3, :include => 'foo')
       list.should be_a Array
       list.length.should == 0
+    end
+
+    it 'handles a result with stats only' do
+      stub_request(:get, '/v1/tests.json?preview=true', { total: 1,facets: {} })
+      list = TestResource.find_all(:preview => true)
+      list.should be_a Array
+      list.length.should == 0
+      list.stats[:total].should == 1
+      list.stats[:facets].should be_empty
     end
 
     describe 'errors' do

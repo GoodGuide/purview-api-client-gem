@@ -82,7 +82,7 @@ module GoodGuide
         res = http.get(url, opts)
 
         if json_root and res.body.is_a?(Hash)
-          ResponseList.new(res.body.delete(json_root.to_s)).tap do |rl|
+          ResponseList.new(res.body.delete(json_root.to_s) || []).tap do |rl|
             rl.stats = res.body
           end
         else
