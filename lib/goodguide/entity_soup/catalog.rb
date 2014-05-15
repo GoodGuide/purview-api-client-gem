@@ -18,8 +18,10 @@ module GoodGuide
         Catalog.find_all(opts.merge(:name => name)).first
       end
 
+      def self.goodguide_catalog_for_type(entity_type)
+        find_by_name("directory_#{entity_type.tableize}")
+      end
     end
-
   end
 end
 

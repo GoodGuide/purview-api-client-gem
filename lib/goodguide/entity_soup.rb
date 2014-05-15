@@ -52,8 +52,6 @@ require "goodguide/entity_soup/cookie_auth"
 
 module GoodGuide
   module EntitySoup
-
-    GOODGUIDE_CATALOG_ID = 1
     DEFAULT_URL = "http://entity-soup.goodguide.com"
 
     class << self
