@@ -4,7 +4,7 @@ module GoodGuide
     class Catalog
       include Resource
 
-      attributes :description, :name, :entity_types, :is_reference, :account_id, :slug
+      attributes :description, :name, :entity_type, :is_reference, :account_id, :slug
 
       def fields(params = {})
         Field.find_all(params.merge(:catalog_id => self.id))
