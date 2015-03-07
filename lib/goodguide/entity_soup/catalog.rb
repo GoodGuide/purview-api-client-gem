@@ -22,8 +22,15 @@ module GoodGuide
         Catalog.find_all(opts).find{|c| c.slug == slug.to_s}
       end
 
-      def self.goodguide_catalog_for_type(entity_type)
-        find_by_slug("directory_#{entity_type.tableize}")
+      def self.goodguide_catalog_for_type(entity_type, sub_type=nil)
+        case sub_type
+        when :food
+          find_by_slug("directory_#{entity_type.tableize}_food")
+        when :chemical
+          find_by_slug("directory_#{entity_type.tableize}") # TODO: Rename the product directory
+        else
+          find_by_slug("directory_#{entity_type.tableize}")
+        end
       end
     end
   end
