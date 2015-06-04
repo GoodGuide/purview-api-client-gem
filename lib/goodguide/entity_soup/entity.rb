@@ -11,7 +11,7 @@ module GoodGuide
       # NOTE: at the moment API returns only entities within a JSON object
       resource_json_root :entities
 
-      attributes :catalog_id, :account_id, :type, :status, :created_at, :updated_at, :value_bindings
+      attributes :catalog_id, :account_id, :type, :status, :created_at, :updated_at, :value_bindings, :image_url
 
       view :brief, {:inherits => nil, :include_value_bindings => false}
 
