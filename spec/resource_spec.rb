@@ -171,7 +171,7 @@ describe GoodGuide::EntitySoup::Resource do
       end
 
       tr = TestResource.new(id: 123)
-      expect(tr.put('element', random_arg: 111)).to be_true
+      expect(tr.put('element', random_arg: 111)).to be(true)
       expect(tr.something).to eql(456)
     end
   end
@@ -187,7 +187,7 @@ describe GoodGuide::EntitySoup::Resource do
         it 'handles server errors' do
           stub_connection! { |stub| stub.send(method, url) { [500, {}, "foo bar exception"] } }
 
-          resource.save.should be_false
+          resource.save.should be(false)
           resource.errors.should_not be_empty
         end
 
@@ -198,7 +198,7 @@ describe GoodGuide::EntitySoup::Resource do
           end
 
           resource.errors.should be_empty
-          resource.save.should be_false
+          resource.save.should be(false)
           resource.errors.should_not be_empty
 
         end

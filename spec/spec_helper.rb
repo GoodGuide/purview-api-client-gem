@@ -11,7 +11,6 @@ require 'goodguide/entity_soup'
 include GoodGuide::EntitySoup
 
 module SpecHelpers
-
   def stub_connection!(&b)
     Connection.http.builder.swap Faraday::Adapter::NetHttp, Faraday::Adapter::Test, &b
   end
@@ -28,18 +27,16 @@ module SpecHelpers
     Digest.bubblebabble(Digest::SHA1::hexdigest("random string")[8..12])
   end
 
-private
+  private
+
   def adapter_stack
     @adapter_stack ||= []
   end
-
 end
 
 RSpec.configure do |config|
   config.mock_framework = :rr
   config.include SpecHelpers
-
 end
 
-GoodGuide::EntitySoup.url="http://localhost:3000"
-
+GoodGuide::EntitySoup.url = "http://localhost:3000"

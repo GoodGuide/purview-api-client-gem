@@ -34,6 +34,7 @@ end
 
 require "faraday_middleware"
 require "faraday_middleware-multi_json"
+require 'active_support'
 require "active_support/core_ext/class"
 require "active_support/core_ext/enumerable"
 require 'active_support/core_ext/string'
@@ -53,8 +54,6 @@ require "goodguide/entity_soup/cookie_auth"
 
 module GoodGuide
   module EntitySoup
-    DEFAULT_URL = "http://entity-soup.goodguide.com"
-
     class << self
 
       def url=(new_url)
@@ -62,9 +61,8 @@ module GoodGuide
       end
 
       def url
-        Connection.site || DEFAULT_URL
+        Connection.site
       end
-
 
       def authenticate(email, password)
         Connection.reset
@@ -74,8 +72,6 @@ module GoodGuide
       rescue Faraday::Error::ClientError
         false
       end
-
     end
-
   end
 end
