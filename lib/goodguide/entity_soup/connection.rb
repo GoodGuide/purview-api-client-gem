@@ -4,7 +4,9 @@ module GoodGuide
     class Connection
 
       class << self
-        attr_reader :site
+        def site
+          @site or raise('No entity_soup API endpoint configured!')
+        end
 
         def site=(new_site)
           if new_site != @site
