@@ -5,9 +5,8 @@
 #
 # Unlike an Entity, a Resource is not necessarily rated.
 
-require 'active_record'
-require 'active_record/base'
-require 'active_record/validations'
+require 'active_model'
+require 'active_model/validations'
 
 module GoodGuide
   module EntitySoup
@@ -33,11 +32,6 @@ module GoodGuide
       def initialize(o = {})
         if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Errors")
           @errors = ActiveModel::Errors.new(self)
-        else
-          @errors = ActiveRecord::Errors.new(self)
-          class << @errors
-            alias :set :add
-          end
         end
 
         case

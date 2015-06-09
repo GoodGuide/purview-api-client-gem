@@ -2,7 +2,7 @@ require './lib/goodguide/entity_soup/version'
 
 Gem::Specification.new do |s|
   s.name = "goodguide-entity_soup"
-  s.version = GoodGuide::EntitySoup.version
+  s.version = "2.0"
   s.authors = ["Simon Waddington"]
   s.email = ["simon@goodguide.com"]
   s.summary = "GoodGuide Entity Soup API gem"
