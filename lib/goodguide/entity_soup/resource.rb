@@ -14,10 +14,7 @@ module GoodGuide
 
       def self.included(base)
         base.extend(ClassMethods)
-
-        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Naming")
-          base.extend(ActiveModel::Naming)
-        end
+        base.extend(ActiveModel::Naming)
 
         base.class_eval do
           attr_reader :errors
@@ -30,9 +27,7 @@ module GoodGuide
       end
 
       def initialize(o = {})
-        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Errors")
-          @errors = ActiveModel::Errors.new(self)
-        end
+        @errors = ActiveModel::Errors.new(self)
 
         case
         when Fixnum === o
@@ -189,7 +184,7 @@ module GoodGuide
         end
 
         def resource_version(version = nil)
-          @version ||= (version || GoodGuide::EntitySoup.version)
+          @version ||= (version || GoodGuide::EntitySoup.api_version)
         end
 
         def resource_version_path
