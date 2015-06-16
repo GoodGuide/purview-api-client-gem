@@ -5,9 +5,8 @@
 #
 # Unlike an Entity, a Resource is not necessarily rated.
 
-require 'active_record'
-require 'active_record/base'
-require 'active_record/validations'
+require 'active_model'
+require 'active_model/validations'
 
 module GoodGuide
   module EntitySoup
@@ -15,10 +14,7 @@ module GoodGuide
 
       def self.included(base)
         base.extend(ClassMethods)
-
-        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Naming")
-          base.extend(ActiveModel::Naming)
-        end
+        base.extend(ActiveModel::Naming)
 
         base.class_eval do
           attr_reader :errors
@@ -31,14 +27,7 @@ module GoodGuide
       end
 
       def initialize(o = {})
-        if Object.const_defined?("ActiveModel") and ActiveModel.const_defined?("Errors")
-          @errors = ActiveModel::Errors.new(self)
-        else
-          @errors = ActiveRecord::Errors.new(self)
-          class << @errors
-            alias :set :add
-          end
-        end
+        @errors = ActiveModel::Errors.new(self)
 
         case
         when Fixnum === o
@@ -195,7 +184,7 @@ module GoodGuide
         end
 
         def resource_version(version = nil)
-          @version ||= (version || GoodGuide::EntitySoup.version)
+          @version ||= (version || GoodGuide::EntitySoup.api_version)
         end
 
         def resource_version_path

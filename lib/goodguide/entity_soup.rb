@@ -13,20 +13,11 @@ rescue Gem::LoadError => e
   end
 end
 
-if ENTITY_SOUP_RAILS_VERSION == 2
-  require "json"
-  require "active_support/core_ext"
-  require 'active_record'
-  require 'active_record/base'
-  require 'active_record/validations'
-  require 'active_support_v3/core_ext/object/to_query'
-else
-  require "active_support/json"
-  require "active_support/benchmarkable"
-  require 'active_model/naming'
-  require 'active_model/errors'
-  require 'active_support/core_ext/object/to_query'
-end
+require "active_support/json"
+require "active_support/benchmarkable"
+require 'active_model/naming'
+require 'active_model/errors'
+require 'active_support/core_ext/object/to_query'
 
 if ENTITY_SOUP_RAILS_VERSION == 2 || ENTITY_SOUP_RAILS_VERSION == 3
   require "active_support/memoizable"
@@ -35,11 +26,9 @@ end
 require "faraday_middleware"
 require "faraday_middleware-multi_json"
 require 'active_support'
-require "active_support/core_ext/class"
 require "active_support/core_ext/enumerable"
 require 'active_support/core_ext/string'
 require 'active_support/core_ext/hash'
-require 'active_support/core_ext/proc'
 require 'active_support/inflector'
 
 require "goodguide/entity_soup/version"
