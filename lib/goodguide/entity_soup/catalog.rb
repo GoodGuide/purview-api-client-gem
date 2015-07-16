@@ -4,7 +4,7 @@ module GoodGuide
     class Catalog
       include Resource
 
-      attributes :description, :name, :entity_type, :is_reference, :account_id, :slug
+      attributes :description, :name, :entity_type, :is_reference, :account_id, :slug, :referenced_catalog_id
 
       def fields(params = {})
         Field.find_all(params.merge(:catalog_id => self.id))
@@ -12,6 +12,10 @@ module GoodGuide
 
       def entities(params = {})
         Entity.find_all(params.merge(:catalog_id => self.id))
+      end
+      
+      def referenced_catalog
+        @referenced_catalog ||= Catalog.find(referenced_catalog_id) if referenced_catalog_id
       end
 
       def self.find_by_name(name, opts = {})
