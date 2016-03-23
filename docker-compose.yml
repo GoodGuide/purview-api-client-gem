@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  app-image:
+    build: ./
+
+  app:
+    image: ${COMPOSE_PROJECT_NAME}_app-image
+    env_file:
+      - ./docker-env.common
+      - ./docker/docker-env

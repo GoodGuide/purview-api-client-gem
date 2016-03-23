@@ -1,0 +1,15 @@
+# copy/symlink this file as docker-compose.override.yml to use it
+#
+# this is a good place to set up volume specifications if you want to mount a local directory
+#
+# n.b. if you change a volume on a docker-compose service, you'll likely need to `docker-compose rm` that service before the change will take. (If you desire to keep the data in the container which you'll be removing via that command, you'll want to back the data up first.)
+#
+# Regarding mounting the local directory in the containers for easier development workflow: Keep in mind -- if you're using a remote docker-machine VM, this won't work unless you manually rsync your local tree to $PWD on the remote host
+
+version: '2'
+
+services:
+  app: &common
+    volumes:
+      - './:/app'
+

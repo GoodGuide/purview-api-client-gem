@@ -1,0 +1,47 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# This script is the ENTRYPOINT defined in the Dockerfile, and it's purpose is to prepare the environment for running the process in the container to use in the app.
+
+report() {
+	printf "[entrypoint] %s\n" "$1" >&2
+}
+
+export() {
+	for assign in "$@"; do
+		builtin export -- "$assign"
+		name="${assign%%=*}"
+		value="$(eval "echo \$${name}")"
+		[[ ${ENTRYPOINT_TRACE:-} ]] && report "${name}='${value}'" || :
+	done
+}
+
+# don't pass through blank/false value for CI
+[[ ${CI:-false} == false ]] && unset CI
+
+# if CI is set, explicity disable DEV_MODE, just in case
+[[ ${CI:-} ]] && export DEV_MODE=false
+
+# don't pass through blank value for DEV_MODE if it's not true
+[[ ${DEV_MODE:-} == true ]] || unset DEV_MODE
+
+if [[ ${DEV_MODE:-} ]]; then
+	# symlink every file in /root/.dotfiles into the home dir
+	for name in /root/.dotfiles/*; do
+		name="$(basename $name)"
+		[[ $name = '.gitignore' || $name = 'README.md' ]] && continue
+		ln -fs "/root/.dotfiles/${name}" "/root/.${name}"
+	done
+	# always do these, even if they don't exist in /root/.dotfiles (bash/pry will create the files as needed)
+	for name in bash_history pry_history; do
+		[[ -f "/root/.${name}" ]] || ln -fs "/root/.dotfiles/${name}" "/root/.${name}"
+	done
+fi
+
+if [[ ! ${EXTERNAL_HOSTNAME:-} ]]; then
+	export EXTERNAL_HOSTNAME=$(hostname -i | awk '{ print $1 }')
+fi
+
+report "exec $*"
+exec $@

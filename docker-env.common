@@ -1,0 +1,12 @@
+# This is used by docker compose (look for `env_file`) as the common environment variables to pass through to all app containers. Each project defines its own docker-env file as well (again, look at the docker-compose file for exactly which services load which files.
+
+# used in CI
+BUILD_ID
+# used in CI by cucumber_runner
+BUILD_NODE_ID
+BUILD_NODE_TOTAL
+
+# used to indicate to the app processes that they should behave in "CI-mode"
+CI
+# used to indicate to the app processes that they should behave in "dev-mode" (this is intentionally independent from RAILS_ENV)
+DEV_MODE
