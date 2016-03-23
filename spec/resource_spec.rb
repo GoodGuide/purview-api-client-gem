@@ -19,20 +19,20 @@ describe GoodGuide::EntitySoup::Resource do
     it 'wraps an entity' do
       r = TestResource.new(TestEntity.new(:id => 123))
 
-      r.should be_a TestResource
-      r.id.should == 123
+      expect(r).to be_a TestResource
+      expect(r.id).to eq(123)
     end
 
     it 'wraps a Hash' do
       r = TestResource.new(:id => 456)
-      r.should be_a TestResource
-      r.id.should == 456
+      expect(r).to be_a TestResource
+      expect(r.id).to eq(456)
     end
 
     it 'wraps a Fixnum' do
       r = TestResource.new(789)
-      r.should be_a TestResource
-      r.id.should == 789
+      expect(r).to be_a TestResource
+      expect(r.id).to eq(789)
     end
 
   end
@@ -45,18 +45,18 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'has fields' do
       r = TestEntity.new(:foo => 'foo', :bar => 'bar')
-      r.foo.should == 'foo'
-      r.bar.should == 'bar'
+      expect(r.foo).to eq('foo')
+      expect(r.bar).to eq('bar')
     end
 
     it 'has editable fields' do
       r = TestEntity.new(:foo => 'foo', :bar => 'bar')
-      r.foo.should == 'foo'
-      r.bar.should == 'bar'
+      expect(r.foo).to eq('foo')
+      expect(r.bar).to eq('bar')
       r.foo = 'bar'
       r.bar = 'foo'
-      r.foo.should == 'bar'
-      r.bar.should == 'foo'
+      expect(r.foo).to eq('bar')
+      expect(r.bar).to eq('foo')
     end
 
   end
@@ -72,8 +72,8 @@ describe GoodGuide::EntitySoup::Resource do
       end
 
       tr = TestResource.find(123)
-      tr.should be_a TestResource
-      tr.id.should == 123
+      expect(tr).to be_a TestResource
+      expect(tr.id).to eq(123)
     end
 
     it 'searches resources' do
@@ -86,9 +86,9 @@ describe GoodGuide::EntitySoup::Resource do
                      :count => 3
                    })
       list = TestResource.find_all(:limit => 3, :include => 'foo')
-      list.should be_a Array
-      list.map(&:id).should == [1, 2, 3]
-      list.stats[:count].should == 3
+      expect(list).to be_a Array
+      expect(list.map(&:id)).to eq([1, 2, 3])
+      expect(list.stats[:count]).to eq(3)
     end
 
     it 'handles a empty search result' do
@@ -98,17 +98,17 @@ describe GoodGuide::EntitySoup::Resource do
         }
       end
       list = TestResource.find_all(:limit => 3, :include => 'foo')
-      list.should be_a Array
-      list.length.should == 0
+      expect(list).to be_a Array
+      expect(list.length).to eq(0)
     end
 
     it 'handles a result with stats only' do
       stub_request(:get, '/v1/tests.json?preview=true', { total: 1,facets: {} })
       list = TestResource.find_all(:preview => true)
-      list.should be_a Array
-      list.length.should == 0
-      list.stats[:total].should == 1
-      list.stats[:facets].should be_empty
+      expect(list).to be_a Array
+      expect(list.length).to eq(0)
+      expect(list.stats[:total]).to eq(1)
+      expect(list.stats[:facets]).to be_empty
     end
 
     describe 'errors' do
@@ -126,7 +126,7 @@ describe GoodGuide::EntitySoup::Resource do
           stub.get('/v1/tests/123.json') { [404, {}, {:errors => { :base => ["not found"]} }.to_json ] }
         end
 
-        TestResource.find(123).should be_nil
+        expect(TestResource.find(123)).to be_nil
       end
 
     end
@@ -142,7 +142,7 @@ describe GoodGuide::EntitySoup::Resource do
       end
 
       tr = TestResource.new(id: 123)
-      tr.get("element").should == { "something" => 123 }
+      expect(tr.get("element")).to eq({ "something" => 123 })
     end
 
   end
@@ -187,8 +187,8 @@ describe GoodGuide::EntitySoup::Resource do
         it 'handles server errors' do
           stub_connection! { |stub| stub.send(method, url) { [500, {}, "foo bar exception"] } }
 
-          resource.save.should be(false)
-          resource.errors.should_not be_empty
+          expect(resource.save).to be(false)
+          expect(resource.errors).to be_empty
         end
 
 
@@ -197,9 +197,9 @@ describe GoodGuide::EntitySoup::Resource do
             stub.send(method, url) { [422, {}, {:error => {:base => ['all messed up'], :name => ['must be unique']}}.to_json ] }
           end
 
-          resource.errors.should be_empty
-          resource.save.should be(false)
-          resource.errors.should_not be_empty
+          expect(resource.errors).to be_empty
+          expect(resource.save).to be(false)
+          expect(resource.errors).to be_empty
 
         end
 
@@ -219,7 +219,7 @@ describe GoodGuide::EntitySoup::Resource do
         end
 
         resource.save
-        resource.id.should == 23
+        expect(resource.id).to eq(23)
       end
 
       it_behaves_like 'it handles errors', :post, '/v1/tests.json'

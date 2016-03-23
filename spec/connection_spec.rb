@@ -16,7 +16,7 @@ describe GoodGuide::EntitySoup::Connection do
 
       it 'must put a single resource' do
         result = connection.put(1, { :name => "foo" })
-        result.should == { "id" => 1, "name" => "foo" }
+        expect(result).to eq({ "id" => 1, "name" => "foo" })
       end
     end
   end
@@ -25,15 +25,15 @@ describe GoodGuide::EntitySoup::Connection do
     it 'must get all resources' do
       stub_request :get, "/foo/entities.json", [{:name => 'boom'}, {:name => 'bip'}]
       results = connection.get_all('entities')
-      results.size.should == 2
-      results.first['name'].should == 'boom'
+      expect(results.size).to eq(2)
+      expect(results.first['name']).to eq('boom')
     end
 
     it 'must get all resources with a json root' do
       stub_request :get, "/foo/entities.json", { :entities => [{:name => 'boom'}, {:name => 'bip'}] }
       results = connection.get_all('entities', {:json_root => "entities"})
-      results.size.should == 2
-      results.first['name'].should == 'boom'
+      expect(results.size).to eq(2)
+      expect(results.first['name']).to eq('boom')
     end
   end
 
@@ -46,8 +46,8 @@ describe GoodGuide::EntitySoup::Connection do
 
       it 'must post a single resource' do
         result = connection.post(:name => "name")
-        result['id'].should == 42
-        result['name'].should == 'name'
+        expect(result['id']).to eq(42)
+        expect(result['name']).to eq('name')
       end
     end
 
@@ -78,7 +78,7 @@ describe GoodGuide::EntitySoup::Connection do
 
       it "must return a single item" do
         result = connection.get(1)
-        result['name'].should == 'foo'
+        expect(result['name']).to eq('foo')
       end
     end
 
@@ -103,7 +103,7 @@ describe GoodGuide::EntitySoup::Connection do
       let(:body) { "asd+ -s34[[}" }
 
       it "must raise an exception" do
-        connection.get(1).should == "asd+ -s34[[}"  # multi_json doesn't throw an exception }.to raise_error(Faraday::Error::ParsingError)
+        expect(connection.get(1)).to eq("asd+ -s34[[}")  # multi_json doesn't throw an exception }.to raise_error(Faraday::Error::ParsingError)
       end
     end
   end
