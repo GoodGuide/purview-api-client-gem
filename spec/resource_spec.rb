@@ -188,7 +188,7 @@ describe GoodGuide::EntitySoup::Resource do
           stub_connection! { |stub| stub.send(method, url) { [500, {}, "foo bar exception"] } }
 
           expect(resource.save).to be(false)
-          expect(resource.errors).to be_empty
+          expect(resource.errors).to_not be_empty
         end
 
 
@@ -199,7 +199,7 @@ describe GoodGuide::EntitySoup::Resource do
 
           expect(resource.errors).to be_empty
           expect(resource.save).to be(false)
-          expect(resource.errors).to be_empty
+          expect(resource.errors).to_not be_empty
 
         end
 
