@@ -5,3 +5,4 @@
 .rspec
 
 docker-compose.override-example.yml
+env.local.sh

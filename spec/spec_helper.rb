@@ -39,5 +39,12 @@ RSpec.configure do |config|
   config.include SpecHelpers
 end
 
-# GoodGuide::EntitySoup.url = "http://localhost:3000"
-GoodGuide::EntitySoup.url = "http://jenkins-docker-machine-1.do.goodguide.com:33254"
+GoodGuide::EntitySoup.url = ENV['GOODGUIDE_ENTITY_SOUP_URL'] || 'http://localhost:3000'
+
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock
+  c.default_cassette_options = { record: :new_episodes }
+end

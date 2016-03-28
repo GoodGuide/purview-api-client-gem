@@ -55,7 +55,7 @@ module GoodGuide
 
       def authenticate(email, password)
         Connection.reset
-        connection = Connection.new('/users/session')
+        connection = Connection.new('/api/users/session')
         connection.post(:email => email, :password => password)
         true
       rescue Faraday::Error::ClientError

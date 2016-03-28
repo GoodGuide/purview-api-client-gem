@@ -10,3 +10,6 @@ BUILD_NODE_TOTAL
 CI
 # used to indicate to the app processes that they should behave in "dev-mode" (this is intentionally independent from RAILS_ENV)
 DEV_MODE
+
+# Testing location of purview/entity_soup
+GOODGUIDE_ENTITY_SOUP_URL
