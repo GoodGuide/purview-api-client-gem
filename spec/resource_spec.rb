@@ -68,7 +68,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'finds a single resource' do
       stub_connection! do |stub|
-        stub.get('/v1/tests/123.json') { [200, {}, { :id => 123 }.to_json] }
+        stub.get('/v1/tests/123') { [200, {}, { :id => 123 }.to_json] }
       end
 
       tr = TestResource.find(123)
@@ -77,7 +77,7 @@ describe GoodGuide::EntitySoup::Resource do
     end
 
     it 'searches resources' do
-      stub_request(:get, "/v1/tests.json?include%5B%5D=foo&limit=3", {
+      stub_request(:get, "/v1/tests?include%5B%5D=foo&limit=3", {
                      :tests => [
                              { :id => 1 },
                              { :id => 2 },
@@ -93,7 +93,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'handles a empty search result' do
       stub_connection! do |stub|
-        stub.get("/v1/tests.json?include%5B%5D=foo&limit=3") {
+        stub.get("/v1/tests?include%5B%5D=foo&limit=3") {
           [404, {}, {:errors => { :base => ["not found"]} }.to_json ]
         }
       end
@@ -103,7 +103,7 @@ describe GoodGuide::EntitySoup::Resource do
     end
 
     it 'handles a result with stats only' do
-      stub_request(:get, '/v1/tests.json?preview=true', { total: 1,facets: {} })
+      stub_request(:get, '/v1/tests?preview=true', { total: 1,facets: {} })
       list = TestResource.find_all(:preview => true)
       expect(list).to be_a Array
       expect(list.length).to eq(0)
@@ -115,7 +115,7 @@ describe GoodGuide::EntitySoup::Resource do
 
       it 'handles get server errors' do
         stub_connection! do |stub|
-          stub.get('/v1/tests/123.json') { [500, {}, "foo bar exception"] }
+          stub.get('/v1/tests/123') { [500, {}, "foo bar exception"] }
         end
 
         expect { TestResource.find(123) }.to raise_error(Faraday::Error::ClientError)
@@ -123,7 +123,7 @@ describe GoodGuide::EntitySoup::Resource do
 
       it 'handles get not found errors' do
         stub_connection! do |stub|
-          stub.get('/v1/tests/123.json') { [404, {}, {:errors => { :base => ["not found"]} }.to_json ] }
+          stub.get('/v1/tests/123') { [404, {}, {:errors => { :base => ["not found"]} }.to_json ] }
         end
 
         expect(TestResource.find(123)).to be_nil
@@ -138,7 +138,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'gets a resource element' do
       stub_connection! do |stub|
-        stub.get('/v1/tests/123/element.json') { [200, {}, { :something => 123 }.to_json] }
+        stub.get('/v1/tests/123/element') { [200, {}, { :something => 123 }.to_json] }
       end
 
       tr = TestResource.new(id: 123)
@@ -152,7 +152,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'returns a resource' do
       stub_connection! do |stub|
-        stub.post('/v1/tests/element.json') { [201, {}, { id: 123, something: 456}.to_json] }
+        stub.post('/v1/tests/element') { [201, {}, { id: 123, something: 456}.to_json] }
       end
 
       tr = TestResource.post('element', something: 456)
@@ -167,7 +167,7 @@ describe GoodGuide::EntitySoup::Resource do
 
     it 'returns a resource' do
       stub_connection! do |stub|
-        stub.put('/v1/tests/123/element.json') { [201, {}, { id: 123, something: 456}.to_json] }
+        stub.put('/v1/tests/123/element') { [201, {}, { id: 123, something: 456}.to_json] }
       end
 
       tr = TestResource.new(id: 123)
@@ -212,7 +212,7 @@ describe GoodGuide::EntitySoup::Resource do
 
       it 'posts the resource and updates its fields' do
         stub_connection! do |stub|
-          stub.post('/v1/tests.json') {
+          stub.post('/v1/tests') {
             body = {:id => 23}.to_json
             [201, {}, body]
           }
@@ -222,7 +222,7 @@ describe GoodGuide::EntitySoup::Resource do
         expect(resource.id).to eq(23)
       end
 
-      it_behaves_like 'it handles errors', :post, '/v1/tests.json'
+      it_behaves_like 'it handles errors', :post, '/v1/tests'
 
     end
 
@@ -230,11 +230,11 @@ describe GoodGuide::EntitySoup::Resource do
 
       let(:resource) { TestResource.new(:id => 23) }
 
-      it_behaves_like 'it handles errors', :put, '/v1/tests/23.json'
+      it_behaves_like 'it handles errors', :put, '/v1/tests/23'
 
       it 'updates the resource and updates its fields' do
         stub_connection! do |stub|
-          stub.put('/v1/tests/23.json') {
+          stub.put('/v1/tests/23') {
             [200, {}, {id: 23, something: 43}.to_json]
           }
         end

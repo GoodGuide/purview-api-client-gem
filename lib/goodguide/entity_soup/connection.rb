@@ -39,19 +39,11 @@ module GoodGuide
       end
 
       def get(id, opts={})
-        opts = opts.dup
-        format = (opts.delete(:format) || 'json')
-
-        res = http.get("#{path_for(id)}.#{format}", opts)
-        res.body
+        http.get(path_for(id), opts).body
       end
 
       def put(id, opts={})
-        opts = opts.dup
-        format = (opts.delete(:format) || 'json')
-
-        res = http.put("#{path_for(id)}.#{format}", opts)
-        res.body
+        http.put(path_for(id), opts).body
       end
 
       def post(id=nil, opts={})
@@ -59,27 +51,18 @@ module GoodGuide
           opts = id
           id = nil
         end
-        opts = opts.dup
-        format = (opts.delete(:format) || 'json')
-
-        res = http.post("#{path_for(id)}.#{format}", opts)
-        res.body
+        http.post(path_for(id), opts).body
       end
 
       def delete(id, opts={})
-        opts = opts.dup
-        format = (opts.delete(:format) || 'json')
-
-        res = http.delete("#{path_for(id)}.#{format}", opts)
-        res.body
+        http.delete(path_for(id), opts).body
       end
 
       def get_all(elements, opts={})
         opts = opts.dup
         json_root = opts.delete(:json_root)
-        format = (opts.delete(:format) || 'json')
 
-        url = (elements ? "#{rel_path}/#{elements}.#{format}" :  "#{rel_path}.#{format}")
+        url = (elements ? "#{rel_path}/#{elements}" :  "#{rel_path}")
 
         res = http.get(url, opts)
 

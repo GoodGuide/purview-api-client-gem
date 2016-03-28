@@ -39,4 +39,5 @@ RSpec.configure do |config|
   config.include SpecHelpers
 end
 
-GoodGuide::EntitySoup.url = "http://localhost:3000"
+# GoodGuide::EntitySoup.url = "http://localhost:3000"
+GoodGuide::EntitySoup.url = "http://jenkins-docker-machine-1.do.goodguide.com:33254"

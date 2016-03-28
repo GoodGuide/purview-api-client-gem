@@ -12,7 +12,7 @@ describe GoodGuide::EntitySoup::Connection do
 
     context "when putting a single resource" do
 
-      before { stub_request :put, "/foo/1.json", { :id => 1, :name => "foo" } }
+      before { stub_request :put, "/foo/1", { :id => 1, :name => "foo" } }
 
       it 'must put a single resource' do
         result = connection.put(1, { :name => "foo" })
@@ -23,14 +23,14 @@ describe GoodGuide::EntitySoup::Connection do
 
   describe 'get_all' do
     it 'must get all resources' do
-      stub_request :get, "/foo/entities.json", [{:name => 'boom'}, {:name => 'bip'}]
+      stub_request :get, "/foo/entities", [{:name => 'boom'}, {:name => 'bip'}]
       results = connection.get_all('entities')
       expect(results.size).to eq(2)
       expect(results.first['name']).to eq('boom')
     end
 
     it 'must get all resources with a json root' do
-      stub_request :get, "/foo/entities.json", { :entities => [{:name => 'boom'}, {:name => 'bip'}] }
+      stub_request :get, "/foo/entities", { :entities => [{:name => 'boom'}, {:name => 'bip'}] }
       results = connection.get_all('entities', {:json_root => "entities"})
       expect(results.size).to eq(2)
       expect(results.first['name']).to eq('boom')
@@ -41,7 +41,7 @@ describe GoodGuide::EntitySoup::Connection do
 
     context "when posting a single resource" do
       before do
-        stub_request :post, "/foo.json", { :id => 42, :name => "name" }
+        stub_request :post, "/foo", { :id => 42, :name => "name" }
       end
 
       it 'must post a single resource' do
@@ -53,7 +53,7 @@ describe GoodGuide::EntitySoup::Connection do
 
     context "when a client error is returned" do
       before do
-        stub_request :post, "/foo.json", nil, 400
+        stub_request :post, "/foo", nil, 400
       end
 
       it "must raise an exception" do
@@ -69,7 +69,7 @@ describe GoodGuide::EntitySoup::Connection do
     let(:raw) { false }
 
     before do
-      stub_request :get, "/foo/1.json", body, status, raw
+      stub_request :get, "/foo/1", body, status, raw
     end
 
     context "when requesting a single id" do
