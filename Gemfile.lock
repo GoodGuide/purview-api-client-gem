@@ -1,0 +1,83 @@
+PATH
+  remote: .
+  specs:
+    goodguide-entity_soup (2.0)
+      activemodel
+      activesupport (>= 3)
+      faraday (~> 0.8.6)
+      faraday_middleware
+      faraday_middleware-multi_json
+      hashie
+      json
+      workqueue
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activemodel (5.0.0.beta3)
+      activesupport (= 5.0.0.beta3)
+    activesupport (5.0.0.beta3)
+      concurrent-ruby (~> 1.0)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    addressable (2.4.0)
+    concurrent-ruby (1.0.1)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
+    diff-lcs (1.2.5)
+    faraday (0.8.11)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
+    faraday_middleware-multi_json (0.0.6)
+      faraday_middleware
+      multi_json
+    hashdiff (0.3.0)
+    hashie (3.4.3)
+    i18n (0.7.0)
+    json (1.8.3)
+    minitest (5.8.4)
+    multi_json (1.11.2)
+    multipart-post (1.2.0)
+    rake (11.1.1)
+    rr (1.1.2)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    safe_yaml (1.0.4)
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    vcr (3.0.1)
+    webmock (1.24.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
+    workqueue (0.1.4)
+    yajl-ruby (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  goodguide-entity_soup!
+  rake
+  rr
+  rspec
+  vcr
+  webmock
+  yajl-ruby
+
+BUNDLED WITH
+   1.11.2

@@ -2,6 +2,6 @@
 /log/*.log
 /tmp
 .rvmrc
-Gemfile.lock
+.rspec
 
 docker-compose.override-example.yml
