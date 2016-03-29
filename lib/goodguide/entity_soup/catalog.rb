@@ -13,7 +13,7 @@ module GoodGuide
       def entities(params = {})
         Entity.find_all(params.merge(:catalog_id => self.id))
       end
-      
+
       def referenced_catalog
         @referenced_catalog ||= Catalog.find(referenced_catalog_id) if referenced_catalog_id
       end

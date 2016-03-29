@@ -188,7 +188,7 @@ module GoodGuide
         end
 
         def resource_version_path
-          "v#{resource_version.split('.').first}"
+          "api/v#{resource_version.split('.').first}"
         end
 
         def resource_json_root(json_root)
