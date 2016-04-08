@@ -192,4 +192,53 @@ http_interactions:
         Inc.","created_at":"2016-03-02T18:09:48.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-03-02T18:09:48.000Z"}}'
     http_version: 
   recorded_at: Tue, 29 Mar 2016 19:27:02 GMT
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/v1/catalogs"
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.8.11
+      Cookie:
+      - _platform_session=WkxXSklLZm5CMjJySStCdjNINE5xanh1aGhnZ2hvYldGbk1KYmJOWHNZK3Jjd2tZQWJRNzduWGFuR1l6d2sxNDRZeTNDSlNtd2hRdXJjdkllME5Kd3Brc0xpWnV3MlFaSTFmMnBvczB2N1p0WGIxMytkUW5OZVJubFlxa01uMWd1dDVldThtS2QyRHA1d3RHSDB2QXVaOUtCS1RSLzd0UE9HY3ptMG5LbFNmT3pPM3hkY21SWWhySGRVeVlhZ3R2Lyt6MklWcHZWTUNtZFB5RnhqZUNZYUk2ZDdDOEJDU2tnZ2VVQUEySFhzdDZhZCtPSzk5YlRPU3hmTnFPOGh5R2R3Wmlvd3dtVk1HSDk3eW9zYUdBUlJ6Wit4RUlnRXkrUEV4bUtPWlhaQVJ0YUdoSy9UQmkwWUlEYnNZVTVIZE9KemZ6QXgzYVJ2TkZuMCs1MktaZjRnPT0tLTFhM1E4ZU5qTDdKRU9yKzM0Z2RXUVE9PQ%3D%3D--9fc416402e5208ea49be0f4998d21d4b57222a2e
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=VGpkSjB2YkRMY1VPRk5tZ09DMEFTTnZCRWgwcnk4T1dESkQvVTBEK1I0Nkl3Y3dPVi8wUUVVODZXaWMyUGlLMGJLUExHZUt0TWVuellxZE1QRjQweFVZL25UdTk4cGdUSEMwZng0WXNoQ2ZKUFNtSlZEd2NVdERmWGNnZlFqZHZMME0zUS9ZMGJLRDZ0cjcxVWZDbDhNNnNKZUtueXBOMC9NQ3BhZHd5eVMzeEVLOU90Q2xBMVlaOXBVaU1wUjA0bjN1ck9QRmVaSHZTcVNMN2xWemhrYWN3VStPbnVhQi9iSE41alRrSVRQeHVDZGJlaFpEK2dSdEtCWnpqNFdtd3pJS2RQMnM2R3ZzQjF0a3RSWWVicjlJSWpkVWJnK1cwSE90RGhiSGV5aG1rZmx5S2ZTQ2w2eXo5Y3NIUEw4T1FMMkhvUUtNMkY0eUNmOTNGaERXWXJnPT0tLXNjYS9XQ0NzSVZwTFVuNzdjdnI0Wmc9PQ%3D%3D--a925390628fe447ca7c65442c40f7292da0edbd7;
+        path=/; HttpOnly
+      X-Request-Id:
+      - c6e77290-0d8b-4002-9c98-07cff5a50c6d
+      X-Runtime:
+      - '1.807000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"name":["can''t be blank"],"account":["can''t be blank"],"entity_type":["is
+        not included in the list"]},"status":"unprocessable_entity"}'
+    http_version: 
+  recorded_at: Fri, 08 Apr 2016 20:00:22 GMT
 recorded_with: VCR 3.0.1

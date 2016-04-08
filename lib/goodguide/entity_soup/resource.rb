@@ -281,8 +281,8 @@ module GoodGuide
           error_info = nil
           begin
             error_info = JSON.load(body)
-            if error_info.is_a?(Hash) and error_info['error']
-            error_info['error'].each {|field, messages| errors.add(field.to_sym, messages)}
+            if error_info.is_a?(Hash) and error_info['errors']
+            error_info['errors'].each {|field, messages| errors.add(field.to_sym, messages)}
             else
               errors.add(:base, ["unknown client error #{status}"])
             end
