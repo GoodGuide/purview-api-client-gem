@@ -3,6 +3,7 @@
 /tmp
 .rvmrc
 .rspec
+Gemfile.lock
 
 docker/runtime/dotfiles/*
 docker-compose.override.yml

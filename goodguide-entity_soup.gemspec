@@ -14,14 +14,18 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*_spec.rb"]
 
   s.add_dependency('activemodel')
-  s.add_dependency('activesupport', '>= 3')
-  s.add_dependency('faraday', '~> 0.8.6')
+  s.add_dependency('activesupport')
+  s.add_dependency('faraday')
   s.add_dependency('faraday_middleware')
   s.add_dependency('faraday_middleware-multi_json')
   s.add_dependency('workqueue')
   s.add_dependency('hashie')
   s.add_dependency('json')
 
+  # We duplicate Rails libraries here to version in development only
+  # http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
+  s.add_development_dependency('activemodel', '>= 5.0.0.beta3')
+  s.add_development_dependency('activesupport', '>= 5.0.0.beta3')
   s.add_development_dependency('rspec')
   s.add_development_dependency('rr')
   s.add_development_dependency('rake')

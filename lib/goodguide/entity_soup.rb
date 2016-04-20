@@ -1,31 +1,15 @@
 require "logger"
+
 require "faraday"
+require "faraday_middleware"
+require "faraday_middleware-multi_json"
 
-ENTITY_SOUP_RAILS_VERSION = begin
-  Bundler.gem('activesupport', '~>2.3.17')
-  2
-rescue Gem::LoadError => e
-  begin
-    Bundler.gem('activesupport', '~>3')
-    3
-  rescue Gem::LoadError => e
-    4
-  end
-end
-
+require 'active_support'
 require "active_support/json"
 require "active_support/benchmarkable"
 require 'active_model/naming'
 require 'active_model/errors'
 require 'active_support/core_ext/object/to_query'
-
-if ENTITY_SOUP_RAILS_VERSION == 2 || ENTITY_SOUP_RAILS_VERSION == 3
-  require "active_support/memoizable"
-end
-
-require "faraday_middleware"
-require "faraday_middleware-multi_json"
-require 'active_support'
 require "active_support/core_ext/enumerable"
 require 'active_support/core_ext/string'
 require 'active_support/core_ext/hash'
