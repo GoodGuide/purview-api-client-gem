@@ -1,8 +1,6 @@
 module GoodGuide
   module EntitySoup
-
     class Connection
-
       class << self
         def site
           @site or raise('No entity_soup API endpoint configured!')
@@ -11,7 +9,7 @@ module GoodGuide
         def site=(new_site)
           if new_site != @site
             @site = new_site
-            @http = nil # Force re-initialization of Faraday next time http is used
+            @http = nil
           end
           @site
         end
@@ -19,7 +17,6 @@ module GoodGuide
         def reset
           @http = nil
         end
-
       end
 
       attr_reader :path
@@ -119,8 +116,6 @@ module GoodGuide
       def http
         self.class.http
       end
-
     end
-
   end
 end
