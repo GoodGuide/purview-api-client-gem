@@ -44,6 +44,9 @@ require "goodguide/entity_soup/cookie_auth"
 module GoodGuide
   module EntitySoup
     class << self
+      attr_accessor :email, :password
+
+      alias :configure :tap
 
       def url=(new_url)
         Connection.site = new_url
@@ -53,7 +56,7 @@ module GoodGuide
         Connection.site
       end
 
-      def authenticate(email, password)
+      def authenticate!
         Connection.reset
         connection = Connection.new('/api/users/session')
         connection.post(:email => email, :password => password)

@@ -15,6 +15,7 @@ module GoodGuide
       def self.included(base)
         base.extend(ClassMethods)
         base.extend(ActiveModel::Naming)
+        base.extend(ActiveModel::Translation)
 
         base.class_eval do
           attr_reader :errors
@@ -34,13 +35,11 @@ module GoodGuide
           @attributes = { :id => o }
         when Hash === o
           @attributes = o.with_indifferent_access
-        # TODO: We don't actually use this anymore, remove?
         when o.respond_to?(:attributes)
           @attributes = o.attributes
         else
           @attributes = { :id => nil }
           super
-          #raise ArgumentError
         end
       end
 
