@@ -15,6 +15,4 @@ if [[ ${DOCKER_MACHINE_NAME:-} ]] && command -v docker-machine > /dev/null; then
   eval $(docker-machine env "${DOCKER_MACHINE_NAME}")
 fi
 
-export PATH="${PWD}/devtools/bin:$PATH"
-
 export DEV_MODE='true'
