@@ -1,23 +1,13 @@
-# Copy or symlink this file as `docker-compose.override.yml` to use it.
+# Copy this file as `docker-compose.override.yml` to modify or create
+# services for your particular development environment.
 #
 # `cp docker-compose.override-example.yml docker-compose.override.yml`
 #
-# This example mounts the current local directory `.` as `/app` inside
-# the container.
-#
-# It also mounts a directory for dotfiles like pry_history and bash_history
 
 version: '2'
 
 services:
-  app: &common
-    volumes:
-      - './:/app'
-      - './docker/runtime/dotfiles:/root/.dotfiles/'
-
-  # Launch a container running a bash shell with the following
-  # command: `docker-compose run shell`.
-  shell:
+  custom-service:
     <<: *common
-    extends: app
-    command: bash
+    container_name: my-special-container-name
+    extends: gem
