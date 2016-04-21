@@ -13,20 +13,25 @@ In your code:
 
     require 'goodguide/entity_soup'
 
-The entity soup RESTful API endpoint is located by the url property which must be set before the first access of any API object and cannot be changed subsequently.  The default is `http:/entity-soup.goodguide.com`.
+The entity soup RESTful API endpoint and credentials can be set like this:
 
-    GoodGuide::EntitySoup.url = 'http://localhost:3000'
+```Ruby
+    GoodGuide::EntitySoup.configure do |config|
+      config.url = 'http://localhost:3000'
+      config.email = 'admin@goodguide.com'
+      config.password = 'password'
+    end
+```
 
 ## Testing
 
-This gem supports Rails/ActiveRecord versions 2 and 3.  To test in a Rails 2 environment, run
+This gem supports Rails/ActiveRecord versions < 5 (5.0.0.beta3 currently)
 
-    RAILS_VERSION=2 rake
+To run tests in a docker container:
 
-And to test in a Rails 3 environment, run
-
-    RAILS_VERSION=3 rake # Or just rake, since this is the default.
-
+    bundle install
+    docker-compose run shell
+    bin/rake
 
 ## Entity Soup Data Model
 
