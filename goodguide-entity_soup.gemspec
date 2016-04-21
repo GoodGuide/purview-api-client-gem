@@ -1,12 +1,15 @@
-require './lib/goodguide/entity_soup/version'
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'goodguide/entity_soup/version'
 
 Gem::Specification.new do |s|
   s.name = "goodguide-entity_soup"
   s.version = GoodGuide::EntitySoup.version
   s.authors = ["Simon Waddington"]
   s.email = ["simon@goodguide.com"]
-  s.summary = "GoodGuide Entity Soup API gem"
-  s.description = "Gem to access the GoodGuide Entity Soup API"
+  s.summary = "Purview API gem"
+  s.description = "Gem to access the Purview API"
   s.homepage = "http://www.goodguide.com"
   s.rubyforge_project = "goodguide"
   s.require_paths = ["lib"]
@@ -22,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency('hashie')
   s.add_dependency('json')
 
-  # We duplicate Rails libraries here to version in development only
+  # We duplicate Rails libraries here to specify version in development only
   # http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
   s.add_development_dependency('activemodel', '>= 5.0.0.beta3')
   s.add_development_dependency('activesupport', '>= 5.0.0.beta3')
