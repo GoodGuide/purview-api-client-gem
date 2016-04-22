@@ -15,15 +15,15 @@ require 'active_support/core_ext/string'
 require 'active_support/core_ext/hash'
 require 'active_support/inflector'
 
-require "goodguide/entity_soup/version"
-require "goodguide/entity_soup/connection"
-require "goodguide/entity_soup/resource"
-require "goodguide/entity_soup/field"
-require "goodguide/entity_soup/attachment"
-require "goodguide/entity_soup/entity"
-require "goodguide/entity_soup/catalog"
-require "goodguide/entity_soup/account"
-require "goodguide/entity_soup/cookie_auth"
+require "purview_api/version"
+require "purview_api/connection"
+require "purview_api/resource"
+require "purview_api/field"
+require "purview_api/attachment"
+require "purview_api/entity"
+require "purview_api/catalog"
+require "purview_api/account"
+require "purview_api/cookie_auth"
 
 module PurviewApi
   class << self

@@ -1,5 +1,5 @@
-require 'goodguide/entity_soup'
-include GoodGuide::EntitySoup
+require 'purview_api'
+include PurviewApi
 
 require 'vcr'
 require 'pry'
@@ -32,14 +32,14 @@ module SpecHelpers
   end
 
   def authenticate!
-    GoodGuide::EntitySoup.authenticate!
+    PurviewApi.authenticate!
   end
 end
 
-GoodGuide::EntitySoup.configure do |config|
-  config.url = ENV['ENTITY_SOUP_URL'] || ENV['PURVIEW_URL']
-  config.email = ENV['ENTITY_SOUP_EMAIL'] || ENV['PURVIEW_EMAIL']
-  config.password = ENV['ENTITY_SOUP_PASSWORD'] || ENV['PURVIEW_PASSWORD']
+PurviewApi.configure do |config|
+  config.url = ENV['PURVIEW_URL']
+  config.email = ENV['PURVIEW_EMAIL']
+  config.password = ENV['PURVIEW_PASSWORD']
 end
 
 VCR.configure do |c|
@@ -47,9 +47,9 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.default_cassette_options = { record: :new_episodes }
   c.configure_rspec_metadata!
-  c.filter_sensitive_data("<PURVIEW_URL>") { GoodGuide::EntitySoup.url }
-  c.filter_sensitive_data("<EMAIL>") { GoodGuide::EntitySoup.email }
-  c.filter_sensitive_data("<PASSWORD>") { GoodGuide::EntitySoup.password }
+  # c.filter_sensitive_data("<PURVIEW_URL>") { PurviewApi.url }
+  # c.filter_sensitive_data("<EMAIL>") { PurviewApi.email }
+  # c.filter_sensitive_data("<PASSWORD>") { PurviewApi.password }
 end
 
 

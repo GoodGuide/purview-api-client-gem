@@ -1,66 +1,63 @@
 require 'hashie/mash'
-require 'goodguide/entity_soup/search'
+require 'purview_api/search'
 
-module GoodGuide
-  module EntitySoup
+module PurviewApi
+  class Entity
+    include Resource
+    extend Search
 
-    class Entity
-      include Resource
-      extend Search
+    # NOTE: at the moment API returns only entities within a JSON object
+    resource_json_root :entities
 
-      # NOTE: at the moment API returns only entities within a JSON object
-      resource_json_root :entities
+    attributes :catalog_id, :account_id, :type, :status, :created_at, :updated_at, :value_bindings, :image_url
 
-      attributes :catalog_id, :account_id, :type, :status, :created_at, :updated_at, :value_bindings, :image_url
+    view :brief, {:inherits => nil, :include_value_bindings => false}
 
-      view :brief, {:inherits => nil, :include_value_bindings => false}
+    def self.types
+      get('types').collect { |t| Hashie::Mash.new(t) }
+    end
 
-      def self.types
-        get('types').collect { |t| Hashie::Mash.new(t) }
-      end
+    def self.merge(representative, others)
 
-      def self.merge(representative, others)
+      Entity.post('merge',
+                  representative: representative.id,
+                  others: others.collect(&:id),
+                  catalog_id: representative.catalog_id,
+                  type: representative.type)
+    end
 
-        Entity.post('merge',
-                    representative: representative.id,
-                    others: others.collect(&:id),
-                    catalog_id: representative.catalog_id,
-                    type: representative.type)
-      end
+    def self.merge_and_update(representative, others, value_bindings)
 
-      def self.merge_and_update(representative, others, value_bindings)
+      Entity.post('merge_and_update',
+                  representative: representative.id,
+                  others: others.collect(&:id),
+                  value_bindings: value_bindings,
+                  catalog_id: representative.catalog_id,
+                  type: representative.type)
+    end
 
-        Entity.post('merge_and_update',
-                    representative: representative.id,
-                    others: others.collect(&:id),
-                    value_bindings: value_bindings,
-                    catalog_id: representative.catalog_id,
-                    type: representative.type)
-      end
+    def deduplicate(others)
+      put('deduplicate',
+          catalog_id: self.catalog_id,
+          type: self.type,
+          others: others.collect(&:id))
+    end
 
-      def deduplicate(others)
-        put('deduplicate',
-            catalog_id: self.catalog_id,
-            type: self.type,
-            others: others.collect(&:id))
-      end
+    def catalog(params = {})
+      Catalog.find(self.catalog_id, params)
+    end
 
-      def catalog(params = {})
-        Catalog.find(self.catalog_id, params)
-      end
+    def account(params = {})
+      Account.find(self.account_id, params)
+    end
 
-      def account(params = {})
-        Account.find(self.account_id, params)
-      end
-
-      def update_value_bindings(params)
-        e = Entity.new(:id => self.id, :value_bindings => params, :catalog_id => self.catalog_id)
-        result = e.save
-        @errors = e.errors
-        result
-      end
-
+    def update_value_bindings(params)
+      e = Entity.new(:id => self.id, :value_bindings => params, :catalog_id => self.catalog_id)
+      result = e.save
+      @errors = e.errors
+      result
     end
 
   end
+
 end

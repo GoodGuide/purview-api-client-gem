@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-describe GoodGuide::EntitySoup::Connection do
-
+describe PurviewApi::Connection do
   let!(:connection) { Connection.new("foo") }
 
   before(:each) do
@@ -9,9 +8,7 @@ describe GoodGuide::EntitySoup::Connection do
   end
 
   describe 'put' do
-
     context "when putting a single resource" do
-
       before { stub_request :put, "/foo/1", { :id => 1, :name => "foo" } }
 
       it 'must put a single resource' do
@@ -63,7 +60,6 @@ describe GoodGuide::EntitySoup::Connection do
   end
 
   describe 'get' do
-
     let(:body) { nil }
     let(:status) { 200 }
     let(:raw) { false }
@@ -73,7 +69,6 @@ describe GoodGuide::EntitySoup::Connection do
     end
 
     context "when requesting a single id" do
-
       let(:body) { {:name => 'foo'} }
 
       it "must return a single item" do
@@ -103,10 +98,9 @@ describe GoodGuide::EntitySoup::Connection do
       let(:body) { "asd+ -s34[[}" }
 
       it "must raise an exception" do
-        expect(connection.get(1)).to eq("asd+ -s34[[}")  # multi_json doesn't throw an exception }.to raise_error(Faraday::Error::ParsingError)
+        # multi_json doesn't throw an exception }.to raise_error(Faraday::Error::ParsingError)
+        expect(connection.get(1)).to eq("asd+ -s34[[}")
       end
     end
   end
-
-
 end

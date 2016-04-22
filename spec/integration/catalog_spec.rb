@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe GoodGuide::EntitySoup::Catalog, :vcr do
+describe PurviewApi::Catalog, :vcr do
   before { authenticate! }
 
   describe '.find_all', :vcr do
@@ -8,7 +8,7 @@ describe GoodGuide::EntitySoup::Catalog, :vcr do
       catalogs = described_class.find_all
 
       expect(catalogs.length).to be > 1
-      expect(catalogs.first).to be_a_kind_of(GoodGuide::EntitySoup::Catalog)
+      expect(catalogs.first).to be_a_kind_of(PurviewApi::Catalog)
     end
   end
 

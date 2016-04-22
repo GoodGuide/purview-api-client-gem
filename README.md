@@ -16,11 +16,11 @@ In your code:
 The entity soup RESTful API endpoint and credentials can be set like this:
 
 ```Ruby
-    PurviewApi.configure do |config|
-      config.url = 'http://localhost:3000'
-      config.email = 'admin@goodguide.com'
-      config.password = 'password'
-    end
+PurviewApi.configure do |config|
+  config.url = ENV['PURVIEW_URL']
+  config.email = ENV['PURVIEW_EMAIL']
+  config.password = ENV['PURVIEW_PASSWORD']
+end
 ```
 
 ## Testing

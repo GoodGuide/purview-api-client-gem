@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe GoodGuide::EntitySoup, :vcr do
+describe PurviewApi, :vcr do
   describe '.authenticate' do
     context 'with proper credentials' do
       it 'returns true' do
-        authenticated = GoodGuide::EntitySoup.authenticate!
+        authenticated = PurviewApi.authenticate!
 
         expect(authenticated).to be(true)
       end
@@ -12,9 +12,9 @@ describe GoodGuide::EntitySoup, :vcr do
 
     context 'with incorrect credentials' do
       it 'returns false' do
-        stub(GoodGuide::EntitySoup).email { 'fake@email.com' }
-        stub(GoodGuide::EntitySoup).password { 'no-password' }
-        authenticated = GoodGuide::EntitySoup.authenticate!
+        stub(PurviewApi).email { 'fake@email.com' }
+        stub(PurviewApi).password { 'no-password' }
+        authenticated = PurviewApi.authenticate!
 
         expect(authenticated).to be(false)
       end
