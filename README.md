@@ -7,7 +7,7 @@ This is the gem for access to the Purview API
 
 In your Gemfile:
 
-    gem 'purview-api'
+    gem 'purview_api'
 
 In your code:
 
@@ -25,7 +25,7 @@ The entity soup RESTful API endpoint and credentials can be set like this:
 
 ## Testing
 
-This gem supports Rails/ActiveRecord versions < 5 (5.0.0.beta3 currently)
+This gem supports Rails/ActiveRecord versions >= 5 (5.0.0.beta3 currently)
 
 To run tests in a docker container:
 

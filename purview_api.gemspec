@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'purview_api/version'
 
 Gem::Specification.new do |s|
-  s.name = "purview-api"
-  s.version = PurviewApi.VERSION
+  s.name = "purview_api"
+  s.version = PurviewApi::VERSION
   s.authors = ["The wonderful people at UL/GoodGuide"]
   s.summary = "Purview API gem"
   s.description = "Gem to access the Purview API"
-  s.homepage = "https://github.com/GoodGuide/purview-api"
+  s.homepage = "https://github.com/GoodGuide/purview_api"
   s.rubyforge_project = "goodguide"
   s.require_paths = ["lib"]
   s.files = Dir['Gemfile', 'purview-api.gemspec', 'lib/**/*.rb']
