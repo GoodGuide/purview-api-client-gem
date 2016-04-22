@@ -2,10 +2,10 @@ FROM ruby:2.3.0
 
 WORKDIR /app
 
-COPY ./lib/goodguide/entity_soup/version.rb \
-      /app/lib/goodguide/entity_soup/version.rb
+COPY ./lib/PurviewApi/version.rb \
+      /app/lib/PurviewApi/version.rb
 
-COPY ./Gemfile goodguide-entity_soup.gemspec /app/
+COPY ./Gemfile purview-api.gemspec /app/
 
 RUN bundle install
 

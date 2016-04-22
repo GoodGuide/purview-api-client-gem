@@ -1,19 +1,18 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'goodguide/entity_soup/version'
+require 'purview_api/version'
 
 Gem::Specification.new do |s|
-  s.name = "goodguide-entity_soup"
-  s.version = GoodGuide::EntitySoup.version
-  s.authors = ["Simon Waddington"]
-  s.email = ["simon@goodguide.com"]
+  s.name = "purview-api"
+  s.version = PurviewApi.VERSION
+  s.authors = ["The wonderful people at UL/GoodGuide"]
   s.summary = "Purview API gem"
   s.description = "Gem to access the Purview API"
-  s.homepage = "http://www.goodguide.com"
+  s.homepage = "https://github.com/GoodGuide/purview-api"
   s.rubyforge_project = "goodguide"
   s.require_paths = ["lib"]
-  s.files = Dir['Gemfile', 'goodguide-entity_soup.gemspec', 'lib/**/*.rb']
+  s.files = Dir['Gemfile', 'purview-api.gemspec', 'lib/**/*.rb']
   s.test_files = Dir["spec/**/*_spec.rb"]
 
   s.add_dependency('activemodel')
