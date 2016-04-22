@@ -16,6 +16,7 @@ services:
   # command: `docker-compose run shell`.
   shell:
     <<: *common
+    extends: gem
 
     volumes:
       # Mount a directory for dotfiles like pry_history and bash_history.
