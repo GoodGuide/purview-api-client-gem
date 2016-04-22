@@ -1,32 +1,37 @@
-# GoodGuide Entity Soup Gem
+# Purview API
 # 
 
-This is the gem for access to the GoodGuide entity soup repository via an underlying RESTful API
+This is the gem for access to the Purview API
 
 ## Configuration
 
 In your Gemfile:
 
-    gem 'goodguide-entity_soup'
+    gem 'purview-api'
 
 In your code:
 
-    require 'goodguide/entity_soup'
+    require 'purview_api'
 
-The entity soup RESTful API endpoint is located by the url property which must be set before the first access of any API object and cannot be changed subsequently.  The default is `http:/entity-soup.goodguide.com`.
+The entity soup RESTful API endpoint and credentials can be set like this:
 
-    GoodGuide::EntitySoup.url = 'http://localhost:3000'
+```Ruby
+    PurviewApi.configure do |config|
+      config.url = 'http://localhost:3000'
+      config.email = 'admin@goodguide.com'
+      config.password = 'password'
+    end
+```
 
 ## Testing
 
-This gem supports Rails/ActiveRecord versions 2 and 3.  To test in a Rails 2 environment, run
+This gem supports Rails/ActiveRecord versions < 5 (5.0.0.beta3 currently)
 
-    RAILS_VERSION=2 rake
+To run tests in a docker container:
 
-And to test in a Rails 3 environment, run
-
-    RAILS_VERSION=3 rake # Or just rake, since this is the default.
-
+    bundle install
+    docker-compose run shell
+    bin/rake
 
 ## Entity Soup Data Model
 
@@ -67,13 +72,13 @@ Every entity within a catalog may have attribute values according to the attribu
 
 ### Namespace
 
-The namespace for the API is `GoodGuide::EntitySoup` which is assumed in the examples below for brevity i.e. if you read
+The namespace for the API is `PurviewApi` which is assumed in the examples below for brevity i.e. if you read
 
     Catalog.find_all
 
 it means
 
-    GoodGuide::EntitySoup::Catalog.find_all
+    PurviewApi::Catalog.find_all
 
 ### Identity
 
