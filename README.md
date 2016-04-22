@@ -1,22 +1,22 @@
-# GoodGuide Entity Soup Gem
+# Purview API
 # 
 
-This is the gem for access to the GoodGuide entity soup repository via an underlying RESTful API
+This is the gem for access to the Purview API
 
 ## Configuration
 
 In your Gemfile:
 
-    gem 'goodguide-entity_soup'
+    gem 'purview-api'
 
 In your code:
 
-    require 'goodguide/entity_soup'
+    require 'purview_api'
 
 The entity soup RESTful API endpoint and credentials can be set like this:
 
 ```Ruby
-    GoodGuide::EntitySoup.configure do |config|
+    PurviewApi.configure do |config|
       config.url = 'http://localhost:3000'
       config.email = 'admin@goodguide.com'
       config.password = 'password'
@@ -72,13 +72,13 @@ Every entity within a catalog may have attribute values according to the attribu
 
 ### Namespace
 
-The namespace for the API is `GoodGuide::EntitySoup` which is assumed in the examples below for brevity i.e. if you read
+The namespace for the API is `PurviewApi` which is assumed in the examples below for brevity i.e. if you read
 
     Catalog.find_all
 
 it means
 
-    GoodGuide::EntitySoup::Catalog.find_all
+    PurviewApi::Catalog.find_all
 
 ### Identity
 
