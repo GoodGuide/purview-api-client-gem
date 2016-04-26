@@ -1,7 +1,8 @@
 require 'spec_helper'
+require "purview_api/catalog"
 
 describe PurviewApi::Catalog, :vcr do
-  before { authenticate! }
+  before { PurviewApi.authenticate! }
 
   describe '.find_all', :vcr do
     it 'finds all the catalogs' do

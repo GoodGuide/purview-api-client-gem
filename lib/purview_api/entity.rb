@@ -1,5 +1,6 @@
 require 'hashie/mash'
 require 'purview_api/search'
+require 'purview_api/resource'
 
 module PurviewApi
   class Entity

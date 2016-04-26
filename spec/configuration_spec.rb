@@ -12,10 +12,12 @@ RSpec.describe PurviewApi do
 
     it 'sets the proper values' do
       PurviewApi.configure do |config|
+        config.url = 'http://example.com'
         config.email = 'random@email.com'
         config.password = 'not-the-pass'
       end
 
+      expect(PurviewApi.config.url).to eq('http://example.com')
       expect(PurviewApi.config.email).to eq('random@email.com')
       expect(PurviewApi.config.password).to eq('not-the-pass')
 

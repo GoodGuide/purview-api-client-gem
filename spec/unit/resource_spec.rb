@@ -14,6 +14,10 @@ describe PurviewApi::Resource do
     include Resource
   end
 
+  before { Connection.reset }
+
+  let(:api_path) { PurviewApi.config.resource_path }
+
   describe 'wrapping' do
     it 'wraps an entity' do
       r = TestResource.new(TestEntity.new(:id => 123))
@@ -64,9 +68,6 @@ describe PurviewApi::Resource do
   end
 
   describe 'finding' do
-    include SpecHelpers
-    before { reset_connection! }
-
     it 'finds a single resource' do
       stub_connection! do |stub|
         stub.get("#{api_path}/tests/123") { [200, {}, { :id => 123 }.to_json] }
@@ -137,8 +138,6 @@ describe PurviewApi::Resource do
   end
 
   describe 'get' do
-    before { reset_connection! }
-
     it 'gets a resource element' do
       stub_connection! do |stub|
         stub.get("#{api_path}/tests/123/element") { [200, {}, { :something => 123 }.to_json] }
@@ -150,8 +149,6 @@ describe PurviewApi::Resource do
   end
 
   describe 'post' do
-    before { reset_connection! }
-
     it 'returns a resource' do
       stub_connection! do |stub|
         stub.post("#{api_path}/tests/element") { [201, {}, { id: 123, something: 456}.to_json] }
@@ -165,8 +162,6 @@ describe PurviewApi::Resource do
   end
 
   describe 'put' do
-    before { reset_connection! }
-
     it 'returns a resource' do
       stub_connection! do |stub|
         stub.put("#{api_path}/tests/123/element") { [201, {}, { id: 123, something: 456}.to_json] }
@@ -179,9 +174,6 @@ describe PurviewApi::Resource do
   end
 
   describe 'saving' do
-
-    before { reset_connection! }
-
     shared_examples_for 'it handles errors' do |method, url|
       describe 'errors' do
         it 'handles server errors' do

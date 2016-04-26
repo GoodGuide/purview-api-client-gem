@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PurviewApi::Connection do
   let!(:connection) { Connection.new("foo") }
 
-  before { reset_connection! }
+  before { Connection.reset }
 
   describe 'put' do
     context "when putting a single resource" do

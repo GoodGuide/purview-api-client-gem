@@ -28,11 +28,3 @@ module PurviewApi
   end
 end
 
-require "purview_api/connection"
-require "purview_api/resource"
-require "purview_api/field"
-require "purview_api/attachment"
-require "purview_api/entity"
-require "purview_api/catalog"
-require "purview_api/account"
-require "purview_api/cookie_auth"

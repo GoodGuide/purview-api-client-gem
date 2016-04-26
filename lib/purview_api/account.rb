@@ -1,3 +1,5 @@
+require "purview_api/resource"
+
 module PurviewApi
   class Account
     include Resource
