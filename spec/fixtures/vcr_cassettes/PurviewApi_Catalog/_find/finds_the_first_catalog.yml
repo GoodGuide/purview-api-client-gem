@@ -1,0 +1,195 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/users/session"
+    body:
+      encoding: UTF-8
+      string: '{"email":"<EMAIL>","<PASSWORD>":"<PASSWORD>"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Location:
+      - "<PURVIEW_URL>/"
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=ZEJJY09sSjhUOE5KdXRxRGJJYlVFS3JyOWFEMHdvZGhxYVZqQmRldU1JMzVENUExbVlZWGJkOHk2QmhWSE9KTW5ITHJYenJWRG5CeVgwRk9pRE9sbXlUMWRBZW1tR29JVi92SXNYVXQzaXprbGJNbzRhSzdiWUhSV2dFcWpVZFpiNmpaMWIwSEh1TnVsb0xyYXpSeWYxcHRxWVg1QWhDUFJuMDd0elhnU2tUSTJDWGhNZ1pwRXZ1aTRYd09jbmFsZzhqWUxYMlQ0dzdvb2NUTDl1cTR5L2U0OVd5aHBwMzNCSzJuUDZMeDV4U2kzZGVVY3M4UE1IT0c4dlJnRHdqeERFQXFCZmFSYWlJQjhNbXRTRjNRS2piS01rTkNmOTJlK2tjczRtL1VvV1F2Mm4xWG56MGhTaVlPa3p4TzY2ai9vQnVrUUlHQS9yWERKK1FLQXNaQWpnPT0tLTQyNU9ZU0VRMkh3TGVjZS84aC9ERWc9PQ%3D%3D--73ed01a45198163958bbc2d4ba8f869237f4b22a;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 98e9c2a9-8091-427d-a3e9-a4340bca65fe
+      X-Runtime:
+      - '0.392000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
+    http_version: 
+  recorded_at: Tue, 26 Apr 2016 04:24:55 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/catalogs"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=ZEJJY09sSjhUOE5KdXRxRGJJYlVFS3JyOWFEMHdvZGhxYVZqQmRldU1JMzVENUExbVlZWGJkOHk2QmhWSE9KTW5ITHJYenJWRG5CeVgwRk9pRE9sbXlUMWRBZW1tR29JVi92SXNYVXQzaXprbGJNbzRhSzdiWUhSV2dFcWpVZFpiNmpaMWIwSEh1TnVsb0xyYXpSeWYxcHRxWVg1QWhDUFJuMDd0elhnU2tUSTJDWGhNZ1pwRXZ1aTRYd09jbmFsZzhqWUxYMlQ0dzdvb2NUTDl1cTR5L2U0OVd5aHBwMzNCSzJuUDZMeDV4U2kzZGVVY3M4UE1IT0c4dlJnRHdqeERFQXFCZmFSYWlJQjhNbXRTRjNRS2piS01rTkNmOTJlK2tjczRtL1VvV1F2Mm4xWG56MGhTaVlPa3p4TzY2ai9vQnVrUUlHQS9yWERKK1FLQXNaQWpnPT0tLTQyNU9ZU0VRMkh3TGVjZS84aC9ERWc9PQ%3D%3D--73ed01a45198163958bbc2d4ba8f869237f4b22a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Date:
+      - Tue, 26 Apr 2016 04:24:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=10, private
+      Etag:
+      - '"f2476044a365ba13f823c006b2a91bc7"'
+      Set-Cookie:
+      - _platform_session=a2hPZWxmLzJBL0NoZHRZK3loOWtRVW5lT1BlUTNMdXdhazl0MjNTQXFOZVFZM0dQakVGNlo0bVo1bWh5OHE4QnE5dUw3TDRWQzUvMWx5MWVhYy9wbnNhcTJrYnFDVngySnhHeWI1WEh1RjJiS0tSd0gwaDVmMVV4M2NiSjFMYXQzSlczcnRBUzgySXBiK2JoUEc0UXVhYXQ0bjFGYzdJalZvc3RIYU1BdW1sMVQyYWVITFBkcG1CSTRieVNpVytDUlZUWVM3Rk1IYTdWbDJnQnNpY3BZQ25BZk04NmdpSmt5UStWSE94V3RNZDZ5a05xRzFTdE12NEROT29hWXRKUEk1THBVeXVMQ3U0anMrbTRYclI3Q0hhcjNPcHVPTWFXUzRrOFNScjZ6dWpjTUhub2NRVkg2eEhycUhaWkE3Q2MyRitOZ09kbU16c0VUOE5KeEx6eHpBPT0tLUtIell1ZDhmM0QwMkxuaXUxeDNmK1E9PQ%3D%3D--0ff8a02200f1ba6b5c2a11d0e2f637fe3c705efb;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 7f523329-72b5-4759-bc1a-959030ac0478
+      X-Runtime:
+      - '0.453000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Brands Catalog","entity_type":"Brand","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":1,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Brands","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_brands","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":1,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Categories Catalog","entity_type":"Category","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":2,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Categories","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_categories","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Certifications Catalog","entity_type":"Certification","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":3,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Certifications","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_certifications","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Companies Catalog","entity_type":"Company","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":4,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Companies","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_companies","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":1,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Components Catalog","entity_type":"Component","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":5,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Components","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_components","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Designs Catalog","entity_type":"Design","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":6,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Designs","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_designs","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Ingredients Catalog","entity_type":"Ingredient","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":7,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Ingredients","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_ingredients","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Materials Catalog","entity_type":"Material","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":8,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Materials","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_materials","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Products Catalog","entity_type":"Product","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":9,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Products","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_products","updated_at":"2016-04-20T19:49:08.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}},{"account_id":2,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:08.000Z","description":null,"entity_type":"Product","frozen_column_position":0,"has_dashboard":null,"has_landing_page":true,"how_it_works":null,"id":10,"inherits_to_children":null,"introduction":null,"is_public":false,"is_reference":false,"landing_page_title":null,"name":"Target
+        Sustainability Standard","open_for_submissions":true,"primary_rating_field_id":11,"referenced_catalog_id":null,"requires_payment":true,"requires_review":true,"short_description":null,"slug":"target_sustainability_standard","updated_at":"2016-04-20T19:49:10.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"1000
+        Nicollet Mall","address_street2":null,"address_city":"Minneapolis","address_state":"MN","address_zip":"55403","company_name":"Target,
+        Inc.","created_at":"2016-04-20T19:49:08.000Z","credits":0,"has_valid_payment_method":false,"id":2,"name":"Target","payment_events_count":0,"updated_at":"2016-04-20T19:49:08.000Z"}}]'
+    http_version: 
+  recorded_at: Tue, 26 Apr 2016 04:24:55 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/catalogs/1"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=a2hPZWxmLzJBL0NoZHRZK3loOWtRVW5lT1BlUTNMdXdhazl0MjNTQXFOZVFZM0dQakVGNlo0bVo1bWh5OHE4QnE5dUw3TDRWQzUvMWx5MWVhYy9wbnNhcTJrYnFDVngySnhHeWI1WEh1RjJiS0tSd0gwaDVmMVV4M2NiSjFMYXQzSlczcnRBUzgySXBiK2JoUEc0UXVhYXQ0bjFGYzdJalZvc3RIYU1BdW1sMVQyYWVITFBkcG1CSTRieVNpVytDUlZUWVM3Rk1IYTdWbDJnQnNpY3BZQ25BZk04NmdpSmt5UStWSE94V3RNZDZ5a05xRzFTdE12NEROT29hWXRKUEk1THBVeXVMQ3U0anMrbTRYclI3Q0hhcjNPcHVPTWFXUzRrOFNScjZ6dWpjTUhub2NRVkg2eEhycUhaWkE3Q2MyRitOZ09kbU16c0VUOE5KeEx6eHpBPT0tLUtIell1ZDhmM0QwMkxuaXUxeDNmK1E9PQ%3D%3D--0ff8a02200f1ba6b5c2a11d0e2f637fe3c705efb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Date:
+      - Tue, 26 Apr 2016 04:24:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=10, private
+      Etag:
+      - '"3f2606e1e2748714751f04eb63262707"'
+      Set-Cookie:
+      - _platform_session=L3VVaDBkak5RTjQ4ZWNvVno2Zm45V0RnOVJGU1RtQnYvUzhOdm9LK2dlOTkrWUVnK3AvV2RWVHQ1VGhIVGJ3eXBncWZ4cUxSWTU5ZVFJNDVrV0hydWdZZTlrY0dENkZUZGNYZWtaVVk2aTE1bWtMZzMxdXV4UXg3TURLcThQbjVTRE96bVJIKzUvL3ljb0tZRWV1ampJcGYwVC9yeWN6dVhITUxpcndxeVBET05hbG1WSUthdHVSVG9oWmRGOVVZeEFYUC9hM0pjRGRUa3R1MkxZSDZhaW52YnZ3U2wrNmZnZldoUUptTk9kNWE1YjZHUzdhYmoybjNvb2JmTFBsekRqekRQWFFYOHg5WElwbjExQlBsYStKQ1hwTXJPeTc0SnA5MkpUWVQyenJ6eGJsOCtTQlZXY0Zaa0FhWnNzZ3JHdmpwNHhoTEo2cllnUU1oenBRMWFBPT0tLUtaenNMcFVaTjNpVHdjOU5zeE1NZlE9PQ%3D%3D--92093a20e6d1deb660a6d3f112a0539fa6e8ed26;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 038bc033-f39e-436e-b0d6-df2f8b944bea
+      X-Runtime:
+      - '0.130000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-04-20T19:49:07.000Z","description":"GoodGuide
+        Brands Catalog","entity_type":"Brand","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":1,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Brands","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_brands","updated_at":"2016-04-20T19:49:07.000Z","sequence":null,"user_entities_count":1,"fields":[{"id":1,"name":"name","title":"Name","group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"IdentityField","is_list":false,"is_identifier":true,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":0,"protection_level":"not_protected","required":"for
+        saving","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}],"field_groups":[],"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-04-20T19:49:04.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-04-20T19:49:04.000Z"}}'
+    http_version: 
+  recorded_at: Tue, 26 Apr 2016 04:24:55 GMT
+recorded_with: VCR 3.0.1
