@@ -87,9 +87,6 @@ module PurviewApi
       "#{path}/#{id}?#{query(opts)}"
     end
 
-    # allow overriding in tests
-    def self.http=(h); @http = h; end
-
     def self.http
       @http ||= Faraday.new(site) do |builder|
         builder.use Request::CookieAuth
@@ -97,9 +94,6 @@ module PurviewApi
         builder.response :multi_json
         builder.response :raise_error
         builder.response :logger if PurviewApi.config.faraday_logging
-        # if defined?(Rails) and !!(ENV['ENTITY_SOUP_MOUNTED'] =~ /^true/i)
-        #   builder.adapter :rack, Rails.application
-        # else
         builder.adapter Faraday.default_adapter
       end
     end

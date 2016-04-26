@@ -17,7 +17,7 @@ module SpecHelpers
   end
 
   def reset_connection!
-    Connection.http = nil
+    Connection.reset
   end
 
   def goodguide_catalog_id
