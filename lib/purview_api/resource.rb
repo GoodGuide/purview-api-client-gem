@@ -5,8 +5,31 @@
 #
 # Unlike an Entity, a Resource is not necessarily rated.
 
+# require 'purview_api'
 require 'active_model'
-require 'active_model/validations'
+# require 'active_model/validations'
+
+require "faraday"
+require "faraday_middleware"
+require "faraday_middleware-multi_json"
+
+# require 'active_support'
+# require "active_support/json"
+# require "active_support/benchmarkable"
+# require 'active_model/naming'
+# require 'active_model/errors'
+# require 'active_support/core_ext/object/to_query'
+# require "active_support/core_ext/enumerable"
+# require 'active_support/core_ext/string'
+require 'active_support/core_ext/hash'
+# require 'active_support/inflector'
+
+# require "purview_api/connection"
+# require "purview_api/field"
+# require "purview_api/attachment"
+# require "purview_api/entity"
+# require "purview_api/account"
+# require "purview_api/cookie_auth"
 
 module PurviewApi
   module Resource
@@ -176,12 +199,12 @@ module PurviewApi
         @resource_name
       end
 
-      def api_path
-        '/api/v1'
-      end
-
       def resource_path(path)
-        self.connection = PurviewApi::Connection.new("#{api_path}/#{path}")
+        #TODO: this doesn't work yet because config isn't being
+        #      configured yet.
+        # full_path = "#{PurviewApi.config.resource_path}/#{path}"
+        full_path = "#{'/api/v1'}/#{path}"
+        self.connection = PurviewApi::Connection.new(full_path)
       end
 
       def resource_json_root(json_root)

@@ -1,4 +1,5 @@
 require 'purview_api'
+require "purview_api/connection"
 include PurviewApi
 
 require 'vcr'
@@ -28,7 +29,7 @@ module SpecHelpers
   end
 
   def api_path
-    '/api/v1'
+    PurviewApi.config.resource_path
   end
 
   def authenticate!
@@ -40,6 +41,9 @@ PurviewApi.configure do |config|
   config.url = ENV['PURVIEW_URL']
   config.email = ENV['PURVIEW_EMAIL']
   config.password = ENV['PURVIEW_PASSWORD']
+  config.resource_path = '/api/v1'
+  config.session_path = '/api/users/session'
+  config.faraday_logging = false
 end
 
 VCR.configure do |c|

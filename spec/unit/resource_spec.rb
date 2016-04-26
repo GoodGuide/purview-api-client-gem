@@ -73,8 +73,8 @@ describe PurviewApi::Resource do
       end
       tr = TestResource.find(123)
 
-      # expect(tr).to be_a TestResource
-      # expect(tr.id).to eq(123)
+      expect(tr).to be_a TestResource
+      expect(tr.id).to eq(123)
     end
 
     it 'searches resources' do

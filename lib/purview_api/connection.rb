@@ -1,34 +1,28 @@
+require "logger"
+
+module PurviewApi
+  class ResponseList < Array
+    def stats
+      @stats ||= HashWithIndifferentAccess.new
+    end
+
+    def stats=(s={})
+      @stats = s.with_indifferent_access
+    end
+  end
+end
+
 module PurviewApi
   class Connection
-    class << self
-      def site
-        @site or raise('No entity_soup API endpoint configured!')
-      end
+    def self.site
+      PurviewApi.config.url || raise('No entity_soup API endpoint configured!')
+    end
 
-      def site=(new_site)
-        if new_site != @site
-          @site = new_site
-          @http = nil
-        end
-        @site
-      end
-
-      def reset
-        @http = nil
-      end
+    def self.reset
+      @http = nil
     end
 
     attr_reader :path
-
-    class ResponseList < Array
-      def stats
-        @stats ||= HashWithIndifferentAccess.new
-      end
-
-      def stats=(s={})
-        @stats = s.with_indifferent_access
-      end
-    end
 
     def initialize(path)
       @path = path
@@ -100,15 +94,13 @@ module PurviewApi
       @http ||= Faraday.new(site) do |builder|
         builder.use Request::CookieAuth
         builder.request  :multi_json
-        #builder.request  :retry, 10
         builder.response :multi_json
         builder.response :raise_error
-        builder.response :logger if !!(ENV['FARADAY_LOGGING'] =~ /^true/i)
-        if defined?(Rails) and !!(ENV['ENTITY_SOUP_MOUNTED'] =~ /^true/i)
-          builder.adapter :rack, Rails.application
-        else
-          builder.adapter Faraday.default_adapter
-        end
+        builder.response :logger if PurviewApi.config.faraday_logging
+        # if defined?(Rails) and !!(ENV['ENTITY_SOUP_MOUNTED'] =~ /^true/i)
+        #   builder.adapter :rack, Rails.application
+        # else
+        builder.adapter Faraday.default_adapter
       end
     end
 
