@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe PurviewApi::Resource do
   class TestResource
-    include Resource
+    include PurviewApi::Resource
+
     resource_name 'test'
     resource_path 'tests'
     resource_json_root 'tests'
@@ -11,10 +12,10 @@ describe PurviewApi::Resource do
   end
 
   class TestEntity
-    include Resource
+    include PurviewApi::Resource
   end
 
-  before { Connection.reset }
+  before { PurviewApi::Connection.reset }
 
   let(:api_path) { PurviewApi.config.resource_path }
 

@@ -1,12 +1,11 @@
 require 'purview_api'
-include PurviewApi
 
 require 'vcr'
 require 'pry'
 
 module SpecHelpers
   def stub_connection!(&block)
-    Connection.http.builder.swap(
+    PurviewApi::Connection.http.builder.swap(
       Faraday::Adapter::NetHttp,
       Faraday::Adapter::Test,
       &block

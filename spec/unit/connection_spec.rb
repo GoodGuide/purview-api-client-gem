@@ -1,9 +1,11 @@
 require 'spec_helper'
+require 'purview_api/connection'
+require 'purview_api/resource'
 
 describe PurviewApi::Connection do
-  let!(:connection) { Connection.new("foo") }
+  let!(:connection) { described_class.new("foo") }
 
-  before { Connection.reset }
+  before { described_class.reset }
 
   describe 'put' do
     context "when putting a single resource" do

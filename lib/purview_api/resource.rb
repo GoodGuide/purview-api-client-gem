@@ -12,6 +12,7 @@ require "faraday_middleware-multi_json"
 
 require "purview_api/connection"
 require "purview_api/cookie_auth"
+require "purview_api/response_list"
 
 
 module PurviewApi
@@ -157,7 +158,7 @@ module PurviewApi
         connection.get_all(elements, params.merge!(:json_root => self.json_root)).map! { |r| new(r) }
       rescue Faraday::Error::ResourceNotFound => e
         # NOTE: can currently happen if find params reference a non-existent entity, a bug in EntitySoup?
-        PurviewApi::Connection::ResponseList.new
+        PurviewApi::ResponseList.new
       end
 
       def get(elements, opts={})
