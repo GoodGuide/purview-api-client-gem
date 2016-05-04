@@ -26,8 +26,8 @@ Gem::Specification.new do |s|
 
   # We duplicate Rails libraries here to specify version in development only
   # http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
-  s.add_development_dependency('activemodel', '>= 5.0.0.beta3')
-  s.add_development_dependency('activesupport', '>= 5.0.0.beta3')
+  s.add_development_dependency('activemodel', '>= 5.0.0.beta4')
+  s.add_development_dependency('activesupport', '>= 5.0.0.beta4')
   s.add_development_dependency('rspec')
   s.add_development_dependency('rr')
   s.add_development_dependency('rake')
