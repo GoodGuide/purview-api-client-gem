@@ -11,6 +11,15 @@ module PurviewApi
       @http = nil
     end
 
+    def self.authenticate!
+      Connection.reset
+      connection = Connection.new(PurviewApi.config.session_path)
+      connection.post(email: PurviewApi.config.email, password: PurviewApi.config.password)
+      true
+    rescue Faraday::Error::ClientError
+      false
+    end
+
     attr_reader :path
 
     def initialize(path)

@@ -16,14 +16,8 @@ module PurviewApi
       self.config = self.default_config.dup
     end
 
-    # TODO: Move this and make it better
     def authenticate!
-      Connection.reset
-      connection = Connection.new(config.session_path)
-      connection.post(email: config.email, password: config.password)
-      true
-    rescue Faraday::Error::ClientError
-      false
+      Connection.authenticate!
     end
   end
 end
