@@ -1,7 +1,8 @@
-require 'purview_api'
-
+require 'webmock/rspec'
 require 'vcr'
 require 'pry'
+
+require 'purview_api'
 
 module SpecHelpers
   def stub_connection!(&block)
