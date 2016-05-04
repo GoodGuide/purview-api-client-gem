@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'purview_api/resource'
 
 describe PurviewApi::Resource do
   class TestResource
@@ -17,7 +17,7 @@ describe PurviewApi::Resource do
 
   before { PurviewApi::Connection.reset }
 
-  let(:api_path) { PurviewApi.config.resource_path }
+  let(:api_path) { PurviewApi.config.api_path }
 
   describe 'wrapping' do
     it 'wraps an entity' do
