@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/users/session"
+    body:
+      encoding: UTF-8
+      string: '{"email":"<PURVIEW_EMAIL>","<PURVIEW_PASSWORD>":"<PURVIEW_PASSWORD>"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Location:
+      - "<PURVIEW_URL>/"
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=Vjd0WGRlN1JaR2ZSeE8wRzBTcE9adVFjV0NQOXU3VFdRRFAxS3pKQUNuOW1KOE5jVG9xbDVEbEpBMW1Fc0d5SWNpcDJHZmd5KzhvRlRKZjN6SE5laWJNS01IYXl6VGhCeTVSWmRyTXUrdDdmNEtqcCtLUmVsOG9MZ3p6aWUvdWtsaG5jcmVMODJWRHpkeFUxNDB3cHRDN0ZxcVJxSndKbHBjaDdrUTlnTU56emdRL1ZpQkhuUmZGdzFuUmcweVRRdjN2ZkJyaXZub2Rna2U1VWI1TTdIOHE0VGtFY1g0MGg2ZXVtbGNjTUZjemJIU1FlWVNybUxuMFAybW5aazBkbkRvVVZtY05IMGtiNEVGblVZUzVtZnZ3UVF1MlZrSHJhRm1oRmlnZjNUeFU5ZGNLNnBSOE1hUW5aQkw1eTdhZ25RREdlLzYzSFVveCtZM0tobVRjenJnPT0tLTJ2VEFiRzlkRENSbXkxVng2citrZ2c9PQ%3D%3D--a50438382f65a65ce0dc545e4c5c49ccf1181b68;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 4c208385-8b80-4113-9013-ce2b6ddf832d
+      X-Runtime:
+      - '0.392000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
+    http_version: 
+  recorded_at: Sat, 07 May 2016 22:35:42 GMT
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/v1/catalogs"
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=Vjd0WGRlN1JaR2ZSeE8wRzBTcE9adVFjV0NQOXU3VFdRRFAxS3pKQUNuOW1KOE5jVG9xbDVEbEpBMW1Fc0d5SWNpcDJHZmd5KzhvRlRKZjN6SE5laWJNS01IYXl6VGhCeTVSWmRyTXUrdDdmNEtqcCtLUmVsOG9MZ3p6aWUvdWtsaG5jcmVMODJWRHpkeFUxNDB3cHRDN0ZxcVJxSndKbHBjaDdrUTlnTU56emdRL1ZpQkhuUmZGdzFuUmcweVRRdjN2ZkJyaXZub2Rna2U1VWI1TTdIOHE0VGtFY1g0MGg2ZXVtbGNjTUZjemJIU1FlWVNybUxuMFAybW5aazBkbkRvVVZtY05IMGtiNEVGblVZUzVtZnZ3UVF1MlZrSHJhRm1oRmlnZjNUeFU5ZGNLNnBSOE1hUW5aQkw1eTdhZ25RREdlLzYzSFVveCtZM0tobVRjenJnPT0tLTJ2VEFiRzlkRENSbXkxVng2citrZ2c9PQ%3D%3D--a50438382f65a65ce0dc545e4c5c49ccf1181b68
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=ODErUmIwT1JKcnh5NlU2aThMekt3NmlXOE9HcUt5bUl2WW16Q1g3RURPbFFrUEtkaDdySCtYa3Qrb2I2Q0dQUzJrYTVtcm01ZGQwbnlJeCtlSy9aLzFTdVlxZ3pJem5CMXk2SXlyUkJ2M2pVdUNZcWdpaXpIamlRN2lXa1doQ2NmeE5FWWNuOVRkaWIzSGF6bU43YnBLNnQ2bjJrdTZnN3hkdXU3RkhRa0w2U1VZRWJLdWJRc0RaK2NoSUo5SlhDOEZ2enM2Y3oxVW1nekNTRHlOZHJLT2JyZ3RVWWpkM2ZFN1lXZ3pReGF6R0VHN0h1TmtZQjY5ZXd2WjBzck5Zb3Q3NkU5Slc2VDFxZTBwVFZBaU9IdXRpcHRGOER3YloxdThmcE1VbUtLYXQ5V1JDaVllWEF0WU9WdFVNM3JuaExkNDdNQjBOQzgyRVo3UXdFdE43aDFRPT0tLWo1dENLSGFNa2FmdUZYQW1tajhyWUE9PQ%3D%3D--5ae6ee40132d34ef091f68a2f9f13f7c9a54c7a3;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 849da361-c3c2-4bae-a369-198ee64f2ed1
+      X-Runtime:
+      - '0.064000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"name":["can''t be blank"],"account":["can''t be blank"],"entity_type":["is
+        not included in the list"]},"status":"unprocessable_entity"}'
+    http_version: 
+  recorded_at: Sat, 07 May 2016 22:35:42 GMT
+recorded_with: VCR 3.0.1

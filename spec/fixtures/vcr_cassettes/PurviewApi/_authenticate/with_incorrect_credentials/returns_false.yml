@@ -1,0 +1,313 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/users/session"
+    body:
+      encoding: UTF-8
+      string: '{"email":"fake@fake.com","password":"badpass"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Request-Id:
+      - ecbf2a48-dee1-4de9-9cae-29c2185949c3
+      X-Runtime:
+      - '0.490000'
+      Content-Length:
+      - '24114'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+        />\n  <title>Action Controller: Exception caught</title>\n  <style>\n    body
+        {\n      background-color: #FAFAFA;\n      color: #333;\n      margin: 0px;\n
+        \   }\n\n    body, p, ol, ul, td {\n      font-family: helvetica, verdana,
+        arial, sans-serif;\n      font-size:   13px;\n      line-height: 18px;\n    }\n\n
+        \   pre {\n      font-size: 11px;\n      white-space: pre-wrap;\n    }\n\n
+        \   pre.box {\n      border: 1px solid #EEE;\n      padding: 10px;\n      margin:
+        0px;\n      width: 958px;\n    }\n\n    header {\n      color: #F0F0F0;\n
+        \     background: #C52F24;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n
+        \     margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size: 2em;\n
+        \   }\n\n    h2 {\n      color: #C52F24;\n      line-height: 25px;\n    }\n\n
+        \   .details {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n
+        \     margin: 1em 0px;\n      display: block;\n      width: 978px;\n    }\n\n
+        \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px solid #D0D0D0;\n
+        \     display: block;\n    }\n\n    .details pre {\n      margin: 5px;\n      border:
+        none;\n    }\n\n    #container {\n      box-sizing: border-box;\n      width:
+        100%;\n      padding: 0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n
+        \     padding: 0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n
+        \     background: #ECECEC;\n      width: 978px;\n    }\n\n    .source pre
+        {\n      padding: 10px 0px;\n      border: none;\n    }\n\n    .source .data
+        {\n      font-size: 80%;\n      overflow: auto;\n      background-color: #FFF;\n
+        \   }\n\n    .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+        {\n      background-color: #ECECEC;\n      color: #AAA;\n      padding: 1em
+        .5em;\n      border-right: 1px solid #DDD;\n      text-align: right;\n    }\n\n
+        \   .line {\n      padding-left: 10px;\n    }\n\n    .line:hover {\n      background-color:
+        #F6F6F6;\n    }\n\n    .line.active {\n      background-color: #FFCCCC;\n
+        \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n    a:hover
+        { color: #C52F24; }\n\n    \n  </style>\n\n  <script>\n    var toggle = function(id)
+        {\n      var s = document.getElementById(id).style;\n      s.display = s.display
+        == 'none' ? 'block' : 'none';\n      return false;\n    }\n    var show =
+        function(id) {\n      document.getElementById(id).style.display = 'block';\n
+        \   }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+        = 'none';\n    }\n    var toggleTrace = function() {\n      return toggle('blame_trace');\n
+        \   }\n    var toggleSessionDump = function() {\n      return toggle('session_dump');\n
+        \   }\n    var toggleEnvDump = function() {\n      return toggle('env_dump');\n
+        \   }\n  </script>\n</head>\n<body>\n\n<header>\n  <h1>\n    NoMethodError
+        in\n    EntitySoup::Session#create\n  </h1>\n</header>\n\n<div id=\"container\">\n
+        \ <p>\n    Showing <i>/usr/local/lib/ruby/gems/shared/gems/devise-3.0.4/app/views/devise/sessions/new.html.erb</i>
+        where line <b>#3</b> raised:\n  </p>\n  <pre><code>undefined method `user_session_path&#39;
+        for #&lt;ActionDispatch::Routing::RoutesProxy:0x22e96064&gt;</code></pre>\n\n
+        \ <div class=\"source\">\n    <div class=\"info\">\n      <p>Extracted source
+        (around line <strong>#3</strong>):</p>\n    </div>\n    <div class=\"data\">\n
+        \   <table cellpadding=\"0\" cellspacing=\"0\" class=\"lines\">\n      <tr>\n
+        \       <td>\n          <pre class=\"line_numbers\">\n<span>1</span>\n<span>2</span>\n<span>3</span>\n<span>4</span>\n<span>5</span>\n<span>6</span>\n
+        \         </pre>\n        </td>\n<td width=\"100%\">\n<pre>\n<div class=\"line\">
+        \ &lt;h2&gt;Sign in&lt;/h2&gt;\n</div><div class=\"line\">  \n</div><div class=\"line
+        active\">  &lt;%= form_for(resource, :as =&gt; resource_name, :url =&gt; session_path(resource_name))
+        do |f| %&gt;\n</div><div class=\"line\">    &lt;div&gt;&lt;%= f.label :email
+        %&gt;&lt;br /&gt;\n</div><div class=\"line\">    &lt;%= f.email_field :email,
+        :autofocus =&gt; true %&gt;&lt;/div&gt;\n</div><div class=\"line\">  \n</div>\n</pre>\n</td>\n
+        \   </tr>\n  </table>\n</div>\n</div>\n\n  <p></p>\n\n  \n<p><code>Rails.root:
+        /app</code></p>\n\n<div id=\"traces\">\n    <a href=\"#\" onclick=\"hide(&#39;Framework-Trace&#39;);hide(&#39;Full-Trace&#39;);show(&#39;Application-Trace&#39;);;
+        return false;\">Application Trace</a> |\n    <a href=\"#\" onclick=\"hide(&#39;Application-Trace&#39;);hide(&#39;Full-Trace&#39;);show(&#39;Framework-Trace&#39;);;
+        return false;\">Framework Trace</a> |\n    <a href=\"#\" onclick=\"hide(&#39;Application-Trace&#39;);hide(&#39;Framework-Trace&#39;);show(&#39;Full-Trace&#39;);;
+        return false;\">Full Trace</a> \n\n    <div id=\"Application-Trace\" style=\"display:
+        block;\">\n      <pre><code>config/environments/development.rb:18:in `call&#39;</code></pre>\n
+        \   </div>\n    <div id=\"Framework-Trace\" style=\"display: none;\">\n      <pre><code>org/jruby/RubyBasicObject.java:1555:in
+        `method_missing&#39;\nactionpack (4.0.13) lib/action_dispatch/routing/routes_proxy.rb:36:in
+        `method_missing&#39;\ndevise (3.0.4) lib/devise/controllers/url_helpers.rb:55:in
+        `session_path&#39;\ndevise (3.0.4views) devise/sessions/new.html.erb:3:in
+        `__usr_local_lib_ruby_gems_shared_gems_devise______views_devise_sessions_new_html_erb__1429450121_106908&#39;\nactionpack
+        (4.0.13) lib/action_view/template.rb:143:in `render&#39;\nactivesupport (4.0.13)
+        lib/active_support/notifications.rb:161:in `instrument&#39;\nactionpack (4.0.13)
+        lib/action_view/template.rb:141:in `render&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:49:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/abstract_renderer.rb:38:in
+        `instrument&#39;\nactivesupport (4.0.13) lib/active_support/notifications.rb:159:in
+        `instrument&#39;\nactivesupport (4.0.13) lib/active_support/notifications/instrumenter.rb:20:in
+        `instrument&#39;\nactivesupport (4.0.13) lib/active_support/notifications.rb:159:in
+        `instrument&#39;\nactionpack (4.0.13) lib/action_view/renderer/abstract_renderer.rb:38:in
+        `instrument&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:48:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:56:in
+        `render_with_layout&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:47:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:17:in
+        `render&#39;\nactionpack (4.0.13) lib/action_view/renderer/renderer.rb:42:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/renderer.rb:23:in
+        `render&#39;\nactionpack (4.0.13) lib/abstract_controller/rendering.rb:127:in
+        `_render_template&#39;\nactionpack (4.0.13) lib/action_controller/metal/streaming.rb:219:in
+        `_render_template&#39;\nactionpack (4.0.13) lib/abstract_controller/rendering.rb:120:in
+        `render_to_body&#39;\nactionpack (4.0.13) lib/action_controller/metal/rendering.rb:33:in
+        `render_to_body&#39;\nactionpack (4.0.13) lib/action_controller/metal/renderers.rb:26:in
+        `render_to_body&#39;\nactionpack (4.0.13) lib/abstract_controller/rendering.rb:97:in
+        `render&#39;\nactionpack (4.0.13) lib/action_controller/metal/rendering.rb:16:in
+        `render&#39;\nactionpack (4.0.13) lib/action_controller/metal/instrumentation.rb:41:in
+        `render&#39;\nactivesupport (4.0.13) lib/active_support/core_ext/benchmark.rb:12:in
+        `ms&#39;\n/usr/local/lib/ruby/2.0/benchmark.rb:296:in `realtime&#39;\nactivesupport
+        (4.0.13) lib/active_support/core_ext/benchmark.rb:12:in `ms&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:41:in `render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime&#39;\nactiverecord
+        (4.0.13) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:40:in `render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:233:in `default_render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:161:in `to_html&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:154:in `respond&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:147:in `call&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/mime_responds.rb:330:in `respond_with&#39;\ndevise
+        (3.0.4controllers) devise/sessions_controller.rb:10:in `new&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/implicit_render.rb:4:in `send_action&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/base.rb:189:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/rendering.rb:10:in `process_action&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/callbacks.rb:18:in `process_action&#39;\nactivesupport
+        (4.0.13) lib/active_support/callbacks.rb:436:in `_run__109514624__process_action__callbacks&#39;\nactivesupport
+        (4.0.13) lib/active_support/callbacks.rb:80:in `run_callbacks&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/callbacks.rb:17:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/rescue.rb:29:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:31:in `process_action&#39;\nactivesupport
+        (4.0.13) lib/active_support/notifications.rb:159:in `instrument&#39;\nactivesupport
+        (4.0.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument&#39;\nactivesupport
+        (4.0.13) lib/active_support/notifications.rb:159:in `instrument&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:30:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/params_wrapper.rb:250:in `process_action&#39;\nactiverecord
+        (4.0.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/base.rb:136:in `process&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/rendering.rb:44:in `process&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal.rb:195:in `dispatch&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal.rb:231:in `action&#39;\norg/jruby/RubyProc.java:281:in
+        `call&#39;\ndevise (3.0.4) lib/devise/failure_app.rb:51:in `recall&#39;\ndevise
+        (3.0.4) lib/devise/failure_app.rb:35:in `respond&#39;\nactionpack (4.0.13)
+        lib/abstract_controller/base.rb:189:in `process_action&#39;\nactionpack (4.0.13)
+        lib/abstract_controller/base.rb:136:in `process&#39;\nactionpack (4.0.13)
+        lib/action_controller/metal.rb:195:in `dispatch&#39;\nactionpack (4.0.13)
+        lib/action_controller/metal/rack_delegation.rb:13:in `dispatch&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal.rb:231:in `action&#39;\norg/jruby/RubyProc.java:281:in
+        `call&#39;\ndevise (3.0.4) lib/devise/failure_app.rb:20:in `call&#39;\ndevise
+        (3.0.4) lib/devise/delegator.rb:5:in `call&#39;\nwarden (1.2.3) lib/warden/manager.rb:130:in
+        `call_failure_app&#39;\nwarden (1.2.3) lib/warden/manager.rb:116:in `process_unauthenticated&#39;\nwarden
+        (1.2.3) lib/warden/manager.rb:47:in `call&#39;\nversionist (1.4.1) lib/versionist/middleware.rb:39:in
+        `_call&#39;\nversionist (1.4.1) lib/versionist/middleware.rb:17:in `call&#39;\nrack
+        (1.5.5) lib/rack/etag.rb:23:in `call&#39;\nrack (1.5.5) lib/rack/conditionalget.rb:35:in
+        `call&#39;\nrack (1.5.5) lib/rack/head.rb:11:in `call&#39;\nactionpack (4.0.13)
+        lib/action_dispatch/middleware/params_parser.rb:27:in `call&#39;\nactionpack
+        (4.0.13) lib/action_dispatch/middleware/flash.rb:241:in `call&#39;\nrack (1.5.5)
+        lib/rack/session/abstract/id.rb:225:in `context&#39;\nrack (1.5.5) lib/rack/session/abstract/id.rb:220:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/cookies.rb:486:in
+        `call&#39;\nactiverecord (4.0.13) lib/active_record/query_cache.rb:36:in `call&#39;\nactiverecord
+        (4.0.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/callbacks.rb:29:in
+        `call&#39;\nactivesupport (4.0.13) lib/active_support/callbacks.rb:376:in
+        `_run__1012184672__call__callbacks&#39;\nactivesupport (4.0.13) lib/active_support/callbacks.rb:80:in
+        `run_callbacks&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/callbacks.rb:27:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/remote_ip.rb:76:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/debug_exceptions.rb:17:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/show_exceptions.rb:30:in
+        `call&#39;\nrailties (4.0.13) lib/rails/rack/logger.rb:38:in `call_app&#39;\nrailties
+        (4.0.13) lib/rails/rack/logger.rb:20:in `call&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:68:in `tagged&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:26:in `tagged&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:68:in `tagged&#39;\nrailties (4.0.13)
+        lib/rails/rack/logger.rb:20:in `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/request_id.rb:21:in
+        `call&#39;\nrack (1.5.5) lib/rack/methodoverride.rb:21:in `call&#39;\nrack
+        (1.5.5) lib/rack/runtime.rb:17:in `call&#39;\nactivesupport (4.0.13) lib/active_support/cache/strategy/local_cache.rb:83:in
+        `call&#39;\nrack (1.5.5) lib/rack/lock.rb:17:in `call&#39;\nactionpack (4.0.13)
+        lib/action_dispatch/middleware/static.rb:84:in `call&#39;\nrack (1.5.5) lib/rack/sendfile.rb:112:in
+        `call&#39;\nrailties (4.0.13) lib/rails/engine.rb:511:in `call&#39;\nrailties
+        (4.0.13) lib/rails/application.rb:97:in `call&#39;\nrack (1.5.5) lib/rack/content_length.rb:14:in
+        `call&#39;\npuma-2.9.0 (java) lib/puma/server.rb:490:in `handle_request&#39;\npuma-2.9.0
+        (java) lib/puma/server.rb:361:in `process_client&#39;\npuma-2.9.0 (java) lib/puma/server.rb:254:in
+        `run&#39;\norg/jruby/RubyProc.java:281:in `call&#39;\npuma-2.9.0 (java) lib/puma/thread_pool.rb:92:in
+        `spawn_thread&#39;</code></pre>\n    </div>\n    <div id=\"Full-Trace\" style=\"display:
+        none;\">\n      <pre><code>org/jruby/RubyBasicObject.java:1555:in `method_missing&#39;\nactionpack
+        (4.0.13) lib/action_dispatch/routing/routes_proxy.rb:36:in `method_missing&#39;\ndevise
+        (3.0.4) lib/devise/controllers/url_helpers.rb:55:in `session_path&#39;\ndevise
+        (3.0.4views) devise/sessions/new.html.erb:3:in `__usr_local_lib_ruby_gems_shared_gems_devise______views_devise_sessions_new_html_erb__1429450121_106908&#39;\nactionpack
+        (4.0.13) lib/action_view/template.rb:143:in `render&#39;\nactivesupport (4.0.13)
+        lib/active_support/notifications.rb:161:in `instrument&#39;\nactionpack (4.0.13)
+        lib/action_view/template.rb:141:in `render&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:49:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/abstract_renderer.rb:38:in
+        `instrument&#39;\nactivesupport (4.0.13) lib/active_support/notifications.rb:159:in
+        `instrument&#39;\nactivesupport (4.0.13) lib/active_support/notifications/instrumenter.rb:20:in
+        `instrument&#39;\nactivesupport (4.0.13) lib/active_support/notifications.rb:159:in
+        `instrument&#39;\nactionpack (4.0.13) lib/action_view/renderer/abstract_renderer.rb:38:in
+        `instrument&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:48:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:56:in
+        `render_with_layout&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:47:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/template_renderer.rb:17:in
+        `render&#39;\nactionpack (4.0.13) lib/action_view/renderer/renderer.rb:42:in
+        `render_template&#39;\nactionpack (4.0.13) lib/action_view/renderer/renderer.rb:23:in
+        `render&#39;\nactionpack (4.0.13) lib/abstract_controller/rendering.rb:127:in
+        `_render_template&#39;\nactionpack (4.0.13) lib/action_controller/metal/streaming.rb:219:in
+        `_render_template&#39;\nactionpack (4.0.13) lib/abstract_controller/rendering.rb:120:in
+        `render_to_body&#39;\nactionpack (4.0.13) lib/action_controller/metal/rendering.rb:33:in
+        `render_to_body&#39;\nactionpack (4.0.13) lib/action_controller/metal/renderers.rb:26:in
+        `render_to_body&#39;\nactionpack (4.0.13) lib/abstract_controller/rendering.rb:97:in
+        `render&#39;\nactionpack (4.0.13) lib/action_controller/metal/rendering.rb:16:in
+        `render&#39;\nactionpack (4.0.13) lib/action_controller/metal/instrumentation.rb:41:in
+        `render&#39;\nactivesupport (4.0.13) lib/active_support/core_ext/benchmark.rb:12:in
+        `ms&#39;\n/usr/local/lib/ruby/2.0/benchmark.rb:296:in `realtime&#39;\nactivesupport
+        (4.0.13) lib/active_support/core_ext/benchmark.rb:12:in `ms&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:41:in `render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime&#39;\nactiverecord
+        (4.0.13) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:40:in `render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:233:in `default_render&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:161:in `to_html&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:154:in `respond&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/responder.rb:147:in `call&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/mime_responds.rb:330:in `respond_with&#39;\ndevise
+        (3.0.4controllers) devise/sessions_controller.rb:10:in `new&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/implicit_render.rb:4:in `send_action&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/base.rb:189:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/rendering.rb:10:in `process_action&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/callbacks.rb:18:in `process_action&#39;\nactivesupport
+        (4.0.13) lib/active_support/callbacks.rb:436:in `_run__109514624__process_action__callbacks&#39;\nactivesupport
+        (4.0.13) lib/active_support/callbacks.rb:80:in `run_callbacks&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/callbacks.rb:17:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/rescue.rb:29:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:31:in `process_action&#39;\nactivesupport
+        (4.0.13) lib/active_support/notifications.rb:159:in `instrument&#39;\nactivesupport
+        (4.0.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument&#39;\nactivesupport
+        (4.0.13) lib/active_support/notifications.rb:159:in `instrument&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/instrumentation.rb:30:in `process_action&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/params_wrapper.rb:250:in `process_action&#39;\nactiverecord
+        (4.0.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/base.rb:136:in `process&#39;\nactionpack
+        (4.0.13) lib/abstract_controller/rendering.rb:44:in `process&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal.rb:195:in `dispatch&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal.rb:231:in `action&#39;\norg/jruby/RubyProc.java:281:in
+        `call&#39;\ndevise (3.0.4) lib/devise/failure_app.rb:51:in `recall&#39;\ndevise
+        (3.0.4) lib/devise/failure_app.rb:35:in `respond&#39;\nactionpack (4.0.13)
+        lib/abstract_controller/base.rb:189:in `process_action&#39;\nactionpack (4.0.13)
+        lib/abstract_controller/base.rb:136:in `process&#39;\nactionpack (4.0.13)
+        lib/action_controller/metal.rb:195:in `dispatch&#39;\nactionpack (4.0.13)
+        lib/action_controller/metal/rack_delegation.rb:13:in `dispatch&#39;\nactionpack
+        (4.0.13) lib/action_controller/metal.rb:231:in `action&#39;\norg/jruby/RubyProc.java:281:in
+        `call&#39;\ndevise (3.0.4) lib/devise/failure_app.rb:20:in `call&#39;\ndevise
+        (3.0.4) lib/devise/delegator.rb:5:in `call&#39;\nwarden (1.2.3) lib/warden/manager.rb:130:in
+        `call_failure_app&#39;\nwarden (1.2.3) lib/warden/manager.rb:116:in `process_unauthenticated&#39;\nwarden
+        (1.2.3) lib/warden/manager.rb:47:in `call&#39;\nversionist (1.4.1) lib/versionist/middleware.rb:39:in
+        `_call&#39;\nversionist (1.4.1) lib/versionist/middleware.rb:17:in `call&#39;\nrack
+        (1.5.5) lib/rack/etag.rb:23:in `call&#39;\nrack (1.5.5) lib/rack/conditionalget.rb:35:in
+        `call&#39;\nrack (1.5.5) lib/rack/head.rb:11:in `call&#39;\nactionpack (4.0.13)
+        lib/action_dispatch/middleware/params_parser.rb:27:in `call&#39;\nactionpack
+        (4.0.13) lib/action_dispatch/middleware/flash.rb:241:in `call&#39;\nrack (1.5.5)
+        lib/rack/session/abstract/id.rb:225:in `context&#39;\nrack (1.5.5) lib/rack/session/abstract/id.rb:220:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/cookies.rb:486:in
+        `call&#39;\nactiverecord (4.0.13) lib/active_record/query_cache.rb:36:in `call&#39;\nactiverecord
+        (4.0.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/callbacks.rb:29:in
+        `call&#39;\nactivesupport (4.0.13) lib/active_support/callbacks.rb:376:in
+        `_run__1012184672__call__callbacks&#39;\nactivesupport (4.0.13) lib/active_support/callbacks.rb:80:in
+        `run_callbacks&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/callbacks.rb:27:in
+        `call&#39;\nconfig/environments/development.rb:18:in `call&#39;\nactionpack
+        (4.0.13) lib/action_dispatch/middleware/remote_ip.rb:76:in `call&#39;\nactionpack
+        (4.0.13) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call&#39;\nactionpack
+        (4.0.13) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call&#39;\nrailties
+        (4.0.13) lib/rails/rack/logger.rb:38:in `call_app&#39;\nrailties (4.0.13)
+        lib/rails/rack/logger.rb:20:in `call&#39;\nactivesupport (4.0.13) lib/active_support/tagged_logging.rb:68:in
+        `tagged&#39;\nactivesupport (4.0.13) lib/active_support/tagged_logging.rb:26:in
+        `tagged&#39;\nactivesupport (4.0.13) lib/active_support/tagged_logging.rb:68:in
+        `tagged&#39;\nrailties (4.0.13) lib/rails/rack/logger.rb:20:in `call&#39;\nactionpack
+        (4.0.13) lib/action_dispatch/middleware/request_id.rb:21:in `call&#39;\nrack
+        (1.5.5) lib/rack/methodoverride.rb:21:in `call&#39;\nrack (1.5.5) lib/rack/runtime.rb:17:in
+        `call&#39;\nactivesupport (4.0.13) lib/active_support/cache/strategy/local_cache.rb:83:in
+        `call&#39;\nrack (1.5.5) lib/rack/lock.rb:17:in `call&#39;\nactionpack (4.0.13)
+        lib/action_dispatch/middleware/static.rb:84:in `call&#39;\nrack (1.5.5) lib/rack/sendfile.rb:112:in
+        `call&#39;\nrailties (4.0.13) lib/rails/engine.rb:511:in `call&#39;\nrailties
+        (4.0.13) lib/rails/application.rb:97:in `call&#39;\nrack (1.5.5) lib/rack/content_length.rb:14:in
+        `call&#39;\npuma-2.9.0 (java) lib/puma/server.rb:490:in `handle_request&#39;\npuma-2.9.0
+        (java) lib/puma/server.rb:361:in `process_client&#39;\npuma-2.9.0 (java) lib/puma/server.rb:254:in
+        `run&#39;\norg/jruby/RubyProc.java:281:in `call&#39;\npuma-2.9.0 (java) lib/puma/thread_pool.rb:92:in
+        `spawn_thread&#39;</code></pre>\n    </div>\n</div>\n\n  \n\n<h2 style=\"margin-top:
+        30px\">Request</h2>\n<p><b>Parameters</b>:</p> <pre>{&quot;email&quot;=&gt;&quot;fake@fake.com&quot;,\n
+        &quot;<PURVIEW_PASSWORD>&quot;=&gt;&quot;[FILTERED]&quot;,\n &quot;session&quot;=&gt;{&quot;email&quot;=&gt;&quot;fake@fake.com&quot;,\n
+        &quot;<PURVIEW_PASSWORD>&quot;=&gt;&quot;[FILTERED]&quot;},\n &quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;fake@fake.com&quot;,\n
+        &quot;<PURVIEW_PASSWORD>&quot;=&gt;&quot;[FILTERED]&quot;}}</pre>\n\n<div
+        class=\"details\">\n  <div class=\"summary\"><a href=\"#\" onclick=\"return
+        toggleSessionDump()\">Toggle session dump</a></div>\n  <div id=\"session_dump\"
+        style=\"display:none\"><pre>flash: {&quot;discard&quot;=&gt;[:alert], &quot;flashes&quot;=&gt;{:alert=&gt;&quot;Invalid
+        email or <PURVIEW_PASSWORD>.&quot;}}\nsession_id: &quot;4ac1dff55d378dcb475ff0c88422f573&quot;</pre></div>\n</div>\n\n<div
+        class=\"details\">\n  <div class=\"summary\"><a href=\"#\" onclick=\"return
+        toggleEnvDump()\">Toggle env dump</a></div>\n  <div id=\"env_dump\" style=\"display:none\"><pre>GATEWAY_INTERFACE:
+        &quot;CGI/1.2&quot;\nHTTP_ACCEPT: &quot;*/*&quot;\nHTTP_ACCEPT_ENCODING: &quot;gzip;q=1.0,deflate;q=0.6,identity;q=0.3&quot;\nREMOTE_ADDR:
+        &quot;24.155.12.33&quot;\nSERVER_NAME: &quot;jenkins-docker-machine-1.do.goodguide.com&quot;\nSERVER_PROTOCOL:
+        &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:</p>
+        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Sat, 07 May 2016 22:35:38 GMT
+recorded_with: VCR 3.0.1

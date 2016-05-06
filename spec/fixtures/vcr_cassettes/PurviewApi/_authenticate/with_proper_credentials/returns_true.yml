@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/users/session"
+    body:
+      encoding: UTF-8
+      string: '{"email":"<PURVIEW_EMAIL>","<PURVIEW_PASSWORD>":"<PURVIEW_PASSWORD>"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Location:
+      - "<PURVIEW_URL>/"
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=Vkw1UXk0RTAzUEl4VndnenNLUkVTQThWYzkxVVBoQUFEbzZab1M4R0FQYzF6SXExRzRrU2lyRVJES0E3NEJhbXoyWWh4T0lFSFFkTmNtNFU4cDduUHZhVnROV1FEK0JaUU9abnhvTFJPRUNNc2RTbnh3OUlQTk5rOGdZck80RW9tM2ZQM2djOUhCR0ROTzk2VmlkM0J0YUhNMHpIOXNRQnpjZFFXZXppVUdlS0QreHJURDI0OE54RS9qSmk2eDN1V3ZWbE9KUE9HTnVnVzdhQ1AzUEFUNlJ4Z0FYc1VsM0FBbktsYWZJTmZhS2xYSCtWZStBMUZrNFBEOTI4TFdsemsxUkdYK21TZmhUUC9Odm51RDRRZTh3L3JXSGJtblZnWWFKeWVZRlhPMTducGhnRGUvcmNTZzFMMDVEOSthZzM2NlhLM3FXeXJEN1VpV3NmbXFrazV3PT0tLU5admlZOEc1TlNNR3d1VWVFQzBhY2c9PQ%3D%3D--38faba82ba36acfa515d963aabdcfada4c744566;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 8e0452f1-adb4-4931-94a4-152a06bfe7da
+      X-Runtime:
+      - '0.398000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
+    http_version: 
+  recorded_at: Sat, 07 May 2016 22:35:37 GMT
+recorded_with: VCR 3.0.1
