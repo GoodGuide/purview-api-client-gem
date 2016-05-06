@@ -29,8 +29,13 @@ module PurviewApi
         params = view_params_for(opts)
         if id.is_a?(Array)
           found_resources = find_all(opts.merge(:id => id))
-          # NOTE: ActiveRecord throws an exception if id isn't found - here we just insert a nil
-          result = id.collect {|requested_id| found_resources.find { |resource| resource.id == requested_id } }
+          # NOTE: ActiveRecord throws an exception if id isn't found - here
+          # we just insert a nil
+          result = id.collect do |requested_id|
+            found_resources.find do |resource|
+              resource.id == requested_id
+            end
+          end
         else
           result = connection.get(id, params)
           new(result)
@@ -43,9 +48,14 @@ module PurviewApi
         params = view_params_for(opts)
         elements = params.delete(:elements)
 
-        connection.get_all(elements, params.merge!(:json_root => self.json_root)).map! { |r| new(r) }
+        connection.get_all(
+          elements, params.merge!(:json_root => self.json_root)
+        ).map! do |resource|
+          new(resource)
+        end
       rescue Faraday::Error::ResourceNotFound => e
-        # NOTE: can currently happen if find params reference a non-existent entity, a bug in EntitySoup?
+        # NOTE: can currently happen if find params reference a
+        # non-existent entity, a bug in EntitySoup?
         PurviewApi::ResponseList.new
       end
 

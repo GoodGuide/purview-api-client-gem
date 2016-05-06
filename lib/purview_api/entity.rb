@@ -7,7 +7,6 @@ module PurviewApi
     include Resource
     extend Search
 
-    # NOTE: at the moment API returns only entities within a JSON object
     resource_json_root :entities
 
     attributes :catalog_id, :account_id, :type, :status, :created_at, :updated_at, :value_bindings, :image_url
@@ -19,7 +18,6 @@ module PurviewApi
     end
 
     def self.merge(representative, others)
-
       Entity.post('merge',
                   representative: representative.id,
                   others: others.collect(&:id),
@@ -28,7 +26,6 @@ module PurviewApi
     end
 
     def self.merge_and_update(representative, others, value_bindings)
-
       Entity.post('merge_and_update',
                   representative: representative.id,
                   others: others.collect(&:id),
@@ -53,12 +50,14 @@ module PurviewApi
     end
 
     def update_value_bindings(params)
-      e = Entity.new(:id => self.id, :value_bindings => params, :catalog_id => self.catalog_id)
+      e = Entity.new(
+        :id => self.id,
+        :value_bindings => params,
+        :catalog_id => self.catalog_id
+      )
       result = e.save
       @errors = e.errors
       result
     end
-
   end
-
 end

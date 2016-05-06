@@ -32,16 +32,16 @@ module PurviewApi
       end
     end
 
-    def initialize(o = {})
+    def initialize(object = {})
       @errors = ActiveModel::Errors.new(self)
 
       case
-      when Fixnum === o
-        @attributes = { :id => o }
-      when Hash === o
-        @attributes = o.with_indifferent_access
-      when o.respond_to?(:attributes)
-        @attributes = o.attributes
+      when Fixnum === object
+        @attributes = { :id => object }
+      when Hash === object
+        @attributes = object.with_indifferent_access
+      when object.respond_to?(:attributes)
+        @attributes = object.attributes
       else
         @attributes = { :id => nil }
         super
