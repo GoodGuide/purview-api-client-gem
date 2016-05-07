@@ -1,28 +1,9 @@
 module PurviewApi
   module Resource
     module ClassMethods
-      def inherited(child)
-        child.initialize_resource!
-      end
-
       def initialize_resource!
         resource_name self.name.demodulize.underscore
         resource_path self.resource_name.pluralize
-      end
-
-      def default_view(params)
-        self.views = views.merge(:default => merge_params(views[:default], params))
-      end
-
-      def view(name, params)
-        inherits = params.fetch(:inherits, :default)
-        params.delete(:inherits)
-
-        self.views = if inherits
-                       views.merge(name => merge_params(views[inherits], params))
-                     else
-                       views.merge(name => params)
-                     end
       end
 
       def find(id, opts={})
@@ -82,9 +63,7 @@ module PurviewApi
       end
 
       def resource_path(path)
-        # TODO: Figure out why this doens't work in rails
-        full_path = "#{PurviewApi.config.api_path}/#{path}"
-        # full_path = "/api/v1/#{path}"
+        full_path = "#{PurviewApi.api_path}/#{path}"
         self.connection = PurviewApi::Connection.new(full_path)
       end
 
@@ -95,14 +74,7 @@ module PurviewApi
       private
 
       def view_params_for(opts)
-        view = opts.fetch(:view, :default)
-        opts.delete(:view)
-
-        params = if view
-                   merge_params(views[view], opts)
-                 else
-                   opts
-                 end
+        params = merge_params(nil, opts)
 
         if params[:exclude] && params[:include]
           params[:exclude] = params[:exclude].split(',') if params[:exclude].is_a? String
@@ -161,8 +133,6 @@ module PurviewApi
         end
       end
     end
-
-    private
 
     # re-wrap this object with new data from the API
     def inflate!(opts={})

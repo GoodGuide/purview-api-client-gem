@@ -35,7 +35,6 @@ describe PurviewApi::Connection do
   end
 
   describe 'post' do
-
     context "when posting a single resource" do
       before do
         stub_request :post, "/foo", { :id => 42, :name => "name" }

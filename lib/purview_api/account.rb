@@ -6,12 +6,12 @@ module PurviewApi
 
     attributes :name
 
-    def attr_values(params = {})
-      AttrValue.find_all(params.merge(:account_id => self.id))
-    end
-
-    def self.find_by_name(name, opts = {})
-      Account.find_all(opts.merge(:name => name)).first
+    def self.find_by_name(name)
+      # Purview no longer supports matching an account attribute such as:
+      # Account.find_all(name: name ).first
+      #
+      # We'll be happy with this for now
+      find_all.detect { |a| a.name == name }
     end
   end
 end

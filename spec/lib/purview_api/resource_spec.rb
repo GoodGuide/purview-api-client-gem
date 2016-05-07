@@ -17,7 +17,7 @@ describe PurviewApi::Resource do
 
   before { PurviewApi::Connection.reset }
 
-  let(:api_path) { PurviewApi.config.api_path }
+  let(:api_path) { PurviewApi.api_path }
 
   describe 'wrapping' do
     it 'wraps an entity' do

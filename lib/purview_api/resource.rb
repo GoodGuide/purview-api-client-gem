@@ -44,7 +44,6 @@ module PurviewApi
         @attributes = object.attributes
       else
         @attributes = { :id => nil }
-        super
       end
     end
 
@@ -64,6 +63,15 @@ module PurviewApi
       else
         raise e
       end
+    end
+
+    def save!
+      return if save
+
+      raise ResourceNotSaved,
+        "Could not save #{self.class.name.demodulize}" +
+        "#{@attributes.inspect}: " +
+        "#{errors.full_messages.join(',')}"
     end
 
     def destroy

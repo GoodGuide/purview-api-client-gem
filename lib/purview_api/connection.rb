@@ -4,7 +4,7 @@ require 'purview_api/response_list'
 module PurviewApi
   class Connection
     def self.site
-      PurviewApi.config.url || raise('No entity_soup API endpoint configured!')
+      PurviewApi.config.url || raise('No API endpoint configured!')
     end
 
     def self.reset
@@ -12,9 +12,17 @@ module PurviewApi
     end
 
     def self.authenticate!
+      # TODO: Obviously this is not thread safe, implement a connection
+      # pool using something like this:
+      # https://github.com/mperham/connection_pool
+      # Good thoughts on the subject here:
+      # https://github.com/celluloid/celluloid/wiki/Thread-safety-notes
       Connection.reset
-      connection = Connection.new(PurviewApi.config.session_path)
-      connection.post(email: PurviewApi.config.email, password: PurviewApi.config.password)
+      connection = Connection.new(PurviewApi.session_path)
+      connection.post(
+        email: PurviewApi.config.email,
+        password: PurviewApi.config.password
+      )
       true
     rescue Faraday::Error::ClientError
       false

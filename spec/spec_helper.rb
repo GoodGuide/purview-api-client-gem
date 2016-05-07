@@ -1,6 +1,6 @@
 require 'webmock/rspec'
 require 'vcr'
-require 'pry'
+require 'pry-byebug'
 
 require 'purview_api'
 
@@ -24,22 +24,29 @@ PurviewApi.configure do |config|
   config.url = ENV['PURVIEW_URL']
   config.email = ENV['PURVIEW_EMAIL']
   config.password = ENV['PURVIEW_PASSWORD']
-  config.api_path = '/api/v1'
-  config.session_path = '/api/users/session'
   config.faraday_logging = false
 end
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock
-  c.default_cassette_options = { record: :new_episodes }
+  c.default_cassette_options = {
+    record: :new_episodes, match_requests_on: [:method, :uri, :body]
+  }
   c.configure_rspec_metadata!
   c.filter_sensitive_data("<PURVIEW_URL>") { PurviewApi.config.url }
-  c.filter_sensitive_data("<EMAIL>") { PurviewApi.config.email }
-  c.filter_sensitive_data("<PASSWORD>") { PurviewApi.config.password }
+  c.filter_sensitive_data("<PURVIEW_EMAIL>") { PurviewApi.config.email }
+  c.filter_sensitive_data("<PURVIEW_PASSWORD>") { PurviewApi.config.password }
 end
 
 RSpec.configure do |config|
   config.mock_framework = :rr
   config.include SpecHelpers
+end
+
+if defined?(PryByebug)
+  Pry.commands.alias_command 'c', 'continue'
+  Pry.commands.alias_command 's', 'step'
+  Pry.commands.alias_command 'n', 'next'
+  Pry.commands.alias_command 'f', 'finish'
 end
