@@ -12,9 +12,9 @@ require "faraday_middleware-multi_json"
 
 require "purview_api/connection"
 require "purview_api/cookie_auth"
+require "purview_api/errors"
 require "purview_api/response_list"
 require "purview_api/resource/class_methods"
-
 
 module PurviewApi
   module Resource
