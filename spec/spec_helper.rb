@@ -42,6 +42,7 @@ end
 RSpec.configure do |config|
   config.mock_framework = :rr
   config.include SpecHelpers
+  config.order = :random
 end
 
 if defined?(PryByebug)

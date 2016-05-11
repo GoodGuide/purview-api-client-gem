@@ -1,5 +1,6 @@
 require 'logger'
-require 'purview_api/response_list'
+require "faraday_middleware-multi_json"
+require "purview_api/cookie_auth"
 
 module PurviewApi
   class Connection

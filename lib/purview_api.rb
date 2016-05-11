@@ -1,4 +1,5 @@
 require 'ostruct'
+require 'purview_api/connection'
 
 module PurviewApi
   class << self
