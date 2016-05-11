@@ -1,11 +1,27 @@
 version: '2'
 
 services:
-  app-image:
+  gem: &common
     build: ./
 
-  app:
-    image: ${COMPOSE_PROJECT_NAME}_app-image
-    env_file:
-      - ./docker-env.common
-      - ./docker/docker-env
+    env_file: docker/env
+
+    volumes:
+      # Mount the current local project directory `.` as `/app` insided
+      # the container so you can edit files in your normal environment
+      # and run rake and tests in the app's docker environment.
+      - './:/app'
+
+  # Launch a container running a bash shell with the following
+  # command: `docker-compose run shell`.
+  shell:
+    <<: *common
+    extends: gem
+
+    volumes:
+      # Mount a directory for dotfiles like pry_history and bash_history.
+      # See docker/runtime/entrypoint for more info about this.
+      - './docker/runtime/dotfiles:/root/.dotfiles/'
+
+    # Run a bash shell inside the container.
+    command: bash

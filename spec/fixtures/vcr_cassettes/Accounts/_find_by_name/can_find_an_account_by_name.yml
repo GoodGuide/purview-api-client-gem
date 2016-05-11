@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/users/session"
+    body:
+      encoding: UTF-8
+      string: '{"email":"<PURVIEW_EMAIL>","<PURVIEW_PASSWORD>":"<PURVIEW_PASSWORD>"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Location:
+      - "<PURVIEW_URL>/"
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=U1RhR2hUQytpeWVmNWJqdnZoNFQ2THY5TDJrVTg0OHdqMjN6RERFOWdybXJWTVdSb2RvYzF5dysrdXpkNzlCRGFGWmJlN3VOZkw4UklZNmNaMWdXN0VPa1BRTkY4L0lVcXlkK3RkbVU4elRHWmFEUXRDV3JHUzdFZ1R2b3Q2UkVpZW0yc1VrZFRkUE55b29pK01ZcjM3dk9xeUljQStxbWtpMi9ZalQxWmhHM2QzWHhZWHI3ZndCY1dZOTBTaFdaaG5FcVYxSGpJN3RtZ000bXo2M3pJSVVURmJWcXkvM015SkljQ0Z2QmpKbW9KM0V4QVo3cGV1MW9GYlYraUQrWFh0SklsL1pudmpDd3dwVjFIYmxyaUJzeGpEN1ZBTDBHQWx2VDI1OWZjeDh2aHVCTUxtOWl0Y0dQZXFHNm5PVXJGcjhqUFR0eTVtK3BNWUJVdDh3SzNRPT0tLU9rREh6Yk81KzdDZFhydUkzYmhwdXc9PQ%3D%3D--ab8a87b368e63e664697d5df97698b372f1fe176;
+        path=/; HttpOnly
+      X-Request-Id:
+      - e875259f-18e8-436e-a77f-293eba0b1f5e
+      X-Runtime:
+      - '0.392000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
+    http_version: 
+  recorded_at: Sat, 07 May 2016 22:35:34 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/accounts"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=U1RhR2hUQytpeWVmNWJqdnZoNFQ2THY5TDJrVTg0OHdqMjN6RERFOWdybXJWTVdSb2RvYzF5dysrdXpkNzlCRGFGWmJlN3VOZkw4UklZNmNaMWdXN0VPa1BRTkY4L0lVcXlkK3RkbVU4elRHWmFEUXRDV3JHUzdFZ1R2b3Q2UkVpZW0yc1VrZFRkUE55b29pK01ZcjM3dk9xeUljQStxbWtpMi9ZalQxWmhHM2QzWHhZWHI3ZndCY1dZOTBTaFdaaG5FcVYxSGpJN3RtZ000bXo2M3pJSVVURmJWcXkvM015SkljQ0Z2QmpKbW9KM0V4QVo3cGV1MW9GYlYraUQrWFh0SklsL1pudmpDd3dwVjFIYmxyaUJzeGpEN1ZBTDBHQWx2VDI1OWZjeDh2aHVCTUxtOWl0Y0dQZXFHNm5PVXJGcjhqUFR0eTVtK3BNWUJVdDh3SzNRPT0tLU9rREh6Yk81KzdDZFhydUkzYmhwdXc9PQ%3D%3D--ab8a87b368e63e664697d5df97698b372f1fe176
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"8df9fe396dfa843eb5a455597e217ec3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _platform_session=NUlZV2daSEdibU5mTUdwZGw0Ri80b1hVYXRZSXNHZk1uMUtQTm5CZEhaNDFURGtYS0g2R0RNcWdXMFZLNHBHNUN6Um14NHF3VVI0OHRPVmVrTjQvV1VUdlFTUzdjWUVoTk1heStvaG5WQjNTR3ArU1RMZExSdzRueWQ3WCtHb3NWVjhZdnNaOE9NTlVURVBPSlhIYm9LSmFBSmVqampzRXVSK2RobXpsY0xJaVJJNm9tZE91aklvU0xUV2daR2NPbi9wV09ZQThDN1lwQVdVMG9HaEFiWGUvdU5uQjRHbGpLOFNWS0lnQ1RBK2dXVzFFZnVQTDlJMy9MZDhUVDQyZUg1Rm8yTmkrMWJaalhXSmRZU25nT3JLdUtZUExzZTY5NnhPblRCcVBtdE9rZkhiSXBKSXBUOVlKS1ZrbmMxRDIxT0tIZ0o0Ty91Mk1aUDhqaEZ3ZEFBPT0tLTkvUGNmQ1NWa2w5a0R4MWpjNHZKZmc9PQ%3D%3D--2355915a0c3da1c895ab9e702e366d26ba1a6375;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 437fec58-db9e-47d4-8662-69614fdbfa25
+      X-Runtime:
+      - '0.145000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"address_street":"98 Battery Street","address_street2":null,"address_city":"San
+        Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-04T04:47:11.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-04T04:47:11.000Z"},{"address_street":"1000
+        Nicollet Mall","address_street2":null,"address_city":"Minneapolis","address_state":"MN","address_zip":"55403","company_name":"Target,
+        Inc.","created_at":"2016-05-04T04:47:14.000Z","credits":0,"has_valid_payment_method":false,"id":2,"name":"Target","payment_events_count":0,"updated_at":"2016-05-04T04:47:14.000Z"},{"address_street":"637
+        Commercial Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"Method
+        Home","created_at":"2016-05-04T04:47:16.000Z","credits":0,"has_valid_payment_method":false,"id":3,"name":"Method","payment_events_count":0,"updated_at":"2016-05-04T04:47:16.000Z"}]'
+    http_version: 
+  recorded_at: Sat, 07 May 2016 22:35:34 GMT
+recorded_with: VCR 3.0.1

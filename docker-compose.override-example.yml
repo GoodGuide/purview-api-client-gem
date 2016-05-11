@@ -1,0 +1,13 @@
+# Copy this file as `docker-compose.override.yml` to modify or create
+# services for your particular development environment.
+#
+# `cp docker-compose.override-example.yml docker-compose.override.yml`
+#
+
+version: '2'
+
+services:
+  custom-service:
+    <<: *common
+    container_name: my-special-container-name
+    extends: gem

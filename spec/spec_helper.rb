@@ -1,59 +1,53 @@
-require 'goodguide/entity_soup'
-include GoodGuide::EntitySoup
-
+require 'webmock/rspec'
 require 'vcr'
+require 'pry-byebug'
+
+require 'purview_api'
 
 module SpecHelpers
-  def stub_connection!(&b)
-    Connection.http.builder.swap Faraday::Adapter::NetHttp, Faraday::Adapter::Test, &b
+  def stub_connection!(&block)
+    PurviewApi::Connection.http.builder.swap(
+      Faraday::Adapter::NetHttp,
+      Faraday::Adapter::Test,
+      &block
+    )
   end
 
   def stub_request(method, url, data, status = 200, raw = false)
-    stub_connection! { |stub| stub.send(method, url) { [status, {}, raw ? data : data.to_json ] } }
+    stub_connection! do |stub|
+      stub.send(method, url) { [status, {}, raw ? data : data.to_json ] }
+    end
   end
+end
 
-  def reset_connection!
-    Connection.http = nil
-  end
-
-  def admin_email
-    ENV['PURVIEW_ADMIN_EMAIL'] || 'admin@goodguide.com'
-  end
-
-  def admin_password
-    ENV['PURVIEW_ADMIN_PASSWORD'] || 'password'
-  end
-
-  def goodguide_catalog_id
-    1
-  end
-
-  def goodguide_catalog_name
-    'GoodGuide Brands'
-  end
-
-  def api_path
-    '/api/v1'
-  end
-
-  def authenticate!
-    GoodGuide::EntitySoup.authenticate(admin_email, admin_password)
-  end
+PurviewApi.configure do |config|
+  config.url = ENV['PURVIEW_URL']
+  config.email = ENV['PURVIEW_EMAIL']
+  config.password = ENV['PURVIEW_PASSWORD']
+  config.faraday_logging = false
 end
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock
-  c.default_cassette_options = { record: :new_episodes }
-  c.filter_sensitive_data("<PURVIEW_URL>") { ENV['PURVIEW_URL'] }
-  c.filter_sensitive_data("<ADMIN_EMAIL>") { ENV['PURVIEW_ADMIN_EMAIL'] }
-  c.filter_sensitive_data("<ADMIN_PASSWORD>") { ENV['PURVIEW_ADMIN_PASSWORD'] }
+  c.default_cassette_options = {
+    record: :new_episodes, match_requests_on: [:method, :uri, :body]
+  }
+  c.configure_rspec_metadata!
+  c.filter_sensitive_data("<PURVIEW_URL>") { PurviewApi.config.url }
+  c.filter_sensitive_data("<PURVIEW_EMAIL>") { PurviewApi.config.email }
+  c.filter_sensitive_data("<PURVIEW_PASSWORD>") { PurviewApi.config.password }
 end
 
 RSpec.configure do |config|
   config.mock_framework = :rr
   config.include SpecHelpers
+  config.order = :random
 end
 
-GoodGuide::EntitySoup.url = ENV['GOODGUIDE_ENTITY_SOUP_URL'] || 'http://localhost:3000'
-
+if defined?(PryByebug)
+  Pry.commands.alias_command 'c', 'continue'
+  Pry.commands.alias_command 's', 'step'
+  Pry.commands.alias_command 'n', 'next'
+  Pry.commands.alias_command 'f', 'finish'
+end

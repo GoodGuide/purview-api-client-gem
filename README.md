@@ -16,16 +16,21 @@ In your code:
 The entity soup RESTful API endpoint and credentials can be set like this:
 
 ```Ruby
-    PurviewApi.configure do |config|
-      config.url = 'http://localhost:3000'
-      config.email = 'admin@goodguide.com'
-      config.password = 'password'
-    end
-```
+PurviewApi.configure do |config|
+  config.url = ENV['PURVIEW_URL']
+  config.email = ENV['PURVIEW_EMAIL']
+  config.password = ENV['PURVIEW_PASSWORD']
+end
 
 ## Testing
 
+<<<<<<< HEAD
+This gem supports Rails/ActiveRecord versions >= 5 (5.0.0.beta3 currently)
+||||||| merged common ancestors
+This gem supports Rails/ActiveRecord versions 2 and 3.  To test in a Rails 2 environment, run
+=======
 This gem supports Rails/ActiveRecord versions < 5 (5.0.0.beta3 currently)
+>>>>>>> master
 
 To run tests in a docker container:
 
