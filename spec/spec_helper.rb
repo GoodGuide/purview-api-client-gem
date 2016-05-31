@@ -1,5 +1,5 @@
-require 'webmock/rspec'
 require 'vcr'
+require 'webmock/rspec'
 require 'pry-byebug'
 
 require 'purview_api'
@@ -18,6 +18,10 @@ module SpecHelpers
       stub.send(method, url) { [status, {}, raw ? data : data.to_json ] }
     end
   end
+
+  def wait_for_solr_if_vcr_is_recording
+    sleep 3 if VCR.current_cassette.recording?
+  end
 end
 
 PurviewApi.configure do |config|
@@ -31,7 +35,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock
   c.default_cassette_options = {
-    record: :new_episodes, match_requests_on: [:method, :uri, :body]
+    record: :once, match_requests_on: [:method, :uri, :body]
   }
   c.configure_rspec_metadata!
   c.filter_sensitive_data("<PURVIEW_URL>") { PurviewApi.config.url }
