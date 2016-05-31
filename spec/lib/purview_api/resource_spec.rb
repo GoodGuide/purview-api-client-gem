@@ -8,7 +8,7 @@ describe PurviewApi::Resource do
     resource_path 'tests'
     resource_json_root 'tests'
 
-    attributes :something
+    define_attribute_methods(:something)
   end
 
   class TestEntity
@@ -44,7 +44,7 @@ describe PurviewApi::Resource do
 
   describe 'entity' do
     class TestEntity
-      attributes :foo, :bar
+      define_attribute_methods(:foo, :bar)
     end
 
     it 'has fields' do

@@ -110,7 +110,7 @@ module PurviewApi
 
       # shortcut for direct method accessors to
       # attributes of the returned hash
-      def attributes(*attrs)
+      def define_attribute_methods(*attrs)
         attrs.each do |attr|
           define_method(attr) do
             self.resource[attr]

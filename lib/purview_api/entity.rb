@@ -9,9 +9,10 @@ module PurviewApi
 
     resource_json_root :entities
 
-    attributes :catalog_id, :account_id, :type, :status, :created_at, :updated_at, :value_bindings, :image_url
 
     view :brief, {:inherits => nil, :include_value_bindings => false}
+    define_attribute_methods(:name, :catalog_id, :account_id, :type, :status,
+      :created_at, :updated_at, :value_bindings, :image_url)
 
     def self.types
       get('types').collect { |t| Hashie::Mash.new(t) }

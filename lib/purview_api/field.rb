@@ -5,7 +5,7 @@ module PurviewApi
   class Field
     include Resource
 
-    attributes :type, :name, :entity_type, :catalog_id, :listing_id, :required
+    define_attribute_methods(:type, :name, :entity_type, :catalog_id, :listing_id, :required)
 
     def self.types(options = {})
       connection.get('types', options).collect { |t| Hashie::Mash.new(t) }

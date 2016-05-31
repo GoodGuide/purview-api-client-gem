@@ -4,7 +4,7 @@ module PurviewApi
   class Catalog
     include Resource
 
-    attributes :description, :name, :entity_type, :is_reference, :account_id, :slug, :referenced_catalog_id
+    define_attribute_methods(:description, :name, :entity_type, :is_reference, :account_id, :slug, :referenced_catalog_id)
 
     def fields(params = {})
       Field.find_all(params.merge(:catalog_id => self.id))

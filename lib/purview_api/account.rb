@@ -4,7 +4,7 @@ module PurviewApi
   class Account
     include Resource
 
-    attributes :name
+    define_attribute_methods(:name)
 
     def self.find_by_name(name)
       # Purview no longer supports matching an account attribute such as:
