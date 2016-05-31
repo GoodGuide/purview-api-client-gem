@@ -7,3 +7,5 @@ Gemfile.lock
 docker/runtime/dotfiles/*
 docker-compose.override.yml
 env.local.sh
+.pryrc
+vcr.log
