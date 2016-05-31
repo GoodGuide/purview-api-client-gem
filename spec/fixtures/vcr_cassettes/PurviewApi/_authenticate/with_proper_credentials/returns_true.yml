@@ -5,7 +5,7 @@ http_interactions:
     uri: "<PURVIEW_URL>/api/users/session"
     body:
       encoding: UTF-8
-      string: '{"email":"<PURVIEW_EMAIL>","<PURVIEW_PASSWORD>":"<PURVIEW_PASSWORD>"}'
+      string: '{"email":"<PURVIEW_EMAIL>","password":"<PURVIEW_PASSWORD>"}'
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -35,17 +35,17 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _platform_session=Vkw1UXk0RTAzUEl4VndnenNLUkVTQThWYzkxVVBoQUFEbzZab1M4R0FQYzF6SXExRzRrU2lyRVJES0E3NEJhbXoyWWh4T0lFSFFkTmNtNFU4cDduUHZhVnROV1FEK0JaUU9abnhvTFJPRUNNc2RTbnh3OUlQTk5rOGdZck80RW9tM2ZQM2djOUhCR0ROTzk2VmlkM0J0YUhNMHpIOXNRQnpjZFFXZXppVUdlS0QreHJURDI0OE54RS9qSmk2eDN1V3ZWbE9KUE9HTnVnVzdhQ1AzUEFUNlJ4Z0FYc1VsM0FBbktsYWZJTmZhS2xYSCtWZStBMUZrNFBEOTI4TFdsemsxUkdYK21TZmhUUC9Odm51RDRRZTh3L3JXSGJtblZnWWFKeWVZRlhPMTducGhnRGUvcmNTZzFMMDVEOSthZzM2NlhLM3FXeXJEN1VpV3NmbXFrazV3PT0tLU5admlZOEc1TlNNR3d1VWVFQzBhY2c9PQ%3D%3D--38faba82ba36acfa515d963aabdcfada4c744566;
+      - _platform_session=ZlJWRVpqY210aGtoL1RLN0d0bS9nUXNERXFiVUlSWHBhZDhMUXJVZ1BoK1h3c1VEWlhSaUUzQ09HQk56N01RK01hODN3VEEvTXY0L0lwT3BaSDBKTTZyOTdqS01xdXh6NDZLeGpKWERkc2RLU296YlBXZ1YrVWthanFkOFBORFAwUy8xaTN1ZE9idTJZRE9ickx6ek4xTEZueUNRWDM5RzdWTUtFL2RBYlp3bkF6STJOMHJLUWJab3RvKzhubHBHMVl6NXIxd1VXVGJBc2t2WnpEb3NYUFQrVDFiT1c5M2RjL1BkL1VjQkljcHM5U3lGVmlwWUQ2RWRxcGE3SmMzdW5MK0pLUFkwNmRFUjUrZHgvbW9XYlF5aHdwS3RBTENDbGZWQXZ0UTVSTkV1T0gxSlFvc2w1cFE1eFV4eHhoTjdPWDYyMVVLT3lHNlZlSVE1aHJaaTNRPT0tLXMxVVM1OFRkUzNleEhVay9IYWVKZkE9PQ%3D%3D--22ea604e5aaf2b303fb174e8ba9f0a6887c0433b;
         path=/; HttpOnly
       X-Request-Id:
-      - 8e0452f1-adb4-4931-94a4-152a06bfe7da
+      - 8a07a343-74ae-49bb-b5e5-58b7c7b8fdde
       X-Runtime:
-      - '0.398000'
+      - '0.577000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Sat, 07 May 2016 22:35:37 GMT
+  recorded_at: Tue, 31 May 2016 03:44:45 GMT
 recorded_with: VCR 3.0.1

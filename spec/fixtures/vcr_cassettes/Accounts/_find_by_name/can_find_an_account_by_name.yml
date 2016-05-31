@@ -5,7 +5,7 @@ http_interactions:
     uri: "<PURVIEW_URL>/api/users/session"
     body:
       encoding: UTF-8
-      string: '{"email":"<PURVIEW_EMAIL>","<PURVIEW_PASSWORD>":"<PURVIEW_PASSWORD>"}'
+      string: '{"email":"<PURVIEW_EMAIL>","password":"<PURVIEW_PASSWORD>"}'
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -35,19 +35,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _platform_session=U1RhR2hUQytpeWVmNWJqdnZoNFQ2THY5TDJrVTg0OHdqMjN6RERFOWdybXJWTVdSb2RvYzF5dysrdXpkNzlCRGFGWmJlN3VOZkw4UklZNmNaMWdXN0VPa1BRTkY4L0lVcXlkK3RkbVU4elRHWmFEUXRDV3JHUzdFZ1R2b3Q2UkVpZW0yc1VrZFRkUE55b29pK01ZcjM3dk9xeUljQStxbWtpMi9ZalQxWmhHM2QzWHhZWHI3ZndCY1dZOTBTaFdaaG5FcVYxSGpJN3RtZ000bXo2M3pJSVVURmJWcXkvM015SkljQ0Z2QmpKbW9KM0V4QVo3cGV1MW9GYlYraUQrWFh0SklsL1pudmpDd3dwVjFIYmxyaUJzeGpEN1ZBTDBHQWx2VDI1OWZjeDh2aHVCTUxtOWl0Y0dQZXFHNm5PVXJGcjhqUFR0eTVtK3BNWUJVdDh3SzNRPT0tLU9rREh6Yk81KzdDZFhydUkzYmhwdXc9PQ%3D%3D--ab8a87b368e63e664697d5df97698b372f1fe176;
+      - _platform_session=R0NCZjE0Z0ZtMTdFd1hFTUdBOHBBSGdRZTZBQnlIZk5GblFyVGZ2YS9Vcm9wODc4akIreXhoakhRbEhGSlB4em5HNVkyY0hBT3A2bHFJd3ZRd1RtRmIvVUlGSGozZEZpc3c2ZTRHUGYrOEZZSnprZkM3OTBZb1VzTEtXMEc1bWgyUVpCQ1pZN05oKzVEUmtQT3p1eTJWL1N2eHVmb0JTOFJrR0JKZWg4WDJ6VWhIZUUwbGIvNk15MitVUjBIUzBHOTcyclpBZDJianoyR1RoVDNsMlR0OWJXcC80SWR3ZWlTeVJTZmFrcHpsV2FQNHgvK3BRN1doc0l3M2JOR2htUGk5WldPY3lqT2FvYXRoRVpLbXRST1RYd2toWEkvOERuS2JoRFV3NlZXcTE5cVpjcGJlRENyc3haL0paeGQvVHNlelJTcEZ3RTBiMmg0MThWNHgvSURBPT0tLU9FMHhXOFJQdGRXbXBPeFJ5VTdVbmc9PQ%3D%3D--a40baf9eb5a97b445eed9022256138b1b72181de;
         path=/; HttpOnly
       X-Request-Id:
-      - e875259f-18e8-436e-a77f-293eba0b1f5e
+      - 71c6e2eb-0946-4ef6-959b-f8f5b6f396e9
       X-Runtime:
-      - '0.392000'
+      - '0.407000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Sat, 07 May 2016 22:35:34 GMT
+  recorded_at: Tue, 31 May 2016 03:44:55 GMT
 - request:
     method: get
     uri: "<PURVIEW_URL>/api/v1/accounts"
@@ -58,7 +58,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=U1RhR2hUQytpeWVmNWJqdnZoNFQ2THY5TDJrVTg0OHdqMjN6RERFOWdybXJWTVdSb2RvYzF5dysrdXpkNzlCRGFGWmJlN3VOZkw4UklZNmNaMWdXN0VPa1BRTkY4L0lVcXlkK3RkbVU4elRHWmFEUXRDV3JHUzdFZ1R2b3Q2UkVpZW0yc1VrZFRkUE55b29pK01ZcjM3dk9xeUljQStxbWtpMi9ZalQxWmhHM2QzWHhZWHI3ZndCY1dZOTBTaFdaaG5FcVYxSGpJN3RtZ000bXo2M3pJSVVURmJWcXkvM015SkljQ0Z2QmpKbW9KM0V4QVo3cGV1MW9GYlYraUQrWFh0SklsL1pudmpDd3dwVjFIYmxyaUJzeGpEN1ZBTDBHQWx2VDI1OWZjeDh2aHVCTUxtOWl0Y0dQZXFHNm5PVXJGcjhqUFR0eTVtK3BNWUJVdDh3SzNRPT0tLU9rREh6Yk81KzdDZFhydUkzYmhwdXc9PQ%3D%3D--ab8a87b368e63e664697d5df97698b372f1fe176
+      - _platform_session=R0NCZjE0Z0ZtMTdFd1hFTUdBOHBBSGdRZTZBQnlIZk5GblFyVGZ2YS9Vcm9wODc4akIreXhoakhRbEhGSlB4em5HNVkyY0hBT3A2bHFJd3ZRd1RtRmIvVUlGSGozZEZpc3c2ZTRHUGYrOEZZSnprZkM3OTBZb1VzTEtXMEc1bWgyUVpCQ1pZN05oKzVEUmtQT3p1eTJWL1N2eHVmb0JTOFJrR0JKZWg4WDJ6VWhIZUUwbGIvNk15MitVUjBIUzBHOTcyclpBZDJianoyR1RoVDNsMlR0OWJXcC80SWR3ZWlTeVJTZmFrcHpsV2FQNHgvK3BRN1doc0l3M2JOR2htUGk5WldPY3lqT2FvYXRoRVpLbXRST1RYd2toWEkvOERuS2JoRFV3NlZXcTE5cVpjcGJlRENyc3haL0paeGQvVHNlelJTcEZ3RTBiMmg0MThWNHgvSURBPT0tLU9FMHhXOFJQdGRXbXBPeFJ5VTdVbmc9PQ%3D%3D--a40baf9eb5a97b445eed9022256138b1b72181de
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -79,27 +79,27 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - '"8df9fe396dfa843eb5a455597e217ec3"'
+      - '"04d444df7c8a26f3374d5e8422d42a13"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _platform_session=NUlZV2daSEdibU5mTUdwZGw0Ri80b1hVYXRZSXNHZk1uMUtQTm5CZEhaNDFURGtYS0g2R0RNcWdXMFZLNHBHNUN6Um14NHF3VVI0OHRPVmVrTjQvV1VUdlFTUzdjWUVoTk1heStvaG5WQjNTR3ArU1RMZExSdzRueWQ3WCtHb3NWVjhZdnNaOE9NTlVURVBPSlhIYm9LSmFBSmVqampzRXVSK2RobXpsY0xJaVJJNm9tZE91aklvU0xUV2daR2NPbi9wV09ZQThDN1lwQVdVMG9HaEFiWGUvdU5uQjRHbGpLOFNWS0lnQ1RBK2dXVzFFZnVQTDlJMy9MZDhUVDQyZUg1Rm8yTmkrMWJaalhXSmRZU25nT3JLdUtZUExzZTY5NnhPblRCcVBtdE9rZkhiSXBKSXBUOVlKS1ZrbmMxRDIxT0tIZ0o0Ty91Mk1aUDhqaEZ3ZEFBPT0tLTkvUGNmQ1NWa2w5a0R4MWpjNHZKZmc9PQ%3D%3D--2355915a0c3da1c895ab9e702e366d26ba1a6375;
+      - _platform_session=UGIvcFlweXpZNWNqdEdwanVCOG9rejZVNXhjMVltU3Q5a0xYY21HL2c5Y05tZjNhMDJpbkQ3cFN4b01pWHE2UzZCVlZnOGhpaDBhK0lpcHVkdVV4U1RFWGZOVlg2VDR2c083dVNSVE12SG91cldmbnB4V2p4ZzBQeFB6SWs0aElRd05PQ2VvNDlKYlpyOXcyampvZmtyWWlyMEhLbFMyT1Z0anZ6L3N5UW92cCtwNXBZVitpR2cxUGc4VHhPRGIycHZteG1aNUpPL1E0NTRZYjV5M291ZG5GU25IMGJuM1FGTTJpaStuQmM4SWpwaVpIaWtkQ0xPRVdCcldQMmU2b2ZMeG5wN1kydHg2aEJVSmdESlpSN3hGZ0xpa0dSY2lZMVpQTEVZa2lpZU0rMDZJa1I0ZXpxRHpuUGZiY3RJR05OQ3JMN1dkOFNKNENuVlloNzE2d3NRPT0tLWRmbnFyL2hqMjdTQ1djR3BBMjlKbFE9PQ%3D%3D--1fcb6791773d145f863998a26ddf5b79fd07cbc7;
         path=/; HttpOnly
       X-Request-Id:
-      - 437fec58-db9e-47d4-8662-69614fdbfa25
+      - e3ada186-413c-46de-af25-7f6bbbf56a3a
       X-Runtime:
-      - '0.145000'
+      - '0.157000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '[{"address_street":"98 Battery Street","address_street2":null,"address_city":"San
         Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
-        Inc.","created_at":"2016-05-04T04:47:11.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-04T04:47:11.000Z"},{"address_street":"1000
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"},{"address_street":"1000
         Nicollet Mall","address_street2":null,"address_city":"Minneapolis","address_state":"MN","address_zip":"55403","company_name":"Target,
-        Inc.","created_at":"2016-05-04T04:47:14.000Z","credits":0,"has_valid_payment_method":false,"id":2,"name":"Target","payment_events_count":0,"updated_at":"2016-05-04T04:47:14.000Z"},{"address_street":"637
+        Inc.","created_at":"2016-05-13T21:14:52.000Z","credits":0,"has_valid_payment_method":false,"id":2,"name":"Target","payment_events_count":0,"updated_at":"2016-05-13T21:14:52.000Z"},{"address_street":"637
         Commercial Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"Method
-        Home","created_at":"2016-05-04T04:47:16.000Z","credits":0,"has_valid_payment_method":false,"id":3,"name":"Method","payment_events_count":0,"updated_at":"2016-05-04T04:47:16.000Z"}]'
+        Home","created_at":"2016-05-13T21:14:54.000Z","credits":0,"has_valid_payment_method":false,"id":3,"name":"Method","payment_events_count":0,"updated_at":"2016-05-13T21:14:54.000Z"}]'
     http_version: 
-  recorded_at: Sat, 07 May 2016 22:35:34 GMT
+  recorded_at: Tue, 31 May 2016 03:44:56 GMT
 recorded_with: VCR 3.0.1

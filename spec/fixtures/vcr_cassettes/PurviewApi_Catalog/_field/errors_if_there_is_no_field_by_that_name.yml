@@ -35,19 +35,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _platform_session=UFh5NmVqSE5mak5Odjhjc0pzS0pyWW0wd1NZL0w4emJBNU1LMGcrY1pvUnMwYUhydEJEVmhOVUF6cmxyclZkeDJGVFB1RHI1ai9TQkpLOTM2bDl2bHptemE4VTFMTGNDLzFaMGowWTdCWWFnUVhVMlQyeWVhWEl2M205aGRWa3FVMk5pNFdkM28vbllMVFFmcktsbXJ4cWNnRnJGZXA5bis1YTF2STkvWmRXZElZRFRVcWxvbHo3aENTTFZmYkFnUjFsU2hRQnFDS2Yzc0IwcjVLYU5pdWNPdjhRaERZL0lOZmhGSEZJMDFPNmtFMkRxdVBmdy9OVE90ZzlCNkdZQWtKMmN2b0VUYmtLMFQrR1U0M1M0RkhFWTQvR00wK2N3VXAwSFU5dFFDOTFUdmJTR2Z0aVl6d05JU3ZRSFdZRmZLc3Fka0xLN201SFdNWjBoTUlsQWh3PT0tLXRuS0RQeWIxckZqMW9wc0lDTjNLaFE9PQ%3D%3D--80d4c227bccba0d2be92ec2b9c5a1f73bd21bb23;
+      - _platform_session=SHQzWCt2Q0RQQUNxOFF1c2VsUE44NkhKV3kzcnZKZDQzclNockg1aEhvVEMza3EvdUZJOUhhNUJna0VBNjRRdjVxQURJRmZTM1hXWFI5N0tSSVUvQnArQXpkVkI1ZnYyclZZcWRWQTloQUdIZ01FQUNUZU43ZmVCeEJvVlRPYUhzU3F2MUVLWkFDUW5WNFVUcWpDclJvdzdHZHZ1cWhBU3NMa3JzbnNmNVBzN0hDYkpkOW8wL052cUFoQTBoVnMzd0w4VEk5UkFxdDlQYkg0MWRKSjJvdVJaQlkvRWxydStNUThxaS9paCtmeUJRemdqTmp0ak9UbUhtZk1SRFoyc2FXOHhXUDNGa0VPejJ4Sjdac3NYSXVqSGJWUUFaTFpBTFlDeFVmUTFlQUtTTHJXV2VRZUx5N0o2eURxT09vUGFkM0ZFS21RbnFmQlpSek5GRGdZWFZBPT0tLTZJdUF4ZnYwUnZ1KzVoYTQyb1FBMHc9PQ%3D%3D--f5402a8fcc7385d6ef774398887e50555141d929;
         path=/; HttpOnly
       X-Request-Id:
-      - b0e206aa-c071-45fc-bc99-e1978bbe2e7a
+      - 18e6651a-de14-407e-b815-44b2271c0cf4
       X-Runtime:
-      - '0.389000'
+      - '0.375000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Tue, 31 May 2016 03:58:37 GMT
+  recorded_at: Tue, 31 May 2016 04:58:07 GMT
 - request:
     method: get
     uri: "<PURVIEW_URL>/api/v1/catalogs"
@@ -58,7 +58,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=UFh5NmVqSE5mak5Odjhjc0pzS0pyWW0wd1NZL0w4emJBNU1LMGcrY1pvUnMwYUhydEJEVmhOVUF6cmxyclZkeDJGVFB1RHI1ai9TQkpLOTM2bDl2bHptemE4VTFMTGNDLzFaMGowWTdCWWFnUVhVMlQyeWVhWEl2M205aGRWa3FVMk5pNFdkM28vbllMVFFmcktsbXJ4cWNnRnJGZXA5bis1YTF2STkvWmRXZElZRFRVcWxvbHo3aENTTFZmYkFnUjFsU2hRQnFDS2Yzc0IwcjVLYU5pdWNPdjhRaERZL0lOZmhGSEZJMDFPNmtFMkRxdVBmdy9OVE90ZzlCNkdZQWtKMmN2b0VUYmtLMFQrR1U0M1M0RkhFWTQvR00wK2N3VXAwSFU5dFFDOTFUdmJTR2Z0aVl6d05JU3ZRSFdZRmZLc3Fka0xLN201SFdNWjBoTUlsQWh3PT0tLXRuS0RQeWIxckZqMW9wc0lDTjNLaFE9PQ%3D%3D--80d4c227bccba0d2be92ec2b9c5a1f73bd21bb23
+      - _platform_session=SHQzWCt2Q0RQQUNxOFF1c2VsUE44NkhKV3kzcnZKZDQzclNockg1aEhvVEMza3EvdUZJOUhhNUJna0VBNjRRdjVxQURJRmZTM1hXWFI5N0tSSVUvQnArQXpkVkI1ZnYyclZZcWRWQTloQUdIZ01FQUNUZU43ZmVCeEJvVlRPYUhzU3F2MUVLWkFDUW5WNFVUcWpDclJvdzdHZHZ1cWhBU3NMa3JzbnNmNVBzN0hDYkpkOW8wL052cUFoQTBoVnMzd0w4VEk5UkFxdDlQYkg0MWRKSjJvdVJaQlkvRWxydStNUThxaS9paCtmeUJRemdqTmp0ak9UbUhtZk1SRFoyc2FXOHhXUDNGa0VPejJ4Sjdac3NYSXVqSGJWUUFaTFpBTFlDeFVmUTFlQUtTTHJXV2VRZUx5N0o2eURxT09vUGFkM0ZFS21RbnFmQlpSek5GRGdZWFZBPT0tLTZJdUF4ZnYwUnZ1KzVoYTQyb1FBMHc9PQ%3D%3D--f5402a8fcc7385d6ef774398887e50555141d929
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -77,27 +77,27 @@ http_interactions:
       X-Ua-Compatible:
       - chrome=1
       Date:
-      - Tue, 31 May 2016 03:58:37 GMT
+      - Tue, 31 May 2016 04:58:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=10, private
       Etag:
-      - '"425a761c4d17a16a0aee386009dd93cd"'
+      - '"1e38ed1d6dc036f0857f8a799762af02"'
       Set-Cookie:
-      - _platform_session=UzRraHAzMkNvd3Q3VEtMcFRveUFzb3ZqSXRsYlVCa1NLQ0RnaXpXVVdUUGdraWdIY0dUQjJ0NzRSVUF2eFBZQkdDU0xxODI2Q3A5K0R1eTVOMHZBdmJXZVhGYlh6Y1duRTEwYnlzcUNYanV4T05GZmREMFlxRXh0QlV2MS9Xd01tZmUwZ0FiRUFQTVIwWGRmTVhNaFNXQVA2Wnp0KzcxVjNEdDRZdW9hUDk5REtQdGFhb05MVGFMSXVRZVQzUS9aVjJqek5YaFNqMVpwUnVGa3FTWHV1cU1yVlVzaWRjTHBBbVZ0VmxkMEUxR2pMTzBRV01aSFAvT2RnY3VNUG90ak9zYnMxOHp5dUNsT1NWdklucDRiVHRUSy9ldzdOVWMxYkdxZkN6VmZBWXplTkhhMnVPbjA2OTRPem8vWW44RERVYXBTeFpzU1NSWVVOS0tGVy9tNWZRPT0tLTVMN2ZkMXpySnpCSy9hUnFnK1ptNlE9PQ%3D%3D--6417434ea3b7a13b9ec8cfd2a7b05a3449db9824;
+      - _platform_session=S29SdEs4RytFUkNUL1NuNmhwOWZ2WURHeWRHM3VzZjhMcEhTOTk1dmZqNmR1ZXdHNDBaZVNqeVZ4cCt3citzUzFwa0tORlVsdWtETFVZaFArMUxlSUFuK1hWTzRnV1pLL0pmVjcxOWhRVktVVEU0TFdYUWRkd2w1aVlBSHhUdFJlZ0RqK3l0alF4c29mZ2JGV01VVStwU3hpRUJVeitlVFJUTkRtcmoyTzJjTThkSGR5eVcwb0F0cDFZUExiODgrdFhpWXZVMlNKRG5aRkZwalJCUjBqWDdacnEwRTdpVmNvenJRdmNSazAyR0FuYUZWUVE3SnJRQVpLYUZUYlNDQ2JPZWNRWmVUYmFKYzU0ZlBjVnBoZU02WGoySkRtMDFTVkNVTjgxT1FWSElMZ3Nwc2I4Vk1nSVMyY3RPaUlGaXhnbFBjM3RlOVdDNHNSTjg1bENjWHVnPT0tLTZUd1lHTnE2TnMxek9pSWtkejhESkE9PQ%3D%3D--74c2730bb056e04a2c5bfcff449ba68db2c57ffe;
         path=/; HttpOnly
       X-Request-Id:
-      - 5d2a79cf-b80b-4ff9-a72f-8a377f5af289
+      - 74699620-33cb-482b-83ef-d968cc6c1092
       X-Runtime:
-      - '0.492000'
+      - '0.526000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '[{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:51.000Z","description":"GoodGuide
         Brands Catalog","entity_type":"Brand","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":1,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
-        Brands","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_brands","updated_at":"2016-05-31T03:58:29.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Brands","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_brands","updated_at":"2016-05-31T04:58:06.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
         Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
         Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
         Categories Catalog","entity_type":"Category","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":2,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
@@ -136,18 +136,18 @@ http_interactions:
         Nicollet Mall","address_street2":null,"address_city":"Minneapolis","address_state":"MN","address_zip":"55403","company_name":"Target,
         Inc.","created_at":"2016-05-13T21:14:52.000Z","credits":0,"has_valid_payment_method":false,"id":2,"name":"Target","payment_events_count":0,"updated_at":"2016-05-13T21:14:52.000Z"}}]'
     http_version: 
-  recorded_at: Tue, 31 May 2016 03:58:38 GMT
+  recorded_at: Tue, 31 May 2016 04:58:07 GMT
 - request:
     method: post
-    uri: "<PURVIEW_URL>/api/v1/catalogs"
+    uri: "<PURVIEW_URL>/api/v1/fields"
     body:
       encoding: UTF-8
-      string: '{"name":"GoodGuide Brands","account_id":1,"entity_type":"Brand"}'
+      string: '{"name":"test_only_delete_me__color","catalog_id":1,"type":"StringField","position":2}'
     headers:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=UzRraHAzMkNvd3Q3VEtMcFRveUFzb3ZqSXRsYlVCa1NLQ0RnaXpXVVdUUGdraWdIY0dUQjJ0NzRSVUF2eFBZQkdDU0xxODI2Q3A5K0R1eTVOMHZBdmJXZVhGYlh6Y1duRTEwYnlzcUNYanV4T05GZmREMFlxRXh0QlV2MS9Xd01tZmUwZ0FiRUFQTVIwWGRmTVhNaFNXQVA2Wnp0KzcxVjNEdDRZdW9hUDk5REtQdGFhb05MVGFMSXVRZVQzUS9aVjJqek5YaFNqMVpwUnVGa3FTWHV1cU1yVlVzaWRjTHBBbVZ0VmxkMEUxR2pMTzBRV01aSFAvT2RnY3VNUG90ak9zYnMxOHp5dUNsT1NWdklucDRiVHRUSy9ldzdOVWMxYkdxZkN6VmZBWXplTkhhMnVPbjA2OTRPem8vWW44RERVYXBTeFpzU1NSWVVOS0tGVy9tNWZRPT0tLTVMN2ZkMXpySnpCSy9hUnFnK1ptNlE9PQ%3D%3D--6417434ea3b7a13b9ec8cfd2a7b05a3449db9824
+      - _platform_session=S29SdEs4RytFUkNUL1NuNmhwOWZ2WURHeWRHM3VzZjhMcEhTOTk1dmZqNmR1ZXdHNDBaZVNqeVZ4cCt3citzUzFwa0tORlVsdWtETFVZaFArMUxlSUFuK1hWTzRnV1pLL0pmVjcxOWhRVktVVEU0TFdYUWRkd2w1aVlBSHhUdFJlZ0RqK3l0alF4c29mZ2JGV01VVStwU3hpRUJVeitlVFJUTkRtcmoyTzJjTThkSGR5eVcwb0F0cDFZUExiODgrdFhpWXZVMlNKRG5aRkZwalJCUjBqWDdacnEwRTdpVmNvenJRdmNSazAyR0FuYUZWUVE3SnJRQVpLYUZUYlNDQ2JPZWNRWmVUYmFKYzU0ZlBjVnBoZU02WGoySkRtMDFTVkNVTjgxT1FWSElMZ3Nwc2I4Vk1nSVMyY3RPaUlGaXhnbFBjM3RlOVdDNHNSTjg1bENjWHVnPT0tLTZUd1lHTnE2TnMxek9pSWtkejhESkE9PQ%3D%3D--74c2730bb056e04a2c5bfcff449ba68db2c57ffe
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -156,8 +156,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 422
-      message: Unprocessable Entity
+      code: 201
+      message: Created
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -169,20 +169,113 @@ http_interactions:
       - chrome=1
       Content-Type:
       - application/json; charset=utf-8
+      Etag:
+      - '"b4d34971e3e67a32cdeb94f02adc1631"'
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _platform_session=R0lGOEYwTDRuTVROUERFeXAxbGhrd2dEdC9BeXZtVXJnTUppNFpOTVNxbG1YTkVHZGZKTUMvaXVkc2dPeG5jRUk0VCs4a3RDWnY3U0hzcVdSNWNEaG5PRyszVUlrb2ZRTzdqcFhLUUpFUC9TRWVtWkNYOG12MVgrVktJNkNyelRNOThIaDlrNDZ4TUNxZWlFdzZrUHl1b08yUitFbFVJTWFaOVJ0NExWRjJ5ZlRxMzBKMjJtK3RBeFljWXVSTjBoRHdDOUZBUWh2Ukk2UnlLcjE2UUc1QU5KMkphYkI5UjloMHNOUmJPK3RKQXNGNTdmeWdlZVowQThBY2t6MllBM1lyUHQrODRjVFJtajZpd2tmNVhvTUVib0NVUTBrQUpVbGdRd3hzSyt2MldBSmZibkpST2pNSUYwMG1FMlowSVc2a0s5cDg0dkJZUnRRVmFyNzNMYzRBPT0tLUxzV3NTWHhRcUNIcGpFa3owa3AwWGc9PQ%3D%3D--b166a6b00dcc5511780f48bf67aaf5f489f3dc63;
+      - _platform_session=MnYvVlpOc08wWWVkNFQ2YTlteURjdkxKS1paM2pMWG42Tmt6cnlVYStuK2oyMmpIdmdSeUhGQTV5WFJudEZLa2J5SnNMN1l6VGxjTzhzdW4xcDJBQlNxR003UWRvS09WbzBKVjJQeWhXdm5Ibk1yM3crbFVSOFpVN0tZQktlWGRQeS9meFhjVkpYdmFyQ0VtckErYUFkQ2JWNWQxNExpeUcxV1hRSGg4VllIcFd2anNJUVh1UXZpSkFZVW4vc3VsWlNmcy85UDBjL1BXbmwvMnZJZkZzZnVFOGM2S3VSUXhuamFYUUZqeHc5MVNGMVluOFBGVEFTU0toMUE1TVhiUldkd2NUN1B1SVhkVTV5SVJhemdZNkpuV1R5L2o1dldRYVR1VUkwNDV5cC9pLzJ6V1VOVDBGK0RJQk92MXNGZU9zZ0JaazVlVnNBUVVKMEpmZEZpR3dBPT0tLU1jYmkzMzhleE1OU0Q0TGtxZTk3K1E9PQ%3D%3D--5bce53ecd772b7c038c76cc099d5a563f722fdaa;
         path=/; HttpOnly
       X-Request-Id:
-      - de39fdaf-dfab-489b-9339-e22c0e0c7f1a
+      - 9f44c71f-8522-4def-bfad-75da7bd96d14
       X-Runtime:
-      - '0.146000'
+      - '0.239000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"errors":{"name":["has already been taken"]},"status":"unprocessable_entity"}'
+      string: '{"id":123,"name":"test_only_delete_me__color","title":null,"group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"StringField","is_list":false,"is_identifier":false,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":2,"protection_level":"not_protected","required":"no","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}'
     http_version: 
-  recorded_at: Tue, 31 May 2016 03:58:38 GMT
+  recorded_at: Tue, 31 May 2016 04:58:08 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/fields?catalog_id=1"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=MnYvVlpOc08wWWVkNFQ2YTlteURjdkxKS1paM2pMWG42Tmt6cnlVYStuK2oyMmpIdmdSeUhGQTV5WFJudEZLa2J5SnNMN1l6VGxjTzhzdW4xcDJBQlNxR003UWRvS09WbzBKVjJQeWhXdm5Ibk1yM3crbFVSOFpVN0tZQktlWGRQeS9meFhjVkpYdmFyQ0VtckErYUFkQ2JWNWQxNExpeUcxV1hRSGg4VllIcFd2anNJUVh1UXZpSkFZVW4vc3VsWlNmcy85UDBjL1BXbmwvMnZJZkZzZnVFOGM2S3VSUXhuamFYUUZqeHc5MVNGMVluOFBGVEFTU0toMUE1TVhiUldkd2NUN1B1SVhkVTV5SVJhemdZNkpuV1R5L2o1dldRYVR1VUkwNDV5cC9pLzJ6V1VOVDBGK0RJQk92MXNGZU9zZ0JaazVlVnNBUVVKMEpmZEZpR3dBPT0tLU1jYmkzMzhleE1OU0Q0TGtxZTk3K1E9PQ%3D%3D--5bce53ecd772b7c038c76cc099d5a563f722fdaa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"29f97ebc6ca3e990f138b4d68fdc2d9c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _platform_session=cUVjZlFOck5RM25VUFlGa2FzQUNvdlhnS1oyM3hHNE9kMEplS0J3QTYyajNQb3RhdXV1WnZKWVpoLzVuNkFJenJlT0FhaVFlTlU2N0Y2eGxoa3BCTUt3b3VjRkRhcC9lV1VGbWhiRkU2dHhRaDZ4ejBPczVHZmZ6czc1MFdjWVRkbjYvbGpCK1FUU2phaDhHWUVHWjBlOEQ1KzZZaTFxSzl5WTdMdGFVSkJyS1JzcTUva2l0TUluMWtmM0V3U0lGRFc4b0dvU2thSVpncVVSOCtMdlBPa3NMUlY1TDF6eGx5YklwMXdtMlN1b3ZTQjRnYXBIQll0dFpSV0FOaGNFdHJ1dXpYN2t1MkxkRHNGdVVSLzBreDdDSHRvNkMzaFc2R1VOSWYrdzl5Uk1nc2IrbGFOajZZUThQNjN5bXdzcStYNWd4MXBhYWtEek42djJmWVMvQ3JBPT0tLUtkZ2EzYm5QclVuVFRlYjY4VFlXL3c9PQ%3D%3D--6c6ab16cb8bde675d2fb8dd3949bf23d8aa861b5;
+        path=/; HttpOnly
+      X-Request-Id:
+      - bb2879e9-582a-42ca-a850-a21dccbdafa9
+      X-Runtime:
+      - '0.144000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"name":"name","title":"Name","group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"IdentityField","is_list":false,"is_identifier":true,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":0,"protection_level":"not_protected","required":"for
+        saving","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null},{"id":123,"name":"test_only_delete_me__color","title":null,"group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"StringField","is_list":false,"is_identifier":false,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":2,"protection_level":"not_protected","required":"no","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}]'
+    http_version: 
+  recorded_at: Tue, 31 May 2016 04:58:10 GMT
+- request:
+    method: delete
+    uri: "<PURVIEW_URL>/api/v1/fields/123?allow_write_unverified&catalog_id=1&criterion_id&default_value&editable_for_renewals=true&entity_type=Brand&enum&enum_labels&external_column_name&field_group_id&group&has_notes&hint&id=123&includes_sub_fields=false&is_autocompleting=false&is_hidden=false&is_identifier=false&is_list=false&is_primary&is_wercs_identifier&max_value&name=test_only_delete_me__color&notes_field_id&notes_for_field_id&ontology_node_id&passing_value&position=2&protection_level=not_protected&required=no&required_format&title&type=StringField&visualization&visualization_options&wercs_attribute"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=cUVjZlFOck5RM25VUFlGa2FzQUNvdlhnS1oyM3hHNE9kMEplS0J3QTYyajNQb3RhdXV1WnZKWVpoLzVuNkFJenJlT0FhaVFlTlU2N0Y2eGxoa3BCTUt3b3VjRkRhcC9lV1VGbWhiRkU2dHhRaDZ4ejBPczVHZmZ6czc1MFdjWVRkbjYvbGpCK1FUU2phaDhHWUVHWjBlOEQ1KzZZaTFxSzl5WTdMdGFVSkJyS1JzcTUva2l0TUluMWtmM0V3U0lGRFc4b0dvU2thSVpncVVSOCtMdlBPa3NMUlY1TDF6eGx5YklwMXdtMlN1b3ZTQjRnYXBIQll0dFpSV0FOaGNFdHJ1dXpYN2t1MkxkRHNGdVVSLzBreDdDSHRvNkMzaFc2R1VOSWYrdzl5Uk1nc2IrbGFOajZZUThQNjN5bXdzcStYNWd4MXBhYWtEek42djJmWVMvQ3JBPT0tLUtkZ2EzYm5QclVuVFRlYjY4VFlXL3c9PQ%3D%3D--6c6ab16cb8bde675d2fb8dd3949bf23d8aa861b5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=SUcxNkxJNmVveEthMVJJdW03emVQSkZOVUwyZHFXbERERGY0d1dJN1VneVFiWjJqTFdQaDBwaWh0MVlTb2xhOW9aY0VOUlhiZUV1bTlvMEFsZ3BlSjMwN3RmU3VFdHMrVWZYZzhoRGhvYzltaWZhdUhmQ0xpeVVSOElEUXlNa0hsT2hUY3lmYi9pem9MVFV2aWlFMVo2TWJFSnVjaHFLWXkrR1p2Nk5vSVZJUzJKTjJJL295Rks4QURmUHNnVjJadWVVNG9NNlBjK08zNm5nTFNCVUJDSnk4M0ZDbmtCaVhJNEtwTHVIL296alNaZWM4WU5wdFpNTDB6c3lKdEhvS0Y0czlsS1BIYWF0a0lxWW9vNXFMdW1CVlEzbUtCczJhdjJ5UkwrTmpMQWt0dkYra3h2ZldwREREa0s1SkN6eCttOThmU0xPU3Y0NG5MVTQ0dFRJa01BPT0tLWp6ODBCMEVCVUFpL1U2MEYvYmo3U2c9PQ%3D%3D--59da9d467133bf490c01901cd110602bcb43c7e8;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 6731b765-0251-4a29-8478-d306f6fe0da9
+      X-Runtime:
+      - '0.140000'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 31 May 2016 04:58:10 GMT
 recorded_with: VCR 3.0.1
