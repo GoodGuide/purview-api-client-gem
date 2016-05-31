@@ -83,6 +83,15 @@ module PurviewApi
       !parse_errors(e.response[:body], e.response[:status])
     end
 
+    def destroy!
+      return if destroy
+
+      raise ResourceNotDestroyed,
+        "Could not destroy #{self.class.name.demodulize}" +
+        "#{@attributes.inspect}: " +
+        "#{errors.full_messages.join(',')}"
+    end
+
     def id
       @attributes.fetch(:id, nil)
     end

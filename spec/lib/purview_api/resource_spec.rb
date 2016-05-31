@@ -238,4 +238,14 @@ describe PurviewApi::Resource do
       end
     end
   end
+
+  describe '.destroy!', :vcr do
+    let(:resource) { TestResource.new(:id => 23) }
+
+    it ('raises error when destroying fails') do
+      expect {
+        resource.destroy!
+      }.to raise_error(PurviewApi::Resource::ResourceNotDestroyed)
+    end
+  end
 end
