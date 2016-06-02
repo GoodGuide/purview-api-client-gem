@@ -17,8 +17,7 @@ describe PurviewApi::Field, :vcr do
                                     catalog_id: first_catalog.id,
                                     type: 'StringField',
                                     position: 2)
-      field.save
-
+                                    
       expect(field.save).to be(false)
       expect(field.errors.full_messages).to match(full_messages)
     end
