@@ -68,10 +68,10 @@ module PurviewApi
     def save!
       return if save
 
-      raise ResourceNotSaved,
+      raise ResourceNotSaved.new(
         "Could not save #{self.class.name.demodulize}" +
         "#{@attributes.inspect}: " +
-        "#{errors.full_messages.join(',')}"
+        "#{errors.full_messages.join(',')}", self)
     end
 
     def destroy
@@ -86,10 +86,10 @@ module PurviewApi
     def destroy!
       return if destroy
 
-      raise ResourceNotDestroyed,
+      raise ResourceNotDestroyed.new(
         "Could not destroy #{self.class.name.demodulize}" +
         "#{@attributes.inspect}: " +
-        "#{errors.full_messages.join(',')}"
+        "#{errors.full_messages.join(',')}", self)
     end
 
     def id

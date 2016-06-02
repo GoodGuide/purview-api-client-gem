@@ -29,8 +29,8 @@ module PurviewApi
     def field(name)
       fields.detect { |f| f.name == name.to_s }.tap do |field|
         unless field
-          raise ResourceNotFound,
-            "Could not find a field named: '#{name}'"
+          raise ResourceNotFound.new(
+            "Could not find a field named: '#{name}'", self)
         end
       end
     end
