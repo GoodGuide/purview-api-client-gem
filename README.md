@@ -35,7 +35,7 @@ To run tests in a docker container:
 
 ## Entity Soup Data Model
 
-The entity soup data model consists of uniquely named catalogs and providers, plus typed entities and attributes, and attribute values.
+The entity soup data model consists of uniquely named catalogs, plus typed entities and attributes, and attribute values.
 
 In psuedo code:
 
@@ -43,24 +43,11 @@ In psuedo code:
       has_many :attrs
       has_many :entities
 
-    Provider(name: <unique string>)
-      has_many :attr_values
-
     Entity(type: <enum>)
       belongs_to :catalog
       has_many :attr_values
 
-    Attr(name: <unique string>, type: <enum>, entity_type: <enum>, options: <hash>)
-      belongs_to :catalog
-      has_many :attr_values
-
-    AttrValue(value: <object>)
-      belongs_to :attr
-      belongs_to :entity
-      belongs_to :provider
-
     Entity.types = 'Company' | 'Brand' | 'Category' | 'Product' | 'Ingredient'
-    Attr.types = 'StringAttr' | 'DerivedAttr' | 'NumericAttr' | 'IntegerAttr' | 'FloatAttr' | 'PercentageAttr' | 'JSONAttr'
 
 In English:
 
@@ -80,10 +67,6 @@ it means
 
     PurviewApi::Catalog.find_all
 
-### Identity
-
-All objects within the entity soup have an internal numeric id that is unique for the class of objects to which they apply.  Ids are immutable and are not reused. Catalogs, providers, and attributes also have a name.  Names are mutable but cannot be null.  Catalog and provider names are unique to within their class e.g. you can have a catalog and provider called "Foo", but only one of each.  Attribute names must be unique for the entity type and catalog in which they are definied, e.g. within a catalog you can have a company attribute called 'country' and a product attribute called 'country' and they can have distinct definitions.
-
 ### CRUD
 
 Read objects with `<Class>.find(id)` or `<Class>.find_all(params)`
@@ -97,18 +80,6 @@ Destroy objects and their dependent objects with `<object>.destroy`
 After saving a new object its `#id` method will return the entity soup numeric id.  Any object that has no id when saved is treated as new and the API will attempt to create it.
 
 Be careful with destroy it destroys all the dependent objects so destroying a catalog destroys all the entities, attributes and attribute values contained within it.  There is no system to restrict CRUD operations as yet.
-
-### Multi-get
-
-Not documented yet - see spec tests
-
-
-TODO:
-* add ACL based access restrictions.
-* add updated and created timestamp access
-* add reload
-* make find(name) work for catalog, provider (because they have a unique name)
-* make Entity#attr_value(name) work
 
 ### Error handling
 
@@ -138,28 +109,6 @@ to further constrain it to integer attributes of product entities use
 
     Attr.find(type: 'IntegerAttr', entity_type: 'Product')
 
-### Caching
-
-The interface to the entity soup RESTful API supports caching via the Cacher gem.  By default caching is disabled.  To use caching you must implicitly or explicitly configure Cacher with an ActiveSupport::Cache compatible cache instance and explicitly enable it by calling `Cacher.enable!`.  If you are using the Cacher within the `Rails` environment it will implicitly use the Rails configured cache.  To explicitly configure the Cacher cache use something like:
-
-    require 'active_support/cache/dalli_store'
-    cache = ActiveSupport::Cache::DalliStore.new(<dalli params>)
-    Cacher.configure { |cacher| cacher.cache = cache }
-
-then
-
-    Cacher.enable!
-
-Once you have enabled the cacher to read new data directly and repopulate the cache by supplying `break: true` as part of a call's parameter hash.  To bypass the cache entirely disable Cacher again:
-
-     Cacher.disable!
-
-but remember that re-enabling it will give you old cached data.
-
-TODO:
-* how to flush the cache completely?
-* auto break cache for relevant objects after write?
-
 ### Access control
 
 Not yet implemented
@@ -181,18 +130,18 @@ Get catalogs directly via `Catalog.find`, `Catalog.find_all` or `Catalog.find_by
     catalog = Catalog.find_by_name(name) # find all catalogs with given name or nil
     catalogs = Catalog.find_all # find all catalogs matching params, or []
 
-The attributes and entities defined within a catalog are accessed via the `#attrs` and `#entities` methods
+The fields and entities defined within a catalog are accessed via the `#fields` and `#entities` methods
 
-    attrs = catalog.attrs(<params>) # find all attributes constrained by params if supplied, [] if none
+    fields = catalog.fields(<params>) # find all attributes constrained by params if supplied, [] if none
     entities = catalog.entities(<params>)  # find all entities constrained by params if supplied, [] if none
 
-Eg. to get all product attributes in the GoodGuide catalog:
+Eg. to get all product fields in the GoodGuide catalog:
 
-    attrs = Catalog.find(1).attrs(entity_type: 'Product')
+    fields = Catalog.find(1).fields(entity_type: 'Product')
 
 To get all string based product attributes in the GoodGuide catalog:
 
-    attrs = Catalog.find(1).attrs(type: 'StringAttr', entity_type: 'Product')
+    fields = Catalog.find(1).fields(type: 'String', entity_type: 'Product')
 
 To get all products in the GoodGuide catalog:
 

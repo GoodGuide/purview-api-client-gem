@@ -8,7 +8,7 @@ describe PurviewApi::Resource do
     resource_path 'tests'
     resource_json_root 'tests'
 
-    attributes :something
+    define_attribute_methods(:something)
   end
 
   class TestEntity
@@ -44,7 +44,7 @@ describe PurviewApi::Resource do
 
   describe 'entity' do
     class TestEntity
-      attributes :foo, :bar
+      define_attribute_methods(:foo, :bar)
     end
 
     it 'has fields' do
@@ -236,6 +236,16 @@ describe PurviewApi::Resource do
         expect(resource.id).to eql(23)
         expect(resource.something).to eql(43)
       end
+    end
+  end
+
+  describe '.destroy!', :vcr do
+    let(:resource) { TestResource.new(:id => 23) }
+
+    it ('raises error when destroying fails') do
+      expect {
+        resource.destroy!
+      }.to raise_error(PurviewApi::Resource::ResourceNotDestroyed)
     end
   end
 end

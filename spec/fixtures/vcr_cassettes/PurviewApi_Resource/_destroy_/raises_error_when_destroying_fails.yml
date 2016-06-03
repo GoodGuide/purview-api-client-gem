@@ -1,0 +1,1390 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: "<PURVIEW_URL>/api/v1/tests/23?id=23"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Request-Id:
+      - d987e542-eb68-472e-9e1f-014e5b42f425
+      X-Runtime:
+      - '0.486000'
+      Content-Length:
+      - '122281'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+        />\n  <title>Action Controller: Exception caught</title>\n  <style>\n    body
+        {\n      background-color: #FAFAFA;\n      color: #333;\n      margin: 0px;\n
+        \   }\n\n    body, p, ol, ul, td {\n      font-family: helvetica, verdana,
+        arial, sans-serif;\n      font-size:   13px;\n      line-height: 18px;\n    }\n\n
+        \   pre {\n      font-size: 11px;\n      white-space: pre-wrap;\n    }\n\n
+        \   pre.box {\n      border: 1px solid #EEE;\n      padding: 10px;\n      margin:
+        0px;\n      width: 958px;\n    }\n\n    header {\n      color: #F0F0F0;\n
+        \     background: #C52F24;\n      padding: 0.5em 1.5em;\n    }\n\n    h1 {\n
+        \     margin: 0.2em 0;\n      line-height: 1.1em;\n      font-size: 2em;\n
+        \   }\n\n    h2 {\n      color: #C52F24;\n      line-height: 25px;\n    }\n\n
+        \   .details {\n      border: 1px solid #D0D0D0;\n      border-radius: 4px;\n
+        \     margin: 1em 0px;\n      display: block;\n      width: 978px;\n    }\n\n
+        \   .summary {\n      padding: 8px 15px;\n      border-bottom: 1px solid #D0D0D0;\n
+        \     display: block;\n    }\n\n    .details pre {\n      margin: 5px;\n      border:
+        none;\n    }\n\n    #container {\n      box-sizing: border-box;\n      width:
+        100%;\n      padding: 0 1.5em;\n    }\n\n    .source * {\n      margin: 0px;\n
+        \     padding: 0px;\n    }\n\n    .source {\n      border: 1px solid #D9D9D9;\n
+        \     background: #ECECEC;\n      width: 978px;\n    }\n\n    .source pre
+        {\n      padding: 10px 0px;\n      border: none;\n    }\n\n    .source .data
+        {\n      font-size: 80%;\n      overflow: auto;\n      background-color: #FFF;\n
+        \   }\n\n    .info {\n      padding: 0.5em;\n    }\n\n    .source .data .line_numbers
+        {\n      background-color: #ECECEC;\n      color: #AAA;\n      padding: 1em
+        .5em;\n      border-right: 1px solid #DDD;\n      text-align: right;\n    }\n\n
+        \   .line {\n      padding-left: 10px;\n    }\n\n    .line:hover {\n      background-color:
+        #F6F6F6;\n    }\n\n    .line.active {\n      background-color: #FFCCCC;\n
+        \   }\n\n    a { color: #980905; }\n    a:visited { color: #666; }\n    a:hover
+        { color: #C52F24; }\n\n      #route_table {\n    margin: 0 auto 0;\n    border-collapse:
+        collapse;\n  }\n\n  #route_table td {\n    padding: 0 30px;\n  }\n\n  #route_table
+        tr.bottom th {\n    padding-bottom: 10px;\n    line-height: 15px;\n  }\n\n
+        \ #route_table .matched_paths {\n    background-color: LightGoldenRodYellow;\n
+        \ }\n\n  #route_table .matched_paths {\n    border-bottom: solid 3px SlateGrey;\n
+        \ }\n\n  #path_search {\n    width: 80%;\n    font-size: inherit;\n  }\n\n
+        \ </style>\n\n  <script>\n    var toggle = function(id) {\n      var s = document.getElementById(id).style;\n
+        \     s.display = s.display == 'none' ? 'block' : 'none';\n      return false;\n
+        \   }\n    var show = function(id) {\n      document.getElementById(id).style.display
+        = 'block';\n    }\n    var hide = function(id) {\n      document.getElementById(id).style.display
+        = 'none';\n    }\n    var toggleTrace = function() {\n      return toggle('blame_trace');\n
+        \   }\n    var toggleSessionDump = function() {\n      return toggle('session_dump');\n
+        \   }\n    var toggleEnvDump = function() {\n      return toggle('env_dump');\n
+        \   }\n  </script>\n</head>\n<body>\n\n<header>\n  <h1>Routing Error</h1>\n</header>\n<div
+        id=\"container\">\n  <h2>No route matches [DELETE] &quot;/api/v1/tests/23&quot;</h2>\n\n
+        \ \n<p><code>Rails.root: /app</code></p>\n\n<div id=\"traces\">\n    <a href=\"#\"
+        onclick=\"hide(&#39;Framework-Trace&#39;);hide(&#39;Full-Trace&#39;);show(&#39;Application-Trace&#39;);;
+        return false;\">Application Trace</a> |\n    <a href=\"#\" onclick=\"hide(&#39;Application-Trace&#39;);hide(&#39;Full-Trace&#39;);show(&#39;Framework-Trace&#39;);;
+        return false;\">Framework Trace</a> |\n    <a href=\"#\" onclick=\"hide(&#39;Application-Trace&#39;);hide(&#39;Framework-Trace&#39;);show(&#39;Full-Trace&#39;);;
+        return false;\">Full Trace</a> \n\n    <div id=\"Application-Trace\" style=\"display:
+        block;\">\n      <pre><code></code></pre>\n    </div>\n    <div id=\"Framework-Trace\"
+        style=\"display: none;\">\n      <pre><code>actionpack (4.0.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/show_exceptions.rb:30:in
+        `call&#39;\nrailties (4.0.13) lib/rails/rack/logger.rb:38:in `call_app&#39;\nrailties
+        (4.0.13) lib/rails/rack/logger.rb:20:in `call&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:68:in `tagged&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:26:in `tagged&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:68:in `tagged&#39;\nrailties (4.0.13)
+        lib/rails/rack/logger.rb:20:in `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/request_id.rb:21:in
+        `call&#39;\nrack (1.5.5) lib/rack/methodoverride.rb:21:in `call&#39;\nrack
+        (1.5.5) lib/rack/runtime.rb:17:in `call&#39;\nactivesupport (4.0.13) lib/active_support/cache/strategy/local_cache.rb:83:in
+        `call&#39;\nrack (1.5.5) lib/rack/lock.rb:17:in `call&#39;\nactionpack (4.0.13)
+        lib/action_dispatch/middleware/static.rb:84:in `call&#39;\nrack (1.5.5) lib/rack/sendfile.rb:112:in
+        `call&#39;\nrailties (4.0.13) lib/rails/engine.rb:511:in `call&#39;\nrailties
+        (4.0.13) lib/rails/application.rb:97:in `call&#39;\nrack (1.5.5) lib/rack/content_length.rb:14:in
+        `call&#39;\npuma-2.9.0 (java) lib/puma/server.rb:490:in `handle_request&#39;\npuma-2.9.0
+        (java) lib/puma/server.rb:361:in `process_client&#39;\npuma-2.9.0 (java) lib/puma/server.rb:254:in
+        `run&#39;\norg/jruby/RubyProc.java:281:in `call&#39;\npuma-2.9.0 (java) lib/puma/thread_pool.rb:92:in
+        `spawn_thread&#39;</code></pre>\n    </div>\n    <div id=\"Full-Trace\" style=\"display:
+        none;\">\n      <pre><code>actionpack (4.0.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in
+        `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/show_exceptions.rb:30:in
+        `call&#39;\nrailties (4.0.13) lib/rails/rack/logger.rb:38:in `call_app&#39;\nrailties
+        (4.0.13) lib/rails/rack/logger.rb:20:in `call&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:68:in `tagged&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:26:in `tagged&#39;\nactivesupport (4.0.13)
+        lib/active_support/tagged_logging.rb:68:in `tagged&#39;\nrailties (4.0.13)
+        lib/rails/rack/logger.rb:20:in `call&#39;\nactionpack (4.0.13) lib/action_dispatch/middleware/request_id.rb:21:in
+        `call&#39;\nrack (1.5.5) lib/rack/methodoverride.rb:21:in `call&#39;\nrack
+        (1.5.5) lib/rack/runtime.rb:17:in `call&#39;\nactivesupport (4.0.13) lib/active_support/cache/strategy/local_cache.rb:83:in
+        `call&#39;\nrack (1.5.5) lib/rack/lock.rb:17:in `call&#39;\nactionpack (4.0.13)
+        lib/action_dispatch/middleware/static.rb:84:in `call&#39;\nrack (1.5.5) lib/rack/sendfile.rb:112:in
+        `call&#39;\nrailties (4.0.13) lib/rails/engine.rb:511:in `call&#39;\nrailties
+        (4.0.13) lib/rails/application.rb:97:in `call&#39;\nrack (1.5.5) lib/rack/content_length.rb:14:in
+        `call&#39;\npuma-2.9.0 (java) lib/puma/server.rb:490:in `handle_request&#39;\npuma-2.9.0
+        (java) lib/puma/server.rb:361:in `process_client&#39;\npuma-2.9.0 (java) lib/puma/server.rb:254:in
+        `run&#39;\norg/jruby/RubyProc.java:281:in `call&#39;\npuma-2.9.0 (java) lib/puma/thread_pool.rb:92:in
+        `spawn_thread&#39;</code></pre>\n    </div>\n</div>\n\n\n    <h2>\n      Routes\n
+        \   </h2>\n\n    <p>\n      Routes match in priority from top to bottom\n
+        \   </p>\n\n    \n<table id='route_table' class='route_table'>\n  <thead>\n
+        \   <tr>\n      <th>Helper</th>\n      <th>HTTP Verb</th>\n      <th>Path</th>\n
+        \     <th>Controller#Action</th>\n    </tr>\n    <tr class='bottom'>\n      <th>\n
+        \       <a data-route-helper=\"_path\" href=\"#\" title=\"Returns a relative
+        path (without the http or domain)\">Path</a> /\n        <a data-route-helper=\"_url\"
+        href=\"#\" title=\"Returns an absolute url (with the http and domain)\">Url</a>\n
+        \     </th>\n      <th>\n      </th>\n      <th>\n        <input id=\"path_search\"
+        name=\"path[]\" placeholder=\"Path Match\" type=\"search\" />\n      </th>\n
+        \     <th>\n      </th>\n    </tr>\n  </thead>\n  <tbody class='matched_paths'
+        id='matched_paths'>\n  </tbody>\n  <tbody>\n    <tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name='entity_soup'>\n      entity_soup<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb=''>\n    \n  </td>\n  <td data-route-path='/api'
+        data-regexp='^\\/api'>\n    /api\n  </td>\n  <td data-route-reqs='EntitySoup::Engine'>\n
+        \   EntitySoup::Engine\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name=''>\n  </td>\n  <td data-route-verb=''>\n    \n  </td>\n
+        \ <td data-route-path='/health' data-regexp='^\\/health'>\n    /health\n  </td>\n
+        \ <td data-route-reqs='#&lt;Rack::URLMap:0x40a02561 @mapping=[[nil, &quot;/status&quot;,
+        /^\\/+status(.*)/, #&lt;Rack::Builder:0x231badf2 @use=[], @run=#&lt;Pinglish:0x7e99bdb2
+        @checks={:host=&gt;#&lt;Pinglish::Check:0x34f3e894 @block=#&lt;Proc:0x5ed880d5@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:70&gt;,
+        @enabled_by_default=true, @name=:host, @timeout=1&gt;, :deployed_at=&gt;#&lt;Pinglish::Check:0x6d9fc291
+        @block=#&lt;Proc:0x3bed5fff@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:71&gt;,
+        @enabled_by_default=true, @name=:deployed_at, @timeout=1&gt;, :revision=&gt;#&lt;Pinglish::Check:0x10f1a75e
+        @block=#&lt;Proc:0xa3543bd@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:72&gt;,
+        @enabled_by_default=true, @name=:revision, @timeout=1&gt;, :started_at=&gt;#&lt;Pinglish::Check:0x19ad9320
+        @block=#&lt;Proc:0x48ee354d@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:73&gt;,
+        @enabled_by_default=true, @name=:started_at, @timeout=1&gt;, :memcached=&gt;#&lt;Pinglish::Check:0x5538b059
+        @block=#&lt;Proc:0x753029e8@/app/lib/entity_soup/config/initializers/health.rb:2&gt;,
+        @enabled_by_default=true, @name=:memcached, @timeout=1&gt;, :redis=&gt;#&lt;Pinglish::Check:0xf190fd
+        @block=#&lt;Proc:0x390c89f3@/app/lib/entity_soup/config/initializers/health.rb:7&gt;,
+        @enabled_by_default=true, @name=:redis, @timeout=1&gt;, :solr=&gt;#&lt;Pinglish::Check:0x29a65cf3
+        @block=#&lt;Proc:0x5dad5f46@/app/lib/entity_soup/config/initializers/health.rb:11&gt;,
+        @enabled_by_default=true, @name=:solr, @timeout=1&gt;, :db=&gt;#&lt;Pinglish::Check:0x51574a76
+        @block=#&lt;Proc:0xcc912be@/app/lib/entity_soup/config/initializers/health.rb:15&gt;,
+        @enabled_by_default=true, @name=:db, @timeout=1&gt;, :maintenance=&gt;#&lt;Pinglish::Check:0x17138610
+        @block=#&lt;Proc:0x20f3bcdb@/app/config/initializers/health.rb:2&gt;, @enabled_by_default=true,
+        @name=:maintenance, @timeout=1&gt;}&gt;, @map=nil&gt;], [nil, &quot;&quot;,
+        /^(.*)/, #&lt;Rack::Builder:0x256924f @use=[], @run=#&lt;Goodguide::Health:0x42cd590
+        @booted_at=2016-05-13 21:03:13 +0000, @deployed_at=2016-05-13 21:03:13 +0000,
+        @pinglish=#&lt;Pinglish:0x7e99bdb2 @checks={:host=&gt;#&lt;Pinglish::Check:0x34f3e894
+        @block=#&lt;Proc:0x5ed880d5@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:70&gt;,
+        @enabled_by_default=true, @name=:host, @timeout=1&gt;, :deployed_at=&gt;#&lt;Pinglish::Check:0x6d9fc291
+        @block=#&lt;Proc:0x3bed5fff@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:71&gt;,
+        @enabled_by_default=true, @name=:deployed_at, @timeout=1&gt;, :revision=&gt;#&lt;Pinglish::Check:0x10f1a75e
+        @block=#&lt;Proc:0xa3543bd@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:72&gt;,
+        @enabled_by_default=true, @name=:revision, @timeout=1&gt;, :started_at=&gt;#&lt;Pinglish::Check:0x19ad9320
+        @block=#&lt;Proc:0x48ee354d@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:73&gt;,
+        @enabled_by_default=true, @name=:started_at, @timeout=1&gt;, :memcached=&gt;#&lt;Pinglish::Check:0x5538b059
+        @block=#&lt;Proc:0x753029e8@/app/lib/entity_soup/config/initializers/health.rb:2&gt;,
+        @enabled_by_default=true, @name=:memcached, @timeout=1&gt;, :redis=&gt;#&lt;Pinglish::Check:0xf190fd
+        @block=#&lt;Proc:0x390c89f3@/app/lib/entity_soup/config/initializers/health.rb:7&gt;,
+        @enabled_by_default=true, @name=:redis, @timeout=1&gt;, :solr=&gt;#&lt;Pinglish::Check:0x29a65cf3
+        @block=#&lt;Proc:0x5dad5f46@/app/lib/entity_soup/config/initializers/health.rb:11&gt;,
+        @enabled_by_default=true, @name=:solr, @timeout=1&gt;, :db=&gt;#&lt;Pinglish::Check:0x51574a76
+        @block=#&lt;Proc:0xcc912be@/app/lib/entity_soup/config/initializers/health.rb:15&gt;,
+        @enabled_by_default=true, @name=:db, @timeout=1&gt;, :maintenance=&gt;#&lt;Pinglish::Check:0x17138610
+        @block=#&lt;Proc:0x20f3bcdb@/app/config/initializers/health.rb:2&gt;, @enabled_by_default=true,
+        @name=:maintenance, @timeout=1&gt;}&gt;&gt;, @map=nil&gt;]]&gt;'>\n    #&lt;Rack::URLMap:0x40a02561
+        @mapping=[[nil, &quot;/status&quot;, /^\\/+status(.*)/, #&lt;Rack::Builder:0x231badf2
+        @use=[], @run=#&lt;Pinglish:0x7e99bdb2 @checks={:host=&gt;#&lt;Pinglish::Check:0x34f3e894
+        @block=#&lt;Proc:0x5ed880d5@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:70&gt;,
+        @enabled_by_default=true, @name=:host, @timeout=1&gt;, :deployed_at=&gt;#&lt;Pinglish::Check:0x6d9fc291
+        @block=#&lt;Proc:0x3bed5fff@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:71&gt;,
+        @enabled_by_default=true, @name=:deployed_at, @timeout=1&gt;, :revision=&gt;#&lt;Pinglish::Check:0x10f1a75e
+        @block=#&lt;Proc:0xa3543bd@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:72&gt;,
+        @enabled_by_default=true, @name=:revision, @timeout=1&gt;, :started_at=&gt;#&lt;Pinglish::Check:0x19ad9320
+        @block=#&lt;Proc:0x48ee354d@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:73&gt;,
+        @enabled_by_default=true, @name=:started_at, @timeout=1&gt;, :memcached=&gt;#&lt;Pinglish::Check:0x5538b059
+        @block=#&lt;Proc:0x753029e8@/app/lib/entity_soup/config/initializers/health.rb:2&gt;,
+        @enabled_by_default=true, @name=:memcached, @timeout=1&gt;, :redis=&gt;#&lt;Pinglish::Check:0xf190fd
+        @block=#&lt;Proc:0x390c89f3@/app/lib/entity_soup/config/initializers/health.rb:7&gt;,
+        @enabled_by_default=true, @name=:redis, @timeout=1&gt;, :solr=&gt;#&lt;Pinglish::Check:0x29a65cf3
+        @block=#&lt;Proc:0x5dad5f46@/app/lib/entity_soup/config/initializers/health.rb:11&gt;,
+        @enabled_by_default=true, @name=:solr, @timeout=1&gt;, :db=&gt;#&lt;Pinglish::Check:0x51574a76
+        @block=#&lt;Proc:0xcc912be@/app/lib/entity_soup/config/initializers/health.rb:15&gt;,
+        @enabled_by_default=true, @name=:db, @timeout=1&gt;, :maintenance=&gt;#&lt;Pinglish::Check:0x17138610
+        @block=#&lt;Proc:0x20f3bcdb@/app/config/initializers/health.rb:2&gt;, @enabled_by_default=true,
+        @name=:maintenance, @timeout=1&gt;}&gt;, @map=nil&gt;], [nil, &quot;&quot;,
+        /^(.*)/, #&lt;Rack::Builder:0x256924f @use=[], @run=#&lt;Goodguide::Health:0x42cd590
+        @booted_at=2016-05-13 21:03:13 +0000, @deployed_at=2016-05-13 21:03:13 +0000,
+        @pinglish=#&lt;Pinglish:0x7e99bdb2 @checks={:host=&gt;#&lt;Pinglish::Check:0x34f3e894
+        @block=#&lt;Proc:0x5ed880d5@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:70&gt;,
+        @enabled_by_default=true, @name=:host, @timeout=1&gt;, :deployed_at=&gt;#&lt;Pinglish::Check:0x6d9fc291
+        @block=#&lt;Proc:0x3bed5fff@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:71&gt;,
+        @enabled_by_default=true, @name=:deployed_at, @timeout=1&gt;, :revision=&gt;#&lt;Pinglish::Check:0x10f1a75e
+        @block=#&lt;Proc:0xa3543bd@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:72&gt;,
+        @enabled_by_default=true, @name=:revision, @timeout=1&gt;, :started_at=&gt;#&lt;Pinglish::Check:0x19ad9320
+        @block=#&lt;Proc:0x48ee354d@/usr/local/lib/ruby/gems/shared/bundler/gems/goodguide-health-0e2ccc708186/lib/goodguide/health.rb:73&gt;,
+        @enabled_by_default=true, @name=:started_at, @timeout=1&gt;, :memcached=&gt;#&lt;Pinglish::Check:0x5538b059
+        @block=#&lt;Proc:0x753029e8@/app/lib/entity_soup/config/initializers/health.rb:2&gt;,
+        @enabled_by_default=true, @name=:memcached, @timeout=1&gt;, :redis=&gt;#&lt;Pinglish::Check:0xf190fd
+        @block=#&lt;Proc:0x390c89f3@/app/lib/entity_soup/config/initializers/health.rb:7&gt;,
+        @enabled_by_default=true, @name=:redis, @timeout=1&gt;, :solr=&gt;#&lt;Pinglish::Check:0x29a65cf3
+        @block=#&lt;Proc:0x5dad5f46@/app/lib/entity_soup/config/initializers/health.rb:11&gt;,
+        @enabled_by_default=true, @name=:solr, @timeout=1&gt;, :db=&gt;#&lt;Pinglish::Check:0x51574a76
+        @block=#&lt;Proc:0xcc912be@/app/lib/entity_soup/config/initializers/health.rb:15&gt;,
+        @enabled_by_default=true, @name=:db, @timeout=1&gt;, :maintenance=&gt;#&lt;Pinglish::Check:0x17138610
+        @block=#&lt;Proc:0x20f3bcdb@/app/config/initializers/health.rb:2&gt;, @enabled_by_default=true,
+        @name=:maintenance, @timeout=1&gt;}&gt;&gt;, @map=nil&gt;]]&gt;\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/locales/:locale(.:format)'
+        data-regexp='^\\/locales\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /locales/:locale(.:format)\n
+        \ </td>\n  <td data-route-reqs='rails_asset_localization/locales#locale'>\n
+        \   rails_asset_localization/locales#locale\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='invitation'>\n      invitation<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/invitation/:id(.:format)' data-regexp='^\\/invitation\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /invitation/:id(.:format)\n  </td>\n  <td data-route-reqs='platform#show_with_new_session'>\n
+        \   platform#show_with_new_session\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='password_reset'>\n      password_reset<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/forgot_password/:id(.:format)' data-regexp='^\\/forgot_password\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /forgot_password/:id(.:format)\n  </td>\n  <td data-route-reqs='platform#show_with_new_session'>\n
+        \   platform#show_with_new_session\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='logout'>\n      logout<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/logout(.:format)'
+        data-regexp='^\\/logout(?:\\.([^\\/.?]+))?$'>\n    /logout(.:format)\n  </td>\n
+        \ <td data-route-reqs='platform#logout'>\n    platform#logout\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='terms'>\n      terms<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/terms(.:format)' data-regexp='^\\/terms(?:\\.([^\\/.?]+))?$'>\n
+        \   /terms(.:format)\n  </td>\n  <td data-route-reqs='terms#show'>\n    terms#show\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='some_path'>\n
+        \     some_path<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/some_path(.:format)' data-regexp='^\\/some_path(?:\\.([^\\/.?]+))?$'>\n
+        \   /some_path(.:format)\n  </td>\n  <td data-route-reqs='platform#show'>\n
+        \   platform#show\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name=''>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/*path(.:format)' data-regexp='^\\/((.+?))(?:\\.([^\\/.?]+))?$'>\n
+        \   /*path(.:format)\n  </td>\n  <td data-route-reqs='platform#show'>\n    platform#show\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='root'>\n
+        \     root<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/' data-regexp='^\\/$'>\n    /\n
+        \ </td>\n  <td data-route-reqs='platform#show'>\n    platform#show\n  </td>\n</tr>\n\n<tr><th
+        colspan=\"4\">Routes for EntitySoup::Engine</th></tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='sidekiq_web'>\n      sidekiq_web<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb=''>\n    \n  </td>\n
+        \ <td data-route-path='/sidekiq' data-regexp='^\\/sidekiq'>\n    /sidekiq\n
+        \ </td>\n  <td data-route-reqs='Sidekiq::Web'>\n    Sidekiq::Web\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='user_omniauth_authorize'>\n
+        \     user_omniauth_authorize<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET|POST'>\n    GET|POST\n  </td>\n  <td data-route-path='/users/auth/:provider(.:format)'
+        data-regexp='^\\/users\\/auth\\/(((?!)))(?:\\.([^\\/.?]+))?$'>\n    /users/auth/:provider(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/omniauth_callbacks#passthru {:provider=&gt;/(?!)/}'>\n
+        \   entity_soup/omniauth_callbacks#passthru {:provider=&gt;/(?!)/}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='user_omniauth_callback'>\n
+        \     user_omniauth_callback<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET|POST'>\n    GET|POST\n  </td>\n  <td data-route-path='/users/auth/:action/callback(.:format)'
+        data-regexp='^\\/users\\/auth\\/(((?!)))\\/callback(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/auth/:action/callback(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/omniauth_callbacks#(?-mix:(?!))'>\n
+        \   entity_soup/omniauth_callbacks#(?-mix:(?!))\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='user_password'>\n      user_password<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n    POST\n
+        \ </td>\n  <td data-route-path='/users/password(.:format)' data-regexp='^\\/users\\/password(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/password(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/passwords#create'>\n
+        \   entity_soup/passwords#create\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name='new_user_password'>\n      new_user_password<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/users/password/new(.:format)'
+        data-regexp='^\\/users\\/password\\/new(?:\\.([^\\/.?]+))?$'>\n    /users/password/new(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/passwords#new'>\n    entity_soup/passwords#new\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_user_password'>\n
+        \     edit_user_password<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/users/password/edit(.:format)'
+        data-regexp='^\\/users\\/password\\/edit(?:\\.([^\\/.?]+))?$'>\n    /users/password/edit(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/passwords#edit'>\n    entity_soup/passwords#edit\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/users/password(.:format)'
+        data-regexp='^\\/users\\/password(?:\\.([^\\/.?]+))?$'>\n    /users/password(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/passwords#update'>\n    entity_soup/passwords#update\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/users/password(.:format)'
+        data-regexp='^\\/users\\/password(?:\\.([^\\/.?]+))?$'>\n    /users/password(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/passwords#update'>\n    entity_soup/passwords#update\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='cancel_user_registration'>\n
+        \     cancel_user_registration<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/users/cancel(.:format)'
+        data-regexp='^\\/users\\/cancel(?:\\.([^\\/.?]+))?$'>\n    /users/cancel(.:format)\n
+        \ </td>\n  <td data-route-reqs='devise_invitable/registrations#cancel'>\n
+        \   devise_invitable/registrations#cancel\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='user_registration'>\n      user_registration<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n    POST\n
+        \ </td>\n  <td data-route-path='/users(.:format)' data-regexp='^\\/users(?:\\.([^\\/.?]+))?$'>\n
+        \   /users(.:format)\n  </td>\n  <td data-route-reqs='devise_invitable/registrations#create'>\n
+        \   devise_invitable/registrations#create\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='new_user_registration'>\n      new_user_registration<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/users/sign_up(.:format)' data-regexp='^\\/users\\/sign_up(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/sign_up(.:format)\n  </td>\n  <td data-route-reqs='devise_invitable/registrations#new'>\n
+        \   devise_invitable/registrations#new\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='edit_user_registration'>\n      edit_user_registration<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/users/edit(.:format)' data-regexp='^\\/users\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/edit(.:format)\n  </td>\n  <td data-route-reqs='devise_invitable/registrations#edit'>\n
+        \   devise_invitable/registrations#edit\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='PATCH'>\n
+        \   PATCH\n  </td>\n  <td data-route-path='/users(.:format)' data-regexp='^\\/users(?:\\.([^\\/.?]+))?$'>\n
+        \   /users(.:format)\n  </td>\n  <td data-route-reqs='devise_invitable/registrations#update'>\n
+        \   devise_invitable/registrations#update\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='PUT'>\n
+        \   PUT\n  </td>\n  <td data-route-path='/users(.:format)' data-regexp='^\\/users(?:\\.([^\\/.?]+))?$'>\n
+        \   /users(.:format)\n  </td>\n  <td data-route-reqs='devise_invitable/registrations#update'>\n
+        \   devise_invitable/registrations#update\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='DELETE'>\n
+        \   DELETE\n  </td>\n  <td data-route-path='/users(.:format)' data-regexp='^\\/users(?:\\.([^\\/.?]+))?$'>\n
+        \   /users(.:format)\n  </td>\n  <td data-route-reqs='devise_invitable/registrations#destroy'>\n
+        \   devise_invitable/registrations#destroy\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='session_zendesk_logout'>\n      session_zendesk_logout<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/users/session/zendesk/logout(.:format)' data-regexp='^\\/users\\/session\\/zendesk\\/logout(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/session/zendesk/logout(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/zendesk/session#logout'>\n
+        \   entity_soup/zendesk/session#logout\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='session_zendesk_login'>\n      session_zendesk_login<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/users/session/zendesk/login(.:format)' data-regexp='^\\/users\\/session\\/zendesk\\/login(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/session/zendesk/login(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/zendesk/session#login'>\n
+        \   entity_soup/zendesk/session#login\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='session'>\n      session<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n    POST\n
+        \ </td>\n  <td data-route-path='/users/session(.:format)' data-regexp='^\\/users\\/session(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/session(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/session#create'>\n
+        \   entity_soup/session#create\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name=''>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/users/session(.:format)' data-regexp='^\\/users\\/session(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/session(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/session#show'>\n
+        \   entity_soup/session#show\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name=''>\n  </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n
+        \ </td>\n  <td data-route-path='/users/session(.:format)' data-regexp='^\\/users\\/session(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/session(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/session#destroy'>\n
+        \   entity_soup/session#destroy\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name='invitations'>\n      invitations<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/users/invitations(.:format)'
+        data-regexp='^\\/users\\/invitations(?:\\.([^\\/.?]+))?$'>\n    /users/invitations(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/invitations#create'>\n    entity_soup/invitations#create\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='invitation'>\n
+        \     invitation<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/users/invitations/:id(.:format)'
+        data-regexp='^\\/users\\/invitations\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/invitations/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/invitations#show'>\n
+        \   entity_soup/invitations#show\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name=''>\n  </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n
+        \ </td>\n  <td data-route-path='/users/invitations/:id(.:format)' data-regexp='^\\/users\\/invitations\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/invitations/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/invitations#update'>\n
+        \   entity_soup/invitations#update\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='PUT'>\n
+        \   PUT\n  </td>\n  <td data-route-path='/users/invitations/:id(.:format)'
+        data-regexp='^\\/users\\/invitations\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/invitations/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/invitations#update'>\n
+        \   entity_soup/invitations#update\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='password_resets'>\n      password_resets<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n    POST\n
+        \ </td>\n  <td data-route-path='/users/password_resets(.:format)' data-regexp='^\\/users\\/password_resets(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/password_resets(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/password_resets#create'>\n
+        \   entity_soup/password_resets#create\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='password_reset'>\n      password_reset<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/users/password_resets/:id(.:format)' data-regexp='^\\/users\\/password_resets\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/password_resets/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/password_resets#show'>\n
+        \   entity_soup/password_resets#show\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='PATCH'>\n
+        \   PATCH\n  </td>\n  <td data-route-path='/users/password_resets/:id(.:format)'
+        data-regexp='^\\/users\\/password_resets\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/password_resets/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/password_resets#update'>\n
+        \   entity_soup/password_resets#update\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='PUT'>\n
+        \   PUT\n  </td>\n  <td data-route-path='/users/password_resets/:id(.:format)'
+        data-regexp='^\\/users\\/password_resets\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /users/password_resets/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/password_resets#update'>\n
+        \   entity_soup/password_resets#update\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='entities_v1_charts'>\n      entities_v1_charts<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/v1/charts/entities(.:format)' data-regexp='^\\/v1\\/charts\\/entities(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/charts/entities(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/charts#entities
+        {:format=&gt;:json}'>\n    entity_soup/v1/charts#entities {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='credits_v1_charts'>\n
+        \     credits_v1_charts<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/charts/credits(.:format)' data-regexp='^\\/v1\\/charts\\/credits(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/charts/credits(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/charts#credits
+        {:format=&gt;:json}'>\n    entity_soup/v1/charts#credits {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_charts'>\n
+        \     v1_charts<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n
+        \   POST\n  </td>\n  <td data-route-path='/v1/charts(.:format)' data-regexp='^\\/v1\\/charts(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/charts(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/charts#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/charts#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_charts'>\n
+        \     new_v1_charts<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/charts/new(.:format)' data-regexp='^\\/v1\\/charts\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/charts/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/charts#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/charts#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_charts'>\n
+        \     edit_v1_charts<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/charts/edit(.:format)' data-regexp='^\\/v1\\/charts\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/charts/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/charts#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/charts#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/charts(.:format)'
+        data-regexp='^\\/v1\\/charts(?:\\.([^\\/.?]+))?$'>\n    /v1/charts(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/charts#show {:format=&gt;:json}'>\n
+        \   entity_soup/v1/charts#show {:format=&gt;:json}\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='PATCH'>\n
+        \   PATCH\n  </td>\n  <td data-route-path='/v1/charts(.:format)' data-regexp='^\\/v1\\/charts(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/charts(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/charts#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/charts#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/charts(.:format)'
+        data-regexp='^\\/v1\\/charts(?:\\.([^\\/.?]+))?$'>\n    /v1/charts(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/charts#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/charts#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/charts(.:format)'
+        data-regexp='^\\/v1\\/charts(?:\\.([^\\/.?]+))?$'>\n    /v1/charts(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/charts#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/charts#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='autocomplete_v1_catalog'>\n
+        \     autocomplete_v1_catalog<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:id/autocomplete(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/autocomplete(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:id/autocomplete(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#autocomplete
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalogs#autocomplete {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='reorder_v1_catalog_field_groups'>\n
+        \     reorder_v1_catalog_field_groups<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/reorder(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/reorder(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/reorder(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/field_groups#reorder {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_groups#reorder {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field_group_attachment'>\n
+        \     v1_catalog_field_group_attachment<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/:field_group_id/attachments/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/([^\\/.?]+)\\/attachments\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/:field_group_id/attachments/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/attachments#show {:format=&gt;:json}'>\n
+        \   entity_soup/v1/attachments#show {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field_groups'>\n
+        \     v1_catalog_field_groups<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_groups#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_groups#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_groups#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_groups#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_field_group'>\n
+        \     new_v1_catalog_field_group<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/new(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_groups#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_groups#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_field_group'>\n
+        \     edit_v1_catalog_field_group<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/:id/edit(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/field_groups#edit {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_groups#edit {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field_group'>\n
+        \     v1_catalog_field_group<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_groups#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_groups#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_groups#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_groups#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_groups#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_groups#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_groups#destroy
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_groups#destroy {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field_triggers'>\n
+        \     v1_catalog_field_triggers<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_triggers#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_triggers#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/field_triggers#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/field_triggers#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_field_trigger'>\n
+        \     new_v1_catalog_field_trigger<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers/new(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers/new(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/field_triggers#new {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_triggers#new {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_field_trigger'>\n
+        \     edit_v1_catalog_field_trigger<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers/:id/edit(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/field_triggers#edit {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_triggers#edit {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field_trigger'>\n
+        \     v1_catalog_field_trigger<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers/:id(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/field_triggers#show {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_triggers#show {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers/:id(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/field_triggers#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_triggers#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers/:id(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/field_triggers#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_triggers#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/field_triggers/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/field_triggers\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/field_triggers/:id(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/field_triggers#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/field_triggers#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_users'>\n
+        \     v1_catalog_users<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/users(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/users(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/users(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/users#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/users#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_accounts'>\n
+        \     v1_catalog_accounts<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/accounts(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/accounts(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/accounts(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/accounts#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/accounts#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='reorder_v1_catalog_fields'>\n
+        \     reorder_v1_catalog_fields<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/reorder(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/reorder(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/reorder(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#reorder
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#reorder {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='autocomplete_v1_catalog_field_value_bindings'>\n
+        \     autocomplete_v1_catalog_field_value_bindings<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings/autocomplete(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings\\/autocomplete(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings/autocomplete(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#autocomplete
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#autocomplete {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field_value_bindings'>\n
+        \     v1_catalog_field_value_bindings<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/value_bindings#index {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#index {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/value_bindings#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_field_value_binding'>\n
+        \     new_v1_catalog_field_value_binding<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings/new(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings/new(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#new {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#new {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_field_value_binding'>\n
+        \     edit_v1_catalog_field_value_binding<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id/edit(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#edit {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#edit {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field_value_binding'>\n
+        \     v1_catalog_field_value_binding<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#show {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#show {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:field_id/value_bindings/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_fields'>\n
+        \     v1_catalog_fields<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_field'>\n
+        \     new_v1_catalog_field<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/new(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_field'>\n
+        \     edit_v1_catalog_field<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_field'>\n
+        \     v1_catalog_field<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/fields/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/fields/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#destroy
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#destroy {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='copy_v1_catalog_batch_entities'>\n
+        \     copy_v1_catalog_batch_entities<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch/copy(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch\\/copy(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch/copy(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/batch_entities#copy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/batch_entities#copy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch/copy(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch\\/copy(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch/copy(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/batch_entities#copy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/batch_entities#copy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_batch_entities'>\n
+        \     v1_catalog_batch_entities<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/batch_entities#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/batch_entities#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_batch_entities'>\n
+        \     new_v1_catalog_batch_entities<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch/new(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch/new(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/batch_entities#new {:format=&gt;:json}'>\n
+        \   entity_soup/v1/batch_entities#new {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_batch_entities'>\n
+        \     edit_v1_catalog_batch_entities<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch/edit(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/batch_entities#edit {:format=&gt;:json}'>\n
+        \   entity_soup/v1/batch_entities#edit {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/batch_entities#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/batch_entities#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/batch_entities#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/batch_entities#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/batch_entities#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/batch_entities#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/batch(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/batch(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/batch(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/batch_entities#destroy
+        {:format=&gt;:json}'>\n    entity_soup/v1/batch_entities#destroy {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:referring_entity_id/fields/:referring_field_id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:referring_entity_id/fields/:referring_field_id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/entities#index {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#index {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/autocomplete(/:field_id)(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/autocomplete(?:\\/([^\\/.?]+))?(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/autocomplete(/:field_id)(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/entities#autocomplete {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#autocomplete {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='locate_v1_catalog_entities'>\n
+        \     locate_v1_catalog_entities<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/locate(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/locate(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/locate(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#locate
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#locate {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='merge_v1_catalog_entities'>\n
+        \     merge_v1_catalog_entities<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/merge(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/merge(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/merge(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#merge
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#merge {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='merge_and_update_v1_catalog_entities'>\n
+        \     merge_and_update_v1_catalog_entities<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/merge_and_update(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/merge_and_update(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/merge_and_update(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/entities#merge_and_update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#merge_and_update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_wercs_data'>\n
+        \     v1_catalog_wercs_data<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/wercs_data(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/wercs_data(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/wercs_data(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/wercs_data#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/wercs_data#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_wercs_data'>\n
+        \     new_v1_catalog_wercs_data<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/wercs_data/new(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/wercs_data\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/wercs_data/new(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/wercs_data#new {:format=&gt;:json}'>\n
+        \   entity_soup/v1/wercs_data#new {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_wercs_data'>\n
+        \     edit_v1_catalog_wercs_data<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/wercs_data/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/wercs_data\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/wercs_data/edit(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/wercs_data#edit {:format=&gt;:json}'>\n
+        \   entity_soup/v1/wercs_data#edit {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/wercs_data(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/wercs_data(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/wercs_data(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/wercs_data#show {:format=&gt;:json}'>\n    entity_soup/v1/wercs_data#show
+        {:format=&gt;:json}\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name=''>\n  </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n
+        \ </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/wercs_data(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/wercs_data(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/wercs_data(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/wercs_data#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/wercs_data#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/wercs_data(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/wercs_data(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/wercs_data(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/wercs_data#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/wercs_data#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/wercs_data(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/wercs_data(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/wercs_data(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/wercs_data#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/wercs_data#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='deduplicate_v1_catalog_entity'>\n
+        \     deduplicate_v1_catalog_entity<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:id/deduplicate(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)\\/deduplicate(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:id/deduplicate(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/entities#deduplicate {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#deduplicate {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:id/ratings/:field_id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)\\/ratings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:id/ratings/:field_id(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/entities#ratings {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#ratings {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_entity_attachment'>\n
+        \     v1_catalog_entity_attachment<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:entity_id/attachments/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)\\/attachments\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:entity_id/attachments/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/attachments#show {:format=&gt;:json}'>\n
+        \   entity_soup/v1/attachments#show {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_entities'>\n
+        \     v1_catalog_entities<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_entity'>\n
+        \     new_v1_catalog_entity<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/new(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_entity'>\n
+        \     edit_v1_catalog_entity<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_entity'>\n
+        \     v1_catalog_entity<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/entities/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/entities/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#destroy
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#destroy {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_stats_product_scores'>\n
+        \     v1_catalog_stats_product_scores<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/stats/product_scores(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/stats\\/product_scores(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/stats/product_scores(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/stats#product_scores {:format=&gt;:json}'>\n
+        \   entity_soup/v1/stats#product_scores {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_stats_product_totals'>\n
+        \     v1_catalog_stats_product_totals<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/stats/product_totals(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/stats\\/product_totals(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/stats/product_totals(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/stats#product_totals {:format=&gt;:json}'>\n
+        \   entity_soup/v1/stats#product_totals {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_stats_survey_questions'>\n
+        \     v1_catalog_stats_survey_questions<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/stats/survey_questions(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/stats\\/survey_questions(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/stats/survey_questions(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/stats#survey_questions {:format=&gt;:json}'>\n
+        \   entity_soup/v1/stats#survey_questions {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_stats_facet_breakdown'>\n
+        \     v1_catalog_stats_facet_breakdown<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/stats/facet_breakdown(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/stats\\/facet_breakdown(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/stats/facet_breakdown(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/stats#facet_breakdown {:format=&gt;:json}'>\n
+        \   entity_soup/v1/stats#facet_breakdown {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='show_progress_v1_catalog_report'>\n
+        \     show_progress_v1_catalog_report<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/reports/:id/show_progress(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/reports\\/([^\\/.?]+)\\/show_progress(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/reports/:id/show_progress(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/workbooks#show_progress {:format=&gt;:json,
+        :type=&gt;:report}'>\n    entity_soup/v1/workbooks#show_progress {:format=&gt;:json,
+        :type=&gt;:report}\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name='v1_catalog_reports'>\n      v1_catalog_reports<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n    POST\n
+        \ </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/reports(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/reports(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/reports(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/workbooks#create
+        {:format=&gt;:json, :type=&gt;:report}'>\n    entity_soup/v1/workbooks#create
+        {:format=&gt;:json, :type=&gt;:report}\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='v1_catalog_report'>\n      v1_catalog_report<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/reports/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/reports\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/reports/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/workbooks#show
+        {:format=&gt;:json, :type=&gt;:report}'>\n    entity_soup/v1/workbooks#show
+        {:format=&gt;:json, :type=&gt;:report}\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='show_progress_v1_catalog_template'>\n
+        \     show_progress_v1_catalog_template<span class='helper'>_path</span>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/templates/:id/show_progress(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/templates\\/([^\\/.?]+)\\/show_progress(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/templates/:id/show_progress(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/v1/workbooks#show_progress {:format=&gt;:json,
+        :type=&gt;:template}'>\n    entity_soup/v1/workbooks#show_progress {:format=&gt;:json,
+        :type=&gt;:template}\n  </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n
+        \ <td data-route-name='v1_catalog_templates'>\n      v1_catalog_templates<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n    POST\n
+        \ </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/templates(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/templates(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/templates(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/workbooks#create
+        {:format=&gt;:json, :type=&gt;:template}'>\n    entity_soup/v1/workbooks#create
+        {:format=&gt;:json, :type=&gt;:template}\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='v1_catalog_template'>\n      v1_catalog_template<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/templates/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/templates\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/templates/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/workbooks#show
+        {:format=&gt;:json, :type=&gt;:template}'>\n    entity_soup/v1/workbooks#show
+        {:format=&gt;:json, :type=&gt;:template}\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='v1_catalog_import_events'>\n      v1_catalog_import_events<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n    POST\n
+        \ </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/import_events(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/import_events(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/import_events(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/import_events#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/import_events#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_import_event'>\n
+        \     v1_catalog_import_event<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/import_events/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/import_events\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/import_events/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/import_events#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/import_events#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_attachment'>\n
+        \     v1_catalog_attachment<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalogs/:catalog_id/attachments/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/attachments\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:catalog_id/attachments/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/attachments#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/attachments#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalogs'>\n
+        \     v1_catalogs<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs(.:format)' data-regexp='^\\/v1\\/catalogs(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalogs#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalogs(.:format)'
+        data-regexp='^\\/v1\\/catalogs(?:\\.([^\\/.?]+))?$'>\n    /v1/catalogs(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/catalogs#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog'>\n
+        \     new_v1_catalog<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs/new(.:format)' data-regexp='^\\/v1\\/catalogs\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalogs#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog'>\n
+        \     edit_v1_catalog<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalogs#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog'>\n
+        \     v1_catalog<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalogs/:id(.:format)' data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalogs/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalogs#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalogs/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/catalogs/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/catalogs#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalogs/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/catalogs/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/catalogs#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalogs/:id(.:format)'
+        data-regexp='^\\/v1\\/catalogs\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/catalogs/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/catalogs#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/catalogs#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_entity_value_bindings'>\n
+        \     v1_entity_value_bindings<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_entity_value_binding'>\n
+        \     new_v1_entity_value_binding<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings/new(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_entity_value_binding'>\n
+        \     edit_v1_entity_value_binding<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings/:id/edit(.:format)\n  </td>\n  <td
+        data-route-reqs='entity_soup/v1/value_bindings#edit {:format=&gt;:json}'>\n
+        \   entity_soup/v1/value_bindings#edit {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_entity_value_binding'>\n
+        \     v1_entity_value_binding<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/entities/:entity_id/value_bindings/:id(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/value_bindings\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:entity_id/value_bindings/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/value_bindings#destroy
+        {:format=&gt;:json}'>\n    entity_soup/v1/value_bindings#destroy {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='merge_v1_entities'>\n
+        \     merge_v1_entities<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n
+        \   POST\n  </td>\n  <td data-route-path='/v1/entities/merge(.:format)' data-regexp='^\\/v1\\/entities\\/merge(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/merge(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#merge
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#merge {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='merge_and_update_v1_entities'>\n
+        \     merge_and_update_v1_entities<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/entities/merge_and_update(.:format)'
+        data-regexp='^\\/v1\\/entities\\/merge_and_update(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/merge_and_update(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#merge_and_update
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#merge_and_update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='deduplicate_v1_entity'>\n
+        \     deduplicate_v1_entity<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/entities/:id/deduplicate(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/deduplicate(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:id/deduplicate(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#deduplicate
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#deduplicate {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_entities'>\n
+        \     v1_entities<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/entities(.:format)' data-regexp='^\\/v1\\/entities(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/entities(.:format)'
+        data-regexp='^\\/v1\\/entities(?:\\.([^\\/.?]+))?$'>\n    /v1/entities(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/entities#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_entity'>\n
+        \     new_v1_entity<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/entities/new(.:format)' data-regexp='^\\/v1\\/entities\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_entity'>\n
+        \     edit_v1_entity<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/entities/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_entity'>\n
+        \     v1_entity<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/entities/:id(.:format)' data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/entities/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/entities#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/entities#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/entities/:id(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/entities/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/entities#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/entities/:id(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/entities/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/entities#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/entities/:id(.:format)'
+        data-regexp='^\\/v1\\/entities\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/entities/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/entities#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/entities#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='types_v1_fields'>\n
+        \     types_v1_fields<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/fields/types(.:format)' data-regexp='^\\/v1\\/fields\\/types(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/fields/types(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#types
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#types {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_fields'>\n
+        \     v1_fields<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/fields(.:format)' data-regexp='^\\/v1\\/fields(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/fields(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/fields(.:format)'
+        data-regexp='^\\/v1\\/fields(?:\\.([^\\/.?]+))?$'>\n    /v1/fields(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/fields#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/fields#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_field'>\n
+        \     new_v1_field<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/fields/new(.:format)' data-regexp='^\\/v1\\/fields\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/fields/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_field'>\n
+        \     edit_v1_field<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/fields/:id/edit(.:format)' data-regexp='^\\/v1\\/fields\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/fields/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_field'>\n
+        \     v1_field<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/fields/:id(.:format)' data-regexp='^\\/v1\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/fields/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/fields#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/fields#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/fields/:id(.:format)'
+        data-regexp='^\\/v1\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/fields/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/fields#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/fields#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/fields/:id(.:format)'
+        data-regexp='^\\/v1\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/fields/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/fields#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/fields#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/fields/:id(.:format)'
+        data-regexp='^\\/v1\\/fields\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/fields/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/fields#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/fields#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_users'>\n
+        \     v1_users<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/users(.:format)' data-regexp='^\\/v1\\/users(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/users(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/users#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/users#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/users(.:format)'
+        data-regexp='^\\/v1\\/users(?:\\.([^\\/.?]+))?$'>\n    /v1/users(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/users#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/users#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name='new_v1_user'>\n      new_v1_user<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/v1/users/new(.:format)' data-regexp='^\\/v1\\/users\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/users/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/users#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/users#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_user'>\n
+        \     edit_v1_user<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/users/:id/edit(.:format)' data-regexp='^\\/v1\\/users\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/users/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/users#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/users#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_user'>\n
+        \     v1_user<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/users/:id(.:format)' data-regexp='^\\/v1\\/users\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/users/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/users#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/users#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/users/:id(.:format)'
+        data-regexp='^\\/v1\\/users\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/users/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/users#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/users#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr class='route_row'
+        data-helper='path'>\n  <td data-route-name=''>\n  </td>\n  <td data-route-verb='PUT'>\n
+        \   PUT\n  </td>\n  <td data-route-path='/v1/users/:id(.:format)' data-regexp='^\\/v1\\/users\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/users/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/users#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/users#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/users/:id(.:format)'
+        data-regexp='^\\/v1\\/users\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/users/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/users#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/users#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='autocomplete_v1_accounts'>\n
+        \     autocomplete_v1_accounts<span class='helper'>_path</span>\n  </td>\n
+        \ <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/accounts/autocomplete(.:format)'
+        data-regexp='^\\/v1\\/accounts\\/autocomplete(?:\\.([^\\/.?]+))?$'>\n    /v1/accounts/autocomplete(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/accounts#autocomplete {:format=&gt;:json}'>\n
+        \   entity_soup/v1/accounts#autocomplete {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_accounts'>\n
+        \     v1_accounts<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/accounts(.:format)' data-regexp='^\\/v1\\/accounts(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/accounts(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/accounts#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/accounts#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/accounts(.:format)'
+        data-regexp='^\\/v1\\/accounts(?:\\.([^\\/.?]+))?$'>\n    /v1/accounts(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/accounts#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/accounts#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_account'>\n
+        \     new_v1_account<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/accounts/new(.:format)' data-regexp='^\\/v1\\/accounts\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/accounts/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/accounts#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/accounts#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_account'>\n
+        \     edit_v1_account<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/accounts/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/accounts\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/accounts/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/accounts#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/accounts#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_account'>\n
+        \     v1_account<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/accounts/:id(.:format)' data-regexp='^\\/v1\\/accounts\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/accounts/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/accounts#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/accounts#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/accounts/:id(.:format)'
+        data-regexp='^\\/v1\\/accounts\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/accounts/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/accounts#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/accounts#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/accounts/:id(.:format)'
+        data-regexp='^\\/v1\\/accounts\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/accounts/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/accounts#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/accounts#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/accounts/:id(.:format)'
+        data-regexp='^\\/v1\\/accounts\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/accounts/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/accounts#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/accounts#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_role_groups'>\n
+        \     v1_role_groups<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/role_groups(.:format)' data-regexp='^\\/v1\\/role_groups(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/role_groups(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/role_groups#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/role_groups(.:format)'
+        data-regexp='^\\/v1\\/role_groups(?:\\.([^\\/.?]+))?$'>\n    /v1/role_groups(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/role_groups#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_role_group'>\n
+        \     new_v1_role_group<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/role_groups/new(.:format)' data-regexp='^\\/v1\\/role_groups\\/new(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/role_groups/new(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#new
+        {:format=&gt;:json}'>\n    entity_soup/v1/role_groups#new {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_role_group'>\n
+        \     edit_v1_role_group<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/role_groups/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/role_groups\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/role_groups/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/role_groups#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_role_group'>\n
+        \     v1_role_group<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/role_groups/:id(.:format)' data-regexp='^\\/v1\\/role_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/role_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/role_groups#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/role_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/role_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/role_groups/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/role_groups#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/role_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/role_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/role_groups/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/role_groups#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/role_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/role_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n    /v1/role_groups/:id(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/role_groups#destroy {:format=&gt;:json}'>\n
+        \   entity_soup/v1/role_groups#destroy {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_groups'>\n
+        \     v1_catalog_groups<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalog_groups(.:format)' data-regexp='^\\/v1\\/catalog_groups(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalog_groups(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalog_groups#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/catalog_groups(.:format)'
+        data-regexp='^\\/v1\\/catalog_groups(?:\\.([^\\/.?]+))?$'>\n    /v1/catalog_groups(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#create {:format=&gt;:json}'>\n
+        \   entity_soup/v1/catalog_groups#create {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='new_v1_catalog_group'>\n
+        \     new_v1_catalog_group<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalog_groups/new(.:format)'
+        data-regexp='^\\/v1\\/catalog_groups\\/new(?:\\.([^\\/.?]+))?$'>\n    /v1/catalog_groups/new(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#new {:format=&gt;:json}'>\n
+        \   entity_soup/v1/catalog_groups#new {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='edit_v1_catalog_group'>\n
+        \     edit_v1_catalog_group<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/catalog_groups/:id/edit(.:format)'
+        data-regexp='^\\/v1\\/catalog_groups\\/([^\\/.?]+)\\/edit(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalog_groups/:id/edit(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#edit
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalog_groups#edit {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_catalog_group'>\n
+        \     v1_catalog_group<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/catalog_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalog_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalog_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#show
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalog_groups#show {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/catalog_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalog_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalog_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalog_groups#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/catalog_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalog_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalog_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#update
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalog_groups#update {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='DELETE'>\n    DELETE\n  </td>\n  <td data-route-path='/v1/catalog_groups/:id(.:format)'
+        data-regexp='^\\/v1\\/catalog_groups\\/([^\\/.?]+)(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/catalog_groups/:id(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/catalog_groups#destroy
+        {:format=&gt;:json}'>\n    entity_soup/v1/catalog_groups#destroy {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_attachments'>\n
+        \     v1_attachments<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n
+        \   POST\n  </td>\n  <td data-route-path='/v1/attachments(.:format)' data-regexp='^\\/v1\\/attachments(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/attachments(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/attachments#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/attachments#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_payment_events'>\n
+        \     v1_payment_events<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n
+        \   GET\n  </td>\n  <td data-route-path='/v1/payment_events(.:format)' data-regexp='^\\/v1\\/payment_events(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/payment_events(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/payment_events#index
+        {:format=&gt;:json}'>\n    entity_soup/v1/payment_events#index {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_payment_transaction'>\n
+        \     v1_payment_transaction<span class='helper'>_path</span>\n  </td>\n  <td
+        data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/v1/payment_transaction(.:format)'
+        data-regexp='^\\/v1\\/payment_transaction(?:\\.([^\\/.?]+))?$'>\n    /v1/payment_transaction(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/payment_transactions#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/payment_transactions#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name='v1_payment_method'>\n
+        \     v1_payment_method<span class='helper'>_path</span>\n  </td>\n  <td data-route-verb='POST'>\n
+        \   POST\n  </td>\n  <td data-route-path='/v1/payment_method(.:format)' data-regexp='^\\/v1\\/payment_method(?:\\.([^\\/.?]+))?$'>\n
+        \   /v1/payment_method(.:format)\n  </td>\n  <td data-route-reqs='entity_soup/v1/payment_methods#create
+        {:format=&gt;:json}'>\n    entity_soup/v1/payment_methods#create {:format=&gt;:json}\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/v1/payment_method(.:format)'
+        data-regexp='^\\/v1\\/payment_method(?:\\.([^\\/.?]+))?$'>\n    /v1/payment_method(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/payment_methods#show {:format=&gt;:json}'>\n
+        \   entity_soup/v1/payment_methods#show {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PATCH'>\n    PATCH\n  </td>\n  <td data-route-path='/v1/payment_method(.:format)'
+        data-regexp='^\\/v1\\/payment_method(?:\\.([^\\/.?]+))?$'>\n    /v1/payment_method(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/payment_methods#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/payment_methods#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name=''>\n  </td>\n
+        \ <td data-route-verb='PUT'>\n    PUT\n  </td>\n  <td data-route-path='/v1/payment_method(.:format)'
+        data-regexp='^\\/v1\\/payment_method(?:\\.([^\\/.?]+))?$'>\n    /v1/payment_method(.:format)\n
+        \ </td>\n  <td data-route-reqs='entity_soup/v1/payment_methods#update {:format=&gt;:json}'>\n
+        \   entity_soup/v1/payment_methods#update {:format=&gt;:json}\n  </td>\n</tr>\n<tr
+        class='route_row' data-helper='path'>\n  <td data-route-name='root'>\n      root<span
+        class='helper'>_path</span>\n  </td>\n  <td data-route-verb='GET'>\n    GET\n
+        \ </td>\n  <td data-route-path='/' data-regexp='^\\/$'>\n    /\n  </td>\n
+        \ <td data-route-reqs='entity_soup/health#status'>\n    entity_soup/health#status\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='GET'>\n    GET\n  </td>\n  <td data-route-path='/*a(.:format)'
+        data-regexp='^\\/((.+?))(?:\\.([^\\/.?]+))?$'>\n    /*a(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/application#routing_error'>\n    entity_soup/application#routing_error\n
+        \ </td>\n</tr>\n<tr class='route_row' data-helper='path'>\n  <td data-route-name=''>\n
+        \ </td>\n  <td data-route-verb='POST'>\n    POST\n  </td>\n  <td data-route-path='/*a(.:format)'
+        data-regexp='^\\/((.+?))(?:\\.([^\\/.?]+))?$'>\n    /*a(.:format)\n  </td>\n
+        \ <td data-route-reqs='entity_soup/application#routing_error'>\n    entity_soup/application#routing_error\n
+        \ </td>\n</tr>\n\n  </tbody>\n</table>\n\n<script type='text/javascript'>\n
+        \ function each(elems, func) {\n    if (!elems instanceof Array) { elems =
+        [elems]; }\n    for (var i = 0, len = elems.length; i < len; i++) {\n      func(elems[i]);\n
+        \   }\n  }\n\n  function setValOn(elems, val) {\n    each(elems, function(elem)
+        {\n      elem.innerHTML = val;\n    });\n  }\n\n  function onClick(elems,
+        func) {\n    each(elems, function(elem) {\n      elem.onclick = func;\n    });\n
+        \ }\n\n  // Enables functionality to toggle between `_path` and `_url` helper
+        suffixes\n  function setupRouteToggleHelperLinks() {\n    var toggleLinks
+        = document.querySelectorAll('#route_table [data-route-helper]');\n    onClick(toggleLinks,
+        function(){\n      var helperTxt   = this.getAttribute(\"data-route-helper\"),\n
+        \         helperElems = document.querySelectorAll('[data-route-name] span.helper');\n
+        \     setValOn(helperElems, helperTxt);\n    });\n  }\n\n  // takes an array
+        of elements with a data-regexp attribute and\n  // passes their their parent
+        <tr> into the callback function\n  // if the regexp matchs a given path\n
+        \ function eachElemsForPath(elems, path, func) {\n    each(elems, function(e){\n
+        \     var reg = e.getAttribute(\"data-regexp\");\n      if (path.match(RegExp(reg)))
+        {\n        func(e.parentNode.cloneNode(true));\n      }\n    })\n  }\n\n  //
+        Ensure path always starts with a slash \"/\" and remove params or fragments\n
+        \ function sanitizePath(path) {\n    var path = path.charAt(0) == '/' ? path
+        : \"/\" + path;\n    return path.replace(/\\#.*|\\?.*/, '');\n  }\n\n  //
+        Enables path search functionality\n  function setupMatchPaths() {\n    var
+        regexpElems     = document.querySelectorAll('#route_table [data-regexp]'),\n
+        \       pathElem        = document.querySelector('#path_search'),\n        selectedSection
+        = document.querySelector('#matched_paths'),\n        noMatchText     = '<tr><th
+        colspan=\"4\">None</th></tr>';\n\n\n    // Remove matches if no path is present\n
+        \   pathElem.onblur = function(e) {\n      if (pathElem.value === \"\") selectedSection.innerHTML
+        = \"\";\n    }\n\n    // On key press perform a search for matching paths\n
+        \   pathElem.onkeyup = function(e){\n      var path        = sanitizePath(pathElem.value),\n
+        \         defaultText = '<tr><th colspan=\"4\">Paths Matching (' + escape(path)
+        + '):</th></tr>';\n\n      // Clear out results section\n      selectedSection.innerHTML=
+        defaultText;\n\n      // Display matches if they exist\n      eachElemsForPath(regexpElems,
+        path, function(e){\n        selectedSection.appendChild(e);\n      });\n\n
+        \     // If no match present, tell the user\n      if (selectedSection.innerHTML
+        === defaultText) {\n        selectedSection.innerHTML = selectedSection.innerHTML
+        + noMatchText;\n      }\n    }\n  }\n\n  setupMatchPaths();\n  setupRouteToggleHelperLinks();\n</script>\n\n</div>\n\n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Tue, 31 May 2016 03:44:54 GMT
+recorded_with: VCR 3.0.1

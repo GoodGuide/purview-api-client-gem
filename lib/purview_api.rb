@@ -17,12 +17,6 @@ module PurviewApi
       self.config ||= OpenStruct.new
 
       yield config
-
-      self.default_config ||= self.config.dup
-    end
-
-    def reset_config!
-      self.config = self.default_config.dup
     end
 
     def authenticate!

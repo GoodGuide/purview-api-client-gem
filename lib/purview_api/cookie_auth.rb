@@ -1,7 +1,6 @@
 module PurviewApi
   module Request
     class CookieAuth < Faraday::Middleware
-
       def initialize(app, cookie = nil)
         super(app)
         @cookie = cookie

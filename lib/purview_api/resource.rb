@@ -68,10 +68,10 @@ module PurviewApi
     def save!
       return if save
 
-      raise ResourceNotSaved,
+      raise ResourceNotSaved.new(
         "Could not save #{self.class.name.demodulize}" +
         "#{@attributes.inspect}: " +
-        "#{errors.full_messages.join(',')}"
+        "#{errors.full_messages.join(',')}", self)
     end
 
     def destroy
@@ -81,6 +81,15 @@ module PurviewApi
       !parse_errors(result)
     rescue Faraday::Error::ClientError => e
       !parse_errors(e.response[:body], e.response[:status])
+    end
+
+    def destroy!
+      return if destroy
+
+      raise ResourceNotDestroyed.new(
+        "Could not destroy #{self.class.name.demodulize}" +
+        "#{@attributes.inspect}: " +
+        "#{errors.full_messages.join(',')}", self)
     end
 
     def id

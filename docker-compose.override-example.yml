@@ -3,11 +3,21 @@
 #
 # `cp docker-compose.override-example.yml docker-compose.override.yml`
 #
-
 version: '2'
 
+# In this example a command-server is created that can be used to run tests
+# in a docker container from outside the virtual machine using a gui editor like
+# Atom or Rubymine.  Launch individual tests with something like:
+#  `echo "bin/rspec --tty {relative_path}:{line_number}" | nc docker.dev 2000`
 services:
-  custom-service:
-    <<: *common
-    container_name: my-special-container-name
+  command-server:
+    build: ./
+    env_file: docker/env
+    volumes:
+      - './:/app'
+
     extends: gem
+    ports:
+      - "2000:2000"
+
+    command: bin/command_runner

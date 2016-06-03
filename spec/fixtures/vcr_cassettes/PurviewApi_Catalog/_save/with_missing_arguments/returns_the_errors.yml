@@ -5,7 +5,7 @@ http_interactions:
     uri: "<PURVIEW_URL>/api/users/session"
     body:
       encoding: UTF-8
-      string: '{"email":"<PURVIEW_EMAIL>","<PURVIEW_PASSWORD>":"<PURVIEW_PASSWORD>"}'
+      string: '{"email":"<PURVIEW_EMAIL>","password":"<PURVIEW_PASSWORD>"}'
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -35,19 +35,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _platform_session=Vjd0WGRlN1JaR2ZSeE8wRzBTcE9adVFjV0NQOXU3VFdRRFAxS3pKQUNuOW1KOE5jVG9xbDVEbEpBMW1Fc0d5SWNpcDJHZmd5KzhvRlRKZjN6SE5laWJNS01IYXl6VGhCeTVSWmRyTXUrdDdmNEtqcCtLUmVsOG9MZ3p6aWUvdWtsaG5jcmVMODJWRHpkeFUxNDB3cHRDN0ZxcVJxSndKbHBjaDdrUTlnTU56emdRL1ZpQkhuUmZGdzFuUmcweVRRdjN2ZkJyaXZub2Rna2U1VWI1TTdIOHE0VGtFY1g0MGg2ZXVtbGNjTUZjemJIU1FlWVNybUxuMFAybW5aazBkbkRvVVZtY05IMGtiNEVGblVZUzVtZnZ3UVF1MlZrSHJhRm1oRmlnZjNUeFU5ZGNLNnBSOE1hUW5aQkw1eTdhZ25RREdlLzYzSFVveCtZM0tobVRjenJnPT0tLTJ2VEFiRzlkRENSbXkxVng2citrZ2c9PQ%3D%3D--a50438382f65a65ce0dc545e4c5c49ccf1181b68;
+      - _platform_session=YVdmdEFBVnQrcFR0Vzg4MmkrOE44bGNYek1MTmlXZWc4eXE2Q0pmYnpoYk41TzZFWENORXg2VjBqZks4YTY3Y25qVUg5Mlp5dldhU1VYSkxJb1dWUVBVSG1jc1lxY3ljUVYzejdRNXZOaEtibDlQNy9BZ241TmQxeWdvVDRXR3RsUDJ5ZnJwQWVFYk54elk4RVRUbnZ4UHNKY0RUSlN5TXFqckgzNlJOaU9xMk5iTmR3N3BmVi95NVl5QjUwaUFRdnBGSkh6V0FQbG1CekxqWlhaaUI1UVc1anlPQkFrc2FTYnFnQmpYdlhwclF0YVRJMG9NQndaMHZvQm03bG1Tc1V0cTBsa0pqVmdyMTl6azR6M3V5NnRDNzFpTnFJU0Y4QS9PZlZKdzJsSHpadzFrV05wNnVnUjJ2cTN6eWovRGFKWFlLa2pUQVFOdVpLdzhPa2psNmFRPT0tLVkrZnRtSWFHb0hld3ZtOWh3MTdkQ0E9PQ%3D%3D--0873f6166b1a8999a84927a2c1a63b3605c21c05;
         path=/; HttpOnly
       X-Request-Id:
-      - 4c208385-8b80-4113-9013-ce2b6ddf832d
+      - 66859cdd-a2cc-4e6e-b610-9bc5274c2e8d
       X-Runtime:
-      - '0.392000'
+      - '0.399000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Sat, 07 May 2016 22:35:42 GMT
+  recorded_at: Tue, 31 May 2016 03:58:39 GMT
 - request:
     method: post
     uri: "<PURVIEW_URL>/api/v1/catalogs"
@@ -58,7 +58,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=Vjd0WGRlN1JaR2ZSeE8wRzBTcE9adVFjV0NQOXU3VFdRRFAxS3pKQUNuOW1KOE5jVG9xbDVEbEpBMW1Fc0d5SWNpcDJHZmd5KzhvRlRKZjN6SE5laWJNS01IYXl6VGhCeTVSWmRyTXUrdDdmNEtqcCtLUmVsOG9MZ3p6aWUvdWtsaG5jcmVMODJWRHpkeFUxNDB3cHRDN0ZxcVJxSndKbHBjaDdrUTlnTU56emdRL1ZpQkhuUmZGdzFuUmcweVRRdjN2ZkJyaXZub2Rna2U1VWI1TTdIOHE0VGtFY1g0MGg2ZXVtbGNjTUZjemJIU1FlWVNybUxuMFAybW5aazBkbkRvVVZtY05IMGtiNEVGblVZUzVtZnZ3UVF1MlZrSHJhRm1oRmlnZjNUeFU5ZGNLNnBSOE1hUW5aQkw1eTdhZ25RREdlLzYzSFVveCtZM0tobVRjenJnPT0tLTJ2VEFiRzlkRENSbXkxVng2citrZ2c9PQ%3D%3D--a50438382f65a65ce0dc545e4c5c49ccf1181b68
+      - _platform_session=YVdmdEFBVnQrcFR0Vzg4MmkrOE44bGNYek1MTmlXZWc4eXE2Q0pmYnpoYk41TzZFWENORXg2VjBqZks4YTY3Y25qVUg5Mlp5dldhU1VYSkxJb1dWUVBVSG1jc1lxY3ljUVYzejdRNXZOaEtibDlQNy9BZ241TmQxeWdvVDRXR3RsUDJ5ZnJwQWVFYk54elk4RVRUbnZ4UHNKY0RUSlN5TXFqckgzNlJOaU9xMk5iTmR3N3BmVi95NVl5QjUwaUFRdnBGSkh6V0FQbG1CekxqWlhaaUI1UVc1anlPQkFrc2FTYnFnQmpYdlhwclF0YVRJMG9NQndaMHZvQm03bG1Tc1V0cTBsa0pqVmdyMTl6azR6M3V5NnRDNzFpTnFJU0Y4QS9PZlZKdzJsSHpadzFrV05wNnVnUjJ2cTN6eWovRGFKWFlLa2pUQVFOdVpLdzhPa2psNmFRPT0tLVkrZnRtSWFHb0hld3ZtOWh3MTdkQ0E9PQ%3D%3D--0873f6166b1a8999a84927a2c1a63b3605c21c05
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -83,12 +83,12 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _platform_session=ODErUmIwT1JKcnh5NlU2aThMekt3NmlXOE9HcUt5bUl2WW16Q1g3RURPbFFrUEtkaDdySCtYa3Qrb2I2Q0dQUzJrYTVtcm01ZGQwbnlJeCtlSy9aLzFTdVlxZ3pJem5CMXk2SXlyUkJ2M2pVdUNZcWdpaXpIamlRN2lXa1doQ2NmeE5FWWNuOVRkaWIzSGF6bU43YnBLNnQ2bjJrdTZnN3hkdXU3RkhRa0w2U1VZRWJLdWJRc0RaK2NoSUo5SlhDOEZ2enM2Y3oxVW1nekNTRHlOZHJLT2JyZ3RVWWpkM2ZFN1lXZ3pReGF6R0VHN0h1TmtZQjY5ZXd2WjBzck5Zb3Q3NkU5Slc2VDFxZTBwVFZBaU9IdXRpcHRGOER3YloxdThmcE1VbUtLYXQ5V1JDaVllWEF0WU9WdFVNM3JuaExkNDdNQjBOQzgyRVo3UXdFdE43aDFRPT0tLWo1dENLSGFNa2FmdUZYQW1tajhyWUE9PQ%3D%3D--5ae6ee40132d34ef091f68a2f9f13f7c9a54c7a3;
+      - _platform_session=M2ozQWRuMVV5RUJHQjI0NFdUdU1UNEpRYmdWZFFQUFNlR0tESWEvaHl5WkJOeDFxeFRCVEFhR2xZVmNvY2dkbnNDdW4zTkNkRUZmYlFPRHZvMyt5UkxtMGpBbVRpeTlSb092QWdCcTVTZ1FnTzJBS011bTJhd3NqSFJicjFYdmE4U0FjU3NPazBzdXJsa1ZmTXRUaXJBcVVtOWpNcmQ5VHpOSG13Snp0REpGL3R1aE5kd0dybzJBN2lrNzRyamxDSkVaM1dBcHJHc3d1eCtuS0FxNkdMaGRVVm1vWVgvTi82aEFrSS9HVk4vRFVmMkFrRysvU0RMQWNtOTBmRjBLVFlmWHlEb1FyaDFyQjZOa1VVRFllVnk2SUJpMDBqb2xqNDVVWkdOSTVFdHpUeG9aTnJDVFRIWm1pWVFsZllKdnkweEFzb3FaUHVZNkRDUU94YlNMaUNRPT0tLTdGanBFeDhpWFBmMGxOVVNMcmdMM1E9PQ%3D%3D--4143bbde901db0433df7501b61771a86503e4922;
         path=/; HttpOnly
       X-Request-Id:
-      - 849da361-c3c2-4bae-a369-198ee64f2ed1
+      - 66bfdf99-b320-45c4-b4d4-06bb145881c9
       X-Runtime:
-      - '0.064000'
+      - '0.148000'
       Transfer-Encoding:
       - chunked
     body:
@@ -96,5 +96,5 @@ http_interactions:
       string: '{"errors":{"name":["can''t be blank"],"account":["can''t be blank"],"entity_type":["is
         not included in the list"]},"status":"unprocessable_entity"}'
     http_version: 
-  recorded_at: Sat, 07 May 2016 22:35:42 GMT
+  recorded_at: Tue, 31 May 2016 03:58:39 GMT
 recorded_with: VCR 3.0.1
