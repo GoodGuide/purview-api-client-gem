@@ -149,16 +149,16 @@ module PurviewApi
         begin
           error_info = JSON.load(body)
           if error_info.is_a?(Hash) and error_info['errors']
-            error_info['errors'].each {|field, messages| errors.add(field.to_sym, messages)}
+            error_info['errors'].each {|field, message| errors.add(field.to_sym, message)}
           else
-            errors.add(:base, ["unknown client error #{status}"])
+            errors.add(:base, "unknown client error #{status}")
           end
         rescue JSON::ParserError => e
-          errors.add(:base, ["unparseable client error #{status} #{e}"])
+          errors.add(:base, "unparseable client error #{status} #{e}")
         end
         true
       when 5
-        errors.add(:base, ["server error #{status}"])
+        errors.add(:base, "server error #{status}")
         true
       else
         false
