@@ -39,10 +39,6 @@ describe PurviewApi::Entity, :vcr do
 
       expect(found_entity).to be_nil
     end
-
-    after do
-      clear_all_temporary_entities(first_catalog.entities)
-    end
   end
 
   describe '.destroy!' do
@@ -53,5 +49,9 @@ describe PurviewApi::Entity, :vcr do
         resource.destroy!
       }.to raise_error(PurviewApi::Resource::ResourceNotDestroyed)
     end
+  end
+
+  after do
+    clear_all_temporary_entities(first_catalog.entities)
   end
 end
