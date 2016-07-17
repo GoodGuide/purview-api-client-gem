@@ -77,19 +77,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _platform_session=RXdnamFEbUxvTERhTStHYXEvbUVBVHpwaXhiUE1RRlpReW1SbTNtS0NVSmxrYmVJZnVydTdsaXBWeUlJS2Z2RU5ibUVZdzhhWDk1ZGhlbzN4WGJQSHRucHVPQ3hhTFIxSzB2SVArejVPL2QwckdsTVJVdXF5TWxlWmp4bkpYdEEwVDVqS3Z5eUV4d2V5akVoOE1CNzRMSnYzTDQ3cW5uNVpMYllYem1uRDFUdSt1ZUpsSXNvS1IxYTBPeGt6OXc0WGlIdHBpbnFIVTZCd1I5ajlvUm5ZSEZWMGU0NE9qMlFlaE55TnVoRllyYzd5NTJQYWUyNndjM0lOZnA4MGZ3TVo0UGdRdlRjZTZVaVd3ZFdORk51azlXbXNlR0ZEY0xCQWRWbGZMNlp3NnFwbUtjaU4yc25YQ2JwU1RNZEszYUsrU1NST25QQ1JKUVJTSnNGbTNkdUp3PT0tLTNleUpmbEYzSEdWc3I4bHN4U2tmUEE9PQ%3D%3D--758251e19e687ba32621d3732bf6e82fc080809f;
+      - _platform_session=Z2F6WlFTVkRzUlR3MnJ4a2U5UFdDOE9nV3lzOCtJaGxpbTNubndOYy9wam5iVy94cXBkSW1DNHJCTnZSZzU3cjh0UUdUbTM4WHNTSElVSUhHU1ZreUg4YmhCWG5LcU8rKzJYa3RDSDJpS3IyVVlFZXJ1Um80c2hQVldoazNvZVJSeG1GVForOHlTbXZIcmFIUHBCTjEydlFJZHNwdlBYTVBtT0cyOWxxbGlmUDRoTXQ0NHVFaFErZnFGQ2wzcjZ5c1Jpa2pvRUo0UnQ0QXFSRmJpOURQY3hkd1c4VzhFRjFILzNoTmVSYmNRbW9CTkJMWUloQkU1OFhsWE15VDI3a0JzZFdVTmIrZ3I5azBpZmhCcm1KSU9FOGwrdW4wcHhwbVBBQy9sT2djWkZPdGZFTzlJa010YzBBQzJaRURnbENMT0dYeGpMTCtGZTNUaStKOWRpaHdnPT0tLU9TUlZoK2poTC80em9lNE4wRGpDcmc9PQ%3D%3D--17380aa30bf4b61077ac4ef459ddf654adef80fe;
         path=/; HttpOnly
       X-Request-Id:
-      - 5549f547-3d2d-4497-9d29-c30f2a15d116
+      - 935aecae-91d1-453b-9e13-f4fcb08e61b4
       X-Runtime:
-      - '0.356000'
+      - '0.402000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Sun, 17 Jul 2016 05:56:05 GMT
+  recorded_at: Sun, 17 Jul 2016 07:13:01 GMT
 - request:
     method: get
     uri: "<PURVIEW_URL>/api/v1/catalogs"
@@ -100,7 +100,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=RXdnamFEbUxvTERhTStHYXEvbUVBVHpwaXhiUE1RRlpReW1SbTNtS0NVSmxrYmVJZnVydTdsaXBWeUlJS2Z2RU5ibUVZdzhhWDk1ZGhlbzN4WGJQSHRucHVPQ3hhTFIxSzB2SVArejVPL2QwckdsTVJVdXF5TWxlWmp4bkpYdEEwVDVqS3Z5eUV4d2V5akVoOE1CNzRMSnYzTDQ3cW5uNVpMYllYem1uRDFUdSt1ZUpsSXNvS1IxYTBPeGt6OXc0WGlIdHBpbnFIVTZCd1I5ajlvUm5ZSEZWMGU0NE9qMlFlaE55TnVoRllyYzd5NTJQYWUyNndjM0lOZnA4MGZ3TVo0UGdRdlRjZTZVaVd3ZFdORk51azlXbXNlR0ZEY0xCQWRWbGZMNlp3NnFwbUtjaU4yc25YQ2JwU1RNZEszYUsrU1NST25QQ1JKUVJTSnNGbTNkdUp3PT0tLTNleUpmbEYzSEdWc3I4bHN4U2tmUEE9PQ%3D%3D--758251e19e687ba32621d3732bf6e82fc080809f
+      - _platform_session=Z2F6WlFTVkRzUlR3MnJ4a2U5UFdDOE9nV3lzOCtJaGxpbTNubndOYy9wam5iVy94cXBkSW1DNHJCTnZSZzU3cjh0UUdUbTM4WHNTSElVSUhHU1ZreUg4YmhCWG5LcU8rKzJYa3RDSDJpS3IyVVlFZXJ1Um80c2hQVldoazNvZVJSeG1GVForOHlTbXZIcmFIUHBCTjEydlFJZHNwdlBYTVBtT0cyOWxxbGlmUDRoTXQ0NHVFaFErZnFGQ2wzcjZ5c1Jpa2pvRUo0UnQ0QXFSRmJpOURQY3hkd1c4VzhFRjFILzNoTmVSYmNRbW9CTkJMWUloQkU1OFhsWE15VDI3a0JzZFdVTmIrZ3I5azBpZmhCcm1KSU9FOGwrdW4wcHhwbVBBQy9sT2djWkZPdGZFTzlJa010YzBBQzJaRURnbENMT0dYeGpMTCtGZTNUaStKOWRpaHdnPT0tLU9TUlZoK2poTC80em9lNE4wRGpDcmc9PQ%3D%3D--17380aa30bf4b61077ac4ef459ddf654adef80fe
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -119,7 +119,7 @@ http_interactions:
       X-Ua-Compatible:
       - chrome=1
       Date:
-      - Sun, 17 Jul 2016 05:56:05 GMT
+      - Sun, 17 Jul 2016 07:13:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -127,12 +127,12 @@ http_interactions:
       Etag:
       - '"d28c2e57a7ec56bac132b608dc404ceb"'
       Set-Cookie:
-      - _platform_session=MFZwdFhETG94Z2p5TUcvb2hFQlZPUFJ6S0s3VFBaMWkrK3V3eXpDK2MvRjRJQzVQREYrNXRqaWJoM1l3TUNZaXMvMFU5ZHA5MkpRL0JLczFOaGp6a1ZNNTN0RWk0UEJWTTdCenRVQkMxM09tZVJUTnRBTEtVVEJPcmxOYXB3Snp1b282cmpFaVFaYlNPM1BZQy9odHhZbXFFUXl1aDA1b0pSY0lYaEpVc0swMUU5WTBZUzIzSlNEMFU2b1V5NGpBRGQ4TW5uUFBIRm1GeitLZDVhS3V2MFVadjd0L1lFSXBpU0xVQUxBR2FpMGxMSXgyUFl5UFk4Sy9jYm1jSVVuRU5BcFlwOU1QY3pSKzBpbTNHR0VOSitYbGlMem9vSGxuQk4xWS9JLzZrVkNVcWVXSzY4aS9LWlV5bWMrRWY0ZkpaVTRUNm1TaVpwczVhSW9aRklqbGZRPT0tLWg2M212UmdIWHdOeEU4OHg3eU5wclE9PQ%3D%3D--fd02dd1785b5572897d5a9186b24b2cb13e4791c;
+      - _platform_session=OUFiaE0yc0NhWDVWUUg0Y1ZPeGU2bDRPS1JzZ3ZVRFhoMjlzUUNROTExNFgxSWI2SFN4eWJpUW52emNCeWRuR2JXZ1ovRzAwYjlrZkpTT2I3VnpiKzN0U2ZHbFFGb0tndS8yUHR5WDJNdjNKcHFPR0tNdHkyOHR6Nlp3Vmo3ZzRva2xleHkxYnZESUk2K0VWU0diaVd0N1RsYjFjVlZHYlFSTExkdFR3bVQ2UWhjRm5BcWRIbHlVV2l6NWUyVmlWN3o5TUJWY0lyMmh4RXg2TzFrT0ZRVnlOdEw0b0FVYWFsRWlocXhCSjdJZzQwcm9HcWpuOVZmaDVtTDNqUmp2S0FUa2hST0pqMnViaW1Zd0ppa0p5Rm5sN2djVzd3ZEZaeGg2MWJGSnRKZ3FHbVNEWWtoOFpUNFRsMVBVK3hSbzN4UDQ5RFBQakJQT003Y2ovZmZYcE5RPT0tLUpWcSszbEpmUzJDUDNDMVlpTFNwRWc9PQ%3D%3D--e346e56ee277e65d7eca23a5de06808c220cc162;
         path=/; HttpOnly
       X-Request-Id:
-      - b2f24279-8920-4a8b-b8de-bac62983e776
+      - d696fd35-c5d2-42c7-972b-02e7fe3e7331
       X-Runtime:
-      - '0.244000'
+      - '0.584000'
       Transfer-Encoding:
       - chunked
     body:
@@ -178,7 +178,7 @@ http_interactions:
         Nicollet Mall","address_street2":null,"address_city":"Minneapolis","address_state":"MN","address_zip":"55403","company_name":"Target,
         Inc.","created_at":"2016-05-13T21:14:52.000Z","credits":0,"has_valid_payment_method":false,"id":2,"name":"Target","payment_events_count":0,"updated_at":"2016-05-13T21:14:52.000Z"}}]'
     http_version: 
-  recorded_at: Sun, 17 Jul 2016 05:56:05 GMT
+  recorded_at: Sun, 17 Jul 2016 07:13:02 GMT
 - request:
     method: get
     uri: "<PURVIEW_URL>/api/v1/entities?catalog_id=1"
@@ -189,7 +189,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=MFZwdFhETG94Z2p5TUcvb2hFQlZPUFJ6S0s3VFBaMWkrK3V3eXpDK2MvRjRJQzVQREYrNXRqaWJoM1l3TUNZaXMvMFU5ZHA5MkpRL0JLczFOaGp6a1ZNNTN0RWk0UEJWTTdCenRVQkMxM09tZVJUTnRBTEtVVEJPcmxOYXB3Snp1b282cmpFaVFaYlNPM1BZQy9odHhZbXFFUXl1aDA1b0pSY0lYaEpVc0swMUU5WTBZUzIzSlNEMFU2b1V5NGpBRGQ4TW5uUFBIRm1GeitLZDVhS3V2MFVadjd0L1lFSXBpU0xVQUxBR2FpMGxMSXgyUFl5UFk4Sy9jYm1jSVVuRU5BcFlwOU1QY3pSKzBpbTNHR0VOSitYbGlMem9vSGxuQk4xWS9JLzZrVkNVcWVXSzY4aS9LWlV5bWMrRWY0ZkpaVTRUNm1TaVpwczVhSW9aRklqbGZRPT0tLWg2M212UmdIWHdOeEU4OHg3eU5wclE9PQ%3D%3D--fd02dd1785b5572897d5a9186b24b2cb13e4791c
+      - _platform_session=OUFiaE0yc0NhWDVWUUg0Y1ZPeGU2bDRPS1JzZ3ZVRFhoMjlzUUNROTExNFgxSWI2SFN4eWJpUW52emNCeWRuR2JXZ1ovRzAwYjlrZkpTT2I3VnpiKzN0U2ZHbFFGb0tndS8yUHR5WDJNdjNKcHFPR0tNdHkyOHR6Nlp3Vmo3ZzRva2xleHkxYnZESUk2K0VWU0diaVd0N1RsYjFjVlZHYlFSTExkdFR3bVQ2UWhjRm5BcWRIbHlVV2l6NWUyVmlWN3o5TUJWY0lyMmh4RXg2TzFrT0ZRVnlOdEw0b0FVYWFsRWlocXhCSjdJZzQwcm9HcWpuOVZmaDVtTDNqUmp2S0FUa2hST0pqMnViaW1Zd0ppa0p5Rm5sN2djVzd3ZEZaeGg2MWJGSnRKZ3FHbVNEWWtoOFpUNFRsMVBVK3hSbzN4UDQ5RFBQakJQT003Y2ovZmZYcE5RPT0tLUpWcSszbEpmUzJDUDNDMVlpTFNwRWc9PQ%3D%3D--e346e56ee277e65d7eca23a5de06808c220cc162
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -214,19 +214,19 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _platform_session=SzFzWlZZUTRSZXFwQ1JPNi9LL1ZkZWNOLzN1ODFjd2hwMUkwakI2T24vdmozeDEzazZBajhkeENacVhPMWNQY3JTY0lleUpkcmRSY0FxM3dzSXQ5a3JncXBZS2tRcjdMOFJNWTBQWVJybzNYTmRUYmNKN3Z5UnRSbFI5aWdsS0V5RVhlYWRneXJzeDNqWTlORkVXSmpWaFBGb0ZDck0rVkZzanhBYnk3aHBOWlFEK1hpQ2FRRVdLSTFIcHAxWjQrSXhrMENhRTFnY09wOHhKbDE0dlVvc3UvdzFBdlhycCtnNDlPRUExTmZHSCswcThtTGZSejEvVHQ5UVBxcjNXMld0clNlaUlYa01Gak1FMTlEQzkrZ01WOWEyZ0JtRGsxZWF0dVgySUk3UkUzMnYwWWxydnNpclFJaFY2WUtZKzhLamF1a1V3TkZ4N3ppamhyellQd25BPT0tLTRZMVNDbWQzODhLb1BrdkhYZmlnSnc9PQ%3D%3D--e8e9fa7ad4b8bd1294b80084cf00b95f3ca40676;
+      - _platform_session=djJSWGdJQ0xoMzg5WWI2VFYyVG9zaTJGRHZVTmhQNlkvczhTZi9tenBYQlRUTzR2VzhoajR5QWE2WElJeWkvTGhyZHdvR2loQ1Y1Nk9qVkdyM3JwVzkyVThsWC8wejU5My94NjQ2Tzc0UGpBb1ZLY2VXQ3djQXI5VVM2NW1qK3o4WTZzeFV5dmRlVWEyN2lSY2dhZXJSN2tzWTBpZ1NKeHJ0d3VpdzVwZE9aS3pieHd5ZlkvN1RreHNvblZpc3BwL0RiV3hMRkU5RHQ2eXNjWFlEZndPUFV5dHN2M2VrQ2t2bUIvTXhxSDdYclZzNHphMFlvcXVaRFNrdEZVVUNKWmxRNkN3a0NoQmcrZm83dkZLa3hOOStrQnk2dUx5WUlFcXdPb3V1V3hxVXRUbnVCNzVsNDE0TWtsVnZacmVzQUJhbnhIZkE1TTVQM3U3UXFaakgvSGNnPT0tLUV3REJteEZDbVBRWlVocUdWY3dGNVE9PQ%3D%3D--601bc766698191b826f5c82db9749f2ba7b86265;
         path=/; HttpOnly
       X-Request-Id:
-      - b0b426af-bc05-4a2a-bd3c-45ad1cbbe531
+      - c0bb4b3a-798d-4edb-b4b7-8e52c886ae90
       X-Runtime:
-      - '0.084000'
+      - '0.164000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"entities":[],"total":0,"facets":{}}'
     http_version: 
-  recorded_at: Sun, 17 Jul 2016 05:56:05 GMT
+  recorded_at: Sun, 17 Jul 2016 07:13:03 GMT
 - request:
     method: get
     uri: "<PURVIEW_URL>/api/v1/fields?catalog_id=1"
@@ -237,7 +237,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=SzFzWlZZUTRSZXFwQ1JPNi9LL1ZkZWNOLzN1ODFjd2hwMUkwakI2T24vdmozeDEzazZBajhkeENacVhPMWNQY3JTY0lleUpkcmRSY0FxM3dzSXQ5a3JncXBZS2tRcjdMOFJNWTBQWVJybzNYTmRUYmNKN3Z5UnRSbFI5aWdsS0V5RVhlYWRneXJzeDNqWTlORkVXSmpWaFBGb0ZDck0rVkZzanhBYnk3aHBOWlFEK1hpQ2FRRVdLSTFIcHAxWjQrSXhrMENhRTFnY09wOHhKbDE0dlVvc3UvdzFBdlhycCtnNDlPRUExTmZHSCswcThtTGZSejEvVHQ5UVBxcjNXMld0clNlaUlYa01Gak1FMTlEQzkrZ01WOWEyZ0JtRGsxZWF0dVgySUk3UkUzMnYwWWxydnNpclFJaFY2WUtZKzhLamF1a1V3TkZ4N3ppamhyellQd25BPT0tLTRZMVNDbWQzODhLb1BrdkhYZmlnSnc9PQ%3D%3D--e8e9fa7ad4b8bd1294b80084cf00b95f3ca40676
+      - _platform_session=djJSWGdJQ0xoMzg5WWI2VFYyVG9zaTJGRHZVTmhQNlkvczhTZi9tenBYQlRUTzR2VzhoajR5QWE2WElJeWkvTGhyZHdvR2loQ1Y1Nk9qVkdyM3JwVzkyVThsWC8wejU5My94NjQ2Tzc0UGpBb1ZLY2VXQ3djQXI5VVM2NW1qK3o4WTZzeFV5dmRlVWEyN2lSY2dhZXJSN2tzWTBpZ1NKeHJ0d3VpdzVwZE9aS3pieHd5ZlkvN1RreHNvblZpc3BwL0RiV3hMRkU5RHQ2eXNjWFlEZndPUFV5dHN2M2VrQ2t2bUIvTXhxSDdYclZzNHphMFlvcXVaRFNrdEZVVUNKWmxRNkN3a0NoQmcrZm83dkZLa3hOOStrQnk2dUx5WUlFcXdPb3V1V3hxVXRUbnVCNzVsNDE0TWtsVnZacmVzQUJhbnhIZkE1TTVQM3U3UXFaakgvSGNnPT0tLUV3REJteEZDbVBRWlVocUdWY3dGNVE9PQ%3D%3D--601bc766698191b826f5c82db9749f2ba7b86265
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -262,12 +262,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _platform_session=WS9uVXBVRjhrOUx5cmNpbHJpVnVkRlU3QlZhWEk1aTBldGh1SDRwNDlaTkg5OVN0MmV2dnBZOXllbm9JcW0yMERVUXFwdVpYOEkva2FGMEZJVlpjZGJNcFVJb2FoRmk4ZnJ1c1hTR2FvMTMxZ1YvMHdIMWR0cjNBcXpCblVtNmNqNDhoaVRhb2FiZ29MTmdlemlad1BRbkF4emdDVXBQVlpwYWVsVTI1UEdYTUNLVzdEOVFmcVRueVNqcHRNdlJIcWdxb3Z4TmpORkVTUWltOG5SdkJVNE1pVGNKMkZsT1pQSFhwTXVucmFTaUlOaUJqVHF3QVAzSEhjeVJpRGNiREV6Q1ZKSVFjMTlXZzZoaDVMalNUZFY0K1VsNnYrcGEzUXo1bmpyT2w5TjJlSDhxY2srSkhwMDR0T1pSVDNSZzVjeFA1aFEzN0pWdVBXdE1QdE1KZGVBPT0tLUNXa1NjeWU2anN4UXFWdkxmL1ZyTXc9PQ%3D%3D--23f4eede7fd30230ae7f7101a7d591601180c195;
+      - _platform_session=NzRRaElvdVQ0WkMzRzZmZEZyQ093aHRMWlJhWDNTTkE4UVNYZTRxMVA3dDZjVTdEWlBlMjljVFdZai8vYzlNUThjbUl5OU5XR1FMNFpPdlRwWW9WTTFaYlNuQlJ6cGRTN05JNHhEeitma0Mxak5CN3Y0U0NnQnczN3VPcGppUXFQdmVEMkdSanQzQytNaEpKWlErTWF4UjNESGhqK2czUDNUM2VQeGRKK3gyckpsZ282cjVjSUs5bTl5ZXQzUEtmOGdxUzAwbTArckFNQmxKejdCc2Q1QmhBUXowZVJWOGJ1SzFqMmpTNjF2UjNQT05DNWVIc3ZQaFhhdUkwVzlTRHloNEd5UDFTUFJBS3BETHdjMElBU3pwZmJSRHZ5N3YyWXQrOFhnMFJ1Z2o4clI4ZzlvMzRiN1QwSVRyYmZaaktydTRvbG1XbzF2cTJxUC9EWlFYVWdBPT0tLUc0TUQzMXY2MGZTa1NZdVY1UmVLM0E9PQ%3D%3D--2f344b7b48e296534a196152fec79d650b2a04eb;
         path=/; HttpOnly
       X-Request-Id:
-      - 57b6d072-9a54-4a54-ba0e-b154a3561411
+      - 60419d64-c6c2-4f10-ae1a-be35bdaf9a17
       X-Runtime:
-      - '0.058000'
+      - '0.117000'
       Transfer-Encoding:
       - chunked
     body:
@@ -275,7 +275,7 @@ http_interactions:
       string: '[{"id":1,"name":"name","title":"Name","group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"IdentityField","is_list":false,"is_identifier":true,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":0,"protection_level":"not_protected","required":"for
         saving","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}]'
     http_version: 
-  recorded_at: Sun, 17 Jul 2016 05:56:06 GMT
+  recorded_at: Sun, 17 Jul 2016 07:13:03 GMT
 - request:
     method: post
     uri: "<PURVIEW_URL>/api/v1/entities"
@@ -286,7 +286,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=WS9uVXBVRjhrOUx5cmNpbHJpVnVkRlU3QlZhWEk1aTBldGh1SDRwNDlaTkg5OVN0MmV2dnBZOXllbm9JcW0yMERVUXFwdVpYOEkva2FGMEZJVlpjZGJNcFVJb2FoRmk4ZnJ1c1hTR2FvMTMxZ1YvMHdIMWR0cjNBcXpCblVtNmNqNDhoaVRhb2FiZ29MTmdlemlad1BRbkF4emdDVXBQVlpwYWVsVTI1UEdYTUNLVzdEOVFmcVRueVNqcHRNdlJIcWdxb3Z4TmpORkVTUWltOG5SdkJVNE1pVGNKMkZsT1pQSFhwTXVucmFTaUlOaUJqVHF3QVAzSEhjeVJpRGNiREV6Q1ZKSVFjMTlXZzZoaDVMalNUZFY0K1VsNnYrcGEzUXo1bmpyT2w5TjJlSDhxY2srSkhwMDR0T1pSVDNSZzVjeFA1aFEzN0pWdVBXdE1QdE1KZGVBPT0tLUNXa1NjeWU2anN4UXFWdkxmL1ZyTXc9PQ%3D%3D--23f4eede7fd30230ae7f7101a7d591601180c195
+      - _platform_session=NzRRaElvdVQ0WkMzRzZmZEZyQ093aHRMWlJhWDNTTkE4UVNYZTRxMVA3dDZjVTdEWlBlMjljVFdZai8vYzlNUThjbUl5OU5XR1FMNFpPdlRwWW9WTTFaYlNuQlJ6cGRTN05JNHhEeitma0Mxak5CN3Y0U0NnQnczN3VPcGppUXFQdmVEMkdSanQzQytNaEpKWlErTWF4UjNESGhqK2czUDNUM2VQeGRKK3gyckpsZ282cjVjSUs5bTl5ZXQzUEtmOGdxUzAwbTArckFNQmxKejdCc2Q1QmhBUXowZVJWOGJ1SzFqMmpTNjF2UjNQT05DNWVIc3ZQaFhhdUkwVzlTRHloNEd5UDFTUFJBS3BETHdjMElBU3pwZmJSRHZ5N3YyWXQrOFhnMFJ1Z2o4clI4ZzlvMzRiN1QwSVRyYmZaaktydTRvbG1XbzF2cTJxUC9EWlFYVWdBPT0tLUc0TUQzMXY2MGZTa1NZdVY1UmVLM0E9PQ%3D%3D--2f344b7b48e296534a196152fec79d650b2a04eb
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -309,25 +309,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - '"f35e01603bfbdf50961fd12fdc1883f3"'
+      - '"10d512050f7f9e41d28a0614b8a57d34"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _platform_session=QzMvdWNWT3c2Y0t5ZVN1WGFuRDZPM1NCVFlYZ2V6ZXFrakZhNDc1YVNscVBQNUk5VW0vOHJzQm11dS9nNkJTN2llUWwxTk5lOVBHYTh6SHQra0tRbkNIcUdDblJTaUtkc0E2WWxuTVk2N0JZR2VzT2pwbDlsN2FLZVFaTG9RTVllTFRFaGt1S2l2dTBaeUJ1SXdhUnZZbTFIYVBwbjJSTS9UMUEzTmtOcGVBVkxabDlUR25jUlFyM2FUeDNMQ1BrRnUwWTl1Njhyc0pZNWFwUytsNXg2a0VIWVUzZCt4WWdOay9uNnppVmM4QmVRSnpzdHNhbEJkMmFnZEZqeWYwSk9OaC9NVGFZRDAzNWZsK1RJKzNqZTZVVFdVVGR4TDNRN2xiUGNwZVN0YkdJU25hZnZjVnJaUTlkWHBZdzhrZFVYTys1S01XNGFkbXlyWHRJREc5Qml3PT0tLUpTTDJkWWMwT05Rc29ZUi9uQStNZ0E9PQ%3D%3D--108fa7fe60db54d1baaf7ddd3511cda017bee6ca;
+      - _platform_session=bUhiTkFUQkZOV2ZJRXQ2bFYzT3J0QmJZTDhDUWJsNS9vZUVzSytSL0tiSFhLNWJxSUFCb2NyckU4TW5SaXFGaVE0WTR6Mi9nRktaanlUbTA4YysrRGVKaksxcWZQNXNLRy9EVWN2cEl3cCtESkdocDhmc2gxSWd1OEZjZTI3RFBvdG9TZnIxaVV0UGRJc0hFdzUwTEwydUFaNThoWWU2R041dDlsYzlMYVBiSFdBa281UXFTaGs3akltTGVsbGdVOE5KYy8vL2NDTDF4Wm1QYUFGTms1U1ppTFlLeEpYeGlTbGhnS3pleXU1UkFzYmZiV1F4eXZpMy9TSDNtYmpWdjBrcmp2dzVGMDllbVVKd0VvVFMxL3pVVmpCZzhoYXNyS0dVUUc4UmxneXB3MDc5anB6bFFHY0FISEZ0OU54VElWRWV3Ky9mZ3FPZ0JHUHlUWnVhSlJRPT0tLUh4VnFLd2QrRkEyMjFiUFBYQU5ReUE9PQ%3D%3D--cdb01426e4040de261d200be91749f1902111cbc;
         path=/; HttpOnly
       X-Request-Id:
-      - 07d436ce-dda3-4382-9c28-3c102b024268
+      - 148802eb-e85e-484d-8264-10361122f311
       X-Runtime:
-      - '0.398000'
+      - '0.569000'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"account":{"id":1,"name":"GoodGuide","credits":0},"catalog_id":1,"created_at":"2016-07-17T05:56:06.000Z","created_by":{"user":{"id":1,"name":"Art
-        Vandelay","email":"<PURVIEW_EMAIL>"},"accounts":[{"id":1,"name":"GoodGuide","credits":0}]},"id":137,"name":"test_only_delete_me__Shampoo","type":"Brand","status":"unsubmitted","updated_at":"2016-07-17T05:56:06.000Z","updated_by":{"user":{"id":1,"name":"Art
+      string: '{"account":{"id":1,"name":"GoodGuide","credits":0},"catalog_id":1,"created_at":"2016-07-17T07:13:03.000Z","created_by":{"user":{"id":1,"name":"Art
+        Vandelay","email":"<PURVIEW_EMAIL>"},"accounts":[{"id":1,"name":"GoodGuide","credits":0}]},"id":142,"name":"test_only_delete_me__Shampoo","type":"Brand","status":"unsubmitted","updated_at":"2016-07-17T07:13:03.000Z","updated_by":{"user":{"id":1,"name":"Art
         Vandelay","email":"<PURVIEW_EMAIL>"},"accounts":[{"id":1,"name":"GoodGuide","credits":0}]},"value_bindings":{"1":"test_only_delete_me__Shampoo"},"submittable":true,"image_url":null}'
     http_version: 
-  recorded_at: Sun, 17 Jul 2016 05:56:06 GMT
+  recorded_at: Sun, 17 Jul 2016 07:13:04 GMT
 - request:
     method: get
     uri: "<PURVIEW_URL>/api/v1/catalogs/1"
@@ -338,7 +338,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=QzMvdWNWT3c2Y0t5ZVN1WGFuRDZPM1NCVFlYZ2V6ZXFrakZhNDc1YVNscVBQNUk5VW0vOHJzQm11dS9nNkJTN2llUWwxTk5lOVBHYTh6SHQra0tRbkNIcUdDblJTaUtkc0E2WWxuTVk2N0JZR2VzT2pwbDlsN2FLZVFaTG9RTVllTFRFaGt1S2l2dTBaeUJ1SXdhUnZZbTFIYVBwbjJSTS9UMUEzTmtOcGVBVkxabDlUR25jUlFyM2FUeDNMQ1BrRnUwWTl1Njhyc0pZNWFwUytsNXg2a0VIWVUzZCt4WWdOay9uNnppVmM4QmVRSnpzdHNhbEJkMmFnZEZqeWYwSk9OaC9NVGFZRDAzNWZsK1RJKzNqZTZVVFdVVGR4TDNRN2xiUGNwZVN0YkdJU25hZnZjVnJaUTlkWHBZdzhrZFVYTys1S01XNGFkbXlyWHRJREc5Qml3PT0tLUpTTDJkWWMwT05Rc29ZUi9uQStNZ0E9PQ%3D%3D--108fa7fe60db54d1baaf7ddd3511cda017bee6ca
+      - _platform_session=bUhiTkFUQkZOV2ZJRXQ2bFYzT3J0QmJZTDhDUWJsNS9vZUVzSytSL0tiSFhLNWJxSUFCb2NyckU4TW5SaXFGaVE0WTR6Mi9nRktaanlUbTA4YysrRGVKaksxcWZQNXNLRy9EVWN2cEl3cCtESkdocDhmc2gxSWd1OEZjZTI3RFBvdG9TZnIxaVV0UGRJc0hFdzUwTEwydUFaNThoWWU2R041dDlsYzlMYVBiSFdBa281UXFTaGs3akltTGVsbGdVOE5KYy8vL2NDTDF4Wm1QYUFGTms1U1ppTFlLeEpYeGlTbGhnS3pleXU1UkFzYmZiV1F4eXZpMy9TSDNtYmpWdjBrcmp2dzVGMDllbVVKd0VvVFMxL3pVVmpCZzhoYXNyS0dVUUc4UmxneXB3MDc5anB6bFFHY0FISEZ0OU54VElWRWV3Ky9mZ3FPZ0JHUHlUWnVhSlJRPT0tLUh4VnFLd2QrRkEyMjFiUFBYQU5ReUE9PQ%3D%3D--cdb01426e4040de261d200be91749f1902111cbc
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -357,7 +357,7 @@ http_interactions:
       X-Ua-Compatible:
       - chrome=1
       Date:
-      - Sun, 17 Jul 2016 05:56:10 GMT
+      - Sun, 17 Jul 2016 07:13:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -365,12 +365,12 @@ http_interactions:
       Etag:
       - '"2a483d0e469271493a379dd877849ec8"'
       Set-Cookie:
-      - _platform_session=UDc5ODlwQzRoYkMxT0ZpOU80b3BLd1l4T0NYUVNiL3NhSGtEbVpnSDdZeEhoUUtyejFtVHJMSXRWc3crMktrQUdhVDlOQjBhK0VDSjBBSTBkdUdMRm43UW90emtuU2cyOHhOMHFyamZQMXBra1M3NkdONVlyZSs2Mm4wR3ViS09ZSVdORjdKdzIycEhrNllyNjBNQ3JqM2ZNWWtsdS9PeGZYT3NXUHFDc2FNTXlOdkl2QXZzY3NJanZrclNMajR6NG1YQXJ2N0J3NnNHTkM5bTNWNUw1cWcxaVF1Mkw5U1FrZ2FrU3BHYVIwZjNBRGN1YnR4dW9wTjMycThJUkcwZzdSalhtd2dvcDJFSU5JZG4rdjB0aHB6UWQ2dS9RRVdLTml4bDJra2JXdHFZNHlLZ1ZLUWdwemk5K1JCUnBlZ21hZm12dzF4QzA1Q09JS09ab0l3QVlBPT0tLVhRS0xCdjJhTllWQW5Fd2cyMlljRXc9PQ%3D%3D--fbb1f28f10b8811133dbc2f2f840cdc225181eed;
+      - _platform_session=OG93WHZjT0h0TmpzbVNPMDhheGlDUjE0OEV1S0kvV2JjbTM5R0ZjSDNZK0lKUCtKNWIwU2ZoaGxLZVpxRlJOSnNTWENpaW9VT1l1Unp0K3doWU9SN3V6NFFIZURMRWZDa0ZWVkJIS0pUZEc4U2N5cm16ZHFBUmJnTXREa0ZNYlNwQ3o4T0xCS0ZVZi8wWkxvRGttL3VxUHpTd0xQS2ZpK0dvd3B2aEZxcEczZytsc0c5akJLSUlpTHFNWWJBSmYxU00rY0JLWnl5d3J5NG01V0QzNmtzZzFIWS8vb0NvV0licktURWdUdTlEc0lkMjhEN2dEWlhEUldZd01qditRc1R2RmwrajRoNWpZaXM2OVNXQ3VNbUdLTGo5SUdFYkNKWjN5dzRlNnVYWGZLR0lndTVkby8vV1pzZFhQeWNVVXRhZ1VQT1ozRVNMWmhVZkFDbC9JYjF3PT0tLWpOVHpEeVVGaHIvVTlNQ0tLOEtRSFE9PQ%3D%3D--2f90e3d4a9c1f83d76b739130e3ecd1ac1e60fec;
         path=/; HttpOnly
       X-Request-Id:
-      - 45381176-55b7-4b59-80ce-f953d3d888dc
+      - 39464965-1a96-47c6-a2d3-8d6d5454bd21
       X-Runtime:
-      - '0.081000'
+      - '0.143000'
       Transfer-Encoding:
       - chunked
     body:
@@ -382,7 +382,7 @@ http_interactions:
         Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
         Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}}'
     http_version: 
-  recorded_at: Sun, 17 Jul 2016 05:56:10 GMT
+  recorded_at: Sun, 17 Jul 2016 07:13:07 GMT
 - request:
     method: get
     uri: "<PURVIEW_URL>/api/v1/fields?catalog_id=1"
@@ -393,7 +393,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Cookie:
-      - _platform_session=UDc5ODlwQzRoYkMxT0ZpOU80b3BLd1l4T0NYUVNiL3NhSGtEbVpnSDdZeEhoUUtyejFtVHJMSXRWc3crMktrQUdhVDlOQjBhK0VDSjBBSTBkdUdMRm43UW90emtuU2cyOHhOMHFyamZQMXBra1M3NkdONVlyZSs2Mm4wR3ViS09ZSVdORjdKdzIycEhrNllyNjBNQ3JqM2ZNWWtsdS9PeGZYT3NXUHFDc2FNTXlOdkl2QXZzY3NJanZrclNMajR6NG1YQXJ2N0J3NnNHTkM5bTNWNUw1cWcxaVF1Mkw5U1FrZ2FrU3BHYVIwZjNBRGN1YnR4dW9wTjMycThJUkcwZzdSalhtd2dvcDJFSU5JZG4rdjB0aHB6UWQ2dS9RRVdLTml4bDJra2JXdHFZNHlLZ1ZLUWdwemk5K1JCUnBlZ21hZm12dzF4QzA1Q09JS09ab0l3QVlBPT0tLVhRS0xCdjJhTllWQW5Fd2cyMlljRXc9PQ%3D%3D--fbb1f28f10b8811133dbc2f2f840cdc225181eed
+      - _platform_session=OG93WHZjT0h0TmpzbVNPMDhheGlDUjE0OEV1S0kvV2JjbTM5R0ZjSDNZK0lKUCtKNWIwU2ZoaGxLZVpxRlJOSnNTWENpaW9VT1l1Unp0K3doWU9SN3V6NFFIZURMRWZDa0ZWVkJIS0pUZEc4U2N5cm16ZHFBUmJnTXREa0ZNYlNwQ3o4T0xCS0ZVZi8wWkxvRGttL3VxUHpTd0xQS2ZpK0dvd3B2aEZxcEczZytsc0c5akJLSUlpTHFNWWJBSmYxU00rY0JLWnl5d3J5NG01V0QzNmtzZzFIWS8vb0NvV0licktURWdUdTlEc0lkMjhEN2dEWlhEUldZd01qditRc1R2RmwrajRoNWpZaXM2OVNXQ3VNbUdLTGo5SUdFYkNKWjN5dzRlNnVYWGZLR0lndTVkby8vV1pzZFhQeWNVVXRhZ1VQT1ozRVNMWmhVZkFDbC9JYjF3PT0tLWpOVHpEeVVGaHIvVTlNQ0tLOEtRSFE9PQ%3D%3D--2f90e3d4a9c1f83d76b739130e3ecd1ac1e60fec
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -418,12 +418,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _platform_session=OTVqckZmeDkxNzBlN1VsSFlZVHdDY3ZOU2wwVnNQNEo4bXB4M1QrakhLUy9VMjN4THdVbWNxd1lsQUNicHlpcjR5aEQvSzdYcGJ6MnFtTkJTVm9lMHJBZmpRalA5Vld5Zm1zMnFjMG4yMHkwRnBIMTd4d05LTWUrOUNaa0JoeDhJc0EvZElCTzVqOGhCZ0ZNcTdSZEtZTVBlNjFwK1hyYWFodWhsWjNhSFZxQkJib3FWcHpmdjA2dUQwUFMveStzeGF0TVlGMzg0dlU1TGpIRUhoc0JabHdXMnQzekhjNmxEbGNoZ1hyUGFJamkwN21QUEhreGVWZ0RkS1Rjd3BUTUppL1NTVTYyRjNaazJ1dVgwUlZBL1A2QzFKZHg3dHIvOEc3WVZZQkY0ZC81MWExeFk2a2tINmp0UW5uSHFhaC8xUnowaHBoVG1qZU16dTJhdUFlZktBPT0tLTdQQnFndUxvZ2ZySWcwcWw4TFpodkE9PQ%3D%3D--df65cbe1f04aa5ffc1619708778894d90e3872e1;
+      - _platform_session=dzAwV1pGNEZ1b3RhNExLZzJSdndKUDRwaE9TbUJhM2FUWXdlN0s1Wk9vMllnWTN5KzBZSUFFTmRPaXQ2aHM3dUQ4TTBqU1RuNWx5eTBuYW1JTzBvWnkvZ2dqUXV0Qk1PQmRNQkU3ZmxOUVUvRVJKNml3aXJpZ2lpb3Q3cnRxYVBuZkN2M2lFRlI4dW0ycEtFM0djcnNCcHZ1ZWNqUFBCdENSUVVRMDYzZTEyYXRHL3FSYnZ1UkRyL0ZtajRoVXlaQzcyakRVOVJ6Qk0xaUZ5Q1ZuTExQYkdFZDJmc1NCVmxhVW55YjJHdnJFNXRwQ0M1a1h5OHJTV3NHQmc4SUJ2anhlYTlsMmpPYXNuQStUNUVNTUJzMHdLaDY1Vmp2MVIvdFJZNHZXU2VicmF5dzl4UWo0Z3BxVGNyN1Rma3ZmQkpkUVlzeHpnYm9EbEt3SHQwRnFWejRBPT0tLVBseDA2dHFCaStoUGpqSTl3bkMvZ1E9PQ%3D%3D--f91a9fb73355812d316ad0f60db7ba26a5306060;
         path=/; HttpOnly
       X-Request-Id:
-      - c9c6f44d-422d-4245-9252-0877abd31d2d
+      - 0d0d4c6c-a875-4f99-9a5b-b641cc9a2b1b
       X-Runtime:
-      - '0.053000'
+      - '0.108000'
       Transfer-Encoding:
       - chunked
     body:
@@ -431,5 +431,5 @@ http_interactions:
       string: '[{"id":1,"name":"name","title":"Name","group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"IdentityField","is_list":false,"is_identifier":true,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":0,"protection_level":"not_protected","required":"for
         saving","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}]'
     http_version: 
-  recorded_at: Sun, 17 Jul 2016 05:56:10 GMT
+  recorded_at: Sun, 17 Jul 2016 07:13:08 GMT
 recorded_with: VCR 3.0.3

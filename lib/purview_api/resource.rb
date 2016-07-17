@@ -79,7 +79,7 @@ module PurviewApi
       raise_not_destroyed('missing id') unless id
       raise_not_destroyed('missing catalog_id') unless attributes[:catalog_id]
 
-      result = connection.delete(id, attributes)
+      result = connection.delete(id, catalog_id: attributes[:catalog_id])
       !parse_errors(result)
     rescue Faraday::Error::ClientError => e
       !parse_errors(e.response[:body], e.response[:status])
