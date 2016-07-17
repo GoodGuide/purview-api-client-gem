@@ -76,6 +76,8 @@ module PurviewApi
 
     def destroy
       return false unless id
+      raise_not_destroyed('missing id') unless id
+      raise_not_destroyed('missing catalog_id') unless attributes[:catalog_id]
 
       result = connection.delete(id, attributes)
       !parse_errors(result)
@@ -86,10 +88,7 @@ module PurviewApi
     def destroy!
       return if destroy
 
-      raise ResourceNotDestroyed.new(
-        "Could not destroy #{self.class.name.demodulize}" +
-        "#{@attributes.inspect}: " +
-        "#{errors.full_messages.join(',')}", self)
+      raise_not_destroyed(errors.full_messages.join(','))
     end
 
     def id
@@ -125,6 +124,15 @@ module PurviewApi
       @attributes.as_json(opts).merge(
         Hash[opts[:methods].map{|m| [m, self.send(m).as_json]}]
       )
+    end
+
+    private
+
+    def raise_not_destroyed(message)
+      raise ResourceNotDestroyed.new(
+        "Could not destroy #{self.class.name.demodulize}" +
+        "#{@attributes.inspect}: " +
+        "#{message}", self)
     end
   end
 end

@@ -1,0 +1,435 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: "<PURVIEW_URL>/api/v1/entities/132?account%5Bcredits%5D=0&account%5Bid%5D=1&account%5Bname%5D=GoodGuide&catalog_id=1&created_at=2016-07-17T05:38:58.000Z&created_by%5Baccounts%5D%5B0%5D%5Bcredits%5D=0&created_by%5Baccounts%5D%5B0%5D%5Bid%5D=1&created_by%5Baccounts%5D%5B0%5D%5Bname%5D=GoodGuide&created_by%5Buser%5D%5Bemail%5D=<PURVIEW_EMAIL>&created_by%5Buser%5D%5Bid%5D=1&created_by%5Buser%5D%5Bname%5D=Art%20Vandelay&id=132&name=test_only_delete_me__Shampoo&status=unsubmitted&type=Brand&updated_at=2016-07-17T05:38:58.000Z&updated_by%5Baccounts%5D%5B0%5D%5Bcredits%5D=0&updated_by%5Baccounts%5D%5B0%5D%5Bid%5D=1&updated_by%5Baccounts%5D%5B0%5D%5Bname%5D=GoodGuide&updated_by%5Buser%5D%5Bemail%5D=<PURVIEW_EMAIL>&updated_by%5Buser%5D%5Bid%5D=1&updated_by%5Buser%5D%5Bname%5D=Art%20Vandelay&value_bindings%5B%5D=test_only_delete_me__Shampoo"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=VDNuVk4yT0Rad3R0eFRrclkxNU8yb2xONGp5ZjVFSVFYU0dmSmJnTzRMNXpPbUQ1Mkx0SmthRE8wM1cwNjY1cWhNTE9TRUZ6aGZFMkNXRUY2ZzNLNk1iS0s4MGNsR0ZUeVJCbHl6bmhuNnYxYzY4MjRJQzdwTExndDJHTVhPNk1SVHZGc1lYdWh3VEdlbXZKTlZpZFpLOFVZOElJWGVnQTdQSzBOaXA0OXlhcUJHWm8vZ2NWVnZjOEJCcUFQSjhMSlMzbVB6Y1BJdUR0TmZEM2pMcFlvaEF2ZW04aXRtdWRtN2JqQXBDMTZXeGFNUVlDc2F4WEduTTR4QTVyVXhxeHhaaTlYTG9HeC82enNyWkhkdmk3STBDUThkQmpLblBpYUtJVGI1c1QzRm1kTTd4dlRtVDRaY2hyd2o2c1dJNDhLdGVkbTNyY1paVzNyTGZYemhiWW1nPT0tLWIxT0dmRUJzNUt4ejl5bStaa0JudkE9PQ%3D%3D--3b04a2240c3c4d9a97ac7d9990ccfdca76db242e
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=VWRUYm5LaXEyM3ZqOXVNU01BTDFWNWkzVGYzQWR2T2Q4WFFIajZSU3QzV04rWHNldkVUVncxdnBtcHJnZ2FqaWlIWmV0Y0g1MjJnRmV1d3NFVW9ONHNJUVBWNG9LOU5tb2o5b0s3c0ZQUkNUR0N3VzUwdC9VWFVMYkRVMk9YU29jTWJoMjBxaFFISStiWmpIZ1BaSFFsVzJQSE96SGF1QVNqUzhCL0dzVXpUSHdDSUxuckZTeWhHYTkwMWZ4cFZJWVYwM1FaRy80RjlnNW1nU21vNjY4aC8wMzRsRGhMUWh2V3RoUEcrVWtpOUZDQ2V3MUgrQmlsbnduNUgxRGY0WGxKbDNzMXI2Qi83d3ZVK09WR3RpTnEweVljRkNiSE94M1QwNUUvYWdZQXVBeVRoNXZHS2pnYkJwWkZCVEJhejFuNzI0ZWdsZm9BZDZRcFdXajhUSmRBPT0tLWRNdnkzYjZ5SFhMcnhiWXhYVjdoQUE9PQ%3D%3D--0be53cc59716de70e4b351a7fa180e5f156c93bf;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 621783c1-227a-4433-bfab-50644f97b5bd
+      X-Runtime:
+      - '0.316000'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:39:58 GMT
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/users/session"
+    body:
+      encoding: UTF-8
+      string: '{"email":"<PURVIEW_EMAIL>","password":"<PURVIEW_PASSWORD>"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Location:
+      - "<PURVIEW_URL>/"
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _platform_session=dHFwamNKTHpqNEhwL0Zzb3cxdkh3QlUydGlaVEFTbm1ZOUtibysxUXRJM1k5TGozb3pUS014N3lnSWhIYkhTRTFmeTRJVEZpUFQzZlJMczBIOTZucjF0cWQ1bk1oTDdEb2pQUlFzTUhkckFuRzFldldDdll3eFBHdWRBZUJlakZMSDlhSTAxNjYyOGpXRjlybWJTTEo4amRpaTc0R0Roc3NKQlEvc3ZqcnZBM1NKaVNQdDMzMjIvc24vMTBPQUh3c3BQUUt5ZktoVUJOMThVSTY4RVd5RXc2NkZ6Vnh1eTUzZ0hEZFdsczZvV1dsMDhTekVFK0g1RUxWS1c0emp1NHZJWFlxM29QanY2dHIvdHRuTHVUb2JqcUxwaG1FNHYvNWVFNEU5eWtJblVOblJyN1NPeHlzUHJZKzNBMFpCUGNGbTRxdnVKSUVHVHBWaEczbjFpYmx3PT0tLUV0SEFxUGFVK3JFNi9Hd0VvaVY5Y3c9PQ%3D%3D--82a3ce1c404e9e574e6f1dd55789ff73e15efb05;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 266c1501-31cd-4097-b100-aa81b2e969c6
+      X-Runtime:
+      - '0.405000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <html><body>You are being <a href="<PURVIEW_URL>/">redirected</a>.</body></html>
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:40:28 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/catalogs"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=dHFwamNKTHpqNEhwL0Zzb3cxdkh3QlUydGlaVEFTbm1ZOUtibysxUXRJM1k5TGozb3pUS014N3lnSWhIYkhTRTFmeTRJVEZpUFQzZlJMczBIOTZucjF0cWQ1bk1oTDdEb2pQUlFzTUhkckFuRzFldldDdll3eFBHdWRBZUJlakZMSDlhSTAxNjYyOGpXRjlybWJTTEo4amRpaTc0R0Roc3NKQlEvc3ZqcnZBM1NKaVNQdDMzMjIvc24vMTBPQUh3c3BQUUt5ZktoVUJOMThVSTY4RVd5RXc2NkZ6Vnh1eTUzZ0hEZFdsczZvV1dsMDhTekVFK0g1RUxWS1c0emp1NHZJWFlxM29QanY2dHIvdHRuTHVUb2JqcUxwaG1FNHYvNWVFNEU5eWtJblVOblJyN1NPeHlzUHJZKzNBMFpCUGNGbTRxdnVKSUVHVHBWaEczbjFpYmx3PT0tLUV0SEFxUGFVK3JFNi9Hd0VvaVY5Y3c9PQ%3D%3D--82a3ce1c404e9e574e6f1dd55789ff73e15efb05
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Date:
+      - Sun, 17 Jul 2016 05:40:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=10, private
+      Etag:
+      - '"d28c2e57a7ec56bac132b608dc404ceb"'
+      Set-Cookie:
+      - _platform_session=Q3BFeGp3cGd5NmUvdjd0SUFNbm1VQ3U0SkExZUt0eWhpRUl4ZXRRNkxDRGJvWXVPRGFxOWcyQ0FOYVV6VlRBTW5NcTRta3ozendKT3UvWXVlQlEzOVNoQnp5alc5UlYxVVZmb2F0N3hoS3ZSUmJLd2RUWVFocE5DWHBTYTRpWGNPU2hhT1JacWwvSkwwQW11Y2xzcElkdTc2cVZGcW1nb1FLYnlPdVZsL2tDeXpzNTB3TEUvTkNGNXZzbTZLcnZPS3JpbGE3Q1UxcEZoVUFkU2NwR3VWZVZRc0JyTExUa0t6Rkl0d0ZkL1lDcFlQQ2NTd1NBS2Uwdy9wR2RzT3dLV2JHdndMQWV1L3lxbFM2ZnE4c013RDUrTWoxNkRIYWtWSDc2eUQ5THBFSnpJa3VsdE82bmh3bUJFSjRGaWhoRU5VenFwUmRUZzJMYmZNUitrOEdRUE9RPT0tLWMzVWVjMWVtU21sYVErbmlNRjQ1Y1E9PQ%3D%3D--df91b959ba56143dd3514a466f9e8e93e5c151a2;
+        path=/; HttpOnly
+      X-Request-Id:
+      - fa398364-9245-4ca9-aefe-ee73ff9f0bfd
+      X-Runtime:
+      - '0.451000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:51.000Z","description":"GoodGuide
+        Brands Catalog","entity_type":"Brand","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":1,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Brands","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_brands","updated_at":"2016-06-15T17:36:06.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Categories Catalog","entity_type":"Category","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":2,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Categories","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_categories","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Certifications Catalog","entity_type":"Certification","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":3,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Certifications","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_certifications","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Companies Catalog","entity_type":"Company","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":4,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Companies","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_companies","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Components Catalog","entity_type":"Component","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":5,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Components","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_components","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Designs Catalog","entity_type":"Design","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":6,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Designs","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_designs","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Ingredients Catalog","entity_type":"Ingredient","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":7,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Ingredients","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_ingredients","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Materials Catalog","entity_type":"Material","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":8,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Materials","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_materials","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":"GoodGuide
+        Products Catalog","entity_type":"Product","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":9,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Products","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_products","updated_at":"2016-05-13T21:14:52.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}},{"account_id":2,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:52.000Z","description":null,"entity_type":"Product","frozen_column_position":0,"has_dashboard":null,"has_landing_page":true,"how_it_works":null,"id":10,"inherits_to_children":null,"introduction":null,"is_public":false,"is_reference":false,"landing_page_title":null,"name":"Target
+        Sustainability Standard","open_for_submissions":true,"primary_rating_field_id":11,"referenced_catalog_id":null,"requires_payment":true,"requires_review":true,"short_description":null,"slug":"target_sustainability_standard","updated_at":"2016-05-13T21:14:54.000Z","sequence":null,"user_entities_count":0,"logo_attachment":null,"account":{"address_street":"1000
+        Nicollet Mall","address_street2":null,"address_city":"Minneapolis","address_state":"MN","address_zip":"55403","company_name":"Target,
+        Inc.","created_at":"2016-05-13T21:14:52.000Z","credits":0,"has_valid_payment_method":false,"id":2,"name":"Target","payment_events_count":0,"updated_at":"2016-05-13T21:14:52.000Z"}}]'
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:40:28 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/entities?catalog_id=1"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=Q3BFeGp3cGd5NmUvdjd0SUFNbm1VQ3U0SkExZUt0eWhpRUl4ZXRRNkxDRGJvWXVPRGFxOWcyQ0FOYVV6VlRBTW5NcTRta3ozendKT3UvWXVlQlEzOVNoQnp5alc5UlYxVVZmb2F0N3hoS3ZSUmJLd2RUWVFocE5DWHBTYTRpWGNPU2hhT1JacWwvSkwwQW11Y2xzcElkdTc2cVZGcW1nb1FLYnlPdVZsL2tDeXpzNTB3TEUvTkNGNXZzbTZLcnZPS3JpbGE3Q1UxcEZoVUFkU2NwR3VWZVZRc0JyTExUa0t6Rkl0d0ZkL1lDcFlQQ2NTd1NBS2Uwdy9wR2RzT3dLV2JHdndMQWV1L3lxbFM2ZnE4c013RDUrTWoxNkRIYWtWSDc2eUQ5THBFSnpJa3VsdE82bmh3bUJFSjRGaWhoRU5VenFwUmRUZzJMYmZNUitrOEdRUE9RPT0tLWMzVWVjMWVtU21sYVErbmlNRjQ1Y1E9PQ%3D%3D--df91b959ba56143dd3514a466f9e8e93e5c151a2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"f3a816dbe183c84427715e47d7248607"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _platform_session=cnNIUFhxcEZXL0hNUTFKMmlydVdVRXNrelR1NVlVRHlYKzVVSG1tLzI4RmZ5enhLdDBHU0lFWHl6Vm5oU2hpeTFReGR2SkdWcC9Qd2h6ckdwdHhiOXZzcjRDcFl6K2FCWGgxRkYyN25mc0MzZDY1ZkVwSEtxelA2MWI2dk1SYTNjVkpLWDJvVXc0aWdLR1JrNnB0dTlhU2NaYTByYVM1eFJLQkxsWkE1eEhHd1hqSUhSWWMzdDJqWHpOL0ZIQWJLbFJQa1UzYjVOMmp0cUowTUpSSGZhUEw2L0M4dUlBOTNEOUJUMEhqQWpLYUNZclFEMjBiNkhmMjMzaG83ZTFRVzZXaXhOQ1JWeENsSlpTWjVJY1VVbmI1Q0Zub3pqRUQrUmpKQTZhb3FCeHVBTjJ3MVlyNmtUOEp0WVYwV00rM0Y1VWwwRHh1R2IrQ2IrWkQ4cy8vNHFBPT0tLXZldk0rbDRCSEI5YnhaWjk2bTZkc1E9PQ%3D%3D--99886955747510c7e2eb29a0a05f3e10193ddbcb;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 4312d60b-0b4d-4a9d-b319-000e71627a3a
+      X-Runtime:
+      - '0.147000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"entities":[],"total":0,"facets":{}}'
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:40:29 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/fields?catalog_id=1"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=cnNIUFhxcEZXL0hNUTFKMmlydVdVRXNrelR1NVlVRHlYKzVVSG1tLzI4RmZ5enhLdDBHU0lFWHl6Vm5oU2hpeTFReGR2SkdWcC9Qd2h6ckdwdHhiOXZzcjRDcFl6K2FCWGgxRkYyN25mc0MzZDY1ZkVwSEtxelA2MWI2dk1SYTNjVkpLWDJvVXc0aWdLR1JrNnB0dTlhU2NaYTByYVM1eFJLQkxsWkE1eEhHd1hqSUhSWWMzdDJqWHpOL0ZIQWJLbFJQa1UzYjVOMmp0cUowTUpSSGZhUEw2L0M4dUlBOTNEOUJUMEhqQWpLYUNZclFEMjBiNkhmMjMzaG83ZTFRVzZXaXhOQ1JWeENsSlpTWjVJY1VVbmI1Q0Zub3pqRUQrUmpKQTZhb3FCeHVBTjJ3MVlyNmtUOEp0WVYwV00rM0Y1VWwwRHh1R2IrQ2IrWkQ4cy8vNHFBPT0tLXZldk0rbDRCSEI5YnhaWjk2bTZkc1E9PQ%3D%3D--99886955747510c7e2eb29a0a05f3e10193ddbcb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"14ecbb531e8898a1444bf00b38fb22eb"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _platform_session=Q21CSWFZaGFGL3gzYkc4NHZsRmxVTGdGM3djRU15dHI1L09QbWtiS0prM0hTbGtjdVA2R0tKQzNDd1pkQjFLWVNSdVRVaGhkSWdUZ2djT1d4R09FNGtHSGlOSTZCS25jM25VamNod3Bzb2dzN2N1VktYMWV6dGNweWhnUVpGMFpsOUluU0Fqb0p2d01XVjMzamtMSm5PL2xKRmxYYStLY3FSTXA4SkxUSnRPS0V5akFTcG1NVytPd2pRR0hZUjU5Q3EyU1FrZENqaFJFcld6Ly9qeHFIZVUxNDV5dkx6TkJ6V2hvaGw2RWJWL0JBOG4ybSswTEYvalMrM3d5VUEwNzFGUFBTV1hYbjBMYTRmd2thN3dxcGdidkRGNmVmMGVWNDIwV2ZmbXR5anUvdmtCWlpiNzczSEVvRzlyV2RkRWM0NFQ2b1RPSWxEb0g5V0ZTM1FrTHV3PT0tLW1WV3loZDJMRGxLclZxZ1FwNmcyMEE9PQ%3D%3D--8cddcc65177618b040053f43cf369a063175d598;
+        path=/; HttpOnly
+      X-Request-Id:
+      - c7eaf145-9649-4fc0-8bba-caee4cdfd935
+      X-Runtime:
+      - '0.112000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"name":"name","title":"Name","group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"IdentityField","is_list":false,"is_identifier":true,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":0,"protection_level":"not_protected","required":"for
+        saving","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}]'
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:40:29 GMT
+- request:
+    method: post
+    uri: "<PURVIEW_URL>/api/v1/entities"
+    body:
+      encoding: UTF-8
+      string: '{"catalog_id":1,"value_bindings":{"1":"test_only_delete_me__Shampoo"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=Q21CSWFZaGFGL3gzYkc4NHZsRmxVTGdGM3djRU15dHI1L09QbWtiS0prM0hTbGtjdVA2R0tKQzNDd1pkQjFLWVNSdVRVaGhkSWdUZ2djT1d4R09FNGtHSGlOSTZCS25jM25VamNod3Bzb2dzN2N1VktYMWV6dGNweWhnUVpGMFpsOUluU0Fqb0p2d01XVjMzamtMSm5PL2xKRmxYYStLY3FSTXA4SkxUSnRPS0V5akFTcG1NVytPd2pRR0hZUjU5Q3EyU1FrZENqaFJFcld6Ly9qeHFIZVUxNDV5dkx6TkJ6V2hvaGw2RWJWL0JBOG4ybSswTEYvalMrM3d5VUEwNzFGUFBTV1hYbjBMYTRmd2thN3dxcGdidkRGNmVmMGVWNDIwV2ZmbXR5anUvdmtCWlpiNzczSEVvRzlyV2RkRWM0NFQ2b1RPSWxEb0g5V0ZTM1FrTHV3PT0tLW1WV3loZDJMRGxLclZxZ1FwNmcyMEE9PQ%3D%3D--8cddcc65177618b040053f43cf369a063175d598
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"1dfb255d21ead6475d53f9c4bb598a10"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _platform_session=a1c5dDdhY1FlZVgvUkJNc0E4ZTRzOWwvc1FFZEx6R29WZC9YZHhGcWFkUDZkSm9vVjJiQWJtT2M2WHVjMkM5OXFGR3pacDBoV1Fxc2k2dUN5ZFJCRVoxclZ5dTUzOHg4Y1IzR3lnL3o4bm1HeFRMb1RVNEdlakphaUJRbUdtNU5wd2NPcW9pNjhIR0FEWU5idjVjRE5RSlFRNmxGdjJSMmh5TGtBRzNyMlYxL2h1NVE3YXVEUnh0YzRUK0orZjJtOEZDdEhLU2t2dlFTZVpyUHREVzNPZk9HUGxGZnZvZTNGakNnb2F4SStEWFdmSktNQ0x2V1AxY2FBL24yNVhoclNyMVVUc1p3Q01EVXdqNkhQUVZidlpIb1ZYaFgwMndRSTdvTkVKMTJzcG9HZlNRMlhrcGhBYnNWdzFmV28vYWVkd2FxOHhDZ3ZmRDlDa1NvVUI3Ukp3PT0tLWNrczBwd0k4UDk2Qm9VU3dRUS8xL1E9PQ%3D%3D--36d2174131b34d7f7bd36dfae64c7e72936bdbed;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 91c457cb-9f7a-47a2-b1a1-f29ae3abb13d
+      X-Runtime:
+      - '0.547000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"account":{"id":1,"name":"GoodGuide","credits":0},"catalog_id":1,"created_at":"2016-07-17T05:40:30.000Z","created_by":{"user":{"id":1,"name":"Art
+        Vandelay","email":"<PURVIEW_EMAIL>"},"accounts":[{"id":1,"name":"GoodGuide","credits":0}]},"id":135,"name":"test_only_delete_me__Shampoo","type":"Brand","status":"unsubmitted","updated_at":"2016-07-17T05:40:30.000Z","updated_by":{"user":{"id":1,"name":"Art
+        Vandelay","email":"<PURVIEW_EMAIL>"},"accounts":[{"id":1,"name":"GoodGuide","credits":0}]},"value_bindings":{"1":"test_only_delete_me__Shampoo"},"submittable":true,"image_url":null}'
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:40:30 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/catalogs/1"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=a1c5dDdhY1FlZVgvUkJNc0E4ZTRzOWwvc1FFZEx6R29WZC9YZHhGcWFkUDZkSm9vVjJiQWJtT2M2WHVjMkM5OXFGR3pacDBoV1Fxc2k2dUN5ZFJCRVoxclZ5dTUzOHg4Y1IzR3lnL3o4bm1HeFRMb1RVNEdlakphaUJRbUdtNU5wd2NPcW9pNjhIR0FEWU5idjVjRE5RSlFRNmxGdjJSMmh5TGtBRzNyMlYxL2h1NVE3YXVEUnh0YzRUK0orZjJtOEZDdEhLU2t2dlFTZVpyUHREVzNPZk9HUGxGZnZvZTNGakNnb2F4SStEWFdmSktNQ0x2V1AxY2FBL24yNVhoclNyMVVUc1p3Q01EVXdqNkhQUVZidlpIb1ZYaFgwMndRSTdvTkVKMTJzcG9HZlNRMlhrcGhBYnNWdzFmV28vYWVkd2FxOHhDZ3ZmRDlDa1NvVUI3Ukp3PT0tLWNrczBwd0k4UDk2Qm9VU3dRUS8xL1E9PQ%3D%3D--36d2174131b34d7f7bd36dfae64c7e72936bdbed
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Date:
+      - Sun, 17 Jul 2016 05:40:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=10, private
+      Etag:
+      - '"2a483d0e469271493a379dd877849ec8"'
+      Set-Cookie:
+      - _platform_session=SUlBVDB3YnQ0S0trZlB2dEo5ZnMyWU9VTmZydytNbm1RNkdkZGtDaXdjMHN1WUIrdUJXSWRRTC9uSGZYWmZsdVNwbXlFM0l2b05pYW5PcjB5Y3FzMXVtVzJmaUE4VDk0M1kzTmJkSldkUkh4SDRObXZsWWtmRHJydlhrbTU5WDdDKzdXTlRCNmVHbzNlaXlPdjAvZUdHb3ZuQ2JxelBHWlh5cCtNMmZUMjlzVC82U2RSVHVOdmVPVlRDMUN1cGdjTUxNQS9nbEZLZWRiUlBiYW00SmFBM1Rudm5UVnFoUUF2eU8xRzk4djRrbGg3Z2FFY1ZobjNaNHVKbWE0K085cFdIN3hBVXRKdUpJbWF4UUdaZytOOGNrUUlma2w4ZW5lREpPaEtaYmxwN2N4NkJMajE5Uk1mTU9wOEJoZ0tqN0JDSmJxTzQ1VVo0MGFMNkloVG5QUTdBPT0tLU5NVGJPdVBaYzdTNkViN29aTXM1cEE9PQ%3D%3D--22215245ac5de33c918ddcd4206481ea93ae3a19;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 9decb67f-0946-4b82-959a-15d5b86506eb
+      X-Runtime:
+      - '0.141000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"account_id":1,"auto_validate":true,"catalog_group_id":1,"created_at":"2016-05-13T21:14:51.000Z","description":"GoodGuide
+        Brands Catalog","entity_type":"Brand","frozen_column_position":0,"has_dashboard":null,"has_landing_page":false,"how_it_works":null,"id":1,"inherits_to_children":null,"introduction":null,"is_public":true,"is_reference":false,"landing_page_title":null,"name":"GoodGuide
+        Brands","open_for_submissions":true,"primary_rating_field_id":null,"referenced_catalog_id":null,"requires_payment":false,"requires_review":true,"short_description":null,"slug":"goodguide_brands","updated_at":"2016-06-15T17:36:06.000Z","sequence":null,"user_entities_count":1,"fields":[{"id":1,"name":"name","title":"Name","group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"IdentityField","is_list":false,"is_identifier":true,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":0,"protection_level":"not_protected","required":"for
+        saving","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}],"field_groups":[],"logo_attachment":null,"account":{"address_street":"98
+        Battery Street","address_street2":null,"address_city":"San Francisco","address_state":"CA","address_zip":"94111","company_name":"GoodGuide,
+        Inc.","created_at":"2016-05-13T21:14:50.000Z","credits":0,"has_valid_payment_method":false,"id":1,"name":"GoodGuide","payment_events_count":0,"updated_at":"2016-05-13T21:14:50.000Z"}}'
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:40:33 GMT
+- request:
+    method: get
+    uri: "<PURVIEW_URL>/api/v1/fields?catalog_id=1"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Cookie:
+      - _platform_session=SUlBVDB3YnQ0S0trZlB2dEo5ZnMyWU9VTmZydytNbm1RNkdkZGtDaXdjMHN1WUIrdUJXSWRRTC9uSGZYWmZsdVNwbXlFM0l2b05pYW5PcjB5Y3FzMXVtVzJmaUE4VDk0M1kzTmJkSldkUkh4SDRObXZsWWtmRHJydlhrbTU5WDdDKzdXTlRCNmVHbzNlaXlPdjAvZUdHb3ZuQ2JxelBHWlh5cCtNMmZUMjlzVC82U2RSVHVOdmVPVlRDMUN1cGdjTUxNQS9nbEZLZWRiUlBiYW00SmFBM1Rudm5UVnFoUUF2eU8xRzk4djRrbGg3Z2FFY1ZobjNaNHVKbWE0K085cFdIN3hBVXRKdUpJbWF4UUdaZytOOGNrUUlma2w4ZW5lREpPaEtaYmxwN2N4NkJMajE5Uk1mTU9wOEJoZ0tqN0JDSmJxTzQ1VVo0MGFMNkloVG5QUTdBPT0tLU5NVGJPdVBaYzdTNkViN29aTXM1cEE9PQ%3D%3D--22215245ac5de33c918ddcd4206481ea93ae3a19
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"14ecbb531e8898a1444bf00b38fb22eb"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _platform_session=S2swRHRRZWtLU1RzUDZDc0hWdmQ1K1liT2lDVkZ0OGJSdEZmUm43dU9NVGhzSVIwdXhId0Vwb285eGUwd05HSkdXTDUyVkViTjNxTTlFMC9oNGo1ajROekVNNWlQdS8xb3NVTlBmK2ZWaktPSHRBWDhnTmZyNE5aMU10VWdEWkZUWE11aUx6OWVRT0tiQ2IybHRMT1E3dUtEUlVFYzIwcWRLQnFMdDl2Tm9JRk9wNXgwMzRkOWdma0I0TUpyWUFncmEzSEZCWFdDNVVYdmZCMVplczB2MnBueGVqMG1DMkQzSDlNS0F3WDR5a2xvaVRjQXVESkNwQ3dGZ1BXaWlQdWQxRnJvSFJXVGs2RkRrRlY0eDN1M1ZuM3pzc01mL05iVWlrUERxdTlXVVJXdzB6bjA1aTkzOWJLV3ZlUWU2TW1ZN0QrdnJzN1M4MW5qRG1yb3Y4cXVRPT0tLXVUSkcvcUZyakFxK0NQanZMM2pkd2c9PQ%3D%3D--3f324f61ca4b455e13e08896d79aa8a4967ecf11;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 26782228-ffac-4bcd-887e-4a749ac9e19a
+      X-Runtime:
+      - '0.134000'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"name":"name","title":"Name","group":null,"hint":null,"field_group_id":null,"catalog_id":1,"type":"IdentityField","is_list":false,"is_identifier":true,"is_primary":null,"is_autocompleting":false,"includes_sub_fields":false,"enum":null,"enum_labels":null,"entity_type":"Brand","visualization":null,"visualization_options":null,"is_hidden":false,"position":0,"protection_level":"not_protected","required":"for
+        saving","max_value":null,"passing_value":null,"required_format":null,"allow_write_unverified":null,"editable_for_renewals":true,"default_value":null,"external_column_name":null,"criterion_id":null,"ontology_node_id":null,"is_wercs_identifier":null,"wercs_attribute":null,"has_notes":null,"notes_for_field_id":null,"notes_field_id":null}]'
+    http_version: 
+  recorded_at: Sun, 17 Jul 2016 05:40:34 GMT
+recorded_with: VCR 3.0.3

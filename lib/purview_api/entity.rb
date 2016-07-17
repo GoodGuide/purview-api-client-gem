@@ -58,5 +58,9 @@ module PurviewApi
       @errors = e.errors
       result
     end
+
+    def field_value(field_name)
+      value_bindings[catalog.field_id(field_name).to_s]
+    end
   end
 end
