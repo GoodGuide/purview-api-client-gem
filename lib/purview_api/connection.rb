@@ -25,7 +25,8 @@ module PurviewApi
         password: PurviewApi.config.password
       )
       true
-    rescue Faraday::Error::ClientError
+    rescue Faraday::Error::ClientError => e
+      puts e
       false
     end
 
