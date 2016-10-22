@@ -17,6 +17,10 @@ module PurviewApi
       find_all(opts).find{|c| c.slug == slug.to_s}
     end
 
+    def self.all(opts = {})
+      find_all(opts)
+    end
+
     def fields(params = {})
       @fields ||= PurviewApi::Field.find_all(params.merge(:catalog_id => id))
     end
