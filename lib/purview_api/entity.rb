@@ -41,11 +41,11 @@ module PurviewApi
     end
 
     def catalog(params = {})
-      Catalog.find(catalog_id, params)
+      @catalog ||= Catalog.find(catalog_id, params)
     end
 
     def account(params = {})
-      Account.find(account_id, params)
+      @account ||= Account.find(account_id, params)
     end
 
     def update_value_bindings(params)
